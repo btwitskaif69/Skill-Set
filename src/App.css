@@ -1,38 +1,79 @@
-.App {
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.input-group {
+    position: relative;
+  }
+  
+  .input-group-text {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+  
+  .form-control.pe-5 {
+    padding-right: 3rem; /* Adjust this value to fit the icon */
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* high z-index to overlay other content */
+  }
+  
+ /* Home.css */
+
+/* Marquee Styles */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  background: #f8f9fa; /* Light background color */
+  padding: 10px 0;
+  width: 100%;
+  height: 100px; /* Fixed height for the marquee */
+}
+
+.marquee-heading {
   text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #343a40; /* Darker text color for visibility */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.marquee-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: nowrap;
+  animation: marquee 20s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
+.marquee-logo {
+  height: 60px; /* Fixed height for logos */
+  margin: 0 15px; /* Space between logos */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateX(-100%);
   }
 }
