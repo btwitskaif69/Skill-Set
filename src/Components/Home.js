@@ -130,7 +130,7 @@ export default function Home() {
                     <div className="course-logos">
                       {course.logo && <img src={course.logo} alt="Course Logo" />}
                     </div>
-                    <h5 className="card-title" style={{fontSize: '17.5px', fontWeight: '600'}}>{course.title}</h5>
+                    <h5 className="card-title" style={{fontSize: '17px', fontWeight: '600'}}>{course.title}</h5>
                     <div className="mt-auto">
                     <p className="card-text mb-0 text-primary" style={{ fontSize: '0.9rem' }}>Advance in Your Degree Program</p>
                       <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
