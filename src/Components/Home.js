@@ -106,14 +106,15 @@ export default function Home() {
         }
         .course-logos {
           display: flex;
-          justify-content: center;
+          align-items: center; /* Vertically center the logo */
           margin-bottom: 10px; /* Space below logo */
         }
         .course-logos img {
           height: 50px; /* Adjust size of logo */
           width: auto;
         }
-      `}</style>
+    `}</style>
+
 
       {/* Course Cards */}
       <div className="container my-5">
