@@ -86,26 +86,50 @@ export default function Home() {
 
       {/* Marquee */}
       <div className="marquee-container" style={{ overflow: 'hidden', position: 'relative', backgroundColor: '#f8f9fa', padding: '30px 0', width: '100%', height: '250px' }}>
-        <h2 className="marquee-heading" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '20px', color: 'blue', fontWeight: '600', textTransform: 'titlecase' }}>Partnering with 10+ Top Universities and Companies</h2>
-        <div className="marquee-content" style={{ display: 'flex', flexWrap: 'nowrap', width: '200%', animation: 'marquee 30s linear infinite' }}>
-          {Object.values(logos).map((logo, index) => (
-            <img key={index} src={logo} alt={`Logo ${index}`} className="marquee-logo" style={{ height: '120px', margin: '0 30px' }} />
-          ))}
-          {Object.values(logos).map((logo, index) => (
-            <img key={index + Object.values(logos).length} src={logo} alt={`Logo ${index}`} className="marquee-logo" style={{ height: '120px', margin: '0 30px' }} />
-          ))}
-        </div>
-      </div>
+  <h2 className="marquee-heading" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '20px', color: 'blue', fontWeight: '600', textTransform: 'titlecase' }}>Partnering with 10+ Top Universities and Companies</h2>
+  <div className="marquee-content">
+    <div className="marquee-inner">
+      {Object.values(logos).slice(0, 10).map((logo, index) => (
+        <img key={index} src={logo} alt={`Logo ${index}`} className="marquee-logo" />
+      ))}
+    </div>
+    <div className="marquee-inner">
+      {Object.values(logos).slice(0, 10).map((logo, index) => (
+        <img key={index + 10} src={logo} alt={`Logo ${index}`} className="marquee-logo" />
+      ))}
+    </div>
+  </div>
+</div>
 
-      <style>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
+<style>{`
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 250px;
+  }
+  .marquee-content {
+    display: flex;
+    width: 200%; /* Covers twice the width of the container */
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-inner {
+    display: flex;
+    flex-shrink: 0;
+    width: 50%; /* Each inner container takes up half the marquee width */
+  }
+  .marquee-logo {
+    height: 120px;
+    margin: 0 6px; /* Adjust margin for spacing */
+  }
         @keyframes fadeIn {
           from {
             opacity: 0;
