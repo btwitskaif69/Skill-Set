@@ -100,31 +100,44 @@ export default function Home() {
             transform: translateX(-50%);
           }
         }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         .card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
-          padding: 8px; /* Decreased padding */
-          border-radius: 8px; /* Increased border radius */
+          padding: 8px;
+          border-radius: 8px;
         }
         .card:hover {
           transform: scale(1.05);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         .card-img-top {
-          border-radius: 8px; /* Increased border radius for images */
+          border-radius: 8px;
         }
         .course-logos {
           display: flex;
-          align-items: center; /* Vertically center the logo */
-          margin-bottom: 10px; /* Space below logo */
+          align-items: center;
+          margin-bottom: 10px;
         }
         .course-logos img {
-          height: 50px; /* Adjust size of logo */
+          height: 50px;
           width: auto;
         }
         .button-container {
           display: flex;
           justify-content: flex-start;
           margin-top: 20px;
+        }
+        .fade-in {
+          animation: fadeIn 0.5s ease-out;
         }
       `}</style>
 
@@ -156,29 +169,27 @@ export default function Home() {
         </div>
 
         {/* Additional Courses */}
-        {showAdditionalCourses && (
-          <div className="row mt-4">
-            {additionalCourses.map(course => (
-              <div key={course.id} className="col-md-3 mb-0">
-                <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                  <div className="card" style={{ height: '22rem' }}>
-                    <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
-                    <div className="card-body d-flex flex-column">
-                      <div className="course-logos">
-                        {course.logo && <img src={course.logo} alt="Course Logo" />}
-                      </div>
-                      <h5 className="card-title" style={{fontSize: '17.5px', fontWeight: '600'}}>{course.title}</h5>
-                      <div className="mt-auto">
-                        <p className="card-text mb-0 text-primary" style={{ fontSize: '0.8rem' }}>Advance in Your Degree Program</p>
-                        <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
-                      </div>
+        <div className={`row mt-4 ${showAdditionalCourses ? 'fade-in' : 'd-none'}`}>
+          {additionalCourses.map(course => (
+            <div key={course.id} className="col-md-3 mb-0">
+              <Link to={`/courses/${course.id}`} className="text-decoration-none">
+                <div className="card" style={{ height: '22rem' }}>
+                  <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
+                  <div className="card-body d-flex flex-column">
+                    <div className="course-logos">
+                      {course.logo && <img src={course.logo} alt="Course Logo" />}
+                    </div>
+                    <h5 className="card-title" style={{fontSize: '17.5px', fontWeight: '600'}}>{course.title}</h5>
+                    <div className="mt-auto">
+                      <p className="card-text mb-0 text-primary" style={{ fontSize: '0.8rem' }}>Advance in Your Degree Program</p>
+                      <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
                     </div>
                   </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-        )}
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
 
         {/* Button Container */}
         <div className="button-container">
