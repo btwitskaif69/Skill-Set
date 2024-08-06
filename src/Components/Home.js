@@ -38,45 +38,51 @@ export default function Home() {
 
   return (
     <div>
-      {/* Carousel */}
-      <div id="carouselExampleCaptions" className="carousel slide" style={{ height: carouselHeight }}>
-        <div className="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src="/Assets/Slides/FirstSlide.jpg" className="d-block w-100" alt="First slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
-            <div className="carousel-caption d-none d-md-block text-start">
-              <h5 className="display-4">Transform Your Career with Cutting-Edge AI Skills</h5>
-              <p className="lead">Dive into the world of artificial intelligence and gain skills that are revolutionizing industries. From machine learning to data science, enhance your expertise and open doors to exciting new career opportunities.</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src="/Assets/Slides/SecondSlide.jpg" className="d-block w-100" alt="Second slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
-            <div className="carousel-caption d-none d-md-block text-start">
-              <h5 className="display-4">Unlock New Opportunities in the AI-Driven Job Market</h5>
-              <p className="lead">Stay ahead in the rapidly evolving job market by mastering AI technologies. Learn how AI is reshaping various fields and position yourself as a valuable asset to employers seeking innovative solutions.</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src="/Assets/Slides/ThirdSlide.jpg" className="d-block w-100" alt="Third slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
-            <div className="carousel-caption d-none d-md-block text-start">
-              <h5 className="display-4">Master the Future: Essential AI Skills for Career Success</h5>
-              <p className="lead">Equip yourself with the essential AI skills needed to thrive in tomorrow's workforce. Whether you’re looking to pivot your career or advance in your current role, these skills will set you apart in the competitive job landscape.</p>
+{/* Carousel */}
+<div id="carouselExampleCaptions" className="carousel slide" style={{ height: carouselHeight }}>
+      <div className="carousel-inner">
+        <div className="carousel-item active">
+          <img src="/Assets/Slides/FirstSlide.jpg" className="d-block w-100" alt="First slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
+          <div className="carousel-caption d-flex justify-content-center align-items-center" style={{ top: '50%', transform: 'translateY(-50%)', textAlign: 'center' }}>
+            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '10px', width: '60%', maxWidth: '800px' }}>
+              <h5 className="display-4 text-white">First Slide Title</h5>
+              <p className="lead text-white">This is the description for the first slide. It is centered in the middle of the slide.</p>
             </div>
           </div>
         </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon p-2" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span className="carousel-control-next-icon p-2" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
+        <div className="carousel-item">
+          <img src="/Assets/Slides/SecondSlide.jpg" className="d-block w-100" alt="Second slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
+          <div className="carousel-caption d-flex justify-content-center align-items-center" style={{ top: '50%', transform: 'translateY(-50%)', textAlign: 'center' }}>
+            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '10px', width: '60%', maxWidth: '800px' }}>
+              <h5 className="display-4 text-white">Second Slide Title</h5>
+              <p className="lead text-white">This is the description for the second slide. It is also centered in the middle of the slide.</p>
+            </div>
+          </div>
+        </div>
+        <div className="carousel-item">
+          <img src="/Assets/Slides/ThirdSlide.jpg" className="d-block w-100" alt="Third slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
+          <div className="carousel-caption d-flex justify-content-center align-items-center" style={{ top: '50%', transform: 'translateY(-50%)', textAlign: 'center' }}>
+            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '10px', width: '60%', maxWidth: '800px' }}>
+              <h5 className="display-4 text-white">Third Slide Title</h5>
+              <p className="lead text-white">This is the description for the third slide. It is centered in the middle of the slide as well.</p>
+            </div>
+          </div>
+        </div>
       </div>
+      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
+      <div className="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
 
       {/* Marquee */}
       <div className="marquee-container" style={{ overflow: 'hidden', position: 'relative', backgroundColor: '#f8f9fa', padding: '30px 0', width: '100%', height: '250px' }}>
