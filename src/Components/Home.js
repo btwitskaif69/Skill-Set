@@ -226,7 +226,7 @@ export default function Home() {
           <button type="button" className="btn btn-primary me-2" onClick={toggleAdditionalCourses}>
             {showAdditionalCourses ? 'Show Less' : 'Show More'}
           </button>
-          <button type="button" className="btn btn-outline-primary">Primary</button>
+          <button type="button" className="btn btn-outline-primary">View all</button>
         </div>
       </div>
     </div>
