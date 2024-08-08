@@ -22,7 +22,7 @@ export default function Carousel() {
                     <img src="/Assets/Slides/FirstSlide.jpg" className="d-block w-100" alt="First slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
                     <div className="carousel-caption d-flex flex-column justify-content-center align-items-start" style={{ top: '50%', transform: 'translateY(-50%)', left: '10%', textAlign: 'left', maxWidth: '500px' }}>
                         <h1 className="display-4 text-dark" style={{ fontWeight: '500' }}>Get job ready with new AI skills</h1>
-                        <p className="lead text-dark">Stand out to employers with an industry-leading Professional Certificate and must-have AI skills from top companies.</p>
+                        <p className="lead text-dark" style={{ fontWeight: '400' }}>Stand out to employers with an industry-leading Professional Certificate and must-have AI skills from top companies.</p>
                         <div>
                             <button className="btn btn-primary btn-lg me-3">Explore certificates</button>
                             <button className="btn btn-outline-light btn-lg">Join for free</button>
@@ -35,7 +35,7 @@ export default function Carousel() {
                     <img src="/Assets/Slides/SecondSlide.jpg" className="d-block w-100" alt="Second slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
                     <div className="carousel-caption d-flex flex-column justify-content-center align-items-start" style={{ top: '50%', transform: 'translateY(-50%)', left: '10%', textAlign: 'left', maxWidth: '500px' }}>
                         <h1 className="display-4 text-dark" style={{ fontWeight: '500' }}>Master AI and data science</h1>
-                        <p className="lead text-dark">Earn credentials that showcase your expertise in AI and data science, opening doors to new career opportunities.</p>
+                        <p className="lead text-dark" style={{ fontWeight: '400' }}>Earn credentials that showcase your expertise in AI and data science, opening doors to new career opportunities.</p>
                         <div>
                             <button className="btn btn-primary btn-lg me-3">Start learning</button>
                             <button className="btn btn-outline-light btn-lg">Discover more</button>
@@ -48,10 +48,9 @@ export default function Carousel() {
                     <img src="/Assets/Slides/ThirdSlide.jpg" className="d-block w-100" alt="Third slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
                     <div className="carousel-caption d-flex flex-column justify-content-center align-items-start" style={{ top: '50%', transform: 'translateY(-50%)', left: '10%', textAlign: 'left', maxWidth: '500px' }}>
                         <h1 className="display-4 text-dark" style={{ fontWeight: '500' }}>Advance your career with AI</h1>
-                        <p className="lead text-dark">Leverage AI skills to lead in your field, with training from world-renowned experts.</p>
+                        <p className="lead text-dark" style={{ fontWeight: '400' }}>Leverage AI skills to lead in your field, with training from world-renowned experts.</p>
                         <div>
-                            <button className="btn btn-primary btn-lg me-3">Find out more</button>
-                            <button className="btn btn-outline-light btn-lg">Get started</button>
+                            <button className="btn btn-primary btn-lg me-3">Enroll Now</button>
                         </div>
                     </div>
                 </div>
