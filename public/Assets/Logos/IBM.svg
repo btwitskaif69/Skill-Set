@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1200 800" style="enable-background:new 0 0 1200 800;" xml:space="preserve">
+	 viewBox="0 0 747.9 300" style="enable-background:new 0 0 747.9 300;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#1F70C1;}
 </style>
 <g>
 	<g>
-		<polygon id="Rectangle-path" class="st0" points="220.8,530.3 368,530.3 368,551.4 220.8,551.4 		"/>
-		<polygon id="Rectangle-path_1_" class="st0" points="220.8,489.8 368,489.8 368,511 220.8,511 		"/>
-		<polygon id="Rectangle-path_2_" class="st0" points="262.8,449.5 326,449.5 326,470.6 262.8,470.6 		"/>
-		<polygon id="Rectangle-path_3_" class="st0" points="262.8,409.1 326,409.1 326,430.3 262.8,430.3 		"/>
-		<polygon id="Rectangle-path_4_" class="st0" points="262.8,368.7 326,368.7 326,389.9 262.8,389.9 		"/>
-		<polygon id="Rectangle-path_5_" class="st0" points="262.8,328.3 326,328.3 326,349.5 262.8,349.5 		"/>
-		<rect id="Rectangle-path_6_" x="220.8" y="287.9" class="st0" width="147.3" height="21.2"/>
-		<rect id="Rectangle-path_7_" x="220.8" y="247.6" class="st0" width="147.3" height="21.2"/>
+		<polygon id="Rectangle-path" class="st0" points="0,279.2 145.4,279.2 145.4,300 0,300 		"/>
+		<polygon id="Rectangle-path_1_" class="st0" points="0,239.2 145.4,239.2 145.4,260.1 0,260.1 		"/>
+		<polygon id="Rectangle-path_2_" class="st0" points="41.5,199.4 103.9,199.4 103.9,220.2 41.5,220.2 		"/>
+		<polygon id="Rectangle-path_3_" class="st0" points="41.5,159.5 103.9,159.5 103.9,180.4 41.5,180.4 		"/>
+		<polygon id="Rectangle-path_4_" class="st0" points="41.5,119.6 103.9,119.6 103.9,140.5 41.5,140.5 		"/>
+		<polygon id="Rectangle-path_5_" class="st0" points="41.5,79.7 103.9,79.7 103.9,100.6 41.5,100.6 		"/>
+		<rect id="Rectangle-path_6_" y="39.8" class="st0" width="145.5" height="20.9"/>
+		<rect id="Rectangle-path_7_" class="st0" width="145.5" height="20.9"/>
 	</g>
 	<g>
-		<path id="Shape_16_" class="st0" d="M389,511h226.5c3.8-6.5,6.7-13.7,8.4-21.2H389V511z"/>
-		<path id="Shape_17_" class="st0" d="M597.9,409.1H431.1v21.2h184.4C610.8,422.2,604.8,415,597.9,409.1z"/>
-		<path id="Shape_18_" class="st0" d="M431.1,368.7v21.2h166.8c7.1-5.9,13-13.1,17.6-21.2L431.1,368.7L431.1,368.7z"/>
-		<path id="Shape_19_" class="st0" d="M615.6,287.9H389v21.2H624C622,301.6,619.2,294.5,615.6,287.9z"/>
-		<path id="Shape_20_" class="st0" d="M545.9,247.6H389v21.2h211C585.9,255.7,566.8,247.6,545.9,247.6z"/>
-		<rect id="Rectangle-path_8_" x="431.1" y="328.3" class="st0" width="63.1" height="21.2"/>
-		<path id="Shape_21_" class="st0" d="M557.4,349.5h66c1.9-6.8,2.9-13.9,2.9-21.2h-68.9L557.4,349.5L557.4,349.5z"/>
-		<polygon id="Rectangle-path_9_" class="st0" points="431.1,449.5 494.2,449.5 494.2,470.6 431.1,470.6 		"/>
-		<path id="Shape_22_" class="st0" d="M557.4,449.5v21.2h68.9c0-7.3-1-14.4-2.9-21.2H557.4z"/>
-		<path id="Shape_23_" class="st0" d="M389,551.2l156.9,0.2c21,0,40-8.1,54.2-21.2H389V551.2z"/>
+		<path id="Shape_16_" class="st0" d="M166.1,260.1h223.7c3.8-6.4,6.6-13.5,8.3-20.9h-232L166.1,260.1L166.1,260.1z"/>
+		<path id="Shape_17_" class="st0" d="M372.4,159.5H207.7v20.9h182.1C385.1,172.4,379.2,165.3,372.4,159.5z"/>
+		<path id="Shape_18_" class="st0" d="M207.7,119.6v20.9h164.7c7-5.8,12.8-12.9,17.4-20.9H207.7L207.7,119.6z"/>
+		<path id="Shape_19_" class="st0" d="M389.9,39.8H166.1v20.9h232.1C396.2,53.3,393.4,46.3,389.9,39.8z"/>
+		<path id="Shape_20_" class="st0" d="M321,0H166.1v20.9h208.4C360.5,8,341.7,0,321,0z"/>
+		<rect id="Rectangle-path_8_" x="207.7" y="79.7" class="st0" width="62.3" height="20.9"/>
+		<path id="Shape_21_" class="st0" d="M332.4,100.6h65.2c1.9-6.7,2.9-13.7,2.9-20.9h-68L332.4,100.6L332.4,100.6z"/>
+		<polygon id="Rectangle-path_9_" class="st0" points="207.7,199.4 270,199.4 270,220.2 207.7,220.2 		"/>
+		<path id="Shape_22_" class="st0" d="M332.4,199.4v20.9h68c0-7.2-1-14.2-2.9-20.9H332.4z"/>
+		<path id="Shape_23_" class="st0" d="M166.1,299.8L321,300c20.7,0,39.5-8,53.5-20.9H166.1V299.8z"/>
 	</g>
 	<g>
-		<polygon id="Rectangle-path_10_" class="st0" points="641.6,530.3 746.8,530.3 746.8,551.4 641.6,551.4 		"/>
-		<polygon id="Rectangle-path_11_" class="st0" points="641.6,489.8 746.8,489.8 746.8,511 641.6,511 		"/>
-		<polygon id="Rectangle-path_12_" class="st0" points="683.6,449.5 746.8,449.5 746.8,470.6 683.6,470.6 		"/>
-		<polygon id="Rectangle-path_13_" class="st0" points="683.6,409.1 746.8,409.1 746.8,430.3 683.6,430.3 		"/>
-		<polygon id="Shape_24_" class="st0" points="776,287.9 641.6,287.9 641.6,309.1 783.3,309.1 		"/>
-		<polygon id="Shape_25_" class="st0" points="762.1,247.6 641.6,247.6 641.6,268.7 769.4,268.7 		"/>
-		<polygon id="Rectangle-path_14_" class="st0" points="873,530.3 978.2,530.3 978.2,551.4 873,551.4 		"/>
-		<polygon id="Rectangle-path_15_" class="st0" points="873,489.8 978.2,489.8 978.2,511 873,511 		"/>
-		<polygon id="Rectangle-path_16_" class="st0" points="873,449.5 936.1,449.5 936.1,470.6 873,470.6 		"/>
-		<polygon id="Rectangle-path_17_" class="st0" points="873,409.1 936.1,409.1 936.1,430.3 873,430.3 		"/>
-		<polygon id="Shape_26_" class="st0" points="873,389.9 936.1,389.9 936.1,368.7 873,368.7 873,368.7 815.8,368.7 809.9,385.8 
-			803.9,368.7 746.8,368.7 746.8,368.7 683.6,368.7 683.6,389.9 746.8,389.9 746.8,370.5 753.5,389.9 866.3,389.9 873,370.5 		"/>
-		<polygon id="Shape_27_" class="st0" points="936.1,328.3 829.8,328.3 822.5,349.5 936.1,349.5 		"/>
-		<polygon id="Shape_28_" class="st0" points="857.7,247.6 850.5,268.7 978.2,268.7 978.2,247.6 		"/>
-		<polygon id="Shape_29_" class="st0" points="809.9,551.2 817.2,530.3 802.6,530.3 		"/>
-		<polygon id="Shape_30_" class="st0" points="795.9,511 823.8,511 831.3,489.8 788.5,489.8 		"/>
-		<polygon id="Shape_31_" class="st0" points="781.7,470.6 838,470.6 845.4,449.5 774.3,449.5 		"/>
-		<polygon id="Shape_32_" class="st0" points="767.6,430.3 852.2,430.3 859.4,409.1 760.4,409.1 		"/>
-		<polygon id="Shape_33_" class="st0" points="683.6,349.5 797.3,349.5 790,328.3 683.6,328.3 		"/>
-		<polygon id="Shape_34_" class="st0" points="836.5,309.1 978.2,309.1 978.2,287.9 843.7,287.9 		"/>
+		<polygon id="Rectangle-path_10_" class="st0" points="415.5,279.2 519.4,279.2 519.4,300 415.5,300 		"/>
+		<polygon id="Rectangle-path_11_" class="st0" points="415.5,239.2 519.4,239.2 519.4,260.1 415.5,260.1 		"/>
+		<polygon id="Rectangle-path_12_" class="st0" points="457,199.4 519.4,199.4 519.4,220.2 457,220.2 		"/>
+		<polygon id="Rectangle-path_13_" class="st0" points="457,159.5 519.4,159.5 519.4,180.4 457,180.4 		"/>
+		<polygon id="Shape_24_" class="st0" points="548.3,39.8 415.5,39.8 415.5,60.7 555.5,60.7 		"/>
+		<polygon id="Shape_25_" class="st0" points="534.5,0 415.5,0 415.5,20.8 541.7,20.8 		"/>
+		<polygon id="Rectangle-path_14_" class="st0" points="644,279.2 747.9,279.2 747.9,300 644,300 		"/>
+		<polygon id="Rectangle-path_15_" class="st0" points="644,239.2 747.9,239.2 747.9,260.1 644,260.1 		"/>
+		<polygon id="Rectangle-path_16_" class="st0" points="644,199.4 706.4,199.4 706.4,220.2 644,220.2 		"/>
+		<polygon id="Rectangle-path_17_" class="st0" points="644,159.5 706.4,159.5 706.4,180.4 644,180.4 		"/>
+		<polygon id="Shape_26_" class="st0" points="644,140.5 706.4,140.5 706.4,119.6 644,119.6 644,119.6 587.6,119.6 581.7,136.5 
+			575.8,119.6 519.4,119.6 519.4,119.6 457,119.6 457,140.5 519.4,140.5 519.4,121.4 526,140.5 637.4,140.5 644,121.4 		"/>
+		<polygon id="Shape_27_" class="st0" points="706.4,79.7 601.4,79.7 594.2,100.6 706.4,100.6 		"/>
+		<polygon id="Shape_28_" class="st0" points="628.9,0 621.8,20.8 747.9,20.8 747.9,0 		"/>
+		<polygon id="Shape_29_" class="st0" points="581.7,299.8 588.9,279.2 574.5,279.2 		"/>
+		<polygon id="Shape_30_" class="st0" points="567.9,260.1 595.5,260.1 602.9,239.2 560.6,239.2 		"/>
+		<polygon id="Shape_31_" class="st0" points="553.9,220.2 609.5,220.2 616.8,199.4 546.6,199.4 		"/>
+		<polygon id="Shape_32_" class="st0" points="540,180.4 623.5,180.4 630.6,159.5 532.9,159.5 		"/>
+		<polygon id="Shape_33_" class="st0" points="457,100.6 569.3,100.6 562.1,79.7 457,79.7 		"/>
+		<polygon id="Shape_34_" class="st0" points="608,60.7 747.9,60.7 747.9,39.8 615.1,39.8 		"/>
 	</g>
 </g>
 </svg>

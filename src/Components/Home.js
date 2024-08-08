@@ -39,54 +39,72 @@ export default function Home() {
   return (
     <div>
 {/* Carousel */}
+{/* Carousel */}
 <div id="carouselExampleCaptions" className="carousel slide" style={{ height: carouselHeight }}>
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img src="/Assets/Slides/FirstSlide.jpg" className="d-block w-100" alt="First slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
-          <div className="carousel-caption d-flex justify-content-center align-items-center" style={{ top: '50%', transform: 'translateY(-50%)', textAlign: 'center' }}>
-            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '10px', width: '60%', maxWidth: '800px' }}>
-              <h5 className="display-4 text-white">First Slide Title</h5>
-              <p className="lead text-white">This is the description for the first slide. It is centered in the middle of the slide.</p>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img src="/Assets/Slides/SecondSlide.jpg" className="d-block w-100" alt="Second slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
-          <div className="carousel-caption d-flex justify-content-center align-items-center" style={{ top: '50%', transform: 'translateY(-50%)', textAlign: 'center' }}>
-            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '10px', width: '60%', maxWidth: '800px' }}>
-              <h5 className="display-4 text-white">Second Slide Title</h5>
-              <p className="lead text-white">This is the description for the second slide. It is also centered in the middle of the slide.</p>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img src="/Assets/Slides/ThirdSlide.jpg" className="d-block w-100" alt="Third slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
-          <div className="carousel-caption d-flex justify-content-center align-items-center" style={{ top: '50%', transform: 'translateY(-50%)', textAlign: 'center' }}>
-            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '10px', width: '60%', maxWidth: '800px' }}>
-              <h5 className="display-4 text-white">Third Slide Title</h5>
-              <p className="lead text-white">This is the description for the third slide. It is centered in the middle of the slide as well.</p>
-            </div>
-          </div>
+  <div className="carousel-inner">
+    
+    {/* First Slide */}
+    <div className="carousel-item active">
+      <img src="/Assets/Slides/FirstSlide.jpg" className="d-block w-100" alt="First slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
+      <div className="carousel-caption d-flex flex-column justify-content-center align-items-start" style={{ top: '50%', transform: 'translateY(-50%)', left: '10%', textAlign: 'left', maxWidth: '500px' }}>
+        <h1 className="display-4 text-dark" style={{ fontWeight: 'bold' }}>Get job ready with new AI skills</h1>
+        <p className="lead text-dark">Stand out to employers with an industry-leading Professional Certificate and must-have AI skills from top companies.</p>
+        <div>
+          <button className="btn btn-primary btn-lg me-3">Explore certificates</button>
+          <button className="btn btn-outline-primary btn-lg">Join for free</button>
         </div>
       </div>
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-      <div className="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    
+    {/* Second Slide */}
+    <div className="carousel-item">
+      <img src="/Assets/Slides/SecondSlide.jpg" className="d-block w-100" alt="Second slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
+      <div className="carousel-caption d-flex flex-column justify-content-center align-items-start" style={{ top: '50%', transform: 'translateY(-50%)', left: '10%', textAlign: 'left', maxWidth: '500px' }}>
+        <h1 className="display-4 text-dark" style={{ fontWeight: 'bold' }}>Master AI and data science</h1>
+        <p className="lead text-dark">Earn credentials that showcase your expertise in AI and data science, opening doors to new career opportunities.</p>
+        <div>
+          <button className="btn btn-primary btn-lg me-3">Start learning</button>
+          <button className="btn btn-outline-primary btn-lg">Discover more</button>
+        </div>
+      </div>
+    </div>
+    
+    {/* Third Slide */}
+    <div className="carousel-item">
+      <img src="/Assets/Slides/ThirdSlide.jpg" className="d-block w-100" alt="Third slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
+      <div className="carousel-caption d-flex flex-column justify-content-center align-items-start" style={{ top: '50%', transform: 'translateY(-50%)', left: '10%', textAlign: 'left', maxWidth: '500px' }}>
+        <h1 className="display-4 text-dark" style={{ fontWeight: 'bold' }}>Advance your career with AI</h1>
+        <p className="lead text-dark">Leverage AI skills to lead in your field, with training from world-renowned experts.</p>
+        <div>
+          <button className="btn btn-primary btn-lg me-3">Find out more</button>
+          <button className="btn btn-outline-primary btn-lg">Get started</button>
+        </div>
       </div>
     </div>
 
-      {/* Marquee */}
-      <div className="marquee-container" style={{ overflow: 'hidden', position: 'relative', backgroundColor: '#f8f9fa', padding: '30px 0', width: '100%', height: '250px' }}>
-  <h2 className="marquee-heading" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '20px', color: 'blue', fontWeight: '600', textTransform: 'titlecase' }}>Partnering with 10+ Top Universities and Companies</h2>
+  </div>
+
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+
+  <div className="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+</div>
+
+
+{/* Marquee */}
+<div className="marquee-container" style={{ overflow: 'hidden', position: 'relative', backgroundColor: '#f8f9fa', padding: '30px 0', width: '100%', height: '250px' }}>
+  <h2 className="marquee-heading mb-5" style={{ textAlign: 'center', fontSize: '2.5rem', color: 'blue', fontWeight: '600', textTransform: 'titlecase' }}>Partnering with 10+ Top Universities and Companies</h2>
   <div className="marquee-content">
     <div className="marquee-inner">
       {Object.values(logos).slice(0, 10).map((logo, index) => (
@@ -118,18 +136,36 @@ export default function Home() {
   }
   .marquee-content {
     display: flex;
-    width: 200%; /* Covers twice the width of the container */
+    width: 200%;
     animation: marquee 30s linear infinite;
   }
   .marquee-inner {
     display: flex;
     flex-shrink: 0;
-    width: 50%; /* Each inner container takes up half the marquee width */
+    width: 50%;
+    justify-content: space-around; /* Evenly space logos */
   }
   .marquee-logo {
-    height: 120px;
-    margin: 0 6px; /* Adjust margin for spacing */
+    height: 40px;
+    margin: 0 15px; /* Adjusted margin for spacing */
+    flex-shrink: 0;
   }
+
+  @media (max-width: 768px) {
+    .marquee-logo {
+      height: 35px;
+      margin: 0 10px; /* Reduce spacing for small screens */
+    }
+  }
+  @media (max-width: 480px) {
+    .marquee-logo {
+      height: 25px;
+      margin: 0 5px; /* Further reduce spacing for very small screens */
+    }
+  }
+`}</style>
+
+<style>{`
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -173,7 +209,7 @@ export default function Home() {
 
       {/* Course Cards */}
       <div className="container my-5">
-        <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '#382d8b'}}>Professional Specializations and Certification Courses</h5>
+        <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '/382d8b'}}>Professional Specializations and Certification Courses</h5>
         <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400'}}>Most Popular Certificates</h3>
         <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400'}}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
         <div className="row">
