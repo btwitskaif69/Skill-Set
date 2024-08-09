@@ -96,7 +96,8 @@ export default function Cards() {
                 </div>
             </div>
 
-            <div className="container my-5">
+            {/* New Courses*/}
+            <div className="container my-5" style={{ background: '#ADD8E6', padding: '30px', width: '100%'}}>
                 <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '#382d8b' }}>Professional Specializations and Certification Courses</h5>
                 <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400' }}>Most Popular Certificates</h3>
                 <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
