@@ -13,7 +13,7 @@ export default function Marquee() {
         University_of_Oxford: '/Assets/Logos/University_of_Oxford.svg',
         University_of_Pennsylvania: '/Assets/Logos/University_of_Pennsylvania.svg',
     };
-    
+
     return (
         <div>
             {/* Marquee */}
@@ -23,12 +23,12 @@ export default function Marquee() {
                 </h2>
                 <div className="marquee-content">
                     <div className="marquee-inner">
-                        {Object.values(logos).slice(0, 10).map((logo, index) => (
+                        {Object.values(logos).map((logo, index) => (
                             <img key={index} src={logo} alt={`Logo ${index}`} className="marquee-logo" />
                         ))}
                     </div>
                     <div className="marquee-inner">
-                        {Object.values(logos).slice(0, 10).map((logo, index) => (
+                        {Object.values(logos).map((logo, index) => (
                             <img key={index + 10} src={logo} alt={`Logo ${index}`} className="marquee-logo" />
                         ))}
                     </div>
@@ -41,7 +41,7 @@ export default function Marquee() {
                         transform: translateX(0);
                     }
                     100% {
-                        transform: translateX(-50%);
+                        transform: translateX(-100%);
                     }
                 }
                 .marquee-container {
@@ -58,25 +58,47 @@ export default function Marquee() {
                 .marquee-inner {
                     display: flex;
                     flex-shrink: 0;
-                    width: 50%;
-                    justify-content: space-around; /* Evenly space logos */
+                    width: 100%;
+                    justify-content: space-around;
                 }
                 .marquee-logo {
                     height: 40px;
-                    margin: 0 15px; /* Adjusted margin for spacing */
+                    margin: 0 10px;
                     flex-shrink: 0;
                 }
 
-                @media (max-width: 768px) {
+                @media (min-width: 1440px) {
+                    .marquee-logo {
+                        height: 50px;
+                        margin: 0 15px;
+                    }
+                }
+                @media (min-width: 1024px) and (max-width: 1439px) {
+                    .marquee-logo {
+                        height: 45px;
+                        margin: 0 12px;
+                    }
+                }
+                @media (max-width: 1024px) {
                     .marquee-logo {
                         height: 35px;
-                        margin: 0 10px; /* Reduce spacing for small screens */
+                        margin: 0 10px;
+                    }
+                }
+                @media (max-width: 768px) {
+                    .marquee-logo {
+                        height: 30px;
+                        margin: 0 8px;
                     }
                 }
                 @media (max-width: 480px) {
                     .marquee-logo {
                         height: 25px;
-                        margin: 0 5px; /* Further reduce spacing for very small screens */
+                        margin: 0 6px;
+                    }
+                    .marquee-heading {
+                        font-size: 1.5rem;
+                        margin-bottom: 10px;
                     }
                 }
             `}</style>
