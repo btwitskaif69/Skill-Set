@@ -97,7 +97,12 @@ export default function Cards() {
             </div>
 
             {/* New Courses*/}
-            <div className="container my-5" style={{ background: '#ADD8E6', padding: '30px', width: '100%'}}>
+            <div className="container my-5" style={{backgroundImage: 'url(/Assets/Background/Image2.jpg)',
+        backgroundSize: 'cover', // Ensure the image covers the entire container
+        backgroundPosition: 'center', // Center the image
+        backgroundRepeat: 'no-repeat', // Prevent repeating the image
+        padding: '30px',
+        width: '100%'}}>
                 <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '#382d8b' }}>Professional Specializations and Certification Courses</h5>
                 <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400' }}>Most Popular Certificates</h3>
                 <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
@@ -123,7 +128,7 @@ export default function Cards() {
                     ))}
                 </div>
 
-                {/* Additional Courses */}
+                {/* Additional New Courses */}
                 <div className={`row mt-4 ${showAdditionalCourses ? 'fade-in' : 'd-none'}`}>
                     {additionalCourses.map(course => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
@@ -151,7 +156,7 @@ export default function Cards() {
                     <button type="button" className="btn btn-primary me-2" onClick={toggleAdditionalCourses}>
                         {showAdditionalCourses ? 'Show Less' : 'Show More'}
                     </button>
-                    <button type="button" className="btn btn-outline-primary">View all</button>
+                    <button type="button" className="btn btn-outline-light btn">View all</button>
                 </div>
             </div>
 
