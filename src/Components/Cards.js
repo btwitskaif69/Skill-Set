@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Cards() {
     const [showAdditionalCourses, setShowAdditionalCourses] = useState(false);
+    const [showNewAdditionalCourses, setShowNewAdditionalCourses] = useState(false);
 
     const logos = {
         Aws: '/Assets/Logos/Aws.svg',
@@ -18,9 +19,9 @@ export default function Cards() {
     };
 
     const courses = [
-        { id: 1, title: "Google Data Analytics", imgSrc: "/Assets/Course/course1.jpg", logo: logos.Aws },
-        { id: 2, title: "IBM Data Science", imgSrc: "/Assets/Course/course2.jpg", logo: logos.Google },
-        { id: 3, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course3.jpg", logo: logos.IBM },
+        { id: 1, title: "Google Data Analytics", imgSrc: "/Assets/Course/course1.jpg", logo: logos.Google },
+        { id: 2, title: "IBM Data Science", imgSrc: "/Assets/Course/course2.jpg", logo: logos.IBM },
+        { id: 3, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course3.jpg", logo: logos.Aws },
         { id: 4, title: "Meta Front-End Dev", imgSrc: "/Assets/Course/course4.jpg", logo: logos.Meta },
         { id: 5, title: "Duke University AI Fundamentals", imgSrc: "/Assets/Course/course5.jpg", logo: logos.Duke_University },
         { id: 6, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course6.jpg", logo: logos.Stanford_University },
@@ -35,56 +36,48 @@ export default function Cards() {
         setShowAdditionalCourses(!showAdditionalCourses);
     };
 
+    const toggleNewAdditionalCourses = () => {
+        setShowNewAdditionalCourses(!showNewAdditionalCourses);
+    };
+
+    const renderCourses = (courseList) => {
+        return (
+            <div className="row">
+                {courseList.map(course => (
+                    <div key={course.id} className="col-md-3 col-sm-6 mb-4">
+                        <Link to={`/courses/${course.id}`} className="text-decoration-none">
+                            <div className="card" style={{ height: '22rem' }}>
+                                <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
+                                <div className="card-body d-flex flex-column">
+                                    <div className="course-logos">
+                                        {course.logo && <img src={course.logo} alt="Course Logo" />}
+                                    </div>
+                                    <h5 className="card-title" style={{ fontSize: '17.5px', fontWeight: '600' }}>{course.title}</h5>
+                                    <div className="mt-auto">
+                                        <p className="card-text mb-0 text-primary" style={{ fontSize: '0.9rem' }}>Advance in Your Degree Program</p>
+                                        <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
     return (
         <div>
-            {/* Course Cards */}
+            {/* Main Courses Section */}
             <div className="container my-5">
                 <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '#382d8b' }}>Professional Specializations and Certification Courses</h5>
                 <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400' }}>Most Popular Certificates</h3>
                 <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
-                <div className="row">
-                    {mainCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
-                            <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card" style={{ height: '22rem' }}>
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
-                                    <div className="card-body d-flex flex-column">
-                                        <div className="course-logos">
-                                            {course.logo && <img src={course.logo} alt="Course Logo" />}
-                                        </div>
-                                        <h5 className="card-title" style={{ fontSize: '17.5px', fontWeight: '600' }}>{course.title}</h5>
-                                        <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary" style={{ fontSize: '0.9rem' }}>Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
-                </div>
+                {renderCourses(mainCourses)}
 
                 {/* Additional Courses */}
                 <div className={`row mt-4 ${showAdditionalCourses ? 'fade-in' : 'd-none'}`}>
-                    {additionalCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
-                            <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card" style={{ height: '22rem' }}>
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
-                                    <div className="card-body d-flex flex-column">
-                                        <div className="course-logos">
-                                            {course.logo && <img src={course.logo} alt="Course Logo" />}
-                                        </div>
-                                        <h5 className="card-title" style={{ fontSize: '17.5px', fontWeight: '600' }}>{course.title}</h5>
-                                        <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary" style={{ fontSize: '0.8rem' }}>Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
+                    {renderCourses(additionalCourses)}
                 </div>
 
                 {/* Button Container */}
@@ -96,67 +89,31 @@ export default function Cards() {
                 </div>
             </div>
 
-            {/* New Courses*/}
-            <div className="container my-5" style={{backgroundImage: 'url(/Assets/Background/Image2.jpg)',
-        backgroundSize: 'cover', // Ensure the image covers the entire container
-        backgroundPosition: 'center', // Center the image
-        backgroundRepeat: 'no-repeat', // Prevent repeating the image
-        padding: '30px',
-        width: '100%'}}>
+            {/* New Courses Section */}
+            <div className="container my-5" style={{
+                backgroundImage: 'url(/Assets/Background/Image2.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                padding: '30px',
+                width: '100%'
+            }}>
                 <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '#382d8b' }}>Professional Specializations and Certification Courses</h5>
                 <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400' }}>Most Popular Certificates</h3>
                 <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
-                <div className="row">
-                    {mainCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
-                            <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card" style={{ height: '22rem' }}>
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
-                                    <div className="card-body d-flex flex-column">
-                                        <div className="course-logos">
-                                            {course.logo && <img src={course.logo} alt="Course Logo" />}
-                                        </div>
-                                        <h5 className="card-title" style={{ fontSize: '17.5px', fontWeight: '600' }}>{course.title}</h5>
-                                        <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary" style={{ fontSize: '0.9rem' }}>Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
-                </div>
+                {renderCourses(mainCourses)}
 
                 {/* Additional New Courses */}
-                <div className={`row mt-4 ${showAdditionalCourses ? 'fade-in' : 'd-none'}`}>
-                    {additionalCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
-                            <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card" style={{ height: '22rem' }}>
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
-                                    <div className="card-body d-flex flex-column">
-                                        <div className="course-logos">
-                                            {course.logo && <img src={course.logo} alt="Course Logo" />}
-                                        </div>
-                                        <h5 className="card-title" style={{ fontSize: '17.5px', fontWeight: '600' }}>{course.title}</h5>
-                                        <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary" style={{ fontSize: '0.8rem' }}>Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
+                <div className={`row mt-4 ${showNewAdditionalCourses ? 'fade-in' : 'd-none'}`}>
+                    {renderCourses(additionalCourses)}
                 </div>
 
                 {/* Button Container */}
                 <div className="button-container">
-                    <button type="button" className="btn btn-primary me-2" onClick={toggleAdditionalCourses}>
-                        {showAdditionalCourses ? 'Show Less' : 'Show More'}
+                    <button type="button" className="btn btn-primary me-2" onClick={toggleNewAdditionalCourses}>
+                        {showNewAdditionalCourses ? 'Show Less' : 'Show More'}
                     </button>
-                    <button type="button" className="btn btn-outline-light btn">View all</button>
+                    <button type="button" className="btn btn-outline-light">View all</button>
                 </div>
             </div>
 
@@ -210,7 +167,10 @@ export default function Cards() {
                         font-size: 36px; /* Smaller heading for small screens */
                     }
                 }
+                .row .col-md-3, .row .col-sm-6 {
+                    margin-bottom: 20px; /* Consistent margin for all cards */
+                }
             `}</style>
         </div>
-    )
+    );
 }
