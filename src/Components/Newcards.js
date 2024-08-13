@@ -18,10 +18,10 @@ export default function NewCards() {
     };
 
     const courses = [
-        { id: 1, title: "Google Data Analytics", imgSrc: "/Assets/Course/course9.jpg", logo: logos.Aws },
-        { id: 2, title: "IBM Data Science", imgSrc: "/Assets/Course/course10.jpg", logo: logos.Google },
-        { id: 3, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course11.jpg", logo: logos.IBM },
-        { id: 4, title: "Meta Front-End Dev", imgSrc: "/Assets/Course/course12.jpg", logo: logos.Meta },
+        { id: 1, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course9.jpg", logo: logos.Aws },
+        { id: 2, title: "Google Data Analytics", imgSrc: "/Assets/Course/course10.jpg", logo: logos.Google },
+        { id: 3, title: "IBM Data Science", imgSrc: "/Assets/Course/course11.jpg", logo: logos.IBM },
+        { id: 4, title: "Meta Front-End Development", imgSrc: "/Assets/Course/course12.jpg", logo: logos.Meta },
         { id: 5, title: "Duke University AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: logos.Duke_University },
         { id: 6, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course14.jpg", logo: logos.Stanford_University },
         { id: 7, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course15.jpg", logo: logos.University_of_Cambridge },
@@ -39,9 +39,9 @@ export default function NewCards() {
         <div>
             {/* Course Cards */}
             <div className="container my-5">
-                <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '#382d8b' }}>Professional Specializations and Certification Courses</h5>
-                <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400' }}>Most Popular Certificates</h3>
-                <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
+                <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '#382d8b' }}>Degree Courses and Professional Certifications</h5>
+                <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400' }}>Newest Programs</h3>
+                <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Discover our newest programs, designed to deliver key, in-demand skills.</h5>
                 <div className="row">
                     {newmainCourses.map(course => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
@@ -148,5 +148,5 @@ export default function NewCards() {
                 }
             `}</style>
         </div>
-    )
+    );
 }
