@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Cards() {
+export default function NewCards() {
     const [showAdditionalCourses, setShowAdditionalCourses] = useState(false);
 
     const logos = {
@@ -18,17 +18,17 @@ export default function Cards() {
     };
 
     const courses = [
-        { id: 1, title: "Google Data Analytics", imgSrc: "/Assets/Course/course1.jpg", logo: logos.Aws },
-        { id: 2, title: "IBM Data Science", imgSrc: "/Assets/Course/course2.jpg", logo: logos.Google },
-        { id: 3, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course3.jpg", logo: logos.IBM },
-        { id: 4, title: "Meta Front-End Dev", imgSrc: "/Assets/Course/course4.jpg", logo: logos.Meta },
-        { id: 5, title: "Duke University AI Fundamentals", imgSrc: "/Assets/Course/course5.jpg", logo: logos.Duke_University },
-        { id: 6, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course6.jpg", logo: logos.Stanford_University },
-        { id: 7, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course7.jpg", logo: logos.University_of_Cambridge },
-        { id: 8, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course8.jpg", logo: logos.University_of_Oxford },
+        { id: 1, title: "Google Data Analytics", imgSrc: "/Assets/Course/course9.jpg", logo: logos.Aws },
+        { id: 2, title: "IBM Data Science", imgSrc: "/Assets/Course/course10.jpg", logo: logos.Google },
+        { id: 3, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course11.jpg", logo: logos.IBM },
+        { id: 4, title: "Meta Front-End Dev", imgSrc: "/Assets/Course/course12.jpg", logo: logos.Meta },
+        { id: 5, title: "Duke University AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: logos.Duke_University },
+        { id: 6, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course14.jpg", logo: logos.Stanford_University },
+        { id: 7, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course15.jpg", logo: logos.University_of_Cambridge },
+        { id: 8, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course16.jpg", logo: logos.University_of_Oxford },
     ];
 
-    const mainCourses = courses.slice(0, 4);
+    const newmainCourses = courses.slice(0, 4);
     const additionalCourses = courses.slice(4);
 
     const toggleAdditionalCourses = () => {
@@ -43,7 +43,7 @@ export default function Cards() {
                 <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400' }}>Most Popular Certificates</h3>
                 <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
                 <div className="row">
-                    {mainCourses.map(course => (
+                    {newmainCourses.map(course => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card" style={{ height: '22rem' }}>
