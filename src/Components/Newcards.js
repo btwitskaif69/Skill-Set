@@ -36,26 +36,26 @@ export default function NewCards() {
     };
 
     return (
-        <div>
+        <div className="main-container">
             {/* Course Cards */}
             <div className="container my-5">
-                <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '#382d8b' }}>Degree Courses and Professional Certifications</h5>
-                <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400' }}>Newest Programs</h3>
-                <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Discover our newest programs, designed to deliver key, in-demand skills.</h5>
+                <h5 className="mb-1">Degree Courses and Professional Certifications</h5>
+                <h3 className="mb-1">Newest Programs</h3>
+                <h5 className="mb-4">Discover our newest programs, designed to deliver key, in-demand skills.</h5>
                 <div className="row">
                     {newmainCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6">
+                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card" style={{ height: '20rem' }}>
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
+                                <div className="card">
+                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} />
                                     <div className="card-body d-flex flex-column">
                                         <div className="course-logos">
                                             {course.logo && <img src={course.logo} alt="Course Logo" />}
                                         </div>
-                                        <h5 className="card-title" style={{ fontSize: '17.5px', fontWeight: '600' }}>{course.title}</h5>
+                                        <h5 className="card-title">{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary" style={{ fontSize: '0.9rem' }}>Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
+                                            <p className="card-text mb-0 text-primary">Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0 text-muted">Professional Certificate</p>
                                         </div>
                                     </div>
                                 </div>
@@ -69,16 +69,16 @@ export default function NewCards() {
                     {additionalCourses.map(course => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card" style={{ height: '20rem' }}>
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
+                                <div className="card">
+                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} />
                                     <div className="card-body d-flex flex-column">
                                         <div className="course-logos">
                                             {course.logo && <img src={course.logo} alt="Course Logo" />}
                                         </div>
-                                        <h5 className="card-title" style={{ fontSize: '17.5px', fontWeight: '600' }}>{course.title}</h5>
+                                        <h5 className="card-title">{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary" style={{ fontSize: '0.8rem' }}>Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted" style={{ fontSize: '0.8rem' }}>Professional Certificate</p>
+                                            <p className="card-text mb-0 text-primary">Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0 text-muted">Professional Certificate</p>
                                         </div>
                                     </div>
                                 </div>
@@ -97,6 +97,12 @@ export default function NewCards() {
             </div>
 
             <style>{`
+                .main-container {
+                    background: linear-gradient(135deg, #f0f4ff 30%, #ffffff 90%);
+                    padding: 30px;
+                    border-radius: 10px;
+                    width: 100%;
+                }
                 @keyframes fadeIn {
                     from {
                         opacity: 0;
@@ -109,26 +115,35 @@ export default function NewCards() {
                 }
                 .card {
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    padding: 8px;
-                    border-radius: 8px;
+                    padding: 7px;
+                    border-radius: 7px;
+                    height: 100%; /* Ensure cards take full height */
                 }
                 .card:hover {
                     transform: scale(1.05);
-                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
                 }
                 .card-img-top {
-                    border-radius: 8px;
+                    height: 60%; /* Adjust height */
+                    border-radius: 10px;
                 }
                 .course-logos {
                     display: flex;
                     align-items: center;
-                    margin-bottom: 10px;
-                    justify-content: left; /* Align logos to the left */
+                    margin-bottom: 8px;
+                    justify-content: left;
                 }
                 .course-logos img {
-                    height: 15px; /* Adjust logo height */
+                    height: 24px; /* Slightly increased logo height */
                     width: auto;
-                    margin-right: 10px;
+                    margin-right: 8px;
+                }
+                .card-title {
+                    font-size: 16px; /* Adjusted to be consistent with image */
+                    font-weight: 600;
+                }
+                .card-text {
+                    font-size: 0.8rem; /* Slightly larger for readability */
                 }
                 .button-container {
                     display: flex;
@@ -140,10 +155,13 @@ export default function NewCards() {
                 }
                 @media (max-width: 576px) {
                     .course-logos img {
-                        height: 30px; /* Smaller logos for small screens */
+                        height: 20px; /* Smaller logos for small screens */
                     }
                     .container h3 {
-                        font-size: 36px; /* Smaller heading for small screens */
+                        font-size: 30px; /* Decrease font size */
+                    }
+                    .card {
+                        margin-bottom: 15px;
                     }
                 }
             `}</style>
