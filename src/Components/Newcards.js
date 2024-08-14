@@ -44,9 +44,9 @@ export default function NewCards() {
                 <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Discover our newest programs, designed to deliver key, in-demand skills.</h5>
                 <div className="row">
                     {newmainCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
+                        <div key={course.id} className="col-md-3 col-sm-6">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card" style={{ height: '22rem' }}>
+                                <div className="card" style={{ height: '20rem' }}>
                                     <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
                                     <div className="card-body d-flex flex-column">
                                         <div className="course-logos">
@@ -69,7 +69,7 @@ export default function NewCards() {
                     {additionalCourses.map(course => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card" style={{ height: '22rem' }}>
+                                <div className="card" style={{ height: '20rem' }}>
                                     <img src={course.imgSrc} className="card-img-top" alt={course.title} style={{ height: '50%', objectFit: 'cover', borderRadius: '12px' }} />
                                     <div className="card-body d-flex flex-column">
                                         <div className="course-logos">
