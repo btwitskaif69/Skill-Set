@@ -44,7 +44,7 @@ export default function Cards() {
                 <h5 className="mb-4" style={{fontWeight: '400' }}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
                 <div className="row">
                     {mainCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
+                        <div key={course.id} className="col-md-3 col-sm-6">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card">
                                     <img src={course.imgSrc} className="card-img-top" alt={course.title} />
@@ -67,7 +67,7 @@ export default function Cards() {
                 {/* Additional Courses */}
                 <div className={`row mt-4 ${showAdditionalCourses ? 'fade-in' : 'd-none'}`}>
                     {additionalCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
+                        <div key={course.id} className="col-md-3 col-sm-6">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card">
                                     <img src={course.imgSrc} className="card-img-top" alt={course.title} />
