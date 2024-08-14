@@ -39,9 +39,9 @@ export default function Cards() {
         <div>
              {/* Course Cards */}
              <div className="container my-5">
-             <h5 className="mb-1" style={{ fontSize: '17.5px', fontWeight: '600', color: '#382d8b' }}>Professional Specializations and Certification Courses</h5>
-                <h3 className="mb-1" style={{ fontSize: '50px', fontWeight: '400' }}>Most Popular Certificates</h3>
-                <h5 className="mb-4" style={{ fontSize: '25px', fontWeight: '400' }}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
+             <h6 className="mb-1" style={{fontWeight: '600', color: '#382d8b' }}>Professional Specializations and Certification Courses</h6>
+                <h1 className="mb-1" style={{fontWeight: '400' }}>Most Popular Certificates</h1>
+                <h5 className="mb-4" style={{fontWeight: '400' }}>Explore our most popular programs, get job-ready for an in-demand career.</h5>
                 <div className="row">
                     {mainCourses.map(course => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
