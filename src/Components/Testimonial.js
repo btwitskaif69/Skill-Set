@@ -114,10 +114,7 @@ const Testimonial = () => {
       <style>{`
         .testimonial-container {
           background-color: #f5f7fa;
-          padding-top: 4rem;
-          padding-bottom: 4rem;
-          padding-left: 5rem;
-          padding-right: 5rem;
+          padding: 4rem 5rem;
           margin: 5rem;
         }
 
