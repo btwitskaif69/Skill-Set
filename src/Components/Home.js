@@ -4,6 +4,7 @@ import Carousel from './Carousel';
 import Cards from './Cards';
 import Footer from './Footer';
 import NewCards from './Newcards';
+import Testimonial from './Testimonial';
 
 export default function Home() {
 
@@ -13,7 +14,8 @@ export default function Home() {
       <Marquee/>
       <Cards/>
       <NewCards/>
-      <Footer/>
+      <Testimonial/>
+      {/* <Footer/> */}
 
     </div>
   );
