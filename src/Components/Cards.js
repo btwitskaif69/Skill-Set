@@ -39,7 +39,7 @@ export default function Cards() {
         <div>
              {/* Course Cards */}
              <div className="container my-5 ">
-             <p className="mb-1 fs-5 fw-semibold">Professional Specializations and Certification Courses</p>
+             <p className="mb-1 fs-5 fw-semibold"style={{color: 'blue'}}>Professional Specializations and Certification Courses</p>
                 <h1 className="mb-1 display-4 fw-normal">Most Popular Certificates</h1>
                 <p className="mb-4 fs-5">Explore our most popular programs, get job-ready for an in-demand career.</p>
                 <div className="row">
