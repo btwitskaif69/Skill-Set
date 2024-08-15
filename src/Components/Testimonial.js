@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 const Testimonials = [
   {
     id: 1,
-    text: `Praesent sit amet ornare magna, vitae consequat arcu. Vestibulum at dictum erat, a fringilla ante. Nam et nibh ut nunc rutrum suscipit quis non neque.`,
+    text: `I started at stage zero. With Geeks I was able to start learning online and eventually build up enough knowledge and skills to transition into a well-paying career.`,
     name: 'Barry Watson',
     role: 'Web Developer, UK',
     image: '/Assets/Users/user1.jpg' // Replace with the correct path to the image
@@ -20,22 +20,26 @@ const Testimonials = [
   },
   {
     id: 3,
-    text: `I started at stage zero. With Geeks I was able to start learning online and eventually build up enough knowledge and skills to transition into a well-paying career.`,
-    name: 'Barry Watson',
-    role: 'Web Developer, UK',
+    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
+    name: 'Linda Shenoy',
+    role: 'Developer and Bootcamp Instructor',
     image: '/Assets/Users/user3.jpg'
-  }
+  },
+  // Add more testimonials here
 ];
 
 const Testimonial = () => {
   // Slider settings
   const settings = {
-    dots: true,
+    dots: false, // Disable dots
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: true,  // Enable forward and reverse buttons
+    arrows: false, // Disable default arrows
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
     responsive: [
       {
         breakpoint: 1024,
@@ -43,7 +47,6 @@ const Testimonial = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
         }
       },
       {
@@ -56,8 +59,10 @@ const Testimonial = () => {
     ]
   };
 
+  let sliderRef = React.createRef();
+
   return (
-    <div className="testimonial-container pt-8 pb-12">
+    <div className="testimonial-container">
       <div className="row mb-8 justify-content-center">
         <div className="col-lg-8 col-md-12 col-12 text-center">
           <span className="testimonial-heading text-primary mb-3 d-block text-uppercase fw-semibold ls-xl">Testimonials</span>
@@ -68,10 +73,10 @@ const Testimonial = () => {
 
       <div className="row">
         <div className="col-md-12">
-          <Slider {...settings}>
+          <Slider ref={slider => (sliderRef = slider)} {...settings}>
             {Testimonials.map((testimonial) => (
-              <div className="testimonial-item" key={testimonial.id}>
-                <div className="testimonial-card border shadow-none p-3 rounded">
+              <div className="testimonial-item px-3" key={testimonial.id}>
+                <div className="testimonial-card border shadow-none p-4 rounded">
                   <div className="testimonial-card-body">
                     <div className="mb-2">
                       <span className="testimonial-stars fs-4">
@@ -95,6 +100,14 @@ const Testimonial = () => {
               </div>
             ))}
           </Slider>
+          <div className="testimonial-controls d-flex justify-content-center mt-4">
+            <button className="slick-prev custom-prev" onClick={() => sliderRef.slickPrev()}>
+              &#8592; Prev
+            </button>
+            <button className="slick-next custom-next ms-3" onClick={() => sliderRef.slickNext()}>
+              Next &#8594;
+            </button>
+          </div>
         </div>
       </div>
 
@@ -113,6 +126,10 @@ const Testimonial = () => {
           border-radius: 12px;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
           padding: 2rem;
+        }
+
+        .testimonial-item {
+          margin-right: 1.5rem;
         }
 
         .testimonial-card-footer {
@@ -142,32 +159,33 @@ const Testimonial = () => {
           font-weight: 700;
         }
 
-        .slick-prev,
-        .slick-next {
+        .testimonial-controls button {
           background-color: #ffffff;
           border-radius: 50%;
+          border: none;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          width: 40px;
-          height: 40px;
+          width: 50px;
+          height: 50px;
           display: flex;
           justify-content: center;
           align-items: center;
+          cursor: pointer;
         }
 
-        .slick-prev::before,
-        .slick-next::before {
+        .testimonial-controls button:hover {
+          background-color: #e9ecef;
+        }
+
+        .testimonial-controls button:focus {
+          outline: none;
+        }
+
+        .custom-prev::before, 
+        .custom-next::before {
           color: #333333;
           font-size: 20px;
+          content: '';
         }
-
-        .slick-prev {
-          left: -45px;
-        }
-
-        .slick-next {
-          right: -45px;
-        }
-
       `}</style>
     </div>
   );
