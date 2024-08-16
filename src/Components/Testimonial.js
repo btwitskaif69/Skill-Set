@@ -165,56 +165,56 @@ const Testimonial = () => {
       </div>
 
       <style>{`
-        .testimonial-container {
-  background-color: #f5f7fa;
-  padding: 4rem 5rem;
-  margin: 5rem;
-}
+          .testimonial-container {
+          background-color: #f5f7fa;
+          padding: 4rem 5rem;
+          margin: 5rem;
+        }
 
-.testimonial-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+        .testimonial-card {
+          background-color: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          padding: 2rem;
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
 
-.testimonial-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
+        .testimonial-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
 
-.testimonial-item {
-  margin-right: 1.5rem;
-}
+        .testimonial-item {
+          margin-right: 1.5rem;
+        }
 
-.testimonial-card-footer {
-  display: flex;
-  align-items: center;
-  padding-top: 1.5rem;
-  border-top: none;
-}
+        .testimonial-card-footer {
+          display: flex;
+          align-items: center;
+          padding-top: 1.5rem;
+          border-top: none;
+        }
 
-.testimonial-card-body {
-  padding-bottom: 0;
-}
+        .testimonial-card-body {
+          padding-bottom: 0;
+        }
 
-.testimonial-image {
-  border-radius: 50%;
-  object-fit: cover;
-}
+        .testimonial-image {
+          border-radius: 50%;
+          object-fit: cover;
+        }
 
-.testimonial-stars i {
-  font-size: 1.25rem;
-}
+        .testimonial-stars i {
+          font-size: 1.25rem;
+        }
 
-.testimonial-heading {
-  color: #6f42c1;
-}
+        .testimonial-heading {
+          color: #6f42c1;
+        }
 
-.testimonial-title {
-  font-weight: 700;
-}
+        .testimonial-title {
+          font-weight: 700;
+        }
 
 
       `}</style>
