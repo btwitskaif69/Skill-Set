@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -29,6 +29,8 @@ const Testimonials = [
 ];
 
 const Testimonial = () => {
+  const sliderRef = useRef(null); // Create a ref for the slider
+
   // Slider settings
   const settings = {
     dots: false,
@@ -36,12 +38,10 @@ const Testimonial = () => {
     speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: true, // Enable default arrows
+    arrows: false, // Disable default arrows since we'll use custom buttons
     autoplay: true,
     autoplaySpeed: 4000,
     cssEase: "ease-in-out",
-    nextArrow: <CustomNextArrow />, // Use custom next arrow
-    prevArrow: <CustomPrevArrow />, // Use custom prev arrow
     responsive: [
       {
         breakpoint: 1024,
@@ -61,6 +61,14 @@ const Testimonial = () => {
     ]
   };
 
+  const next = () => {
+    sliderRef.current.slickNext(); // Call the next slide
+  };
+
+  const previous = () => {
+    sliderRef.current.slickPrev(); // Call the previous slide
+  };
+
   return (
     <div className="testimonial-container">
       <div className="row mb-8 justify-content-center">
@@ -73,7 +81,7 @@ const Testimonial = () => {
 
       <div className="row">
         <div className="col-md-12">
-          <Slider {...settings}>
+          <Slider ref={sliderRef} {...settings}>
             {Testimonials.map((testimonial) => (
               <div className="testimonial-item px-3" key={testimonial.id}>
                 <div className="testimonial-card border shadow-none p-4 rounded">
@@ -100,6 +108,10 @@ const Testimonial = () => {
               </div>
             ))}
           </Slider>
+          <div className="d-flex justify-content-center">
+            <button onClick={previous} className="btn btn-light bi bi-chevron-left rounded-circle my-4"></button>
+            <button onClick={next} className="btn btn-light bi bi-chevron-right rounded-circle my-4"></button>
+          </div>
         </div>
       </div>
 
@@ -153,58 +165,8 @@ const Testimonial = () => {
         .testimonial-title {
           font-weight: 700;
         }
-
-        .slick-prev, 
-        .slick-next {
-          background-color: #fff;
-          border-radius: 50%;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          width: 40px;
-          height: 40px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          z-index: 1;
-        }
-
-        .slick-prev:before, 
-        .slick-next:before {
-          font-size: 20px;
-          color: #333;
-        }
-
-        .slick-prev {
-          left: -50px; /* Adjust based on your layout */
-        }
-
-        .slick-next {
-          right: -50px; /* Adjust based on your layout */
-        }
       `}</style>
     </div>
-  );
-};
-
-const CustomPrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "#fff", borderRadius: "50%", padding: "10px", boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)" }}
-      onClick={onClick}
-    />
-  );
-};
-
-const CustomNextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "#fff", borderRadius: "50%", padding: "10px", boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)" }}
-      onClick={onClick}
-    />
   );
 };
 
