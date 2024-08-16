@@ -125,6 +125,7 @@ export default function NewCards() {
                 .card-img-top {
                     height: 60%; /* Adjust height */
                     border-radius: 10px;
+                    object-fit: cover;
                 }
                 .course-logos {
                     display: flex;

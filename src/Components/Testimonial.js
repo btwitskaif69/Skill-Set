@@ -25,6 +25,55 @@ const Testimonials = [
     role: 'Developer and Bootcamp Instructor',
     image: '/Assets/Profile/image3.jpg'
   },
+  {
+    id: 4,
+    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
+    name: 'Linda Shenoy',
+    role: 'Developer and Bootcamp Instructor',
+    image: '/Assets/Profile/image4.jpg'
+  },
+  {
+    id: 5,
+    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
+    name: 'Linda Shenoy',
+    role: 'Developer and Bootcamp Instructor',
+    image: '/Assets/Profile/image5.jpg'
+  },
+  {
+    id: 6,
+    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
+    name: 'Linda Shenoy',
+    role: 'Developer and Bootcamp Instructor',
+    image: '/Assets/Profile/image6.jpg'
+  },
+  {
+    id: 7,
+    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
+    name: 'Linda Shenoy',
+    role: 'Developer and Bootcamp Instructor',
+    image: '/Assets/Profile/image7.jpg'
+  },
+  {
+    id: 8,
+    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
+    name: 'Linda Shenoy',
+    role: 'Developer and Bootcamp Instructor',
+    image: '/Assets/Profile/image8.jpg'
+  },
+  {
+    id: 9,
+    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
+    name: 'Linda Shenoy',
+    role: 'Developer and Bootcamp Instructor',
+    image: '/Assets/Profile/image9.jpg'
+  },
+  {
+    id: 10,
+    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
+    name: 'Linda Shenoy',
+    role: 'Developer and Bootcamp Instructor',
+    image: '/Assets/Profile/image10.jpg'
+  },
   // Add more testimonials here
 ];
 
@@ -40,7 +89,7 @@ const Testimonial = () => {
     slidesToScroll: 1,
     arrows: false, // Disable default arrows since we'll use custom buttons
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
     cssEase: "ease-in-out",
     responsive: [
       {
@@ -117,54 +166,57 @@ const Testimonial = () => {
 
       <style>{`
         .testimonial-container {
-          background-color: #f5f7fa;
-          padding: 4rem 5rem;
-          margin: 5rem;
-        }
+  background-color: #f5f7fa;
+  padding: 4rem 5rem;
+  margin: 5rem;
+}
 
-        .testimonial-card {
-          background-color: #ffffff;
-          border-radius: 12px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          padding: 2rem;
-          transition: transform 0.3s ease-in-out;
-        }
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-        .testimonial-card:hover {
-          transform: translateY(-10px);
-        }
+.testimonial-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
-        .testimonial-item {
-          margin-right: 1.5rem;
-        }
+.testimonial-item {
+  margin-right: 1.5rem;
+}
 
-        .testimonial-card-footer {
-          display: flex;
-          align-items: center;
-          padding-top: 1.5rem;
-          border-top: none;
-        }
+.testimonial-card-footer {
+  display: flex;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: none;
+}
 
-        .testimonial-card-body {
-          padding-bottom: 0;
-        }
+.testimonial-card-body {
+  padding-bottom: 0;
+}
 
-        .testimonial-image {
-          border-radius: 50%;
-          object-fit: cover;
-        }
+.testimonial-image {
+  border-radius: 50%;
+  object-fit: cover;
+}
 
-        .testimonial-stars i {
-          font-size: 1.25rem;
-        }
+.testimonial-stars i {
+  font-size: 1.25rem;
+}
 
-        .testimonial-heading {
-          color: #6f42c1;
-        }
+.testimonial-heading {
+  color: #6f42c1;
+}
 
-        .testimonial-title {
-          font-weight: 700;
-        }
+.testimonial-title {
+  font-weight: 700;
+}
+
+
       `}</style>
     </div>
   );
