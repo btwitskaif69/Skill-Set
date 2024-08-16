@@ -9,7 +9,7 @@ const Testimonials = [
     text: `I started at stage zero. With Geeks I was able to start learning online and eventually build up enough knowledge and skills to transition into a well-paying career.`,
     name: 'Barry Watson',
     role: 'Web Developer, UK',
-    image: '/Assets/Profile/image1.jpg' // Replace with the correct path to the image
+    image: '/Assets/Profile/image1.jpg'
   },
   {
     id: 2,
@@ -31,15 +31,17 @@ const Testimonials = [
 const Testimonial = () => {
   // Slider settings
   const settings = {
-    dots: false, // Disable dots
+    dots: false,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false, // Disable default arrows
+    arrows: true, // Enable default arrows
     autoplay: true,
-    autoplaySpeed: 3000,
-    cssEase: "linear",
+    autoplaySpeed: 4000,
+    cssEase: "ease-in-out",
+    nextArrow: <CustomNextArrow />, // Use custom next arrow
+    prevArrow: <CustomPrevArrow />, // Use custom prev arrow
     responsive: [
       {
         breakpoint: 1024,
@@ -59,8 +61,6 @@ const Testimonial = () => {
     ]
   };
 
-  let sliderRef = React.createRef();
-
   return (
     <div className="testimonial-container">
       <div className="row mb-8 justify-content-center">
@@ -73,7 +73,7 @@ const Testimonial = () => {
 
       <div className="row">
         <div className="col-md-12">
-          <Slider ref={slider => (sliderRef = slider)} {...settings}>
+          <Slider {...settings}>
             {Testimonials.map((testimonial) => (
               <div className="testimonial-item px-3" key={testimonial.id}>
                 <div className="testimonial-card border shadow-none p-4 rounded">
@@ -100,14 +100,6 @@ const Testimonial = () => {
               </div>
             ))}
           </Slider>
-          <div className="testimonial-controls d-flex justify-content-center mt-4">
-            <button className="slick-prev custom-prev" onClick={() => sliderRef.slickPrev()}>
-              &#8592; Prev
-            </button>
-            <button className="slick-next custom-next ms-3" onClick={() => sliderRef.slickNext()}>
-              Next &#8594;
-            </button>
-          </div>
         </div>
       </div>
 
@@ -123,6 +115,11 @@ const Testimonial = () => {
           border-radius: 12px;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
           padding: 2rem;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .testimonial-card:hover {
+          transform: translateY(-10px);
         }
 
         .testimonial-item {
@@ -157,35 +154,57 @@ const Testimonial = () => {
           font-weight: 700;
         }
 
-        .testimonial-controls button {
-          background-color: #ffffff;
+        .slick-prev, 
+        .slick-next {
+          background-color: #fff;
           border-radius: 50%;
-          border: none;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           display: flex;
           justify-content: center;
           align-items: center;
           cursor: pointer;
+          z-index: 1;
         }
 
-        .testimonial-controls button:hover {
-          background-color: #e9ecef;
-        }
-
-        .testimonial-controls button:focus {
-          outline: none;
-        }
-
-        .custom-prev::before, 
-        .custom-next::before {
-          color: #333333;
+        .slick-prev:before, 
+        .slick-next:before {
           font-size: 20px;
-          content: '';
+          color: #333;
+        }
+
+        .slick-prev {
+          left: -50px; /* Adjust based on your layout */
+        }
+
+        .slick-next {
+          right: -50px; /* Adjust based on your layout */
         }
       `}</style>
     </div>
+  );
+};
+
+const CustomPrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "#fff", borderRadius: "50%", padding: "10px", boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)" }}
+      onClick={onClick}
+    />
+  );
+};
+
+const CustomNextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "#fff", borderRadius: "50%", padding: "10px", boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)" }}
+      onClick={onClick}
+    />
   );
 };
 
