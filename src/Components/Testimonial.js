@@ -9,21 +9,21 @@ const Testimonials = [
     text: `I started at stage zero. With Geeks I was able to start learning online and eventually build up enough knowledge and skills to transition into a well-paying career.`,
     name: 'Barry Watson',
     role: 'Web Developer, UK',
-    image: '/Assets/Users/user1.jpg' // Replace with the correct path to the image
+    image: '/Assets/Profile/image1.jpg' // Replace with the correct path to the image
   },
   {
     id: 2,
     text: `Sed pretium risus magna, ac efficitur nunc rutrum imperdiet. Vivamus sed ante sed mi fermentum tempus. Nullam finibus augue eget felis efficitur semper.`,
     name: 'Jean Watson',
     role: 'Engineering Architect',
-    image: '/Assets/Users/user2.jpg'
+    image: '/Assets/Profile/image2.jpg'
   },
   {
     id: 3,
     text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
     name: 'Linda Shenoy',
     role: 'Developer and Bootcamp Instructor',
-    image: '/Assets/Users/user3.jpg'
+    image: '/Assets/Profile/image3.jpg'
   },
   // Add more testimonials here
 ];
@@ -142,6 +142,7 @@ const Testimonial = () => {
 
         .testimonial-image {
           border-radius: 50%;
+          object-fit: cover;
         }
 
         .testimonial-stars i {
