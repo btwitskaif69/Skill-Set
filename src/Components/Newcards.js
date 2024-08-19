@@ -98,7 +98,7 @@ export default function NewCards() {
 
             <style>{`
                 .main-container {
-                    background: linear-gradient(135deg, #f0f4ff 30%, #ffffff 90%);
+                    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
                     padding: 30px;
                     width: 100%;
                 }

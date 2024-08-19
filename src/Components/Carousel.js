@@ -74,7 +74,7 @@ export default function Carousel() {
 
             <style jsx>{`
                 .carousel-item {
-                    transition: transform 0.5s ease-in-out;
+                    transition: transform 0.75s ease-in-out;
                 }
                 .carousel-control-prev, .carousel-control-next {
                     width: 5%;
