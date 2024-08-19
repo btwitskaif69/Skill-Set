@@ -138,7 +138,7 @@ const Testimonial = () => {
             {Testimonials.map((testimonial) => (
               <div className="testimonial-item px-3" key={testimonial.id}>
                 <div className="testimonial-card border shadow-none p-4 rounded">
-                  <div className='Stars'>
+                  <div className='testimonial-stars mb-4'>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
@@ -146,15 +146,6 @@ const Testimonial = () => {
                     <i class="bi bi-star-fill"></i>
                   </div>
                   <div className="testimonial-card-body">
-                    <div className="mb-2">
-                      <span className="testimonial-stars fs-4">
-                        <i className="mdi mdi-star text-warning me-n1"></i>
-                        <i className="mdi mdi-star text-warning me-n1"></i>
-                        <i className="mdi mdi-star text-warning me-n1"></i>
-                        <i className="mdi mdi-star text-warning me-n1"></i>
-                        <i className="mdi mdi-star text-warning"></i>
-                      </span>
-                    </div>
                     <p className="testimonial-text lead text-dark font-italic fw-medium mb-4">"{testimonial.text}"</p>
                   </div>
                   <div className="testimonial-card-footer d-flex align-items-center pt-4 border-0">
@@ -214,11 +205,6 @@ const Testimonial = () => {
           border-radius: 50%;
           object-fit: cover;
         }
-
-        .testimonial-stars i {
-          font-size: 1.25rem;
-        }
-
         .testimonial-heading {
           color: #6f42c1;
         }
@@ -227,7 +213,7 @@ const Testimonial = () => {
           font-weight: 700;
         }
 
-        .Stars{
+        .testimonial-stars{
           color: #f59e0b;
           font-size: 20px;
         }
