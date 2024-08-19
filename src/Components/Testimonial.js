@@ -126,9 +126,9 @@ const Testimonial = () => {
     <div className="testimonial-container">
       <div className="row mb-8 justify-content-center">
         <div className="col-lg-8 col-md-12 col-12 text-center">
-          <span className="testimonial-heading text-primary mb-3 d-block text-uppercase fw-semibold ls-xl">Testimonials</span>
-          <h2 className="testimonial-title mb-2 display-4 fw-bold">What our learners are saying</h2>
-          <p className="testimonial-subtitle lead">1+ million people are already learning on Skill Set</p>
+          <span className="testimonial-heading text-primary mb-2 d-block text-uppercase fw-semibold fs-4">Testimonials</span>
+          <h2 className="testimonial-title mb-2 display-4 fw-medium">What our learners are saying</h2>
+          <p className="testimonial-subtitle fs-5 mb-4">1+ million people are already learning on Skill Set</p>
         </div>
       </div>
 
