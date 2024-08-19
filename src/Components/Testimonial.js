@@ -138,6 +138,13 @@ const Testimonial = () => {
             {Testimonials.map((testimonial) => (
               <div className="testimonial-item px-3" key={testimonial.id}>
                 <div className="testimonial-card border shadow-none p-4 rounded">
+                  <div className='Stars'>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
                   <div className="testimonial-card-body">
                     <div className="mb-2">
                       <span className="testimonial-stars fs-4">
@@ -218,6 +225,11 @@ const Testimonial = () => {
 
         .testimonial-title {
           font-weight: 700;
+        }
+
+        .Stars{
+          color: #f59e0b;
+          font-size: 20px;
         }
 
 
