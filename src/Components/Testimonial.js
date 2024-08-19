@@ -6,75 +6,79 @@ import "slick-carousel/slick/slick-theme.css";
 const Testimonials = [
   {
     id: 1,
-    text: `Skillset has been a game-changer for me. The courses are comprehensive, and I could immediately apply the skills I learned to my job.`,
+    text: `Skillset's courses are transformational, focusing on real-world applications. The platform’s flexibility enabled me to balance my career and personal life while enhancing my skills. It’s been an invaluable resource for my professional growth, allowing me to apply new knowledge immediately and effectively.`,
     name: 'David Miller',
     role: 'Software Engineer, USA',
     image: '/Assets/Profile/image1.jpg'
   },
   {
     id: 2,
-    text: `I never thought learning online could be this effective. Thanks to Skillset, I was able to secure a promotion at my company.`,
+    text: `Skillset made online learning surprisingly effective. With a focus on real-world applications, the courses were engaging and easy to follow. My skills improved significantly, leading to a promotion at work. This practical approach has been a game-changer in my career, allowing me to apply new skills immediately.`,
     name: 'John Carter',
     role: 'Project Manager, Canada',
     image: '/Assets/Profile/image2.jpg'
   },
   {
     id: 3,
-    text: `Skillset helped me bridge the gap between academic knowledge and industry-relevant skills. It’s been invaluable to my career development.`,
+    text: `Skillset bridged the gap between academic knowledge and industry-relevant skills. The courses offer practical experience beyond theory, which I applied in my job immediately. The focus on real-world applications has been crucial to my career development, making learning both meaningful and directly applicable.`,
     name: 'Michael Rodriguez',
     role: 'Data Analyst, Australia',
     image: '/Assets/Profile/image3.jpg'
   },
   {
     id: 4,
-    text: `As a working mom, finding time to upskill was challenging. Skillset made it possible to learn at my own pace and advance my career.`,
+    text: `As a working mom, upskilling was challenging, but Skillset made it possible. The focus on real-world applications made learning impactful and flexible, allowing me to balance my career and family life while advancing my skills. Skillset has been a vital tool for both personal and professional growth.`,
     name: 'Emily Johnson',
     role: 'UX Designer, UK',
     image: '/Assets/Profile/image4.jpg'
   },
   {
     id: 5,
-    text: `The flexibility that Skillset offers has allowed me to pursue my passion for coding while balancing my full-time job.`,
+    text: `Skillset's flexibility enabled me to pursue coding while working full-time. The courses' real-world applications made learning meaningful, and I could apply new skills immediately in my job. This practical approach has significantly impacted my professional development, making Skillset an essential part of my career journey.`,
     name: 'Ryan Smith',
     role: 'Full Stack Developer, Germany',
     image: '/Assets/Profile/image5.jpg'
   },
   {
     id: 6,
-    text: `With Skillset, I was able to dive deep into AI and machine learning, which helped me land my dream job at a top tech company.`,
+    text: `Skillset allowed me to dive into AI and machine learning, helping me secure my dream job. The platform’s focus on real-world applications, coupled with engaging and practical courses, enabled me to apply new skills immediately in my role. Skillset has been instrumental in my career advancement.`,
     name: 'James Brown',
     role: 'AI Engineer, India',
     image: '/Assets/Profile/image6.jpg'
   },
   {
     id: 7,
-    text: `The practical approach of Skillset's courses allowed me to apply new skills immediately in my current role.`,
+    text: `Skillset's practical courses allowed me to apply new skills immediately in my cybersecurity role. The focus on real-world applications made learning impactful. Case studies and examples provided essential knowledge for implementing what I learned, significantly enhancing my job performance and career growth.`,
     name: 'Chris Wilson',
     role: 'Cybersecurity Specialist, Singapore',
     image: '/Assets/Profile/image7.jpg'
   },
   {
     id: 8,
-    text: `Skillset’s community and mentorship made my learning journey engaging and supported my growth into a leadership role.`,
+    text: `Skillset’s community and mentorship made my learning journey engaging and supported my leadership growth. The focus on real-world applications made learning impactful, allowing me to apply new skills immediately. This combination of practical learning and support was key in transitioning into a leadership role.`,
     name: 'Mark Thompson',
     role: 'Technical Lead, South Africa',
     image: '/Assets/Profile/image8.jpg'
   },
   {
     id: 9,
-    text: `Skillset's hands-on approach and real-world projects have been key to my success as a self-taught programmer.`,
+    text: `Skillset's hands-on approach and real-world projects were key to my success as a self-taught programmer. The platform made learning meaningful by focusing on practical applications. I could immediately apply new skills in my role, making Skillset an invaluable resource in advancing my career.`,
     name: 'Jason Lee',
     role: 'Software Developer, South Korea',
     image: '/Assets/Profile/image9.jpg'
   },
   {
     id: 10,
-    text: `The quality of the courses at Skillset is top-notch, and it allowed me to transition into a new industry seamlessly.`,
+    text: `Skillset's courses are top-notch, focusing on real-world applications that made learning impactful. I could seamlessly transition into a new industry and apply my new skills immediately in my role. The platform's practical approach to learning has been instrumental in my professional growth and success in my new career.`,
     name: 'Paul Martin',
     role: 'Cloud Architect, Brazil',
     image: '/Assets/Profile/image10.jpg'
   },
 ];
+
+
+
+
 
 
 const Testimonial = () => {
