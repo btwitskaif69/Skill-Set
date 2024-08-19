@@ -23,9 +23,9 @@ export default function Footer() {
 
           <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <h6 className="text-uppercase fw-bold">Follow Us</h6>
-            <a href="https://www.linkedin.com/in/btwitskaif69/" className="btn btn-outline-light btn-floating m-1">Linkedin</a>
-            <a href="https://x.com/btwitskaif69" className="btn btn-outline-light btn-floating m-1">X</a>
-            <a href="https://github.com/btwitskaif69" className="btn btn-outline-light btn-floating m-1">Github</a>
+            <a href="https://www.linkedin.com/in/btwitskaif69/" target="_blank" rel="noreferrer" className="btn btn-outline-light btn-floating m-1">Linkedin</a>
+            <a href="https://x.com/btwitskaif69" target="_blank" rel="noreferrer" className="btn btn-outline-light btn-floating m-1">X</a>
+            <a href="https://github.com/btwitskaif69" target="_blank" rel="noreferrer" className="btn btn-outline-light btn-floating m-1">Github</a>
           </div>
         </div>
       </section>
