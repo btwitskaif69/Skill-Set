@@ -6,76 +6,76 @@ import "slick-carousel/slick/slick-theme.css";
 const Testimonials = [
   {
     id: 1,
-    text: `I started at stage zero. With Geeks I was able to start learning online and eventually build up enough knowledge and skills to transition into a well-paying career.`,
-    name: 'Barry Watson',
-    role: 'Web Developer, UK',
+    text: `Skillset has been a game-changer for me. The courses are comprehensive, and I could immediately apply the skills I learned to my job.`,
+    name: 'David Miller',
+    role: 'Software Engineer, USA',
     image: '/Assets/Profile/image1.jpg'
   },
   {
     id: 2,
-    text: `Sed pretium risus magna, ac efficitur nunc rutrum imperdiet. Vivamus sed ante sed mi fermentum tempus. Nullam finibus augue eget felis efficitur semper.`,
-    name: 'Jean Watson',
-    role: 'Engineering Architect',
+    text: `I never thought learning online could be this effective. Thanks to Skillset, I was able to secure a promotion at my company.`,
+    name: 'John Carter',
+    role: 'Project Manager, Canada',
     image: '/Assets/Profile/image2.jpg'
   },
   {
     id: 3,
-    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
-    name: 'Linda Shenoy',
-    role: 'Developer and Bootcamp Instructor',
+    text: `Skillset helped me bridge the gap between academic knowledge and industry-relevant skills. It’s been invaluable to my career development.`,
+    name: 'Michael Rodriguez',
+    role: 'Data Analyst, Australia',
     image: '/Assets/Profile/image3.jpg'
   },
   {
     id: 4,
-    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
-    name: 'Linda Shenoy',
-    role: 'Developer and Bootcamp Instructor',
+    text: `As a working mom, finding time to upskill was challenging. Skillset made it possible to learn at my own pace and advance my career.`,
+    name: 'Emily Johnson',
+    role: 'UX Designer, UK',
     image: '/Assets/Profile/image4.jpg'
   },
   {
     id: 5,
-    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
-    name: 'Linda Shenoy',
-    role: 'Developer and Bootcamp Instructor',
+    text: `The flexibility that Skillset offers has allowed me to pursue my passion for coding while balancing my full-time job.`,
+    name: 'Ryan Smith',
+    role: 'Full Stack Developer, Germany',
     image: '/Assets/Profile/image5.jpg'
   },
   {
     id: 6,
-    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
-    name: 'Linda Shenoy',
-    role: 'Developer and Bootcamp Instructor',
+    text: `With Skillset, I was able to dive deep into AI and machine learning, which helped me land my dream job at a top tech company.`,
+    name: 'James Brown',
+    role: 'AI Engineer, India',
     image: '/Assets/Profile/image6.jpg'
   },
   {
     id: 7,
-    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
-    name: 'Linda Shenoy',
-    role: 'Developer and Bootcamp Instructor',
+    text: `The practical approach of Skillset's courses allowed me to apply new skills immediately in my current role.`,
+    name: 'Chris Wilson',
+    role: 'Cybersecurity Specialist, Singapore',
     image: '/Assets/Profile/image7.jpg'
   },
   {
     id: 8,
-    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
-    name: 'Linda Shenoy',
-    role: 'Developer and Bootcamp Instructor',
+    text: `Skillset’s community and mentorship made my learning journey engaging and supported my growth into a leadership role.`,
+    name: 'Mark Thompson',
+    role: 'Technical Lead, South Africa',
     image: '/Assets/Profile/image8.jpg'
   },
   {
     id: 9,
-    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
-    name: 'Linda Shenoy',
-    role: 'Developer and Bootcamp Instructor',
+    text: `Skillset's hands-on approach and real-world projects have been key to my success as a self-taught programmer.`,
+    name: 'Jason Lee',
+    role: 'Software Developer, South Korea',
     image: '/Assets/Profile/image9.jpg'
   },
   {
     id: 10,
-    text: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vulputate euismod justo in consequat.`,
-    name: 'Linda Shenoy',
-    role: 'Developer and Bootcamp Instructor',
+    text: `The quality of the courses at Skillset is top-notch, and it allowed me to transition into a new industry seamlessly.`,
+    name: 'Paul Martin',
+    role: 'Cloud Architect, Brazil',
     image: '/Assets/Profile/image10.jpg'
   },
-  // Add more testimonials here
 ];
+
 
 const Testimonial = () => {
   const sliderRef = useRef(null); // Create a ref for the slider
@@ -123,8 +123,8 @@ const Testimonial = () => {
       <div className="row mb-8 justify-content-center">
         <div className="col-lg-8 col-md-12 col-12 text-center">
           <span className="testimonial-heading text-primary mb-3 d-block text-uppercase fw-semibold ls-xl">Testimonials</span>
-          <h2 className="testimonial-title mb-2 display-4 fw-bold">Don’t just take our word for it.</h2>
-          <p className="testimonial-subtitle lead">12+ million people are already learning on Geeks</p>
+          <h2 className="testimonial-title mb-2 display-4 fw-bold">What our learners are saying</h2>
+          <p className="testimonial-subtitle lead">1+ million people are already learning on Skill Set</p>
         </div>
       </div>
 
