@@ -19,9 +19,9 @@ export default function Marquee() {
         <div>
             {/* Marquee */}
             <div className="marquee-container" style={{ overflow: 'hidden', position: 'relative', backgroundColor: '#f8f9fa', padding: '30px 0', width: '100%', height: '250px' }}>
-                <h2 className="marquee-heading mb-5" style={{ textAlign: 'center', fontSize: '2.5rem', color: 'blue', fontWeight: '600', textTransform: 'titlecase' }}>
+                <h3 className="marquee-heading mb-5 text-center fs-1 fw-semibold" style={{color: '#210BE3',}}>
                     Partnering with 10+ Top Universities and Companies
-                </h2>
+                </h3>
                 <div className="marquee-content">
                     <div className="marquee-inner">
                         {Object.values(University_Logos).map((logo, index) => (
