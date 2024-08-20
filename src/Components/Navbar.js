@@ -21,7 +21,7 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div className="container-fluid">
-          <a className="navbar-brand fs-3 fw-bold" href="/" style={{ color: '#0d6efd' }}>SKILL SET</a>
+          <a className="navbar-brand fs-3 fw-bold" href="/" style={{ color: '#210BE3' }}>SKILL SET</a>
           <button
             className="navbar-toggler"
             type="button"
