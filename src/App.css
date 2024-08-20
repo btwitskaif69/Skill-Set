@@ -100,3 +100,12 @@
   color: #210BE3;
   border-color: #ffffff; /* Ensure the border remains #210BE3 on hover */
 }
+
+.follow-us h6 {
+  margin-bottom: 10px; /* Adjusts space below "Follow Us" heading */
+}
+
+.follow-us .btn {
+  margin-top: 5px; /* Reduces space above each button */
+  padding: 8px 16px; /* Adjusts button padding */
+}
