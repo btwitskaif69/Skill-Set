@@ -24,8 +24,9 @@ export default function Carousel() {
                         <h1 className="display-4 text-dark" style={{ fontWeight: '500' }}>Get job ready with new AI skills</h1>
                         <p className="lead text-dark" style={{ fontWeight: '400' }}>Stand out to employers with an industry-leading Professional Certificate and must-have AI skills from top companies.</p>
                         <div>
-                            <button className="btn btn-primary btn-lg me-3">Explore certificates</button>
-                            <button className="btn btn-outline-light btn-lg">Join for free</button>
+                            <button className="btn btn-primary btn-lg me-3" style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>Explore certificates</button>
+                            <button className="btn btn-outline-primary btn-lg custom-join-btn">Join for free</button>
+
                         </div>
                     </div>
                 </div>
@@ -37,8 +38,8 @@ export default function Carousel() {
                         <h1 className="display-4 text-dark" style={{ fontWeight: '500' }}>Master AI and data science</h1>
                         <p className="lead text-dark" style={{ fontWeight: '400' }}>Earn credentials that showcase your expertise in AI and data science, opening doors to new career opportunities.</p>
                         <div>
-                            <button className="btn btn-primary btn-lg me-3">Start learning</button>
-                            <button className="btn btn-outline-light btn-lg">Discover more</button>
+                            <button className="btn btn-primary btn-lg me-3" style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>Start learning</button>
+                            <button className="btn btn-outline-light btn-lg custom-join-btn">Discover more</button>
                         </div>
                     </div>
                 </div>
@@ -50,7 +51,7 @@ export default function Carousel() {
                         <h1 className="display-4 text-dark" style={{ fontWeight: '500' }}>Advance your career with AI</h1>
                         <p className="lead text-dark" style={{ fontWeight: '400' }}>Leverage AI skills to lead in your field, with training from world-renowned experts.</p>
                         <div>
-                            <button className="btn btn-primary btn-lg me-3">Enroll Now</button>
+                            <button className="btn btn-primary btn-lg me-3" style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>Enroll Now</button>
                         </div>
                     </div>
                 </div>

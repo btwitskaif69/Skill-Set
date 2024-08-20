@@ -88,3 +88,15 @@
   background-color: #210BE3;
   color: white;
 }
+
+
+.custom-join-btn {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.custom-join-btn:hover {
+  background-color: #ffffff;
+  color: #210BE3;
+  border-color: #ffffff; /* Ensure the border remains #210BE3 on hover */
+}
