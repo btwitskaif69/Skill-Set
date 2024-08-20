@@ -17,11 +17,16 @@ export default function Navbar() {
     setActiveForm(null);
   };
 
+  const Logo = {
+    SKILL_SET: '/Assets/Logo/Skill_Set.svg',
+  };
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div className="container-fluid">
-          <a className="navbar-brand fs-3 fw-bold" href="/" style={{ color: '#210BE3' }}>SKILL SET</a>
+          <a className="navbar-brand" href="/"><img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '25px' }} /></a>
+
           <button
             className="navbar-toggler"
             type="button"
