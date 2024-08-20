@@ -1,17 +1,18 @@
 import React from 'react';
 
 export default function Marquee() {
-    const logos = {
-        Aws: '/Assets/Logos/Aws.svg',
-        Duke_University: '/Assets/Logos/Duke_University.svg',
-        Google: '/Assets/Logos/Google.svg',
-        IBM: '/Assets/Logos/IBM.svg',
-        Meta: '/Assets/Logos/Meta.svg',
-        Stanford_University: '/Assets/Logos/Stanford_University.svg',
-        University_of_Cambridge: '/Assets/Logos/University_of_Cambridge.svg',
-        University_of_Michigan: '/Assets/Logos/University_of_Michigan.svg',
-        University_of_Oxford: '/Assets/Logos/University_of_Oxford.svg',
-        University_of_Pennsylvania: '/Assets/Logos/University_of_Pennsylvania.svg',
+
+    const University_Logos = {
+        Aws: '/Assets/University_Logos/Aws.svg',
+        Duke_University: '/Assets/University_Logos/Duke_University.svg',
+        Google: '/Assets/University_Logos/Google.svg',
+        IBM: '/Assets/University_Logos/IBM.svg',
+        Meta: '/Assets/University_Logos/Meta.svg',
+        Stanford_University: '/Assets/University_Logos/Stanford_University.svg',
+        University_of_Cambridge: '/Assets/University_Logos/University_of_Cambridge.svg',
+        University_of_Michigan: '/Assets/University_Logos/University_of_Michigan.svg',
+        University_of_Oxford: '/Assets/University_Logos/University_of_Oxford.svg',
+        University_of_Pennsylvania: '/Assets/University_Logos/University_of_Pennsylvania.svg',
     };
 
     return (
@@ -23,12 +24,12 @@ export default function Marquee() {
                 </h2>
                 <div className="marquee-content">
                     <div className="marquee-inner">
-                        {Object.values(logos).map((logo, index) => (
+                        {Object.values(University_Logos).map((logo, index) => (
                             <img key={index} src={logo} alt={`Logo ${index}`} className="marquee-logo" />
                         ))}
                     </div>
                     <div className="marquee-inner">
-                        {Object.values(logos).map((logo, index) => (
+                        {Object.values(University_Logos).map((logo, index) => (
                             <img key={index + 10} src={logo} alt={`Logo ${index}`} className="marquee-logo" />
                         ))}
                     </div>
