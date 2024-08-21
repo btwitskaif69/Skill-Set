@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           <div className="follow-us d-grid col-2 mx-auto">
-  <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3',padding: '0px'}}>Follow Us</h6>
+  <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3'}}>Follow Us</h6>
   <button className="btn btn-primary mb-2">Button</button>
   <button className="btn btn-primary mb-2">Button</button>
   <button className="btn btn-primary mb-2">Button</button>
