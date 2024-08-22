@@ -39,9 +39,9 @@ export default function Cards() {
         <div>
              {/* Course Cards */}
              <div className="container my-5 ">
-             <p className="mb-1 fs-5 fw-semibold"style={{color: 'blue'}}>Professional Specializations and Certification Courses</p>
-                <h1 className="mb-1 display-4 fw-normal">Most Popular Certificates</h1>
-                <p className="mb-4 fs-5">Explore our most popular programs, get job-ready for an in-demand career.</p>
+             <p className="mb-1 fs-5 fw-semibold" style={{color: '#210BE3'}}>Professional Specializations and Certification Courses</p>
+                <h1 className="mb-1 display-4 fw-normal" style={{color: 'Black'}}>Most Popular Certificates</h1>
+                <p className="mb-4 fs-5" style={{color: 'Black'}}>Explore our most popular programs, get job-ready for an in-demand career.</p>
                 <div className="row">
                     {mainCourses.map(course => (
                         <div key={course.id} className="col-md-3 col-sm-6">
@@ -52,10 +52,10 @@ export default function Cards() {
                                         <div className="course-logos">
                                             {course.logo && <img src={course.logo} alt="Course Logo" />}
                                         </div>
-                                        <h5 className="card-title">{course.title}</h5>
+                                        <h5 className="card-title" style={{color: 'Black'}}>{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary">Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted">Professional Certificate</p>
+                                            <p className="card-text mb-0" style={{color: '#210BE3'}}>Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0" style={{color: '#636363'}}>Professional Certificate</p>
                                         </div>
                                     </div>
                                 </div>
@@ -75,10 +75,10 @@ export default function Cards() {
                                         <div className="course-logos">
                                             {course.logo && <img src={course.logo} alt="Course Logo" />}
                                         </div>
-                                        <h5 className="card-title">{course.title}</h5>
+                                        <h5 className="card-title" style={{color: 'Black'}}>{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary">Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted">Professional Certificate</p>
+                                            <p className="card-text mb-0" style={{color: '#210BE3'}}>Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0" style={{color: '#636363'}}>Professional Certificate</p>
                                         </div>
                                     </div>
                                 </div>

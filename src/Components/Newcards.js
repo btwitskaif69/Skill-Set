@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function NewCards() {
     const [showAdditionalCourses, setShowAdditionalCourses] = useState(false);
@@ -18,15 +18,26 @@ export default function NewCards() {
     };
 
     const courses = [
-        { id: 1, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course9.jpg", logo: University_Logos.Aws },
-        { id: 2, title: "Google Data Analytics", imgSrc: "/Assets/Course/course10.jpg", logo: University_Logos.Google },
-        { id: 3, title: "IBM Data Science", imgSrc: "/Assets/Course/course11.jpg", logo: University_Logos.IBM },
-        { id: 4, title: "Meta Front-End Development", imgSrc: "/Assets/Course/course12.jpg", logo: University_Logos.Meta },
-        { id: 5, title: "Duke University AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: University_Logos.Duke_University },
-        { id: 6, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course14.jpg", logo: University_Logos.Stanford_University },
-        { id: 7, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course15.jpg", logo: University_Logos.University_of_Cambridge },
-        { id: 8, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course16.jpg", logo: University_Logos.University_of_Oxford },
+        { id: 1, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course16.jpg", logo: University_Logos.University_of_Oxford },
+        { id: 2, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course15.jpg", logo: University_Logos.University_of_Cambridge },
+        { id: 3, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course14.jpg", logo: University_Logos.Stanford_University },
+        { id: 4, title: "Duke University AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: University_Logos.Duke_University },
+        { id: 5, title: "Meta Front-End Development", imgSrc: "/Assets/Course/course12.jpg", logo: University_Logos.Meta },
+        { id: 6, title: "IBM Data Science", imgSrc: "/Assets/Course/course11.jpg", logo: University_Logos.IBM },
+        { id: 7, title: "Google Data Analytics", imgSrc: "/Assets/Course/course10.jpg", logo: University_Logos.Google },
+        { id: 8, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course9.jpg", logo: University_Logos.Aws },
     ];
+
+    // const courses = [
+    //     { id: 1, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course9.jpg", logo: University_Logos.Aws },
+    //     { id: 2, title: "Google Data Analytics", imgSrc: "/Assets/Course/course10.jpg", logo: University_Logos.Google },
+    //     { id: 3, title: "IBM Data Science", imgSrc: "/Assets/Course/course11.jpg", logo: University_Logos.IBM },
+    //     { id: 4, title: "Meta Front-End Development", imgSrc: "/Assets/Course/course12.jpg", logo: University_Logos.Meta },
+    //     { id: 5, title: "Duke University AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: University_Logos.Duke_University },
+    //     { id: 6, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course14.jpg", logo: University_Logos.Stanford_University },
+    //     { id: 7, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course15.jpg", logo: University_Logos.University_of_Cambridge },
+    //     { id: 8, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course16.jpg", logo: University_Logos.University_of_Oxford },
+    // ];
 
     const newmainCourses = courses.slice(0, 4);
     const additionalCourses = courses.slice(4);
@@ -34,17 +45,15 @@ export default function NewCards() {
     const toggleAdditionalCourses = () => {
         setShowAdditionalCourses(!showAdditionalCourses);
     };
-    // const toggleCourse = () => {
-        
-    // }
+    const navigate = useNavigate();
 
     return (
         <div className="main-container">
             {/* Course Cards */}
             <div className="container my-5">
-             <p className="mb-1 fs-5 fw-semibold"style={{color: 'blue'}}>Professional Specializations and Certification Courses</p>
-                <h1 className="mb-1 display-4 fw-normal">Most Popular Certificates</h1>
-                <p className="mb-4 fs-5">Explore our most popular programs, get job-ready for an in-demand career.</p>
+             <p className="mb-1 fs-5 fw-semibold"style={{color: 'blue'}}>Courses and Professional Certificates</p>
+                <h1 className="mb-1 display-4 fw-normal" >New Courses for Critical Skills</h1>
+                <p className="mb-4 fs-5">Discover our latest courses, designed to build critical skills.</p>
                 <div className="row">
                     {newmainCourses.map(course => (
                         <div key={course.id} className="col-md-3 col-sm-6">
@@ -57,7 +66,7 @@ export default function NewCards() {
                                         </div>
                                         <h5 className="card-title">{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary">Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0" style={{color: '#210BE3'}}>Advance in Your Degree Program</p>
                                             <p className="card-text mb-0 text-muted">Professional Certificate</p>
                                         </div>
                                     </div>
@@ -80,7 +89,7 @@ export default function NewCards() {
                                         </div>
                                         <h5 className="card-title">{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 text-primary">Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0" style={{color: '#210BE3'}}>Advance in Your Degree Program</p>
                                             <p className="card-text mb-0 text-muted">Professional Certificate</p>
                                         </div>
                                     </div>
@@ -95,7 +104,7 @@ export default function NewCards() {
                     <button type="button" className="btn btn-primary me-2" onClick={toggleAdditionalCourses} style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>
                         {showAdditionalCourses ? 'Show Less' : 'Show More'}
                     </button>
-                    <button type="button" className="btn btn-outline-primary custom-join-btn"><Link to="/Courses" style={{ textDecoration: 'none', color: 'inherit' }}>View all</Link></button>
+                    <button type="button" className="btn btn-outline-primary custom-join-btn" onClick={()=> navigate('/Courses')}>View all</button>
                 </div>
             </div>
 

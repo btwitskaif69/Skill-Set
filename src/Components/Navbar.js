@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import SignUp from './SignUp';
 import LogIn from './LogIn';
 
@@ -41,7 +42,7 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link fs-6 text-dark" aria-current="page" href="/">Home</a>
+                <a className="nav-link fs-6 text-dark" aria-current="page" href="/"><Link to='/home'></Link>Home</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link fs-6 text-dark" href="/">Link</a>
