@@ -6,56 +6,82 @@ export default function Course() {
       <div className="row">
         {/* Filter Section */}
         <div className="col-md-3">
-          <h5>Filter by</h5>
+          <h6 className="mb-3">Filter by</h6>
           <div className="filter-section">
             <div className="filter-category mb-4">
-              <h6>Subject</h6>
-              <ul className="list-group">
-                <li className="list-group-item">
-                  <input type="checkbox" className="form-check-input" /> Data Science (895)
+              <h6 className="text-muted">Subject</h6>
+              <ul className="list-unstyled">
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="data-science" />
+                  <label className="form-check-label" htmlFor="data-science">Data Science (895)</label>
                 </li>
-                <li className="list-group-item">
-                  <input type="checkbox" className="form-check-input" /> Computer Science (258)
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="computer-science" />
+                  <label className="form-check-label" htmlFor="computer-science">Computer Science (258)</label>
                 </li>
-                <li className="list-group-item">
-                  <input type="checkbox" className="form-check-input" /> Information Technology (248)
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="it" />
+                  <label className="form-check-label" htmlFor="it">Information Technology (248)</label>
                 </li>
-                <li className="list-group-item">
-                  <input type="checkbox" className="form-check-input" /> Business (206)
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="business" />
+                  <label className="form-check-label" htmlFor="business">Business (206)</label>
                 </li>
-                {/* Add more filter options as needed */}
               </ul>
+              <button className="btn btn-link p-0">Show 7 more</button>
             </div>
+
             <div className="filter-category mb-4">
-              <h6>Language</h6>
-              <ul className="list-group">
-                <li className="list-group-item">
-                  <input type="checkbox" className="form-check-input" /> English (1,584)
+              <h6 className="text-muted">Language</h6>
+              <ul className="list-unstyled">
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="english" />
+                  <label className="form-check-label" htmlFor="english">English (1,584)</label>
                 </li>
-                <li className="list-group-item">
-                  <input type="checkbox" className="form-check-input" /> Spanish (1,044)
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="spanish" />
+                  <label className="form-check-label" htmlFor="spanish">Spanish (1,044)</label>
                 </li>
-                <li className="list-group-item">
-                  <input type="checkbox" className="form-check-input" /> French (1,003)
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="french" />
+                  <label className="form-check-label" htmlFor="french">French (1,003)</label>
                 </li>
-                <li className="list-group-item">
-                  <input type="checkbox" className="form-check-input" /> Portuguese (999)
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="portuguese" />
+                  <label className="form-check-label" htmlFor="portuguese">Portuguese (999)</label>
                 </li>
-                {/* Add more filter options as needed */}
+              </ul>
+              <button className="btn btn-link p-0">Show 20 more</button>
+            </div>
+
+            <div className="filter-category mb-4">
+              <h6 className="text-muted">Learning Product</h6>
+              <ul className="list-unstyled">
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="guided-projects" />
+                  <label className="form-check-label" htmlFor="guided-projects">Guided Projects (272)</label>
+                </li>
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="courses" />
+                  <label className="form-check-label" htmlFor="courses">Courses (1,219)</label>
+                </li>
+                <li className="form-check">
+                  <input type="checkbox" className="form-check-input" id="projects" />
+                  <label className="form-check-label" htmlFor="projects">Projects (43)</label>
+                </li>
               </ul>
             </div>
-            {/* Add more filter categories as needed */}
           </div>
         </div>
 
         {/* Course Cards Section */}
         <div className="col-md-9">
-          <h5>Over 500 results for "machine learning"</h5>
+          <h6 className="mb-4">Over 500 results for "machine learning"</h6>
           <div className="row">
             {/* Single Course Card */}
-            <div className="col-md-4 mb-4">
-              <div className="card">
-                <img src="path-to-image" className="card-img-top" alt="course-image" />
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="card h-100">
+                <img src="path-to-image" className="card-img-top" alt="course" />
                 <div className="card-body">
                   <h6 className="card-title">Machine Learning</h6>
                   <p className="card-text">
@@ -66,6 +92,7 @@ export default function Course() {
               </div>
             </div>
             {/* Repeat the course card for more courses */}
+            {/* Add more cards as needed */}
           </div>
         </div>
       </div>

@@ -6,17 +6,14 @@ import SignUp from './Components/SignUp';
 import LogIn from './Components/LogIn'; 
 import Home from './Components/Home'; 
 import Courses from './Components/Courses';
-import Footer from './Components/Footer';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar />
-        <Home/>
-        <Footer/>
         <Routes>
-          <Route path="/home" element={<home />} /> {/* Ensure Home component is valid */}
+        <Route path="/" element={<Home />} /> {/* Ensure Home component is valid */}
           <Route path="/signup" element={<SignUp />} /> {/* Ensure SignUp component is valid */}
           <Route path="/login" element={<LogIn />} /> {/* Ensure LogIn component is valid */}
           <Route path="/courses" element={<Courses />} />

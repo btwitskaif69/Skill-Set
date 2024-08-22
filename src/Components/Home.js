@@ -4,6 +4,8 @@ import Carousel from './Carousel';
 import Cards from './Cards';
 import NewCards from './NewCards';
 import Testimonial from './Testimonial';
+import Footer from './Footer';
+
 
 export default function Home() {
 
@@ -14,6 +16,7 @@ export default function Home() {
       <Cards/>
       <NewCards/>
       <Testimonial/>
+      <Footer/>
     </div>
   );
 }

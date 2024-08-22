@@ -92,7 +92,8 @@ export default function Cards() {
                     <button type="button" className="btn btn-primary me-2" onClick={toggleAdditionalCourses} style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>
                         {showAdditionalCourses ? 'Show Less' : 'Show More'}
                     </button>
-                    <button type="button" className="btn btn-outline-primary custom-button">View all</button>
+                    <Link to="/courses"><button type="button" className="btn btn-outline-primary custom-button">View all</button>
+                    </Link>
                 </div>
             </div>
 

@@ -91,7 +91,8 @@ export default function NewCards() {
                 <div className="button-container">
                     <button type="button" className="btn btn-primary me-2" onClick={toggleAdditionalCourses} style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>
                         {showAdditionalCourses ? 'Show Less' : 'Show More'}
-                    </button><Link to="/courses"><button type="button" className="btn btn-outline-primary custom-join-btn">View all</button>
+                    </button>
+                    <Link to="/courses"><button type="button" className="btn btn-outline-primary custom-join-btn">View all</button>
                     </Link>
                     
                 </div>

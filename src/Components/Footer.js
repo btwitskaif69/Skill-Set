@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Company Links Section */}
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3' }}>Company</h6>
-            <p><a href="#!" style={{ color: 'Black' }}>About</a></p>
+            <p><a href="#!" style={{ color: 'Black' }}>Home</a></p>
             <p><a href="#!" style={{ color: 'Black' }}>Contact</a></p>
             <p><a href="#!" style={{ color: 'Black' }}>Blog</a></p>
             <p><a href="#!" style={{ color: 'Black' }}>Terms of Service</a></p>
