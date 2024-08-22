@@ -34,6 +34,9 @@ export default function NewCards() {
     const toggleAdditionalCourses = () => {
         setShowAdditionalCourses(!showAdditionalCourses);
     };
+    // const toggleCourse = () => {
+        
+    // }
 
     return (
         <div className="main-container">
@@ -89,10 +92,10 @@ export default function NewCards() {
 
                 {/* Button Container */}
                 <div className="button-container">
-                    <button type="button" className="btn btn-primary me-2" onClick={toggleAdditionalCourses}>
+                    <button type="button" className="btn btn-primary me-2" onClick={toggleAdditionalCourses} style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>
                         {showAdditionalCourses ? 'Show Less' : 'Show More'}
                     </button>
-                    <button type="button" className="btn btn-outline-primary">View all</button>
+                    <button type="button" className="btn btn-outline-primary custom-join-btn"><Link to="/Courses" style={{ textDecoration: 'none', color: 'inherit' }}>View all</Link></button>
                 </div>
             </div>
 
