@@ -13,13 +13,13 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <Courses/>
         <Home/>
         <Footer/>
         <Routes>
           <Route path="/home" element={<home />} /> {/* Ensure Home component is valid */}
           <Route path="/signup" element={<SignUp />} /> {/* Ensure SignUp component is valid */}
           <Route path="/login" element={<LogIn />} /> {/* Ensure LogIn component is valid */}
+          <Route path="/courses" element={<Courses />} />
         </Routes>
       </div>
     </Router>

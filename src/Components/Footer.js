@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Footer() {
-
   const Logo = {
     SKILL_SET: '/Assets/Logo/Skill_Set.svg',
   };
@@ -10,42 +9,40 @@ export default function Footer() {
     <footer className="text-center text-lg-start text-white" style={styles.footer}>
       <section className="container text-center text-md-start mt-5">
         <div className="row mt-3">
+          {/* Logo and Buttons Section */}
           <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <h4 className="text-uppercase fw-bold"><img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '25px' }} /></h4>
-            <p style={{color: 'black'}}>Start your journey now.</p>
-            <button className="btn btn-light"style={{color: '#210BE3'}}>Try for Free</button>
-            <button className="btn btn-outline-light ms-2">Get a Demo</button>
+            <h4 className="text-uppercase fw-bold">
+              <img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '25px' }} />
+            </h4>
+            <p style={{ color: 'black' }}>Start your journey now.</p>
+            <button className="btn btn-light"style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>Try for Free</button>
+            <button className="btn btn-outline-light ms-2 custom-button">Get a Demo</button>
           </div>
 
-          <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style={{color: '#210BE3'}}>
-            <h6 className="text-uppercase fw-bold">Company</h6>
-            <p><a href="#!"style={{color: 'Black'}}>About</a></p>
-            <p><a href="#!"style={{color: 'Black'}}>Contact</a></p>
-            <p><a href="#!"style={{color: 'Black'}}>Blog</a></p>
-            <p><a href="#!"style={{color: 'Black'}}>Terms of Service</a></p>
-            <p><a href="#!"style={{color: 'Black'}}>Privacy Policy</a></p>
+          {/* Company Links Section */}
+          <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3' }}>Company</h6>
+            <p><a href="#!" style={{ color: 'Black' }}>About</a></p>
+            <p><a href="#!" style={{ color: 'Black' }}>Contact</a></p>
+            <p><a href="#!" style={{ color: 'Black' }}>Blog</a></p>
+            <p><a href="#!" style={{ color: 'Black' }}>Terms of Service</a></p>
+            <p><a href="#!" style={{ color: 'Black' }}>Privacy Policy</a></p>
           </div>
 
-          <div className="follow-us d-grid col-2 mx-auto">
-  <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3', marginBottom: '0'}}>Follow Us</h6>
-  <button href='https://www.linkedin.com/in/btwitskaif69/' className="btn btn-primary mb-2 bi bi-linkedin"> Linkedin</button>
-  <button className="btn btn-primary mb-2">Button</button>
-  <button className="btn btn-primary mb-2">Button</button>
-</div>
-
-
-
-          {/* <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <h6 className="text-uppercase fw-bold" style={{color: '#210BE3'}}>Follow Us</h6>
-            <a href="https://www.linkedin.com/in/btwitskaif69/" target="_blank" rel="noreferrer" className="btn btn-outline-light btn-floating m-1">Linkedin</a>
-            <a href="https://x.com/btwitskaif69" target="_blank" rel="noreferrer" className="btn btn-outline-light btn-floating m-1">X</a>
-            <a href="https://github.com/btwitskaif69" target="_blank" rel="noreferrer" className="btn btn-outline-light btn-floating m-1">Github</a>
-          </div> */}
+          {/* Follow Us Section */}
+          <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3', marginBottom: '10px' }}>Follow Us</h6>
+            <div className="d-grid gap-2">
+            <a href="https://www.linkedin.com/in/btwitskaif69/" target="_blank" rel="noreferrer"className="btn btn-primary btn-lg mb-2 bi bi-linkedin custom-button">&nbsp;</a>
+            <a href="https://x.com/btwitskaif69/" target="_blank" rel="noreferrer"className="btn btn-primary btn-lg mb-2 bi bi-twitter-x custom-button">&nbsp;</a>
+            <a href="https://github.com/btwitskaif69" target="_blank" rel="noreferrer"className="btn btn-primary btn-lg mb-2  bi bi-github custom-button">&nbsp;</a>
+            </div>
+          </div>
         </div>
       </section>
 
       <div className="text-center p-3" style={styles.bottomBar}>
-        <p className="mb-0">© 2024. All rights reserved. <a href="#!" className="text-white">Assortium Technologies Pvt. Ltd.</a></p>
+        <p className="mb-0">© 2024 Skill Set All rights reserved.</p>
       </div>
     </footer>
   );
@@ -53,10 +50,9 @@ export default function Footer() {
 
 const styles = {
   footer: {
-    backgroundColor: '#f5f7fa', // Black background color
-    color: 'blue', // White text color
+    backgroundColor: '#f5f7fa',
+    color: 'blue',
     paddingTop: '20px',
-    paddingBottom: '20px',
     marginTop: 'auto',
     position: 'relative',
     bottom: 0,
@@ -64,19 +60,15 @@ const styles = {
   },
   hr: {
     width: '60px',
-    backgroundColor: '#fff', // White color for the horizontal line
+    backgroundColor: '#fff',
     height: '2px',
     color: 'red',
   },
   bottomBar: {
-    backgroundColor: 'blue', // Dark grey background
-    padding: '1rem 0',
+    backgroundColor: '#210BE3',
+    paddingBottom: '0px',
   },
 };
-
-
-
-
 
 
 // import React from 'react';

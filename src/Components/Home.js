@@ -2,7 +2,7 @@ import React from 'react';
 import Marquee from './Marquee';
 import Carousel from './Carousel';
 import Cards from './Cards';
-import NewCards from './Newcards';
+import NewCards from './NewCards';
 import Testimonial from './Testimonial';
 
 export default function Home() {
@@ -14,8 +14,6 @@ export default function Home() {
       <Cards/>
       <NewCards/>
       <Testimonial/>
-
-
     </div>
   );
 }
