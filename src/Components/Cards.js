@@ -22,7 +22,7 @@ export default function Cards() {
         { id: 2, title: "IBM Data Science", imgSrc: "/Assets/Course/course2.jpg", logo: University_Logos.Google },
         { id: 3, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course3.jpg", logo: University_Logos.IBM },
         { id: 4, title: "Meta Front-End Dev", imgSrc: "/Assets/Course/course4.jpg", logo: University_Logos.Meta },
-        { id: 5, title: "Duke University AI Fundamentals", imgSrc: "/Assets/Course/course5.jpg", logo: University_Logos.Duke_University },
+        { id: 5, title: "AI Fundamentals", imgSrc: "/Assets/Course/course5.jpg", logo: University_Logos.Duke_University },
         { id: 6, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course6.jpg", logo: University_Logos.Stanford_University },
         { id: 7, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course7.jpg", logo: University_Logos.University_of_Cambridge },
         { id: 8, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course8.jpg", logo: University_Logos.University_of_Oxford },
@@ -124,7 +124,7 @@ export default function Cards() {
                     object-fit: cover;
                 }
                 .course-logos {
-                    display: flex;University_Logos                align-items: center;
+                    display: flex;University_Logos;
                     margin-bottom: 8px;
                     justify-content: left;
                 }
