@@ -21,7 +21,7 @@ export default function NewCards() {
         { id: 1, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course16.jpg", logo: University_Logos.University_of_Oxford },
         { id: 2, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course15.jpg", logo: University_Logos.University_of_Cambridge },
         { id: 3, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course14.jpg", logo: University_Logos.Stanford_University },
-        { id: 4, title: "Duke University AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: University_Logos.Duke_University },
+        { id: 4, title: "AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: University_Logos.Duke_University },
         { id: 5, title: "Meta Front-End Development", imgSrc: "/Assets/Course/course12.jpg", logo: University_Logos.Meta },
         { id: 6, title: "IBM Data Science", imgSrc: "/Assets/Course/course11.jpg", logo: University_Logos.IBM },
         { id: 7, title: "Google Data Analytics", imgSrc: "/Assets/Course/course10.jpg", logo: University_Logos.Google },
