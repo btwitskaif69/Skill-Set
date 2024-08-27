@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Cards() {
@@ -18,14 +18,62 @@ export default function Cards() {
     };
 
     const courses = [
-        { id: 1, title: "Google Data Analytics", imgSrc: "/Assets/Course/course1.jpg", logo: University_Logos.Aws },
-        { id: 2, title: "IBM Data Science", imgSrc: "/Assets/Course/course2.jpg", logo: University_Logos.Google },
-        { id: 3, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course3.jpg", logo: University_Logos.IBM },
-        { id: 4, title: "Meta Front-End Dev", imgSrc: "/Assets/Course/course4.jpg", logo: University_Logos.Meta },
-        { id: 5, title: "AI Fundamentals", imgSrc: "/Assets/Course/course5.jpg", logo: University_Logos.Duke_University },
-        { id: 6, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course6.jpg", logo: University_Logos.Stanford_University },
-        { id: 7, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course7.jpg", logo: University_Logos.University_of_Cambridge },
-        { id: 8, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course8.jpg", logo: University_Logos.University_of_Oxford },
+        {
+            id: 1,
+            title: "Google Data Analytics",
+            imgSrc: "/Assets/Course/course1.jpg",
+            logo: University_Logos.Google,
+            skills: "Data Analysis, Google Analytics, Data Visualization"
+        },
+        {
+            id: 2,
+            title: "IBM Data Science",
+            imgSrc: "/Assets/Course/course2.jpg",
+            logo: University_Logos.IBM,
+            skills: "Python, Machine Learning, Data Visualization"
+        },
+        {
+            id: 3,
+            title: "AWS Solutions Architect",
+            imgSrc: "/Assets/Course/course3.jpg",
+            logo: University_Logos.Aws,
+            skills: "Cloud Computing, AWS, Architecture Design"
+        },
+        {
+            id: 4,
+            title: "Meta Front-End Development",
+            imgSrc: "/Assets/Course/course4.jpg",
+            logo: University_Logos.Meta,
+            skills: "HTML, CSS, JavaScript, React"
+        },
+        {
+            id: 5,
+            title: "AI Fundamentals",
+            imgSrc: "/Assets/Course/course5.jpg",
+            logo: University_Logos.Duke_University,
+            skills: "Artificial Intelligence, Python, Machine Learning"
+        },
+        {
+            id: 6,
+            title: "Stanford Machine Learning",
+            imgSrc: "/Assets/Course/course6.jpg",
+            logo: University_Logos.Stanford_University,
+            skills: "Machine Learning, Python, Data Analysis"
+        },
+        {
+            id: 7,
+            title: "Cambridge Data Science",
+            imgSrc: "/Assets/Course/course7.jpg",
+            logo: University_Logos.University_of_Cambridge,
+            skills: "Data Science, Statistics, R Programming"
+        },
+        {
+            id: 8,
+            title: "Oxford Cyber Security",
+            imgSrc: "/Assets/Course/course8.jpg",
+            logo: University_Logos.University_of_Oxford,
+            skills: "Cybersecurity, Ethical Hacking, Network Security"
+        },
     ];
 
     const mainCourses = courses.slice(0, 4);
@@ -92,8 +140,8 @@ export default function Cards() {
                     <button type="button" className="btn btn-primary me-2" onClick={toggleAdditionalCourses} style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>
                         {showAdditionalCourses ? 'Show Less' : 'Show More'}
                     </button>
-                    <Link to="/courses"><button type="button" className="btn btn-outline-primary custom-button">View all</button>
-                    </Link>
+                    <Link to="/courses"><button type="button" className="btn btn-outline-primary custom-button"
+                    onClick={() => window.scrollTo(0, 0)}>View all</button></Link>
                 </div>
             </div>
 

@@ -83,6 +83,10 @@
   color: #210BE3;
   border-color: #210BE3;
 }
+.custom-button-transperent {
+  color: #210BE3;
+  border-color: #210BE3;
+}
 
 .custom-button:hover {
   background-color: #210BE3;

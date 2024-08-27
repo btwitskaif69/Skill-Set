@@ -290,7 +290,7 @@ export default function CoursesCards() {
 
     return (
         <div className="container">
-            <p className="mb-4 display-6 fs-2 fw-semibold" style={{ color: 'Black' }}>
+            <p className="mb-4 display-6 fs-4 fw-semibold" style={{ color: 'Black' }}>
                 Explore our most popular programs, get job-ready for an in-demand career.
             </p>
             <div className="row g-4">
@@ -310,13 +310,10 @@ export default function CoursesCards() {
                                         <b style={{ color: 'black', fontWeight: '600' }}>Skills you'll gain:</b> {course.skills}
                                     </p>
                                     <div className="mt-auto">
-                                        <p className="card-text mb-0" style={{ color: '#210BE3' }}>
-                                            Advance your degree journey
-                                        </p>
+                                        <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;Advance your degree journey</p>
                                         <p className="card-text mb-0">
                                             <i className="bi bi-star-fill" style={{ color: '#f59e0b' }}></i>&nbsp;
-                                            <b>{course.rating}</b>&nbsp;
-                                            {course.reviews}
+                                            <b>{course.rating}</b> {course.reviews}
                                         </p>
                                         <p className="card-text mb-0" style={{ color: '#636363' }}>
                                             Beginner · Career Certificate · 3-6 Months
