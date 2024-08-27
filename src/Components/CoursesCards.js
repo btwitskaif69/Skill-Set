@@ -45,7 +45,7 @@ export default function CoursesCards() {
 
     return (
         <div className="container">
-            <p className="mb-4 fs-5" style={{ color: 'Black' }}>
+            <p className="mb-4 display-6 fs-2 fw-semibold" style={{ color: 'Black' }}>
                 Explore our most popular programs, get job-ready for an in-demand career.
             </p>
             <div className="row g-4">
@@ -61,12 +61,16 @@ export default function CoursesCards() {
                                         )}
                                     </div>
                                     <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
+                                     {/* New content addition */}
+                                    <p className="card-text" style={{ color: '#636363' }}>
+                                        <b>Skills you'll gain:</b> Network Security, Python Programming, Linux, Cloud Computing, Audit, Computer Programming, Computer Security...
+                                    </p>
                                     <div className="mt-auto">
                                         <p className="card-text mb-0" style={{ color: '#210BE3' }}>
-                                            Advance in Your Degree Program
+                                            Make progress toward a degree
                                         </p>
                                         <p className="card-text mb-0" style={{ color: '#636363' }}>
-                                            Professional Certificate
+                                        Beginner · Professional Certificate · 3 - 6 Months
                                         </p>
                                     </div>
                                 </div>
