@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function CoursesCards() {
-
     const University_Logos = {
         Aws: '/Assets/University_Logos/Aws.svg',
         Duke_University: '/Assets/University_Logos/Duke_University.svg',
@@ -15,7 +14,7 @@ export default function CoursesCards() {
         University_of_Oxford: '/Assets/University_Logos/University_of_Oxford.svg',
         University_of_Pennsylvania: '/Assets/University_Logos/University_of_Pennsylvania.svg',
     };
-    
+
     const courses = [
         {
             id: 1,
@@ -24,213 +23,270 @@ export default function CoursesCards() {
             logo: University_Logos.Google,
             skills: "Data Analysis, Google Analytics, Data Visualization",
             rating: "4.8",
-            reviews: "10K (reviews)"
+            reviews: "(10K reviews)"
         },
         {
             id: 2,
             title: "IBM Data Science",
             imgSrc: "/Assets/Course/course2.jpg",
             logo: University_Logos.IBM,
-            skills: "Python, Machine Learning, Data Visualization"
+            skills: "Python, Machine Learning, Data Visualization",
+            rating: "4.7",
+            reviews: "(8K reviews)"
         },
         {
             id: 3,
             title: "AWS Solutions Architect",
             imgSrc: "/Assets/Course/course3.jpg",
             logo: University_Logos.Aws,
-            skills: "Cloud Computing, AWS, Architecture Design"
+            skills: "Cloud Computing, AWS, Architecture Design",
+            rating: "4.9",
+            reviews: "(12K reviews)"
         },
         {
             id: 4,
             title: "Meta Front-End Development",
             imgSrc: "/Assets/Course/course4.jpg",
             logo: University_Logos.Meta,
-            skills: "HTML, CSS, JavaScript, React"
+            skills: "HTML, CSS, JavaScript, React",
+            rating: "4.6",
+            reviews: "(6K reviews)"
         },
         {
             id: 5,
             title: "AI Fundamentals",
             imgSrc: "/Assets/Course/course5.jpg",
             logo: University_Logos.Duke_University,
-            skills: "Artificial Intelligence, Python, Machine Learning"
+            skills: "Artificial Intelligence, Python, Machine Learning",
+            rating: "4.5",
+            reviews: "(9K reviews)"
         },
         {
             id: 6,
             title: "Stanford Machine Learning",
             imgSrc: "/Assets/Course/course6.jpg",
             logo: University_Logos.Stanford_University,
-            skills: "Machine Learning, Python, Data Analysis"
+            skills: "Machine Learning, Python, Data Analysis",
+            rating: "4.9",
+            reviews: "(11K reviews)"
         },
         {
             id: 7,
             title: "Cambridge Data Science",
             imgSrc: "/Assets/Course/course7.jpg",
             logo: University_Logos.University_of_Cambridge,
-            skills: "Data Science, Statistics, R Programming"
+            skills: "Data Science, Statistics, R Programming",
+            rating: "4.8",
+            reviews: "(7K reviews)"
         },
         {
             id: 8,
             title: "Oxford Cyber Security",
             imgSrc: "/Assets/Course/course8.jpg",
             logo: University_Logos.University_of_Oxford,
-            skills: "Cybersecurity, Ethical Hacking, Network Security"
+            skills: "Cybersecurity, Ethical Hacking, Network Security",
+            rating: "4.7",
+            reviews: "(5K reviews)"
         },
         {
             id: 9,
             title: "Google UX Design",
             imgSrc: "/Assets/Course/course9.jpg",
             logo: University_Logos.Google,
-            skills: "UX Design, Prototyping, User Research"
+            skills: "UX Design, Prototyping, User Research",
+            rating: "4.8",
+            reviews: "(9K reviews)"
         },
         {
             id: 10,
             title: "IBM Cloud Computing",
             imgSrc: "/Assets/Course/course10.jpg",
             logo: University_Logos.IBM,
-            skills: "Cloud Computing, Docker, Kubernetes"
+            skills: "Cloud Computing, Docker, Kubernetes",
+            rating: "4.6",
+            reviews: "(6.5K reviews)"
         },
         {
             id: 11,
             title: "Meta Advanced React",
             imgSrc: "/Assets/Course/course11.jpg",
             logo: University_Logos.Meta,
-            skills: "React, Redux, Web Development"
+            skills: "React, Redux, Web Development",
+            rating: "4.9",
+            reviews: "(10.5K reviews)"
         },
         {
             id: 12,
             title: "AWS Data Engineering",
             imgSrc: "/Assets/Course/course12.jpg",
             logo: University_Logos.Aws,
-            skills: "Data Engineering, AWS, Python"
+            skills: "Data Engineering, AWS, Python",
+            rating: "4.7",
+            reviews: "(8.5K reviews)"
         },
         {
             id: 13,
             title: "Stanford Artificial Intelligence",
             imgSrc: "/Assets/Course/course13.jpg",
             logo: University_Logos.Stanford_University,
-            skills: "Artificial Intelligence, Robotics, Machine Learning"
+            skills: "Artificial Intelligence, Robotics, Machine Learning",
+            rating: "4.9",
+            reviews: "(13K reviews)"
         },
         {
             id: 14,
             title: "Quantum Computing",
             imgSrc: "/Assets/Course/course14.jpg",
             logo: University_Logos.University_of_Cambridge,
-            skills: "Quantum Computing, Python, Algorithms"
+            skills: "Quantum Computing, Python, Algorithms",
+            rating: "4.8",
+            reviews: "(7.5K reviews)"
         },
         {
             id: 15,
             title: "Oxford Business Analytics",
             imgSrc: "/Assets/Course/course15.jpg",
             logo: University_Logos.University_of_Oxford,
-            skills: "Business Analytics, Data Science, Excel"
+            skills: "Business Analytics, Data Science, Excel",
+            rating: "4.6",
+            reviews: "(5.5K reviews)"
         },
         {
             id: 16,
             title: "Google Cloud ML",
             imgSrc: "/Assets/Course/course16.jpg",
             logo: University_Logos.Google,
-            skills: "Machine Learning, Google Cloud, Python"
+            skills: "Machine Learning, Google Cloud, Python",
+            rating: "4.7",
+            reviews: "(8K reviews)"
         },
         {
             id: 17,
             title: "IBM Blockchain Essentials",
             imgSrc: "/Assets/Course/course17.jpg",
             logo: University_Logos.IBM,
-            skills: "Blockchain, Hyperledger, Smart Contracts"
+            skills: "Blockchain, Hyperledger, Smart Contracts",
+            rating: "4.6",
+            reviews: "(6K reviews)"
         },
         {
             id: 18,
             title: "Meta AR/VR Development",
             imgSrc: "/Assets/Course/course18.jpg",
             logo: University_Logos.Meta,
-            skills: "Augmented Reality, Virtual Reality, Unity"
+            skills: "Augmented Reality, Virtual Reality, Unity",
+            rating: "4.9",
+            reviews: "(9.5K reviews)"
         },
         {
             id: 19,
             title: "Financial Engineering",
             imgSrc: "/Assets/Course/course19.jpg",
             logo: University_Logos.Duke_University,
-            skills: "Financial Engineering, Risk Management, MATLAB"
+            skills: "Financial Engineering, Risk Management, MATLAB",
+            rating: "4.8",
+            reviews: "(7K reviews)"
         },
         {
             id: 20,
             title: "Stanford Deep Learning",
             imgSrc: "/Assets/Course/course20.jpg",
             logo: University_Logos.Stanford_University,
-            skills: "Deep Learning, TensorFlow, Neural Networks"
+            skills: "Deep Learning, TensorFlow, Neural Networks",
+            rating: "4.9",
+            reviews: "(11.5K reviews)"
         },
         {
             id: 21,
             title: "Advanced Data Analysis",
             imgSrc: "/Assets/Course/course21.jpg",
             logo: University_Logos.University_of_Cambridge,
-            skills: "Advanced Data Analysis, R, Python"
+            skills: "Advanced Data Analysis, R, Python",
+            rating: "4.7",
+            reviews: "(8.5K reviews)"
         },
         {
             id: 22,
             title: "Oxford Fintech",
             imgSrc: "/Assets/Course/course22.jpg",
             logo: University_Logos.University_of_Oxford,
-            skills: "Fintech, Cryptocurrency, Blockchain"
+            skills: "Fintech, Cryptocurrency, Blockchain",
+            rating: "4.8",
+            reviews: "(7K reviews)"
         },
         {
             id: 23,
             title: "Google Mobile Dev",
             imgSrc: "/Assets/Course/course23.jpg",
             logo: University_Logos.Google,
-            skills: "Android Development, Kotlin, Java"
+            skills: "Android Development, Kotlin, Java",
+            rating: "4.6",
+            reviews: "(5.5K reviews)"
         },
         {
             id: 24,
             title: "IBM Artificial Intelligence",
             imgSrc: "/Assets/Course/course24.jpg",
             logo: University_Logos.IBM,
-            skills: "Artificial Intelligence, Machine Learning, Python"
+            skills: "Artificial Intelligence, Machine Learning, Python",
+            rating: "4.9",
+            reviews: "(11K reviews)"
         },
         {
             id: 25,
             title: "Meta Advanced JavaScript",
             imgSrc: "/Assets/Course/course25.jpg",
             logo: University_Logos.Meta,
-            skills: "JavaScript, Node.js, Web Development"
+            skills: "JavaScript, Node.js, Web Development",
+            rating: "4.7",
+            reviews: "(7.5K reviews)"
         },
         {
             id: 26,
             title: "AWS DevOps Engineer",
             imgSrc: "/Assets/Course/course26.jpg",
             logo: University_Logos.Aws,
-            skills: "DevOps, AWS, CI/CD"
+            skills: "DevOps, AWS, CI/CD",
+            rating: "4.9",
+            reviews: "(9.8K reviews)"
         },
         {
             id: 27,
-            title: "Data Structures & Algorithms",
+            title: "Stanford Cybersecurity",
             imgSrc: "/Assets/Course/course27.jpg",
             logo: University_Logos.Stanford_University,
-            skills: "Data Structures, Algorithms, Problem Solving"
+            skills: "Cybersecurity, Ethical Hacking, Python",
+            rating: "4.8",
+            reviews: "(7K reviews)"
         },
         {
             id: 28,
-            title: "Natural Language Processing",
+            title: "Cambridge AI Ethics",
             imgSrc: "/Assets/Course/course28.jpg",
             logo: University_Logos.University_of_Cambridge,
-            skills: "Natural Language Processing, Machine Learning, Python"
+            skills: "AI Ethics, Machine Learning, Policy",
+            rating: "4.7",
+            reviews: "(6.5K reviews)"
         },
         {
             id: 29,
-            title: "Oxford Business Management",
+            title: "Oxford Leadership Program",
             imgSrc: "/Assets/Course/course29.jpg",
             logo: University_Logos.University_of_Oxford,
-            skills: "Business Management, Leadership, Strategic Planning"
+            skills: "Leadership, Management, Strategy",
+            rating: "4.6",
+            reviews: "(8K reviews)"
         },
         {
             id: 30,
-            title: "Google Cloud DevOps",
+            title: "Google Cloud Solutions",
             imgSrc: "/Assets/Course/course30.jpg",
             logo: University_Logos.Google,
-            skills: "DevOps, Google Cloud, Kubernetes"
+            skills: "Google Cloud, Cloud Solutions, DevOps",
+            rating: "4.9",
+            reviews: "(9K reviews)"
         }
     ];
-    
 
     return (
         <div className="container">
@@ -250,17 +306,20 @@ export default function CoursesCards() {
                                         )}
                                     </div>
                                     <h5 className="card-title mb-0" style={{ color: 'Black' }}>{course.title}</h5>
-                                     {/* New content addition */}
-                                     <p className="card-text" style={{ color: '#636363' }}>
-                                        <b style={{ color: 'black', fontWeight: '600' }}>Skills you'll gain:</b>
+                                    <p className="card-text" style={{ color: '#636363' }}>
+                                        <b style={{ color: 'black', fontWeight: '600' }}>Skills you'll gain:</b> {course.skills}
                                     </p>
                                     <div className="mt-auto">
                                         <p className="card-text mb-0" style={{ color: '#210BE3' }}>
-                                        Advance your degree journey
+                                            Advance your degree journey
                                         </p>
-                                        <p className="card-text mb-0 bi bi-star-fill" style={{ color: '#636363' }}>&nbsp;&nbsp;<b>{course.rating}</b>{course.reviews}</p>
+                                        <p className="card-text mb-0">
+                                            <i className="bi bi-star-fill" style={{ color: '#f59e0b' }}></i>&nbsp;
+                                            <b>{course.rating}</b>&nbsp;
+                                            {course.reviews}
+                                        </p>
                                         <p className="card-text mb-0" style={{ color: '#636363' }}>
-                                        Beginner · Career Certificate · 3-6 Months
+                                            Beginner · Career Certificate · 3-6 Months
                                         </p>
                                     </div>
                                 </div>
@@ -297,7 +356,7 @@ export default function CoursesCards() {
                     border-radius: 7px;
                 }
                 .course-logos {
-                    display: flex;University_Logos;
+                    display: flex;
                     margin-bottom: 8px;
                     justify-content: left;
                 }
@@ -329,7 +388,6 @@ export default function CoursesCards() {
                     .container h3 {
                         font-size: 30px; /* Decrease font size */
                     }
-                    
             `}</style>
         </div>
     );
