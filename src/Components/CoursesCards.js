@@ -22,7 +22,9 @@ export default function CoursesCards() {
             title: "Google Data Analytics",
             imgSrc: "/Assets/Course/course1.jpg",
             logo: University_Logos.Google,
-            skills: "Data Analysis, Google Analytics, Data Visualization"
+            skills: "Data Analysis, Google Analytics, Data Visualization",
+            rating: "4.8",
+            reviews: "10K (reviews)"
         },
         {
             id: 2,
@@ -47,7 +49,7 @@ export default function CoursesCards() {
         },
         {
             id: 5,
-            title: "Duke University AI Fundamentals",
+            title: "AI Fundamentals",
             imgSrc: "/Assets/Course/course5.jpg",
             logo: University_Logos.Duke_University,
             skills: "Artificial Intelligence, Python, Machine Learning"
@@ -110,7 +112,7 @@ export default function CoursesCards() {
         },
         {
             id: 14,
-            title: "Cambridge Quantum Computing",
+            title: "Quantum Computing",
             imgSrc: "/Assets/Course/course14.jpg",
             logo: University_Logos.University_of_Cambridge,
             skills: "Quantum Computing, Python, Algorithms"
@@ -124,7 +126,7 @@ export default function CoursesCards() {
         },
         {
             id: 16,
-            title: "Google Cloud Machine Learning",
+            title: "Google Cloud ML",
             imgSrc: "/Assets/Course/course16.jpg",
             logo: University_Logos.Google,
             skills: "Machine Learning, Google Cloud, Python"
@@ -145,7 +147,7 @@ export default function CoursesCards() {
         },
         {
             id: 19,
-            title: "Duke University Financial Engineering",
+            title: "Financial Engineering",
             imgSrc: "/Assets/Course/course19.jpg",
             logo: University_Logos.Duke_University,
             skills: "Financial Engineering, Risk Management, MATLAB"
@@ -159,7 +161,7 @@ export default function CoursesCards() {
         },
         {
             id: 21,
-            title: "Cambridge Advanced Data Analysis",
+            title: "Advanced Data Analysis",
             imgSrc: "/Assets/Course/course21.jpg",
             logo: University_Logos.University_of_Cambridge,
             skills: "Advanced Data Analysis, R, Python"
@@ -173,7 +175,7 @@ export default function CoursesCards() {
         },
         {
             id: 23,
-            title: "Google Mobile App Development",
+            title: "Google Mobile Dev",
             imgSrc: "/Assets/Course/course23.jpg",
             logo: University_Logos.Google,
             skills: "Android Development, Kotlin, Java"
@@ -201,14 +203,14 @@ export default function CoursesCards() {
         },
         {
             id: 27,
-            title: "Stanford Data Structures & Algorithms",
+            title: "Data Structures & Algorithms",
             imgSrc: "/Assets/Course/course27.jpg",
             logo: University_Logos.Stanford_University,
             skills: "Data Structures, Algorithms, Problem Solving"
         },
         {
             id: 28,
-            title: "Cambridge Natural Language Processing",
+            title: "Natural Language Processing",
             imgSrc: "/Assets/Course/course28.jpg",
             logo: University_Logos.University_of_Cambridge,
             skills: "Natural Language Processing, Machine Learning, Python"
@@ -222,7 +224,7 @@ export default function CoursesCards() {
         },
         {
             id: 30,
-            title: "Google Cloud DevOps Engineer",
+            title: "Google Cloud DevOps",
             imgSrc: "/Assets/Course/course30.jpg",
             logo: University_Logos.Google,
             skills: "DevOps, Google Cloud, Kubernetes"
@@ -250,15 +252,15 @@ export default function CoursesCards() {
                                     <h5 className="card-title mb-0" style={{ color: 'Black' }}>{course.title}</h5>
                                      {/* New content addition */}
                                      <p className="card-text" style={{ color: '#636363' }}>
-                                        <b style={{ color: 'black', fontWeight: '600' }}>Skills you'll gain:</b> {course.skills}
+                                        <b style={{ color: 'black', fontWeight: '600' }}>Skills you'll gain:</b>
                                     </p>
                                     <div className="mt-auto">
                                         <p className="card-text mb-0" style={{ color: '#210BE3' }}>
-                                            Make progress toward a degree
+                                        Advance your degree journey
                                         </p>
-                                        <p className="card-text mb-0" style={{ color: '#636363' }}><b>4.8 </b>(10K reviews)</p>
+                                        <p className="card-text mb-0 bi bi-star-fill" style={{ color: '#636363' }}>&nbsp;&nbsp;<b>{course.rating}</b>{course.reviews}</p>
                                         <p className="card-text mb-0" style={{ color: '#636363' }}>
-                                        Beginner · Professional Certificate · 3 - 6 Months
+                                        Beginner · Career Certificate · 3-6 Months
                                         </p>
                                     </div>
                                 </div>
@@ -292,6 +294,7 @@ export default function CoursesCards() {
                    height: 200px; /* Set a fixed height for the image */
                     width: 100%; /* Make sure the image takes up the full width */
                     object-fit: cover; /* Ensures the image covers the area without stretching */
+                    border-radius: 7px;
                 }
                 .course-logos {
                     display: flex;University_Logos;
@@ -304,12 +307,12 @@ export default function CoursesCards() {
                     margin-right: 8px;
                 }
                 .card-title {
-                    min-height: 60px; /* Set a minimum height for the title */
+                    min-height: 30px; /* Set a minimum height for the title */
                     font-size: 16px;
                     font-weight: 600;
                 }
                 .card-text {
-                    font-size: 0.65rem; /* Slightly larger for readability */
+                    font-size: 0.75rem; /* Slightly larger for readability */
                 }
                 .button-container {
                     display: flex;
@@ -326,9 +329,7 @@ export default function CoursesCards() {
                     .container h3 {
                         font-size: 30px; /* Decrease font size */
                     }
-                    .card {
-                        margin-bottom: 15px;
-                    }
+                    
             `}</style>
         </div>
     );
