@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function SignUp({ onClose }) {
@@ -82,10 +82,10 @@ export default function SignUp({ onClose }) {
                   </div>
                 </div>
                 <button type="submit" className="btn btn-primary w-100">Sign Up</button>
-                {/* <div className="mt-3 text-center">
-                Already have an account? 
-                <Link to="/login" className="text-primary" >Log In</Link>
-              </div> */}
+                <div className="mt-3 text-center">
+                Already on Skill Set? 
+                <Link to="/login" className="text-primary" >&nbsp;Log In</Link>
+              </div>
               </form>
             </div>
           </div>

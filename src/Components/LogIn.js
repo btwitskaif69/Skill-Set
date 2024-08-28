@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function LogIn({ onClose }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -52,10 +52,10 @@ export default function LogIn({ onClose }) {
                   </div>
                 </div>
                 <button type="submit" className="btn btn-primary w-100">Log In</button>
-                {/* <div className="mt-3 text-center">
-                Already have an account? 
-                <Link to="/login" className="text-primary" >Log In</Link>
-              </div> */}
+                <div className="mt-3 text-center">
+                Don’t have an account?
+                <Link to="/Signup" className="text-primary" >&nbsp;Sign Up</Link>
+              </div>
               </form>
             </div>
           </div>
