@@ -42,32 +42,72 @@ export default function CoursesPage() {
                 </div>
             </div>
 
-            {/* Course Features & Degree Credit Section */}
-<div className="row mt-5 d-flex align-items-center shadow-lg rounded-3">
-    <div className="col-lg-2 col-md-4 col-sm-12 mb-3">
-        <h5 className="fw-bold">9 course series</h5>
-        <p className="text-muted fs-7">Earn a career credential that demonstrates your expertise</p>
-    </div>
-    <div className="col-lg-2 col-md-4 col-sm-12 mb-3">
-        <h5 className="fw-bold">
-            <i className="bi bi-star-fill text-warning"></i> 4.7
-        </h5>
-        <p className="text-muted">(16,680 reviews)</p>
-    </div>
-    <div className="col-lg-2 col-md-4 col-sm-12 mb-3">
-        <h5 className="fw-bold">Beginner level</h5>
-        <p className="text-muted">No prior experience required</p>
-    </div>
-    <div className="col-lg-3 col-md-4 col-sm-12 mb-3">
-        <h5 className="fw-bold">Flexible schedule</h5>
-        <p className="text-muted">7 months, 6 hours a week. Learn at your own pace</p>
-    </div>
-    <div className="col-lg-3 col-md-4 col-sm-12 mb-3">
-        <h5 className="fw-bold">Earn degree credit</h5>
-        <a href="/" className="text-muted">Learn more</a>
-    </div>
-</div>
+           {/* Course Features & Degree Credit Section */}
+            <div className="row mt-5 shadow-lg rounded-3 p-3 mb-5">
+                <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end">
+                    <h5 className="fw-bold fs-6">9 course series</h5>
+                    <p className="text-muted" style={{ fontSize: '12.5px' }}>Earn a career credential that demonstrates your expertise</p>
+                </div>
+                <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end">
+                    <h5 className="fw-bold">
+                        <i className="bi bi-star-fill fs-6" style={{color: '#0056b3'}}></i> 4.7
+                    </h5>
+                    <p className="text-muted" style={{ fontSize: '12.5px' }}>(16,680 reviews)</p>
+                </div>
+                <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end">
+                    <h5 className="fw-bold fs-6">Beginner level</h5>
+                    <p className="text-muted" style={{ fontSize: '12.5px' }}>No prior experience required</p>
+                </div>
+                <div className="col-lg-3 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end">
+                    <h5 className="fw-bold fs-6">Flexible schedule</h5>
+                    <p className="text-muted" style={{ fontSize: '12.5px' }}>7 months, 6 hours a week. Learn at your own pace</p>
+                </div>
+                <div className="col-lg-3 col-md-4 col-sm-12 d-flex flex-column justify-content-center">
+                    <h5 className="fw-bold fs-6 ">Earn degree credit</h5>
+                    <a href="/" className="text-muted" style={{ fontSize: '12.5px' }}>Learn more</a>
+                </div>
+            </div>
 
+
+            {/* Accordion */}
+            <div className="accordion" id="accordionPanelsStayOpenExample">
+            <div className="accordion-item">
+                <h2 className="accordion-header">
+                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Accordion Item #1
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
+                <div className="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+                </div>
+            </div>
+            <div className="accordion-item">
+                <h2 className="accordion-header">
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Accordion Item #2
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse">
+                <div className="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+                </div>
+            </div>
+            <div className="accordion-item">
+                <h2 className="accordion-header">
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Accordion Item #3
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse">
+                <div className="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
     );
 }
