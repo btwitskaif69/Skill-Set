@@ -42,35 +42,32 @@ export default function CoursesPage() {
                 </div>
             </div>
 
-            {/* Course Features Section */}
-            <div className="row mt-5">
-                <div className="col-md-3">
-                    <h5 className="fw-bold">9 course series</h5>
-                    <p className="text-muted">Earn a career credential that demonstrates your expertise</p>
-                </div>
-                <div className="col-md-3">
-                    <h5 className="fw-bold">
-                        <i className="bi bi-star-fill text-warning"></i> 4.7
-                    </h5>
-                    <p className="text-muted">(16,680 reviews)</p>
-                </div>
-                <div className="col-md-3">
-                    <h5 className="fw-bold">Beginner level</h5>
-                                        <p className="text-muted">No prior experience required</p>
-                </div>
-                <div className="col-md-3">
-                    <h5 className="fw-bold">Flexible schedule</h5>
-                    <p className="text-muted">7 months, 6 hours a week. Learn at your own pace</p>
-                </div>
-            </div>
+            {/* Course Features & Degree Credit Section */}
+<div className="row mt-5 d-flex align-items-center shadow-lg rounded-3">
+    <div className="col-lg-2 col-md-4 col-sm-12 mb-3">
+        <h5 className="fw-bold">9 course series</h5>
+        <p className="text-muted fs-7">Earn a career credential that demonstrates your expertise</p>
+    </div>
+    <div className="col-lg-2 col-md-4 col-sm-12 mb-3">
+        <h5 className="fw-bold">
+            <i className="bi bi-star-fill text-warning"></i> 4.7
+        </h5>
+        <p className="text-muted">(16,680 reviews)</p>
+    </div>
+    <div className="col-lg-2 col-md-4 col-sm-12 mb-3">
+        <h5 className="fw-bold">Beginner level</h5>
+        <p className="text-muted">No prior experience required</p>
+    </div>
+    <div className="col-lg-3 col-md-4 col-sm-12 mb-3">
+        <h5 className="fw-bold">Flexible schedule</h5>
+        <p className="text-muted">7 months, 6 hours a week. Learn at your own pace</p>
+    </div>
+    <div className="col-lg-3 col-md-4 col-sm-12 mb-3">
+        <h5 className="fw-bold">Earn degree credit</h5>
+        <a href="/" className="text-muted">Learn more</a>
+    </div>
+</div>
 
-            {/* Degree Credit Section */}
-            <div className="row mt-4">
-                <div className="col-md-12">
-                    <h5 className="fw-bold">Earn degree credit</h5>
-                    <a href="/" className="text-muted">Learn more</a>
-                </div>
-            </div>
         </div>
     );
 }
