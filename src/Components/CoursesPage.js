@@ -19,8 +19,8 @@ export default function CoursesPage() {
             <div className="row" style={{}} >
                 {/* Left Column: Meta Logo and Course Information */}
                 <div className="col-md-9">
-                    <img src={University_Logos.Meta} alt="Meta Logo" style={{ width: "200px" }} className="mb-4"/>
-                    <h1 className="mb-1 display-4 fw-medium">Meta Front-End Developer Professional Certificate</h1>
+                    <img src={University_Logos.Meta} alt="Meta Logo" style={{ width: "150px" }} className="mb-3"/>
+                    <h1 className="mb-1 display-4 fw-semibold">Meta Front-End Developer Professional Certificate</h1>
                     <p className="mb-2 fs-6">
                         Launch your career as a front-end developer. Build job-ready skills for an in-demand career and earn a credential from Meta. No degree or prior experience required to get started.
                     </p>
@@ -38,7 +38,7 @@ export default function CoursesPage() {
             </div>
 
            {/* Course Features & Degree Credit Section */}
-            <div className="row mt-5 shadow-lg rounded-3 p-3 mb-5">
+            <div className="row mt-5 shadow rounded-3 p-3 mb-5">
                 <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end">
                     <h5 className="fw-bold fs-6">9 course series</h5>
                     <p className="text-muted" style={{ fontSize: '12.5px' }}>Earn a career credential that demonstrates your expertise</p>
