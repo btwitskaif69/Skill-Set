@@ -16,28 +16,23 @@ export default function CoursesPage() {
 
     return (
         <div className="container my-5">
-            <div className="row">
+            <div className="row" style={{}} >
                 {/* Left Column: Meta Logo and Course Information */}
-                <div className="col-md-8">
-                    <img
-                        src={University_Logos.Meta}
-                        alt="Meta Logo"
-                        style={{ width: "80px" }}
-                        className="mb-3"
-                    />
-                    <h1 className="mt-4">Meta Front-End Developer Professional Certificate</h1>
-                    <p className="lead mt-3">
+                <div className="col-md-9">
+                    <img src={University_Logos.Meta} alt="Meta Logo" style={{ width: "200px" }} className="mb-4"/>
+                    <h1 className="mb-1 display-4 fw-medium">Meta Front-End Developer Professional Certificate</h1>
+                    <p className="mb-2 fs-6">
                         Launch your career as a front-end developer. Build job-ready skills for an in-demand career and earn a credential from Meta. No degree or prior experience required to get started.
                     </p>
                     <p className="text-muted">
                         Instructor: <a href="/">Taught by Meta Staff</a>
                     </p>
-                    <button className="btn btn-primary btn-lg mt-3">Enroll for Free</button>
+                    <button className="btn btn-primary btn-xxlg mt-3">Enroll for Free</button>
                     <p className="mt-3">
                         <strong>304,498</strong> already enrolled
                     </p>
                     <p className="text-muted">
-                        Included with <a href="/">Coursera Plus</a> • <a href="/">Learn more</a>
+                        Included with <a href="/">Skill Set</a> • <a href="/">Learn more</a>
                     </p>
                 </div>
             </div>
