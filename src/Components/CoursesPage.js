@@ -119,15 +119,8 @@ export default function CoursesPage() {
             </li>
           </ul>
         </nav>
-        <div
-          data-bs-spy="scroll"
-          data-bs-target="#navbar-example2"
-          data-bs-root-margin="0px 0px -40%"
-          data-bs-smooth-scroll="true"
-          className="scrollspy-example bg-body-tertiary p-3 rounded-2"
-          tabIndex="0"
-        >
-          <h4 id="scrollspyHeading1">First heading</h4>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example bg-body-tertiary p-3 rounded-2" tabIndex="0">
+          <h4 id="scrollspyHeading1">What you'll learn</h4>
           <div className="row shadow-sm rounded-3 p-4 border">
             <div className="col-lg-6 col-md-6 col-sm-12">
               <ul className="list-unstyled">
@@ -164,67 +157,16 @@ export default function CoursesPage() {
               </h4>
               <div className="d-flex justify-content-center flex-wrap mt-3">
                 {/* Add company logos here */}
-                <img
-                  src={University_Logos.Aws}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2  mx-3"
-                />
-                <img
-                  src={University_Logos.Duke_University}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2   mx-3"
-                />
-                <img
-                  src={University_Logos.Google}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2   mx-3"
-                />
-                <img
-                  src={University_Logos.IBM}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2   mx-3"
-                />
-                <img
-                  src={University_Logos.Meta}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2   mx-3"
-                />
-                <img
-                  src={University_Logos.Stanford_University}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2   mx-3"
-                />
-                <img
-                  src={University_Logos.University_of_Cambridge}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2   mx-3"
-                />
-                <img
-                  src={University_Logos.University_of_Michigan}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2   mx-3"
-                />
-                <img
-                  src={University_Logos.University_of_Oxford}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2   mx-3"
-                />
-                <img
-                  src={University_Logos.University_of_Pennsylvania}
-                  style={{ height: "30px" }}
-                  alt="Company 1"
-                  className="m-2   mx-3"
-                />
-                {/* Add more logos as needed */}
+                <img src={University_Logos.Aws} style={{ height: "30px" }} alt="Company 1" className="m-2  mx-3"/>
+                <img src={University_Logos.Duke_University} style={{ height: "30px" }} alt="Company 1" className="m-2   mx-3"/>
+                <img src={University_Logos.Google} style={{ height: "30px" }} alt="Company 1" className="m-2   mx-3"/>
+                <img src={University_Logos.IBM} style={{ height: "30px" }} alt="Company 1" className="m-2   mx-3"/>
+                <img src={University_Logos.Meta} style={{ height: "30px" }} alt="Company 1" className="m-2   mx-3"/>
+                <img src={University_Logos.Stanford_University} style={{ height: "30px" }} alt="Company 1" className="m-2   mx-3"/>
+                <img src={University_Logos.University_of_Cambridge} style={{ height: "30px" }} alt="Company 1" className="m-2   mx-3"/>
+                <img src={University_Logos.University_of_Michigan} style={{ height: "30px" }} alt="Company 1" className="m-2   mx-3"/>
+                <img src={University_Logos.University_of_Oxford} style={{ height: "30px" }} alt="Company 1" className="m-2   mx-3"/>
+                <img src={University_Logos.University_of_Pennsylvania} style={{ height: "30px" }} alt="Company 1" className="m-2   mx-3"/>
               </div>
             </div>
           </section>
@@ -232,36 +174,11 @@ export default function CoursesPage() {
           <section id="skills" className="my-4">
             <h4>Knowledge You'll Gain</h4>
             <div className="d-flex flex-wrap">
-              <span
-                className="badge m-1"
-                style={{ backgroundColor: "#210BE3" }}
-              >
-                HTML
-              </span>
-              <span
-                className="badge m-1"
-                style={{ backgroundColor: "#210BE3" }}
-              >
-                UX design
-              </span>
-              <span
-                className="badge m-1"
-                style={{ backgroundColor: "#210BE3" }}
-              >
-                JavaScript
-              </span>
-              <span
-                className="badge m-1"
-                style={{ backgroundColor: "#210BE3" }}
-              >
-                CSS
-              </span>
-              <span
-                className="badge m-1"
-                style={{ backgroundColor: "#210BE3" }}
-              >
-                React
-              </span>
+              <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>HTML</span>
+              <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>UX design</span>
+              <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>JavaScript</span>
+              <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>CSS</span>
+              <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>React</span>
             </div>
           </section>
 
@@ -292,18 +209,10 @@ export default function CoursesPage() {
                 </div>
                 <div className="col-lg-4 col-md-12">
                   <div className="card">
-                    <img
-                      src="/path/to/image.jpg"
-                      className="card-img-top"
-                      alt="Career"
-                    />
+                    <img src="/path/to/image.jpg" className="card-img-top" alt="Career"/>
                     <div className="card-body">
-                      <p className="card-text">
-                        $130,000+ median U.S. salary for Front-end Development
-                      </p>
-                      <p className="card-text">
-                        29,000+ U.S. job openings in Front-end Development
-                      </p>
+                    <p className="card-text">$130,000+ median U.S. salary for Front-end Development</p>
+                    <p className="card-text">29,000+ U.S. job openings in Front-end Development</p>
                     </div>
                   </div>
                 </div>
@@ -312,81 +221,85 @@ export default function CoursesPage() {
           </p>
 
           <div className="display-6 fw-medium" id="scrollspyHeading3">
-            Professional Certificate - 9 course series
-          </div>
-          <p>
-            Looking to kickstart a career in coding and web development? This
-            certificate, created by software engineering experts at Meta—the
-            minds behind Facebook and Instagram—will set you on the path to
-            becoming a front-end developer.
-          </p>
-          <p>In this program, you will master:</p>
-          <ul>
-            <li>
-              The basics of coding and crafting interactive web pages with
-              HTML5, CSS, and JavaScript.
-            </li>
-            <li>
-              Essential design techniques to build professional-grade layouts
-              using popular tools like Bootstrap, React, and Figma.
-            </li>
-            <li>
-              How to manage code with GitHub, work with content management
-              systems (CMS), and enhance images using Figma.
-            </li>
-            <li>
-              Tips and strategies to excel in technical interviews for front-end
-              developer positions.
-            </li>
-          </ul>
+  Professional Certificate - 9 course series
+</div>
+<p>
+  Looking to kickstart a career in coding and web development? This certificate,
+  created by software engineering experts at Meta—the minds behind Facebook and
+  Instagram—will set you on the path to becoming a front-end developer.
+</p>
+<p>In this program, you will master:</p>
+<ul>
+  <li>
+    The basics of coding and crafting interactive web pages with HTML5, CSS,
+    and JavaScript.
+  </li>
+  <li>
+    Essential design techniques to build professional-grade layouts using
+    popular tools like Bootstrap, React, and Figma.
+  </li>
+  <li>
+    How to manage code with GitHub, work with content management systems (CMS),
+    and enhance images using Figma.
+  </li>
+  <li>
+    Tips and strategies to excel in technical interviews for front-end
+    developer positions.
+  </li>
+</ul>
 
-          {isExpanded && (
-            <>
-              <p>
-                By the program’s conclusion, you’ll apply your skills in a
-                real-world project, where you’ll develop a front-end web
-                application from scratch. Please note, third-party trademarks,
-                logos, and intellectual property referenced remain the property
-                of their respective owners, and Coursera’s mention of them does
-                not imply any affiliation or endorsement.
-              </p>
+<div
+  style={{maxHeight: isExpanded ? '1000px' : '0', overflow: 'hidden', transition: 'max-height 1s ease-in-out, opacity 1s ease', opacity: isExpanded ? '1' : '0'}}>
+  {isExpanded && (
+    <>
+      <p>
+        By the program’s conclusion, you’ll apply your skills in a real-world
+        project, where you’ll develop a front-end web application from scratch.
+        Please note, third-party trademarks, logos, and intellectual property
+        referenced remain the property of their respective owners, and
+        Coursera’s mention of them does not imply any affiliation or
+        endorsement.
+      </p>
 
-              <h5>Practical Learning Experience</h5>
-              <p>
-                This program offers hands-on learning, allowing you to directly
-                apply the skills you acquire. Each course concludes with a
-                project to ensure you have fully grasped the concepts before
-                moving forward. Across 9 projects, you’ll work on tasks such as:
-              </p>
-              <ul>
-                <li>
-                  Updating your personal Bio page, utilizing your knowledge of
-                  HTML5, CSS, and UI frameworks.
-                </li>
-                <li>
-                  Managing a project on GitHub, employing version control
-                  through Git repositories and the Linux Terminal.
-                </li>
-                <li>
-                  Building a static version of an application, applying concepts
-                  of React, frameworks, hooks, routing, and bundlers.
-                </li>
-              </ul>
-              <p>
-                Finally, you’ll complete a Capstone project, bringing all of
-                your newfound skills together to create a fully functioning
-                front-end web application.
-              </p>
-            </>
-          )}
+      <h5>Practical Learning Experience</h5>
+      <p>
+        This program offers hands-on learning, allowing you to directly apply the
+        skills you acquire. Each course concludes with a project to ensure you
+        have fully grasped the concepts before moving forward. Across 9 projects,
+        you’ll work on tasks such as:
+      </p>
+      <ul>
+        <li>
+          Updating your personal Bio page, utilizing your knowledge of HTML5,
+          CSS, and UI frameworks.
+        </li>
+        <li>
+          Managing a project on GitHub, employing version control through Git
+          repositories and the Linux Terminal.
+        </li>
+        <li>
+          Building a static version of an application, applying concepts of
+          React, frameworks, hooks, routing, and bundlers.
+        </li>
+      </ul>
+      <p>
+        Finally, you’ll complete a Capstone project, bringing all of your
+        newfound skills together to create a fully functioning front-end web
+        application.
+      </p>
+    </>
+  )}
+</div>
 
-          <button
-            className="btn btn-primary mb-4"
-            onClick={toggleReadMore}
-            style={{ backgroundColor: "#210BE3" }}
-          >
-            {isExpanded ? "Read Less" : "Read More"}
-          </button>
+<button
+  className="btn btn-primary mb-4"
+  onClick={toggleReadMore}
+  style={{ backgroundColor: "#210BE3" }}
+>
+  {isExpanded ? "Read Less" : "Read More"}
+</button>
+
+
 
           {/* Accordion Item #1 */}
           <div>
@@ -399,9 +312,9 @@ export default function CoursesPage() {
                 <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
                   <div className="accordion-body" style={{ paddingLeft: "20px" }}>
                     <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                      <li className="bi bi-check-lg">&nbsp;Distinguish between front-end, back-end, and full-stack developers.</li>
-                      <li className="bi bi-check-lg">&nbsp;Create and style a webpage with HTML and CSS.</li>
-                      <li className="bi bi-check-lg">&nbsp;The benefits of working with UI frameworks.</li>
+                      <li className="bi bi-check-lg mb-1">&nbsp;Distinguish between front-end, back-end, and full-stack developers.</li>
+                      <li className="bi bi-check-lg mb-1">&nbsp;Create and style a webpage with HTML and CSS.</li>
+                      <li className="bi bi-check-lg mb-1">&nbsp;The benefits of working with UI frameworks.</li>
                     </ul>
                     <h6>Knowledge You'll Gain</h6>
                     <div className="skills-tags">
@@ -427,9 +340,9 @@ export default function CoursesPage() {
                   <div className="accordion-body" style={{ paddingLeft: "20px" }}
                   >
                     <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                      <li className="bi bi-check-lg">&nbsp;Distinguish between front-end, back-end, andfull-stack developers.</li>
-                      <li className="bi bi-check-lg">&nbsp;Create and style a webpage with HTML and CSS.</li>
-                      <li className="bi bi-check-lg">&nbsp;The benefits of working with UI frameworks.</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;Distinguish between front-end, back-end, andfull-stack developers.</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;Create and style a webpage with HTML and CSS.</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;The benefits of working with UI frameworks.</li>
                     </ul>
                     <h6>Knowledge You'll Gain</h6>
                     <div className="skills-tags">
@@ -447,7 +360,7 @@ export default function CoursesPage() {
               <div className="accordion-item">
                 <h2 className="accordion-header">
                   <button className="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" style={{ backgroundColor: "transparent", boxShadow: "none",}}>
-                    Programming with JavaScript
+                  Version Control
                   </button>
                 </h2>
                 <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse"
@@ -455,17 +368,17 @@ export default function CoursesPage() {
                   <div className="accordion-body" style={{ paddingLeft: "20px" }}
                   >
                     <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                      <li className="bi bi-check-lg">&nbsp;Distinguish between front-end, back-end, andfull-stack developers.</li>
-                      <li className="bi bi-check-lg">&nbsp;Create and style a webpage with HTML and CSS.</li>
-                      <li className="bi bi-check-lg">&nbsp;The benefits of working with UI frameworks.</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;Implement Version Control systems.</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;Navigate and configure using the command line</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;Use a GitHub repository. Create a GitHub repository</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;Manage code revisions</li>
                     </ul>
                     <h6>Knowledge You'll Gain</h6>
                     <div className="skills-tags">
-                      <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>Version Control</span>
-                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>GitHub</span>
-                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Bash (Unix Shell)</span>
-                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Web Development</span>
-                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Linux</span>
+                    <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>React (Web Framework)</span>
+                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Application Development</span>
+                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Web Application</span>
+                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Front-End Web Development</span>
                     </div>
                   </div>
                 </div>
@@ -475,7 +388,7 @@ export default function CoursesPage() {
               <div className="accordion-item">
                 <h2 className="accordion-header">
                   <button className="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour" style={{ backgroundColor: "transparent", boxShadow: "none",}}>
-                    Programming with JavaScript
+                  HTML and CSS in Depth
                   </button>
                 </h2>
                 <div id="panelsStayOpen-collapseFour" className="accordion-collapse collapse"
@@ -483,17 +396,18 @@ export default function CoursesPage() {
                   <div className="accordion-body" style={{ paddingLeft: "20px" }}
                   >
                     <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                      <li className="bi bi-check-lg">&nbsp;Distinguish between front-end, back-end, andfull-stack developers.</li>
-                      <li className="bi bi-check-lg">&nbsp;Create and style a webpage with HTML and CSS.</li>
-                      <li className="bi bi-check-lg">&nbsp;The benefits of working with UI frameworks.</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;Create a simple form with a responsive layout using HTML5 and CSS.</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;Create a responsive layout using CSS .</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;Create a UI using Bootstraps.</li>
+                      <li className="bi bi-check-lg  mb-1">&nbsp;CImplement debugging tools.</li>
                     </ul>
                     <h6>Knowledge You'll Gain</h6>
                     <div className="skills-tags">
-                      <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>Version Control</span>
-                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>GitHub</span>
-                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Bash (Unix Shell)</span>
-                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Web Development</span>
-                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Linux</span>
+                      <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>Data Structure</span>
+                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Computer Science</span>
+                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Algorithms</span>
+                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Communication</span>
+                      <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Pseudocode</span>
                     </div>
                   </div>
                 </div>
