@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function CoursesPage() {
     const University_Logos = {
@@ -12,6 +12,12 @@ export default function CoursesPage() {
         University_of_Michigan: '/Assets/University_Logos/University_of_Michigan.svg',
         University_of_Oxford: '/Assets/University_Logos/University_of_Oxford.svg',
         University_of_Pennsylvania: '/Assets/University_Logos/University_of_Pennsylvania.svg',
+    };
+
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleReadMore = () => {
+        setIsExpanded(!isExpanded);
     };
 
     return (
@@ -63,7 +69,8 @@ export default function CoursesPage() {
                 </div>
             </div>
 
-{/* Scrollspy Navigation
+
+
 <nav id="navbar-example2" className="navbar bg-body-tertiary px-3 mb-3">
     <ul className="nav nav-pills">
         <li className="nav-item">
@@ -79,13 +86,10 @@ export default function CoursesPage() {
             <a className="nav-link" href="#scrollspyHeading4">Testimonials</a>
         </li>
     </ul>
-</nav> */}
-
-{/* Scrollspy Content
+</nav>
 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example bg-body-tertiary p-3 rounded-2" tabIndex="0">
-    <h4 id="scrollspyHeading1">What you'll learn</h4>
+    <h4 id="scrollspyHeading1">First heading</h4>
     <div className="row shadow-sm rounded-3 p-4 border">
-        <h5 className="fw-bold mb-4">What you'll learn</h5>
         <div className="col-lg-6 col-md-6 col-sm-12">
           <ul className="list-unstyled">
             <li><i className="bi bi-check-circle-fill text-success"></i> Create a responsive website using HTML, CSS, and JavaScript.</li>
@@ -99,16 +103,111 @@ export default function CoursesPage() {
           </ul>
         </div>
     </div>
-</div> */}
+
+
+    <section id="companies" className="my-4">
+      <div className="p-4 border rounded-3 text-center bg-light">
+        <h4>Find out how experts at major firms are acquiring sought-after skills</h4>
+        <div className="d-flex justify-content-center flex-wrap mt-3">
+          {/* Add company logos here */}
+          <img src={University_Logos.Aws} style={{height: '30px'}}  alt="Company 1" className="m-2  mx-3" />
+          <img src={University_Logos.Duke_University} style={{height: '30px'}}  alt="Company 1" className="m-2   mx-3" />
+          <img src={University_Logos.Google} style={{height: '30px'}}  alt="Company 1" className="m-2   mx-3" />
+          <img src={University_Logos.IBM} style={{height: '30px'}}  alt="Company 1" className="m-2   mx-3" />
+          <img src={University_Logos.Meta} style={{height: '30px'}}  alt="Company 1" className="m-2   mx-3" />
+          <img src={University_Logos.Stanford_University} style={{height: '30px'}}  alt="Company 1" className="m-2   mx-3" />
+          <img src={University_Logos.University_of_Cambridge} style={{height: '30px'}}  alt="Company 1" className="m-2   mx-3" />
+          <img src={University_Logos.University_of_Michigan} style={{height: '30px'}}  alt="Company 1" className="m-2   mx-3" />
+          <img src={University_Logos.University_of_Oxford} style={{height: '30px'}}  alt="Company 1" className="m-2   mx-3" />
+          <img src={University_Logos.University_of_Pennsylvania} style={{height: '30px'}}  alt="Company 1" className="m-2   mx-3" />
+          {/* Add more logos as needed */}
+        </div>
+      </div>
+    </section>
 
 
 
-            Accordion
-            <div className="accordion" id="accordionPanelsStayOpenExample">
+    <section id="skills" className="my-4">
+      <h4>Knowledge You'll Gain</h4>
+      <div className="d-flex flex-wrap">
+        <span className="badge m-1" style={{backgroundColor: '#210BE3'}}>HTML</span>
+        <span className="badge m-1" style={{backgroundColor: '#210BE3'}}>UX design</span>
+        <span className="badge m-1" style={{backgroundColor: '#210BE3'}}>JavaScript</span>
+        <span className="badge m-1" style={{backgroundColor: '#210BE3'}}>CSS</span>
+        <span className="badge m-1" style={{backgroundColor: '#210BE3'}}>React</span>
+      </div>
+    </section>
+
+    <h4 id="scrollspyHeading2">Second heading</h4>
+  <p>
+  <section id="career" className="my-4">
+      <h4>Prepare for a career in Front-end Development</h4>
+      <div className="row">
+        <div className="col-lg-8 col-md-12">
+          <ul className="list-unstyled">
+            <li><i className="bi bi-check-circle-fill text-success"></i> Receive professional-level training from Meta</li>
+            <li><i className="bi bi-check-circle-fill text-success"></i> Demonstrate your proficiency in portfolio-ready projects</li>
+            <li><i className="bi bi-check-circle-fill text-success"></i> Earn an employee-recognized certificate from Meta</li>
+            <li><i className="bi bi-check-circle-fill text-success"></i> Qualify for in-demand job titles</li>
+          </ul>
+        </div>
+        <div className="col-lg-4 col-md-12">
+          <div className="card">
+            <img src="/path/to/image.jpg" className="card-img-top" alt="Career" />
+            <div className="card-body">
+              <p className="card-text">$130,000+ median U.S. salary for Front-end Development</p>
+              <p className="card-text">29,000+ U.S. job openings in Front-end Development</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </p>
+
+
+  <div className="display-6 fw-medium" id="scrollspyHeading3">Professional Certificate - 9 course series</div>
+  <p>
+                Looking to kickstart a career in coding and web development? This certificate, created by software engineering experts at Meta—the minds behind Facebook and Instagram—will set you on the path to becoming a front-end developer.
+            </p>
+            <p>In this program, you will master:</p>
+            <ul>
+                <li>The basics of coding and crafting interactive web pages with HTML5, CSS, and JavaScript.</li>
+                <li>Essential design techniques to build professional-grade layouts using popular tools like Bootstrap, React, and Figma.</li>
+                <li>How to manage code with GitHub, work with content management systems (CMS), and enhance images using Figma.</li>
+                <li>Tips and strategies to excel in technical interviews for front-end developer positions.</li>
+            </ul>
+
+            {isExpanded && (
+                <>
+                    <p>
+                        By the program’s conclusion, you’ll apply your skills in a real-world project, where you’ll develop a front-end web application from scratch. Please note, third-party trademarks, logos, and intellectual property referenced remain the property of their respective owners, and Coursera’s mention of them does not imply any affiliation or endorsement.
+                    </p>
+
+                    <h5>Practical Learning Experience</h5>
+                    <p>
+                        This program offers hands-on learning, allowing you to directly apply the skills you acquire. Each course concludes with a project to ensure you have fully grasped the concepts before moving forward. Across 9 projects, you’ll work on tasks such as:
+                    </p>
+                    <ul>
+                        <li>Updating your personal Bio page, utilizing your knowledge of HTML5, CSS, and UI frameworks.</li>
+                        <li>Managing a project on GitHub, employing version control through Git repositories and the Linux Terminal.</li>
+                        <li>Building a static version of an application, applying concepts of React, frameworks, hooks, routing, and bundlers.</li>
+                    </ul>
+                    <p>
+                        Finally, you’ll complete a Capstone project, bringing all of your newfound skills together to create a fully functioning front-end web application.
+                    </p>
+                </>
+            )}
+
+            <button className="btn btn-primary mb-4" onClick={toggleReadMore}>
+                {isExpanded ? 'Read Less' : 'Read More'}
+            </button>
+  <div>
+
+  <div className="accordion" id="accordionPanelsStayOpenExample">
             <div className="accordion-item">
                 <h2 className="accordion-header">
                 <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                    Accordion Item #1
+                Introduction to Front-End Development
                 </button>
                 </h2>
                 <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
@@ -142,6 +241,15 @@ export default function CoursesPage() {
                 </div>
             </div>
             </div>
+  </div>
+</div>
+
+
+
+
+
+
+            
 
 
 
@@ -156,50 +264,8 @@ export default function CoursesPage() {
     </section>
 
 
-    <section id="career" className="my-4">
-      <h4>Prepare for a career in Front-end Development</h4>
-      <div className="row">
-        <div className="col-lg-8 col-md-12">
-          <ul className="list-unstyled">
-            <li><i className="bi bi-check-circle-fill text-success"></i> Receive professional-level training from Meta</li>
-            <li><i className="bi bi-check-circle-fill text-success"></i> Demonstrate your proficiency in portfolio-ready projects</li>
-            <li><i className="bi bi-check-circle-fill text-success"></i> Earn an employee-recognized certificate from Meta</li>
-            <li><i className="bi bi-check-circle-fill text-success"></i> Qualify for in-demand job titles</li>
-          </ul>
-        </div>
-        <div className="col-lg-4 col-md-12">
-          <div className="card">
-            <img src="/path/to/image.jpg" className="card-img-top" alt="Career" />
-            <div className="card-body">
-              <p className="card-text">$130,000+ median U.S. salary for Front-end Development</p>
-              <p className="card-text">29,000+ U.S. job openings in Front-end Development</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
-
-
-    <section id="companies" className="my-4">
-      <div className="p-4 border rounded-3 text-center bg-light">
-        <h4>See how employees at top companies are mastering in-demand skills</h4>
-        <div className="d-flex justify-content-center flex-wrap mt-3">
-          {/* Add company logos here */}
-          <img src={University_Logos.Aws} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Duke} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Google} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.IBM} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Stanford_University} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.University_of_Cambridge} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.University_of_Michigan} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.University_of_Oxford} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.University_of_Pennsylvania} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          {/* Add more logos as needed */}
-        </div>
-      </div>
-    </section>
 
 
 
@@ -216,96 +282,8 @@ export default function CoursesPage() {
 
 
 
-    <section id="about" className="my-4">
-      <h4>What you'll learn</h4>
-      <div className="row border rounded-3 p-4">
-        <div className="col-lg-6 col-md-6 col-sm-12">
-          <ul className="list-unstyled">
-            <li><i className="bi bi-check-circle-fill text-success"></i> Create a responsive website using HTML, CSS, and JavaScript.</li>
-            <li><i className="bi bi-check-circle-fill text-success"></i> Learn Bootstrap CSS Framework and work with GitHub.</li>
-          </ul>
-        </div>
-        <div className="col-lg-6 col-md-6 col-sm-12">
-          <ul className="list-unstyled">
-            <li><i className="bi bi-check-circle-fill text-success"></i> Learn to use React with JavaScript libraries.</li>
-            <li><i className="bi bi-check-circle-fill text-success"></i> Prepare for coding interviews and build portfolio-ready projects.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
 
-
-
-
-
-{/* Scrollspy */}
-<nav id="navbar-example2" className="navbar bg-body-tertiary px-3 mb-3">
-                <ul className="nav nav-pills">
-                    <li className="nav-item">
-                    <a className="nav-link" href="#scrollspyHeading1">About</a>
-                    </li>
-                    <li className="nav-item">
-                    <a className="nav-link" href="#scrollspyHeading2">Top Companies partners</a>
-                    </li>
-                    <li className="nav-item">
-                    <a className="nav-link" href="#scrollspyHeading1">Course Content</a>
-                    </li>
-                    <li className="nav-item">
-                    <a className="nav-link" href="#scrollspyHeading2">Second</a>
-                    </li>
-                </ul>
-                </nav>
-                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-                <div id="scrollspyHeading1">
-
-                <div className="col-lg-6 col-md-6 col-sm-12">
-                <ul className="list-unstyled">
-                    <li><i className="bi bi-check-circle-fill text-success"></i> Create a responsive website using HTML, CSS, and JavaScript.</li>
-                    <li><i className="bi bi-check-circle-fill text-success"></i> Learn Bootstrap CSS Framework and work with GitHub.</li>
-                </ul>
-                </div>
-
-                <div className="col-lg-6 col-md-6 col-sm-12">
-                <ul className="list-unstyled">
-                    <li><i className="bi bi-check-circle-fill text-success"></i> Learn to use React with JavaScript libraries.</li>
-                    <li><i className="bi bi-check-circle-fill text-success"></i> Prepare for coding interviews and build portfolio-ready projects.</li>
-                </ul>
-                </div>
-
-                </div>
-                <div id="scrollspyHeading2">
-
-                <section id="companies" className="my-4">
-      <div className="p-4 border rounded-3 text-center bg-light">
-        <h4>See how employees at top companies are mastering in-demand skills</h4>
-        <div className="d-flex justify-content-center flex-wrap mt-3">
-          {/* Add company logos here */}
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Aws} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Duke_University} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          <img src={University_Logos.Meta} style={{height: '20px'}}  alt="Company 1" className="m-2" />
-          {/* Add more logos as needed */}
-        </div>
-      </div>
-    </section>
-                </div>
-                <p>...</p>
-                <div id="scrollspyHeading3">
-                </div>
-                <h4 id="scrollspyHeading4">Fourth heading</h4>
-                <h4 id="scrollspyHeading5">Fifth heading</h4>
-
-                </div>
 
 
 
