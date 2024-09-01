@@ -73,7 +73,7 @@ export default function Carousel() {
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
 
-            <style jsx>{`
+            <style>{`
                 .carousel-item {
                     transition: transform 0.75s ease-in-out;
                 }

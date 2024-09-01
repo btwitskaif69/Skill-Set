@@ -139,11 +139,11 @@ const Testimonial = () => {
               <div className="testimonial-item px-3" key={testimonial.id}>
                 <div className="testimonial-card border shadow-none p-4 rounded">
                   <div className='testimonial-stars mb-4'>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
                   </div>
                   <div className="testimonial-card-body">
                     <p className="testimonial-text lead text-dark font-italic fw-medium mb-4">"{testimonial.text}"</p>
