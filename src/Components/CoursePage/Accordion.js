@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Accordian() {
+export default function Accordion() {
   return (
         <div className=' container mb-5'>
             {/* Accordion Item #1 */}
