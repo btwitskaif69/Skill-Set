@@ -136,8 +136,8 @@ const Testimonial = () => {
         <div className="col-md-12">
           <Slider ref={sliderRef} {...settings}>
             {Testimonials.map((testimonial) => (
-              <div className="testimonial-item px-3" key={testimonial.id}>
-                <div className="testimonial-card border shadow-none p-4 rounded">
+              <div className="testimonial-item px-3" key={testimonial.id} >
+                <div className="testimonial-card border shadow-none p-4 rounded my-4 rounded-3">
                   <div className='testimonial-stars mb-4'>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
@@ -175,7 +175,6 @@ const Testimonial = () => {
 
         .testimonial-card {
           background-color: #ffffff;
-          border-radius: 12px;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
           padding: 2rem;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
