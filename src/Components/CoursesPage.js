@@ -6,7 +6,7 @@ import CourseDescription from "./CoursePage/CourseDescription";
 import Accordian from "./CoursePage/Accordion";
 import CourseBenefit from "./CoursePage/CourseBenefit";
 import Footer from './Footer';
-import CourseTestimonials from "./CoursePage/CourseTestimonials";
+import Testimonial from "./Testimonial";
 
 export default function CoursesPage() {
     
@@ -21,7 +21,7 @@ export default function CoursesPage() {
         <CourseBenefit/>
         <CourseDescription/>
         <Accordian/>
-        <CourseTestimonials/>
+        <Testimonial/>
         <Footer/>
       </div>
       
