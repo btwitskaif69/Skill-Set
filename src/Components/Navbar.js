@@ -26,7 +26,7 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/"><img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '25px' }} /></a>
+          <a className="navbar-brand" href="/"><img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '30px' }} /></a>
 
           <button
             className="navbar-toggler"
