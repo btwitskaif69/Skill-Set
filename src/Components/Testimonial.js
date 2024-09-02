@@ -6,75 +6,80 @@ import "slick-carousel/slick/slick-theme.css";
 const Testimonials = [
   {
     id: 1,
-    text: `Skillset's courses are transformational, focusing on real-world applications. The platform’s flexibility enabled me to balance my career and personal life while enhancing my skills. It’s been an invaluable resource for my professional growth, allowing me to apply new knowledge immediately and effectively.`,
+    text: `Skillset's courses transformed the way I approach learning. With a strong focus on real-world applications, the platform enabled me to balance my professional life while developing new skills. I could implement what I learned immediately, which has been crucial in driving my career forward and achieving continuous growth.`,
     name: 'David Miller',
     role: 'Software Engineer, USA',
     image: '/Assets/Profile/image1.jpg'
   },
   {
     id: 2,
-    text: `Skillset made online learning surprisingly effective. With a focus on real-world applications, the courses were engaging and easy to follow. My skills improved significantly, leading to a promotion at work. This practical approach has been a game-changer in my career, allowing me to apply new skills immediately.`,
+    text: `Skillset made online learning both effective and highly practical. The courses’ emphasis on real-world scenarios allowed me to improve my skills in no time. I could apply the knowledge directly in my current role, which led to a promotion. This practical approach has been a game-changer for my career progression.`,
     name: 'John Carter',
     role: 'Project Manager, Canada',
     image: '/Assets/Profile/image2.jpg'
   },
   {
     id: 3,
-    text: `Skillset bridged the gap between academic knowledge and industry-relevant skills. The courses offer practical experience beyond theory, which I applied in my job immediately. The focus on real-world applications has been crucial to my career development, making learning both meaningful and directly applicable.`,
+    text: `Skillset helped bridge the gap between academic learning and industry-relevant skills. The platform's hands-on experience meant that I could apply everything I learned in real time, directly impacting my performance at work. This practical focus has been crucial in advancing my career and making the learning experience truly meaningful.`,
     name: 'Michael Rodriguez',
     role: 'Data Analyst, Australia',
     image: '/Assets/Profile/image3.jpg'
   },
   {
     id: 4,
-    text: `As a working mom, upskilling was challenging, but Skillset made it possible. The focus on real-world applications made learning impactful and flexible, allowing me to balance my career and family life while advancing my skills. Skillset has been a vital tool for both personal and professional growth.`,
+    text: `As a working mom, it was tough to find the time to upskill, but Skillset’s flexibility made it possible. The courses are tailored for real-world applications, and I could balance my job and family life while progressing in my career. Skillset has been a vital part of my personal and professional growth.`,
     name: 'Emily Johnson',
     role: 'UX Designer, UK',
     image: '/Assets/Profile/image4.jpg'
   },
   {
     id: 5,
-    text: `Skillset's flexibility enabled me to pursue coding while working full-time. The courses' real-world applications made learning meaningful, and I could apply new skills immediately in my job. This practical approach has significantly impacted my professional development, making Skillset an essential part of my career journey.`,
+    text: `Skillset’s flexible courses allowed me to pursue coding while working full-time. The focus on real-world applications made the learning process engaging and practical. I could apply my new skills right away, which had a significant impact on my career, making Skillset an essential part of my professional journey.`,
     name: 'Ryan Smith',
     role: 'Full Stack Developer, Germany',
     image: '/Assets/Profile/image5.jpg'
   },
   {
     id: 6,
-    text: `Skillset allowed me to dive into AI and machine learning, helping me secure my dream job. The platform’s focus on real-world applications, coupled with engaging and practical courses, enabled me to apply new skills immediately in my role. Skillset has been instrumental in my career advancement.`,
+    text: `Skillset gave me the tools to explore AI and machine learning in-depth. The platform’s real-world focus ensured that I could apply the skills right away, leading to my dream job. This practical approach to learning has been a critical factor in my rapid career progression in the tech industry.`,
     name: 'James Brown',
     role: 'AI Engineer, India',
     image: '/Assets/Profile/image6.jpg'
   },
   {
     id: 7,
-    text: `Skillset's practical courses allowed me to apply new skills immediately in my cybersecurity role. The focus on real-world applications made learning impactful. Case studies and examples provided essential knowledge for implementing what I learned, significantly enhancing my job performance and career growth.`,
+    text: `Skillset’s practical courses in cybersecurity were exactly what I needed to enhance my performance at work. The focus on real-world applications made learning incredibly impactful, and I could implement what I learned right away, leading to both personal confidence and significant career growth.`,
     name: 'Chris Wilson',
     role: 'Cybersecurity Specialist, Singapore',
     image: '/Assets/Profile/image7.jpg'
   },
   {
     id: 8,
-    text: `Skillset’s community and mentorship made my learning journey engaging and supported my leadership growth. The focus on real-world applications made learning impactful, allowing me to apply new skills immediately. This combination of practical learning and support was key in transitioning into a leadership role.`,
+    text: `Skillset’s community and mentorship helped make my learning experience engaging and productive. The focus on real-world applications allowed me to apply new skills immediately, helping me transition into a leadership role. The combination of practical learning and guidance has been key to my growth and success.`,
     name: 'Mark Thompson',
     role: 'Technical Lead, South Africa',
     image: '/Assets/Profile/image8.jpg'
   },
   {
     id: 9,
-    text: `Skillset's hands-on approach and real-world projects were key to my success as a self-taught programmer. The platform made learning meaningful by focusing on practical applications. I could immediately apply new skills in my role, making Skillset an invaluable resource in advancing my career.`,
+    text: `Skillset’s hands-on learning approach and focus on real-world projects made all the difference in my journey as a self-taught programmer. The platform enabled me to apply new skills immediately in my role, providing a seamless and practical way to advance in my career.`,
     name: 'Jason Lee',
     role: 'Software Developer, South Korea',
     image: '/Assets/Profile/image9.jpg'
   },
   {
     id: 10,
-    text: `Skillset's courses are top-notch, focusing on real-world applications that made learning impactful. I could seamlessly transition into a new industry and apply my new skills immediately in my role. The platform's practical approach to learning has been instrumental in my professional growth and success in my new career.`,
+    text: `Skillset’s top-notch courses emphasize real-world applications, which helped me seamlessly transition into a new industry. The practical, hands-on approach enabled me to apply new skills in my role effectively, and the platform has been instrumental in driving my professional growth and success.`,
     name: 'Paul Martin',
     role: 'Cloud Architect, Brazil',
     image: '/Assets/Profile/image10.jpg'
   },
 ];
+
+
+
+
+
 
 
 
@@ -123,12 +128,12 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="testimonial-container">
+    <div className="testimonial-container" style={{backgroundColor:'#f5f7fa', padding: '2rem 3rem', margin: '4rem 0rem 4rem 0rem' }}>
       <div className="row mb-8 justify-content-center">
         <div className="col-lg-8 col-md-12 col-12 text-center">
-          <span className="testimonial-heading text-primary mb-2 d-block text-uppercase fw-semibold fs-4">Testimonials</span>
-          <h2 className="testimonial-title mb-2 display-4 fw-medium">What our learners are saying</h2>
-          <p className="testimonial-subtitle fs-5 mb-4">1+ million people are already learning on Skill Set</p>
+          <span className="testimonial-heading mb-1 d-block text-uppercase fw-semibold fs-4" style={{color: '#210BE3'}}>Testimonials</span>
+          <h2 className="testimonial-title mb-1 display-4 fw-semibold" style={{color:'black'}}>What our learners are saying</h2>
+          <p className="testimonial-subtitle fs-5 mb-1">1+ million people are already learning on Skill Set</p>
         </div>
       </div>
 
@@ -136,20 +141,20 @@ const Testimonial = () => {
         <div className="col-md-12">
           <Slider ref={sliderRef} {...settings}>
             {Testimonials.map((testimonial) => (
-              <div className="testimonial-item px-3" key={testimonial.id} >
-                <div className="testimonial-card border shadow-none p-4 rounded my-4 rounded-3">
-                  <div className='testimonial-stars mb-4'>
+              <div className="testimonial-item px-3" key={testimonial.id}  style={{marginRight: '1.5rem'}}>
+                <div className="testimonial-card border p-4 rounded my-4 rounded-3 mx-1">
+                  <div className='testimonial-stars mb-2' style={{color: '#f59e0b', fontSize: '20px'}}>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
                   </div>
-                  <div className="testimonial-card-body">
-                    <p className="testimonial-text lead text-dark font-italic fw-medium mb-4">"{testimonial.text}"</p>
-                  </div>
-                  <div className="testimonial-card-footer d-flex align-items-center pt-4 border-0">
-                    <img src={testimonial.image} alt={testimonial.name} className="testimonial-image rounded-circle me-3" width="60" height="60" />
+                  <div className="testimonial-card-body" style={{ flexGrow: '1' }}>
+                  <p className="testimonial-text lead text-dark fs-6 fw-medium" style={{ maxHeight: '150px', overflow: 'hidden',  textOverflow: 'ellipsis', textAlign: 'justify'}}>"{testimonial.text}"</p></div>
+
+                  <div className="testimonial-card-footer d-flex align-items-center pt-2 border-0">
+                    <img src={testimonial.image} alt={testimonial.name} className="testimonial-image rounded-circle me-3" style={{objectFit:'cover'}} width="60" height="60" />
                     <div>
                       <h5 className="testimonial-name mb-0 fw-bold">{testimonial.name}</h5>
                       <p className="testimonial-role mb-0 small text-muted">{testimonial.role}</p>
@@ -160,65 +165,32 @@ const Testimonial = () => {
             ))}
           </Slider>
           <div className="d-flex justify-content-center">
-            <button onClick={previous} className="btn btn-light bi bi-chevron-left rounded-circle my-4"></button>
-            <button onClick={next} className="btn btn-light bi bi-chevron-right rounded-circle my-4"></button>
+            <button onClick={previous}  className="btn btn-light rounded-circle mt-1 mx-2"><i class="bi bi-chevron-left"></i></button>
+            <button onClick={next} className="btn btn-light rounded-circle mt-1 mx-2"><i class="bi bi-chevron-right"></i></button>
           </div>
         </div>
       </div>
 
       <style>{`
-          .testimonial-container {
-          background-color: #f5f7fa;
-          padding: 4rem 5rem;
-          margin: 5rem;
-        }
-
-        .testimonial-card {
-          background-color: #ffffff;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          padding: 2rem;
-          transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .testimonial-card:hover {
-          transform: scale(1.05);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .testimonial-item {
-          margin-right: 1.5rem;
-        }
-
-        .testimonial-card-footer {
-          display: flex;
-          align-items: center;
-          padding-top: 1.5rem;
-          border-top: none;
-        }
-
-        .testimonial-card-body {
-          padding-bottom: 0;
-        }
-
-        .testimonial-image {
-          border-radius: 50%;
-          object-fit: cover;
-        }
-        .testimonial-heading {
-          color: #6f42c1;
-        }
-
-        .testimonial-title {
-          font-weight: 700;
-        }
-
-        .testimonial-stars{
-          color: #f59e0b;
-          font-size: 20px;
-        }
 
 
-      `}</style>
+  .testimonial-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 325px; /* Set a fixed height for the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .testimonial-card:hover {
+    transform: scale(1.05);
+                    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+  }
+
+`}</style>
     </div>
   );
 };
