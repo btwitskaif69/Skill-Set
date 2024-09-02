@@ -128,11 +128,11 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="testimonial-container" style={{backgroundColor:'#f5f7fa', padding: '2rem 3rem', margin: '4rem 0rem 4rem 0rem' }}>
+    <div className="testimonial-container" style={{ backgroundColor: '#f5f7fa', padding: '2rem 3rem', margin: '4rem 0rem' }}>
       <div className="row mb-8 justify-content-center">
         <div className="col-lg-8 col-md-12 col-12 text-center">
-          <span className="testimonial-heading mb-1 d-block text-uppercase fw-semibold fs-4" style={{color: '#210BE3'}}>Testimonials</span>
-          <h2 className="testimonial-title mb-1 display-4 fw-semibold" style={{color:'black'}}>What our learners are saying</h2>
+          <span className="testimonial-heading mb-1 d-block text-uppercase fw-semibold fs-4" style={{ color: '#210BE3' }}>Testimonials</span>
+          <h2 className="testimonial-title mb-1 display-4 fw-semibold" style={{ color: 'black' }}>What our learners are saying</h2>
           <p className="testimonial-subtitle fs-5 mb-1">1+ million people are already learning on Skill Set</p>
         </div>
       </div>
@@ -141,9 +141,9 @@ const Testimonial = () => {
         <div className="col-md-12">
           <Slider ref={sliderRef} {...settings}>
             {Testimonials.map((testimonial) => (
-              <div className="testimonial-item px-3" key={testimonial.id}  style={{marginRight: '1.5rem'}}>
-                <div className="testimonial-card border p-4 rounded my-4 rounded-3 mx-1">
-                  <div className='testimonial-stars mb-2' style={{color: '#f59e0b', fontSize: '20px'}}>
+              <div className="testimonial-item px-0" key={testimonial.id} style={{ marginRight: '1.5rem' }}>
+                <div className="testimonial-card border p-4 rounded my-4 mx-4 rounded-3 mx-1">
+                  <div className='testimonial-stars mb-2' style={{ color: '#f59e0b', fontSize: '20px' }}>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
@@ -151,10 +151,11 @@ const Testimonial = () => {
                     <i className="bi bi-star-fill"></i>
                   </div>
                   <div className="testimonial-card-body" style={{ flexGrow: '1' }}>
-                  <p className="testimonial-text lead text-dark fs-6 fw-medium" style={{ maxHeight: '150px', overflow: 'hidden',  textOverflow: 'ellipsis', textAlign: 'justify'}}>"{testimonial.text}"</p></div>
+                    <p className="testimonial-text lead text-dark fs-6 fw-medium" style={{ maxHeight: '150px', overflow: 'hidden', textOverflow: 'ellipsis', textAlign: 'justify' }}>"{testimonial.text}"</p>
+                  </div>
 
                   <div className="testimonial-card-footer d-flex align-items-center pt-2 border-0">
-                    <img src={testimonial.image} alt={testimonial.name} className="testimonial-image rounded-circle me-3" style={{objectFit:'cover'}} width="60" height="60" />
+                    <img src={testimonial.image} alt={testimonial.name} className="testimonial-image rounded-circle me-3" style={{ objectFit: 'cover' }} width="60" height="60" />
                     <div>
                       <h5 className="testimonial-name mb-0 fw-bold">{testimonial.name}</h5>
                       <p className="testimonial-role mb-0 small text-muted">{testimonial.role}</p>
@@ -165,32 +166,30 @@ const Testimonial = () => {
             ))}
           </Slider>
           <div className="d-flex justify-content-center">
-            <button onClick={previous}  className="btn btn-light rounded-circle mt-1 mx-2"><i class="bi bi-chevron-left"></i></button>
-            <button onClick={next} className="btn btn-light rounded-circle mt-1 mx-2"><i class="bi bi-chevron-right"></i></button>
+            <button onClick={previous} className="btn btn-light rounded-circle mt-1 mx-2"><i className="bi bi-chevron-left"></i></button>
+            <button onClick={next} className="btn btn-light rounded-circle mt-1 mx-2"><i className="bi bi-chevron-right"></i></button>
           </div>
         </div>
       </div>
 
       <style>{`
+        .testimonial-card {
+          background-color: #ffffff;
+          padding: 2rem;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          height: 325px; /* Set a fixed height for the card */
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
 
+        .testimonial-card:hover {
+          transform: scale(1.05);
+          /* Smoother and more subtle shadow on hover */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+      `}</style>
 
-  .testimonial-card {
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 325px; /* Set a fixed height for the card */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .testimonial-card:hover {
-    transform: scale(1.05);
-                    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
-  }
-
-`}</style>
     </div>
   );
 };
