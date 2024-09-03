@@ -39,15 +39,11 @@ export default function CourseBanner() {
             <p className="text-muted">
               Instructor: <a href="/">Taught by Meta Staff</a>
             </p>
-            <button className="btn btn-primary btn-xxlg mt-3">
+            <button className="btn btn-primary btn-lg btn-xxlg mt-3">
               Enroll for Free
             </button>
             <p className="mt-3">
               <strong>304,498</strong> already enrolled
-            </p>
-            <p className="text-muted">
-              Included with <a href="/">Skill Set</a> •{" "}
-              <a href="/">Learn more</a>
             </p>
           </div>
         </div>
