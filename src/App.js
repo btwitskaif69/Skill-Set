@@ -7,6 +7,7 @@ import LogIn from './Components/LogIn';
 import Home from './Components/Home'; 
 import Courses from './Components/Courses';
 import CoursesPage from './Components/CoursesPage';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<LogIn />} /> {/* Ensure LogIn component is valid */}
           <Route path="/courses" element={<Courses />} />
           <Route path="/CoursesPage" element={<CoursesPage />} />
+          <Footer/>
         </Routes>
       </div>
     </Router>

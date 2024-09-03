@@ -128,12 +128,12 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="testimonial-container" style={{ backgroundColor: '#f5f7fa', padding: '2rem 3rem', margin: '4rem 0rem' }}>
+    <div className="testimonial-container" style={{padding: '2rem 3rem', margin: '2rem 0rem' }}>
       <div className="row mb-8 justify-content-center">
         <div className="col-lg-8 col-md-12 col-12 text-center">
           <span className="testimonial-heading mb-1 d-block text-uppercase fw-semibold fs-4" style={{ color: '#210BE3' }}>Testimonials</span>
           <h2 className="testimonial-title mb-1 display-4 fw-semibold" style={{ color: 'black' }}>What our learners are saying</h2>
-          <p className="testimonial-subtitle fs-5 mb-1">1+ million people are already learning on Skill Set</p>
+          <p className="testimonial-subtitle fs-5 mb-1" style={{ color: 'black' }}>1+ million people are already learning on Skill Set</p>
         </div>
       </div>
 
@@ -157,7 +157,7 @@ const Testimonial = () => {
                   <div className="testimonial-card-footer d-flex align-items-center pt-2 border-0">
                     <img src={testimonial.image} alt={testimonial.name} className="testimonial-image rounded-circle me-3" style={{ objectFit: 'cover' }} width="60" height="60" />
                     <div>
-                      <h5 className="testimonial-name mb-0 fw-bold">{testimonial.name}</h5>
+                      <h5 className="testimonial-name mb-0 fw-bold"style={{ color: 'black' }}>{testimonial.name}</h5>
                       <p className="testimonial-role mb-0 small text-muted">{testimonial.role}</p>
                     </div>
                   </div>
