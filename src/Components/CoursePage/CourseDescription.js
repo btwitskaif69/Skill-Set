@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, forwardRef } from "react";
 
-export default function CourseDescription() {
+const CourseDescription = forwardRef((props, ref) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const contentRef = useRef(null); // Reference to the expandable content
 
@@ -20,7 +20,7 @@ export default function CourseDescription() {
   }, [isExpanded]);
 
   return (
-    <div className="container">
+    <div ref={ref} id="course-description-section" className="container">
       <div className="display-6 fw-medium" id="scrollspyHeading3">
         Professional Certificate - 9 course series
       </div>
@@ -52,7 +52,13 @@ export default function CourseDescription() {
       {/* Content that expands/collapses */}
       <div
         ref={contentRef}
-        style={{ maxHeight: '0', overflow: 'hidden', transition: 'max-height 1s ease-in-out, opacity 1s ease', opacity: '0',}}>
+        style={{
+          maxHeight: '0',
+          overflow: 'hidden',
+          transition: 'max-height 1s ease-in-out, opacity 1s ease',
+          opacity: '0',
+        }}
+      >
         <p>
           By the program’s conclusion, you’ll apply your skills in a real-world
           project, where you’ll develop a front-end web application from scratch.
@@ -99,4 +105,6 @@ export default function CourseDescription() {
       </button>
     </div>
   );
-}
+});
+
+export default CourseDescription;
