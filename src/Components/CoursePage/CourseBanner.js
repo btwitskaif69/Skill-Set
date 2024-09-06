@@ -48,45 +48,52 @@ export default function CourseBanner() {
           </div>
         </div>
 
-        {/* Course Features & Degree Credit Section */}
-        <div className="row mt-5 shadow rounded-3 p-3 mb-5">
-          <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end">
-            <h5 className="fw-bold fs-6">9 course series</h5>
-            <p className="text-muted" style={{ fontSize: "10px" }}>
-              Earn a career credential that demonstrates your expertise
-            </p>
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end">
-            <h5 className="fw-bold">
-              <i
-                className="bi bi-star-fill fs-6"
-                style={{ color: "#0056b3" }}
-              ></i>{" "}
-              4.7
-            </h5>
-            <p className="text-muted" style={{ fontSize: "10px" }}>
-              (16,680 reviews)
-            </p>
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end">
-            <h5 className="fw-bold fs-6">Beginner level</h5>
-            <p className="text-muted" style={{ fontSize: "10px" }}>
-              No prior experience required
-            </p>
-          </div>
-          <div className="col-lg-3 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end">
-            <h5 className="fw-bold fs-6">Flexible schedule</h5>
-            <p className="text-muted" style={{ fontSize: "10px" }}>
-              7 months, 6 hours a week. Learn at your own pace
-            </p>
-          </div>
-          <div className="col-lg-3 col-md-4 col-sm-12 d-flex flex-column justify-content-center">
-            <h5 className="fw-bold fs-6 ">Earn degree credit</h5>
-            <a href="/" className="text-muted" style={{ fontSize: "10px" }}>
-              Learn more
-            </a>
-          </div>
-        </div>
+       {/* Course Features & Degree Credit Section */}
+<div className="row mt-5 shadow rounded-3 p-3 mb-5 course-features">
+  {/* Course Series */}
+  <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end text-center">
+    <h5 className="fw-bold fs-6">9 Course Series</h5>
+    <p className="text-muted" style={{ fontSize: "12px" }}>
+      Earn a career credential that demonstrates your expertise
+    </p>
+  </div>
+
+  {/* Rating Section */}
+  <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end text-center">
+    <h5 className="fw-bold d-flex justify-content-center align-items-center">
+      <i className="bi bi-star-fill fs-5 me-1" style={{ color: "#0056b3" }}></i> 4.7
+    </h5>
+    <p className="text-muted" style={{ fontSize: "12px" }}>
+      16,680 reviews
+    </p>
+  </div>
+
+  {/* Beginner Level Section */}
+  <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end text-center">
+    <h5 className="fw-bold fs-6">Beginner Level</h5>
+    <p className="text-muted" style={{ fontSize: "12px" }}>
+      No prior experience required
+    </p>
+  </div>
+
+  {/* Flexible Schedule */}
+  <div className="col-lg-3 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end text-center">
+    <h5 className="fw-bold fs-6">Flexible Schedule</h5>
+    <p className="text-muted" style={{ fontSize: "12px" }}>
+      7 months, 6 hours per week. Learn at your own pace
+    </p>
+  </div>
+
+  {/* Degree Credit */}
+  <div className="col-lg-3 col-md-4 col-sm-12 d-flex flex-column justify-content-center text-center">
+    <h5 className="fw-bold fs-6">Earn Degree Credit</h5>
+    <a href="/" className="text-muted" style={{ fontSize: "12px" }}>
+      Learn more
+    </a>
+  </div>
+</div>
+
+
 
         
       </div>
