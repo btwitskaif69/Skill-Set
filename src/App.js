@@ -14,7 +14,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-        <Route path="/" element={<Home />} /> {/* Ensure Home component is valid */}
+        <Route path="/Home" element={<Home />} /> {/* Ensure Home component is valid */}
           <Route path="/signup" element={<SignUp />} /> {/* Ensure SignUp component is valid */}
           <Route path="/login" element={<LogIn />} /> {/* Ensure LogIn component is valid */}
           <Route path="/courses" element={<Courses />} />

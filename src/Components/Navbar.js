@@ -34,7 +34,7 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/"><img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '30px' }} /></a>
+          <Link Home to='/Home' className="navbar-brand"><img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '30px' }} /></Link>
 
           <button
             className="navbar-toggler"
@@ -50,10 +50,10 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link fs-6 text-dark" aria-current="page" href="/"><Link to='/home'></Link>Home</a>
+                <Link Home to='/Home' className="nav-link fs-6 text-dark" aria-current="page">Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link fs-6 text-dark" href="/">Link</a>
+                <Link Courses to='/Courses' className="nav-link fs-6 text-dark">Courses</Link>
               </li>
               <li className="nav-item">
                 <form className="d-flex" role="search">
