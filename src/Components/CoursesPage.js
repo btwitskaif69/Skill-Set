@@ -1,6 +1,8 @@
 import React, { useRef} from "react";
 import CourseBanner from "./CoursePage/CourseBanner";
 import CourseSkills from "./CoursePage/CourseSkills";
+import InstructorDetails from './CoursePage/InstructorDetails';
+import CourseReviews from './CoursePage/CourseReviews';
 import CompanyLogos from "./CoursePage/CompanyLogos";
 import CourseDescription from "./CoursePage/CourseDescription";
 import Accordian from "./CoursePage/Accordion";
@@ -20,7 +22,10 @@ export default function CoursesPage() {
         <CourseBanner/>
         <ScrollSpy courseDescriptionRef={courseDescriptionRef} testimonialsRef={testimonialsRef}/>
         <CourseAbout/>
+        <InstructorDetails/> {/* New Component */}
         <CourseSkills/>
+        
+        <CourseReviews/>   {/* New Component */}
         <CompanyLogos/>
         <CourseBenefit/>
         <CourseDescription ref={courseDescriptionRef}/>

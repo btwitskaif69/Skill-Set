@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
-export default function LogIn({ onClose }) {
+export default function LogIn({ onClose, switchToSignUp }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleTogglePassword = () => {
@@ -53,9 +52,10 @@ export default function LogIn({ onClose }) {
                 </div>
                 <button type="submit" className="btn btn-primary w-100">Log In</button>
                 <div className="mt-3 text-center">
-                Don’t have an account?
-                <Link to="/Signup" className="text-primary" >&nbsp;Sign Up</Link>
-              </div>
+                  Don’t have an account?
+                  {/* Use the form-switching handler instead of Link */}
+                  <span className="text-primary" style={{ cursor: 'pointer' }} onClick={switchToSignUp}>&nbsp;Sign Up</span>
+                </div>
               </form>
             </div>
           </div>

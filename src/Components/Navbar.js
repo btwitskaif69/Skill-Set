@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SignUp from './SignUp';
 import LogIn from './LogIn';
 
@@ -16,6 +16,14 @@ export default function Navbar() {
 
   const closeForm = () => {
     setActiveForm(null);
+  };
+
+  const switchToSignUp = () => {
+    setActiveForm('signup');
+  };
+
+  const switchToLogin = () => {
+    setActiveForm('login');
   };
 
   const Logo = {
@@ -60,15 +68,16 @@ export default function Navbar() {
               </li>
             </ul>
             <div className="d-flex gap-2">
-            <button onClick={handleOnLogIn} type="button" className="btn btn-outline-primary custom-button">Log In</button>
-
+              <button onClick={handleOnLogIn} type="button" className="btn btn-outline-primary custom-button">Log In</button>
               <button onClick={handleOnSignUp} type="button" className="btn btn-primary" style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>Sign Up</button>
             </div>
           </div>
         </div>
       </nav>
-      {activeForm === 'signup' && <SignUp onClose={closeForm} />}
-      {activeForm === 'login' && <LogIn onClose={closeForm} />}
+
+      {/* Render the forms conditionally and pass the switch handlers */}
+      {activeForm === 'signup' && <SignUp onClose={closeForm} switchToLogin={switchToLogin} />}
+      {activeForm === 'login' && <LogIn onClose={closeForm} switchToSignUp={switchToSignUp} />}
     </div>
   );
 }
