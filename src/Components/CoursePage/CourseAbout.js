@@ -16,7 +16,7 @@ export default function CourseAbout() {
         {learnings.map((text, index) => (
           <div className="col-md-6" key={index}>
             <div className="d-flex align-items-start mb-3">
-              <i className="bi bi-check2-circle text-success me-2"></i>
+              <i className="bi bi-check-circle-fill text-success me-2"></i>
               <p className="mb-0">{text}</p>
             </div>
           </div>
