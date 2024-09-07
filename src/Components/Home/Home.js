@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from '../Navbar';
 import Marquee from './Marquee';
 import Carousel from './Carousel';
 import Cards from './Cards';
-import Testimonial from './Testimonial';
-import Footer from './Footer';
+import Testimonial from '../Testimonial';
+import Footer from '../Footer';
 import NewCards from './NewCards';
 
 
