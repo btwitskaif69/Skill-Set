@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
-import Navbar from './Components/Navbar'; 
+// import Navbar from './Components/Navbar'; 
 import SignUp from './Components/SignUp'; 
 import LogIn from './Components/LogIn'; 
 import Home from './Components/Home'; 
@@ -12,9 +12,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
-        <Route path="/Home" element={<Home />} /> {/* Ensure Home component is valid */}
+          <Route path="/" element={<Navigate to="/home" />} /> {/* Default redirect to Home */}
+          <Route path="/home" element={<Home />} /> {/* Ensure Home component is valid */}
           <Route path="/signup" element={<SignUp />} /> {/* Ensure SignUp component is valid */}
           <Route path="/login" element={<LogIn />} /> {/* Ensure LogIn component is valid */}
           <Route path="/courses" element={<Courses />} />

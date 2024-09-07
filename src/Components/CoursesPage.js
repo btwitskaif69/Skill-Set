@@ -1,16 +1,17 @@
 import React, { useRef} from "react";
-import CourseBanner from "./CoursePage/CourseBanner";
-import CourseSkills from "./CoursePage/CourseSkills";
-import InstructorDetails from './CoursePage/InstructorDetails';
-import CourseReviews from './CoursePage/CourseReviews';
-import CompanyLogos from "./CoursePage/CompanyLogos";
-import CourseDescription from "./CoursePage/CourseDescription";
-import Accordian from "./CoursePage/Accordion";
-import CourseBenefit from "./CoursePage/CourseBenefit";
+import CourseBanner from "./CourseEnrollmentPage/CourseBanner";
+import CourseSkills from "./CourseEnrollmentPage/CourseSkills";
+import InstructorDetails from './CourseEnrollmentPage/InstructorDetails';
+import CourseReviews from './CourseEnrollmentPage/CourseReviews';
+import CompanyLogos from "./CourseEnrollmentPage/CompanyLogos";
+import CourseDescription from "./CourseEnrollmentPage/CourseDescription";
+import Accordian from "./CourseEnrollmentPage/Accordion";
+import CourseBenefit from "./CourseEnrollmentPage/CourseBenefit";
 import Footer from './Footer';
 import Testimonial from "./Testimonial";
-import ScrollSpy from "./CoursePage/ScrollSpy";
-import CourseAbout from "./CoursePage/CourseAbout";
+import ScrollSpy from "./CourseEnrollmentPage/ScrollSpy";
+import CourseAbout from "./CourseEnrollmentPage/CourseAbout";
+import Navbar from "./Navbar";
 
 export default function CoursesPage() {
     // Define the refs using the useRef hook
@@ -19,6 +20,7 @@ export default function CoursesPage() {
 
     return (
       <div>
+        <Navbar/>
         <CourseBanner/>
         <ScrollSpy courseDescriptionRef={courseDescriptionRef} testimonialsRef={testimonialsRef}/>
         <CourseAbout/>
