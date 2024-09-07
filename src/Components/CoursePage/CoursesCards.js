@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function CoursesCards() {
+export default function CoursesCards({ selectedFilters }) {
     const University_Logos = {
         Aws: '/Assets/University_Logos/Aws.svg',
         Duke_University: '/Assets/University_Logos/Duke_University.svg',
@@ -23,7 +23,10 @@ export default function CoursesCards() {
             logo: University_Logos.Google,
             skills: "Data Analysis, Google Analytics, Data Visualization",
             rating: "4.8",
-            reviews: "(10K reviews)"
+            reviews: "(10K reviews)",
+            subject: "Data Science",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 2,
@@ -32,7 +35,10 @@ export default function CoursesCards() {
             logo: University_Logos.IBM,
             skills: "Python, Machine Learning, Data Visualization",
             rating: "4.7",
-            reviews: "(8K reviews)"
+            reviews: "(8K reviews)",
+            subject: "Computer Science",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 3,
@@ -288,43 +294,56 @@ export default function CoursesCards() {
         }
     ];
 
+    const filteredCourses = courses.filter(course => {
+        const subjectMatch = selectedFilters.subjects.length === 0 || selectedFilters.subjects.includes(course.subject);
+        const languageMatch = selectedFilters.languages.length === 0 || selectedFilters.languages.includes(course.language);
+        const productMatch = selectedFilters.learningProducts.length === 0 || selectedFilters.learningProducts.includes(course.product);
+        return subjectMatch && languageMatch && productMatch;
+    });
+
     return (
         <div className="container">
             <p className="mb-4 display-6 fs-4 fw-semibold" style={{ color: 'Black' }}>
                 Explore our most popular programs, get job-ready for an in-demand career.
             </p>
             <div className="row g-4">
-                {courses.map(course => (
-                    <div key={course.id} className="col-lg-4 col-md-6 col-sm-12">
-                        <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                            <div className="card h-100">
-                                <img src={course.imgSrc} className="card-img-top" alt={course.title} />
-                                <div className="card-body d-flex flex-column">
-                                    <div className="course-logos mb-3">
-                                        {course.logo && (
-                                            <img src={course.logo} alt="Course Logo"/>
-                                        )}
-                                    </div>
-                                    <h5 className="card-title mb-0" style={{ color: 'Black' }}>{course.title}</h5>
-                                    <p className="card-text" style={{ color: '#636363' }}>
-                                        <b style={{ color: 'black', fontWeight: '600' }}>Skills you'll gain:</b> {course.skills}
-                                    </p>
-                                    <div className="mt-auto">
-                                        <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;Advance your degree journey</p>
-                                        <p className="card-text mb-0">
-                                            <i className="bi bi-star-fill" style={{ color: '#f59e0b' }}></i>&nbsp;
-                                            <b>{course.rating}</b> {course.reviews}
+                {filteredCourses.length > 0 ? (
+                    filteredCourses.map(course => (
+                        <div key={course.id} className="col-lg-4 col-md-6 col-sm-12">
+                            <Link to={`/courses/${course.id}`} className="text-decoration-none">
+                                <div className="card h-100">
+                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} />
+                                    <div className="card-body d-flex flex-column">
+                                        <div className="course-logos mb-3">
+                                            {course.logo && (
+                                                <img src={course.logo} alt="Course Logo" />
+                                            )}
+                                        </div>
+                                        <h5 className="card-title mb-0" style={{ color: 'Black' }}>{course.title}</h5>
+                                        <p className="card-text" style={{ color: '#636363' }}>
+                                            <b style={{ color: 'black', fontWeight: '600' }}>Skills you'll gain:</b> {course.skills}
                                         </p>
-                                        <p className="card-text mb-0" style={{ color: '#636363' }}>
-                                            Beginner · Career Certificate · 3-6 Months
-                                        </p>
+                                        <div className="mt-auto">
+                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;Advance your degree journey</p>
+                                            <p className="card-text mb-0">
+                                                <i className="bi bi-star-fill" style={{ color: '#f59e0b' }}></i>&nbsp;
+                                                <b>{course.rating}</b> {course.reviews}
+                                            </p>
+                                            <p className="card-text mb-0" style={{ color: '#636363' }}>
+                                                Beginner · Career Certificate · 3-6 Months
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Link>
-                    </div>
-                ))}
+                            </Link>
+                        </div>
+                    ))
+                ) : (
+                    <p>No courses found matching your filters.</p>
+                )}
             </div>
+
+            {/* Inline styling for card effects */}
             <style>{`
                 @keyframes fadeIn {
                     from {
@@ -370,11 +389,6 @@ export default function CoursesCards() {
                 .card-text {
                     font-size: 0.75rem; /* Slightly larger for readability */
                 }
-                .button-container {
-                    display: flex;
-                    justify-content: flex-start;
-                    margin-top: 20px;
-                }
                 .fade-in {
                     animation: fadeIn 0.5s ease-out;
                 }
@@ -382,9 +396,7 @@ export default function CoursesCards() {
                     .course-logos img {
                         height: 20px; /* Smaller logos for small screens */
                     }
-                    .container h3 {
-                        font-size: 30px; /* Decrease font size */
-                    }
+                }
             `}</style>
         </div>
     );
