@@ -294,16 +294,18 @@ export default function CoursesCards({ selectedFilters }) {
         }
     ];
 
-    const filteredCourses = courses.filter(course => {
+      // Filter courses based on selected filters
+      const filteredCourses = courses.filter(course => {
         const subjectMatch = selectedFilters.subjects.length === 0 || selectedFilters.subjects.includes(course.subject);
         const languageMatch = selectedFilters.languages.length === 0 || selectedFilters.languages.includes(course.language);
         const productMatch = selectedFilters.learningProducts.length === 0 || selectedFilters.learningProducts.includes(course.product);
         return subjectMatch && languageMatch && productMatch;
     });
 
+    // Rendering the course cards
     return (
         <div className="container">
-            <p className="mb-4 display-6 fs-4 fw-semibold" style={{ color: 'Black' }}>
+            <p className="mb-4 fs-5 fw-semibold" style={{ color: 'Black' }}>
                 Explore our most popular programs, get job-ready for an in-demand career.
             </p>
             <div className="row g-4">
@@ -311,12 +313,19 @@ export default function CoursesCards({ selectedFilters }) {
                     filteredCourses.map(course => (
                         <div key={course.id} className="col-lg-4 col-md-6 col-sm-12">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card h-100">
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} />
+                                <div className="card h-100 fade-in">
+                                    <img 
+                                        src={course.imgSrc} 
+                                        className="card-img-top" 
+                                        alt={course.title || 'Course Image'} 
+                                    />
                                     <div className="card-body d-flex flex-column">
                                         <div className="course-logos mb-3">
                                             {course.logo && (
-                                                <img src={course.logo} alt="Course Logo" />
+                                                <img 
+                                                    src={course.logo} 
+                                                    alt={`${course.title} Logo`} 
+                                                />
                                             )}
                                         </div>
                                         <h5 className="card-title mb-0" style={{ color: 'Black' }}>{course.title}</h5>
@@ -324,7 +333,9 @@ export default function CoursesCards({ selectedFilters }) {
                                             <b style={{ color: 'black', fontWeight: '600' }}>Skills you'll gain:</b> {course.skills}
                                         </p>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;Advance your degree journey</p>
+                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>
+                                                &nbsp;Advance your degree journey
+                                            </p>
                                             <p className="card-text mb-0">
                                                 <i className="bi bi-star-fill" style={{ color: '#f59e0b' }}></i>&nbsp;
                                                 <b>{course.rating}</b> {course.reviews}
@@ -366,7 +377,7 @@ export default function CoursesCards({ selectedFilters }) {
                     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
                 }
                 .card-img-top {
-                   height: 200px; /* Set a fixed height for the image */
+                    height: 200px; /* Set a fixed height for the image */
                     width: 100%; /* Make sure the image takes up the full width */
                     object-fit: cover; /* Ensures the image covers the area without stretching */
                     border-radius: 7px;

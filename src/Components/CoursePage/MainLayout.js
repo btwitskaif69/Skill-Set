@@ -1,25 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import SideBar from './SideBar';
 import CoursesCards from './CoursesCards';
 
 export default function MainLayout() {
+    // State for selected filters
     const [selectedFilters, setSelectedFilters] = useState({
         subjects: [],
         languages: [],
         learningProducts: []
     });
 
-    const handleFilterChange = (filterType, value) => {
+    // Function to handle filter changes
+    const handleFilterChange = useCallback((filterType, value) => {
         setSelectedFilters(prevFilters => {
-            const newFilters = { ...prevFilters };
-            if (newFilters[filterType].includes(value)) {
-                newFilters[filterType] = newFilters[filterType].filter(item => item !== value);
+            const updatedFilter = [...prevFilters[filterType]];
+            
+            if (updatedFilter.includes(value)) {
+                return {
+                    ...prevFilters,
+                    [filterType]: updatedFilter.filter(item => item !== value)  // Remove filter
+                };
             } else {
-                newFilters[filterType].push(value);
+                return {
+                    ...prevFilters,
+                    [filterType]: [...updatedFilter, value]  // Add filter
+                };
             }
-            return newFilters;
         });
-    };
+    }, []);
 
     return (
         <div className="container my-5">

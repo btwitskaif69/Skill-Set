@@ -4,7 +4,7 @@ import './App.css';
 // import Navbar from './Components/Navbar'; 
 import SignUp from './Components/SignUp'; 
 import LogIn from './Components/LogIn'; 
-import Home from './Components/Home/Home'; 
+import Home from './Components/Home'; 
 import Courses from './Components/CoursePage/Courses';
 import CoursesPage from './Components/CoursesPage';
 

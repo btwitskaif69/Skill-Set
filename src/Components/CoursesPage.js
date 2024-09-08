@@ -26,7 +26,6 @@ export default function CoursesPage() {
         <CourseAbout/>
         <InstructorDetails/> {/* New Component */}
         <CourseSkills/>
-        
         <CourseReviews/>   {/* New Component */}
         <CompanyLogos/>
         <CourseBenefit/>
