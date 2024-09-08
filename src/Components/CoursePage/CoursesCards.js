@@ -47,7 +47,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Aws,
             skills: "Cloud Computing, AWS, Architecture Design",
             rating: "4.9",
-            reviews: "(12K reviews)"
+            reviews: "(12K reviews)",
+            subject: "Cloud Computing",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 4,
@@ -56,7 +59,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Meta,
             skills: "HTML, CSS, JavaScript, React",
             rating: "4.6",
-            reviews: "(6K reviews)"
+            reviews: "(6K reviews)",
+            subject: "Web Development",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 5,
@@ -65,7 +71,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Duke_University,
             skills: "Artificial Intelligence, Python, Machine Learning",
             rating: "4.5",
-            reviews: "(9K reviews)"
+            reviews: "(9K reviews)",
+            subject: "Artificial Intelligence",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 6,
@@ -74,7 +83,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Stanford_University,
             skills: "Machine Learning, Python, Data Analysis",
             rating: "4.9",
-            reviews: "(11K reviews)"
+            reviews: "(11K reviews)",
+            subject: "Machine Learning",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 7,
@@ -83,7 +95,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.University_of_Cambridge,
             skills: "Data Science, Statistics, R Programming",
             rating: "4.8",
-            reviews: "(7K reviews)"
+            reviews: "(7K reviews)",
+            subject: "Data Science",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 8,
@@ -92,7 +107,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.University_of_Oxford,
             skills: "Cybersecurity, Ethical Hacking, Network Security",
             rating: "4.7",
-            reviews: "(5K reviews)"
+            reviews: "(5K reviews)",
+            subject: "Cybersecurity",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 9,
@@ -101,7 +119,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Google,
             skills: "UX Design, Prototyping, User Research",
             rating: "4.8",
-            reviews: "(9K reviews)"
+            reviews: "(9K reviews)",
+            subject: "UX Design",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 10,
@@ -110,7 +131,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.IBM,
             skills: "Cloud Computing, Docker, Kubernetes",
             rating: "4.6",
-            reviews: "(6.5K reviews)"
+            reviews: "(6.5K reviews)",
+            subject: "Cloud Computing",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 11,
@@ -119,7 +143,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Meta,
             skills: "React, Redux, Web Development",
             rating: "4.9",
-            reviews: "(10.5K reviews)"
+            reviews: "(10.5K reviews)",
+            subject: "Web Development",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 12,
@@ -128,7 +155,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Aws,
             skills: "Data Engineering, AWS, Python",
             rating: "4.7",
-            reviews: "(8.5K reviews)"
+            reviews: "(8.5K reviews)",
+            subject: "Data Engineering",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 13,
@@ -137,7 +167,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Stanford_University,
             skills: "Artificial Intelligence, Robotics, Machine Learning",
             rating: "4.9",
-            reviews: "(13K reviews)"
+            reviews: "(13K reviews)",
+            subject: "Artificial Intelligence",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 14,
@@ -146,7 +179,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.University_of_Cambridge,
             skills: "Quantum Computing, Python, Algorithms",
             rating: "4.8",
-            reviews: "(7.5K reviews)"
+            reviews: "(7.5K reviews)",
+            subject: "Quantum Computing",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 15,
@@ -155,7 +191,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.University_of_Oxford,
             skills: "Business Analytics, Data Science, Excel",
             rating: "4.6",
-            reviews: "(5.5K reviews)"
+            reviews: "(5.5K reviews)",
+            subject: "Business Analytics",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 16,
@@ -164,7 +203,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Google,
             skills: "Machine Learning, Google Cloud, Python",
             rating: "4.7",
-            reviews: "(8K reviews)"
+            reviews: "(8K reviews)",
+            subject: "Machine Learning",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 17,
@@ -173,7 +215,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.IBM,
             skills: "Blockchain, Hyperledger, Smart Contracts",
             rating: "4.6",
-            reviews: "(6K reviews)"
+            reviews: "(6K reviews)",
+            subject: "Blockchain",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 18,
@@ -182,7 +227,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Meta,
             skills: "Augmented Reality, Virtual Reality, Unity",
             rating: "4.9",
-            reviews: "(9.5K reviews)"
+            reviews: "(9.5K reviews)",
+            subject: "AR/VR Development",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 19,
@@ -191,7 +239,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Duke_University,
             skills: "Financial Engineering, Risk Management, MATLAB",
             rating: "4.8",
-            reviews: "(7K reviews)"
+            reviews: "(7K reviews)",
+            subject: "Financial Engineering",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 20,
@@ -200,7 +251,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Stanford_University,
             skills: "Deep Learning, TensorFlow, Neural Networks",
             rating: "4.9",
-            reviews: "(11.5K reviews)"
+            reviews: "(11.5K reviews)",
+            subject: "Deep Learning",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 21,
@@ -209,7 +263,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.University_of_Cambridge,
             skills: "Advanced Data Analysis, R, Python",
             rating: "4.7",
-            reviews: "(8.5K reviews)"
+            reviews: "(8.5K reviews)",
+            subject: "Data Analysis",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 22,
@@ -218,7 +275,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.University_of_Oxford,
             skills: "Fintech, Cryptocurrency, Blockchain",
             rating: "4.8",
-            reviews: "(7K reviews)"
+            reviews: "(7K reviews)",
+            subject: "Fintech",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 23,
@@ -227,7 +287,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Google,
             skills: "Android Development, Kotlin, Java",
             rating: "4.6",
-            reviews: "(5.5K reviews)"
+            reviews: "(5.5K reviews)",
+            subject: "Mobile Development",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 24,
@@ -236,7 +299,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.IBM,
             skills: "Artificial Intelligence, Machine Learning, Python",
             rating: "4.9",
-            reviews: "(11K reviews)"
+            reviews: "(11K reviews)",
+            subject: "Artificial Intelligence",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 25,
@@ -245,7 +311,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Meta,
             skills: "JavaScript, Node.js, Web Development",
             rating: "4.7",
-            reviews: "(7.5K reviews)"
+            reviews: "(7.5K reviews)",
+            subject: "Web Development",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 26,
@@ -254,7 +323,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Aws,
             skills: "DevOps, AWS, CI/CD",
             rating: "4.9",
-            reviews: "(9.8K reviews)"
+            reviews: "(9.8K reviews)",
+            subject: "DevOps",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 27,
@@ -263,7 +335,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Stanford_University,
             skills: "Cybersecurity, Ethical Hacking, Python",
             rating: "4.8",
-            reviews: "(7K reviews)"
+            reviews: "(7K reviews)",
+            subject: "Cybersecurity",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 28,
@@ -272,7 +347,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.University_of_Cambridge,
             skills: "AI Ethics, Machine Learning, Policy",
             rating: "4.7",
-            reviews: "(6.5K reviews)"
+            reviews: "(6.5K reviews)",
+            subject: "AI Ethics",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 29,
@@ -281,7 +359,10 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.University_of_Oxford,
             skills: "Leadership, Management, Strategy",
             rating: "4.6",
-            reviews: "(8K reviews)"
+            reviews: "(8K reviews)",
+            subject: "Leadership",
+            language: "English",
+            product: "Courses"
         },
         {
             id: 30,
@@ -290,17 +371,35 @@ export default function CoursesCards({ selectedFilters }) {
             logo: University_Logos.Google,
             skills: "Google Cloud, Cloud Solutions, DevOps",
             rating: "4.9",
-            reviews: "(9K reviews)"
+            reviews: "(9K reviews)",
+            subject: "Cloud Solutions",
+            language: "English",
+            product: "Courses"
         }
     ];
+    
 
       // Filter courses based on selected filters
-      const filteredCourses = courses.filter(course => {
-        const subjectMatch = selectedFilters.subjects.length === 0 || selectedFilters.subjects.includes(course.subject);
-        const languageMatch = selectedFilters.languages.length === 0 || selectedFilters.languages.includes(course.language);
-        const productMatch = selectedFilters.learningProducts.length === 0 || selectedFilters.learningProducts.includes(course.product);
-        return subjectMatch && languageMatch && productMatch;
-    });
+const filteredCourses = courses.filter(course => {
+    // Check if the course subject matches any of the selected subjects or if no subjects are selected
+    const subjectMatch = selectedFilters.subjects.length === 0 || selectedFilters.subjects.includes(course.subject);
+    
+    // Check if the course language matches any of the selected languages or if no languages are selected
+    const languageMatch = selectedFilters.languages.length === 0 || selectedFilters.languages.includes(course.language);
+    
+    // Check if the course product matches any of the selected learning products or if no learning products are selected
+    const productMatch = selectedFilters.learningProducts.length === 0 || selectedFilters.learningProducts.includes(course.product);
+    
+    // Check if the course skills match any of the selected skills or if no skills are selected
+    const skillsMatch = selectedFilters.skills.length === 0 || selectedFilters.skills.some(skill => course.skills.includes(skill));
+
+    // Check if the course university matches any of the selected universities or if no universities are selected
+    const logoMatch = selectedFilters.logo.length === 0 || selectedFilters.logo.includes(course.logo);
+
+    return subjectMatch && languageMatch && productMatch && skillsMatch &logoMatch;
+});
+
+    
 
     // Rendering the course cards
     return (

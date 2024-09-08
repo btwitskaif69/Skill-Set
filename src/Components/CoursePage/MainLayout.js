@@ -7,7 +7,9 @@ export default function MainLayout() {
     const [selectedFilters, setSelectedFilters] = useState({
         subjects: [],
         languages: [],
-        learningProducts: []
+        learningProducts: [],
+        skills: [],
+        logo: []  // Use 'universities' instead of 'imgSrc'
     });
 
     // Function to handle filter changes

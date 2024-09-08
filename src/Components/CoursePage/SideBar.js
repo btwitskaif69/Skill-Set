@@ -1,6 +1,88 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 export default function SideBar({ onFilterChange }) {
+
+    const skills = [
+      "Data Analysis",
+      "Google Analytics",
+      "Data Visualization",
+      "Python",
+      "Machine Learning",
+      "Cloud Computing",
+      "AWS",
+      "Architecture Design",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Artificial Intelligence",
+      "R Programming",
+      "Cybersecurity",
+      "Ethical Hacking",
+      "Network Security",
+      "UX Design",
+      "Prototyping",
+      "User Research",
+      "Docker",
+      "Kubernetes",
+      "Data Engineering",
+      "Robotics",
+      "Neural Networks",
+      "Quantum Computing",
+      "Business Analytics",
+      "Excel",
+      "TensorFlow",
+      "Deep Learning",
+      "Advanced Data Analysis",
+      "Fintech",
+      "Cryptocurrency",
+      "Blockchain",
+      "Android Development",
+      "Kotlin",
+      "Java",
+      "Node.js",
+      "DevOps",
+      "CI/CD",
+      "AI Ethics",
+      "Policy",
+      "Leadership",
+      "Management",
+      "Strategy",
+    ];
+
+    const subjects = [
+        "Data Science",
+        "Computer Science",
+        "Cloud Computing",
+        "Web Development",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Engineering",
+        "Quantum Computing",
+        "Business Analytics",
+        "Cybersecurity",
+        "UX Design",
+        "Blockchain",
+        "AR/VR Development",
+        "Financial Engineering",
+        "Deep Learning",
+        "Data Analysis",
+        "Fintech",
+        "Mobile Development",
+        "DevOps",
+        "AI Ethics",
+        "Leadership",
+        "Cloud Solutions"
+    ];
+
+    const [showAll, setShowAll] = useState(false);
+
+    const visibleSubjects = showAll ? subjects : subjects.slice(0, 5);
+
+    const handleToggle = () => {
+        setShowAll(prev => !prev);
+    };
+
     return (
         <div className="sidebar-container mb-5 ms-n5" style={{
             scrollbarWidth: 'thin', /* For Firefox */
@@ -10,50 +92,28 @@ export default function SideBar({ onFilterChange }) {
 
             {/* Subject Filter */}
             <div className="mb-4">
-                <h6 className="fw-bold">Subject</h6>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Data Science" id="subject1"
-                        onChange={() => onFilterChange('subjects', 'Data Science')} />
-                    <label className="form-check-label" htmlFor="subject1">
-                        Data Science (895)
+            <h6 className="fw-bold">Subject</h6>
+            {visibleSubjects.map((subject, index) => (
+                <div className="form-check" key={index}>
+                    <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value={subject}
+                        id={`subject${index}`}
+                        onChange={() => onFilterChange('subjects', subject)}
+                    />
+                    <label className="form-check-label" htmlFor={`subject${index}`}>
+                        {subject} (0) {/* Replace (0) with the actual count if needed */}
                     </label>
                 </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Computer Science" id="subject2"
-                        onChange={() => onFilterChange('subjects', 'Computer Science')} />
-                    <label className="form-check-label" htmlFor="subject2">
-                        Computer Science (258)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Business" id="subject3"
-                        onChange={() => onFilterChange('subjects', 'Business')} />
-                    <label className="form-check-label" htmlFor="subject3">
-                        Business (312)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Health" id="subject4"
-                        onChange={() => onFilterChange('subjects', 'Health')} />
-                    <label className="form-check-label" htmlFor="subject4">
-                        Health (198)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Mathematics" id="subject5"
-                        onChange={() => onFilterChange('subjects', 'Mathematics')} />
-                    <label className="form-check-label" htmlFor="subject5">
-                        Mathematics (145)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Arts" id="subject6"
-                        onChange={() => onFilterChange('subjects', 'Arts')} />
-                    <label className="form-check-label" htmlFor="subject6">
-                        Arts (89)
-                    </label>
-                </div>
-            </div>
+            ))}
+            <button
+                className="btn btn-link"
+                onClick={handleToggle}
+            >
+                {showAll ? 'Show Less' : 'Show More'}
+            </button>
+        </div>
 
             {/* Language Filter */}
             <div className="mb-4">
@@ -83,64 +143,57 @@ export default function SideBar({ onFilterChange }) {
 
             {/* Skills Filter */}
             <div className="mb-4">
-                <h6 className="fw-bold">Skills</h6>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Data Analysis" id="skill1"
-                        onChange={() => onFilterChange('skills', 'Data Analysis')} />
-                    <label className="form-check-label" htmlFor="skill1">
-                        Data Analysis (432)
+            <h6 className="fw-bold">Skills</h6>
+            {skills.map((skill, index) => (
+                <div className="form-check" key={index}>
+                    <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value={skill}
+                        id={`skill${index}`}
+                        onChange={() => onFilterChange('skills', skill)}
+                    />
+                    <label className="form-check-label" htmlFor={`skill${index}`}>
+                        {skill} (0) {/* Replace (0) with the actual count if needed */}
                     </label>
                 </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Machine Learning" id="skill2"
-                        onChange={() => onFilterChange('skills', 'Machine Learning')} />
-                    <label className="form-check-label" htmlFor="skill2">
-                        Machine Learning (299)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Cloud Computing" id="skill3"
-                        onChange={() => onFilterChange('skills', 'Cloud Computing')} />
-                    <label className="form-check-label" htmlFor="skill3">
-                        Cloud Computing (198)
-                    </label>
-                </div>
-            </div>
+            ))}
+        </div>
 
             {/* University Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">University</h6>
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" value="Google" id="uni1"
-                        onChange={() => onFilterChange('universities', 'Google')} />
+                        onChange={() => onFilterChange('logo', 'Google')} />
                     <label className="form-check-label" htmlFor="uni1">
                         Google (580)
                     </label>
                 </div>
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" value="IBM" id="uni2"
-                        onChange={() => onFilterChange('universities', 'IBM')} />
+                        onChange={() => onFilterChange('logo', 'IBM')} />
                     <label className="form-check-label" htmlFor="uni2">
                         IBM (325)
                     </label>
                 </div>
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" value="Stanford University" id="uni3"
-                        onChange={() => onFilterChange('universities', 'Stanford University')} />
+                        onChange={() => onFilterChange('logo', 'Stanford University')} />
                     <label className="form-check-label" htmlFor="uni3">
                         Stanford University (280)
                     </label>
                 </div>
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" value="Harvard University" id="uni4"
-                        onChange={() => onFilterChange('universities', 'Harvard University')} />
+                        onChange={() => onFilterChange('logo', 'Harvard University')} />
                     <label className="form-check-label" htmlFor="uni4">
                         Harvard University (470)
                     </label>
                 </div>
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" value="MIT" id="uni5"
-                        onChange={() => onFilterChange('universities', 'MIT')} />
+                        onChange={() => onFilterChange('logo', 'MIT')} />
                     <label className="form-check-label" htmlFor="uni5">
                         MIT (310)
                     </label>
