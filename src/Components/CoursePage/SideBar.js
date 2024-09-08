@@ -1,86 +1,38 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 export default function SideBar({ onFilterChange }) {
 
     const skills = [
-      "Data Analysis",
-      "Google Analytics",
-      "Data Visualization",
-      "Python",
-      "Machine Learning",
-      "Cloud Computing",
-      "AWS",
-      "Architecture Design",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Artificial Intelligence",
-      "R Programming",
-      "Cybersecurity",
-      "Ethical Hacking",
-      "Network Security",
-      "UX Design",
-      "Prototyping",
-      "User Research",
-      "Docker",
-      "Kubernetes",
-      "Data Engineering",
-      "Robotics",
-      "Neural Networks",
-      "Quantum Computing",
-      "Business Analytics",
-      "Excel",
-      "TensorFlow",
-      "Deep Learning",
-      "Advanced Data Analysis",
-      "Fintech",
-      "Cryptocurrency",
-      "Blockchain",
-      "Android Development",
-      "Kotlin",
-      "Java",
-      "Node.js",
-      "DevOps",
-      "CI/CD",
-      "AI Ethics",
-      "Policy",
-      "Leadership",
-      "Management",
-      "Strategy",
+        "Data Analysis", "Google Analytics", "Data Visualization", "Python", "Machine Learning",
+        "Cloud Computing", "AWS", "Architecture Design", "HTML", "CSS", "JavaScript", "React",
+        "Artificial Intelligence", "R Programming", "Cybersecurity", "Ethical Hacking",
+        "Network Security", "UX Design", "Prototyping", "User Research", "Docker", "Kubernetes",
+        "Data Engineering", "Robotics", "Neural Networks", "Quantum Computing", "Business Analytics",
+        "Excel", "TensorFlow", "Deep Learning", "Advanced Data Analysis", "Fintech", "Cryptocurrency",
+        "Blockchain", "Android Development", "Kotlin", "Java", "Node.js", "DevOps", "CI/CD",
+        "AI Ethics", "Policy", "Leadership", "Management", "Strategy",
     ];
 
     const subjects = [
-        "Data Science",
-        "Computer Science",
-        "Cloud Computing",
-        "Web Development",
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Data Engineering",
-        "Quantum Computing",
-        "Business Analytics",
-        "Cybersecurity",
-        "UX Design",
-        "Blockchain",
-        "AR/VR Development",
-        "Financial Engineering",
-        "Deep Learning",
-        "Data Analysis",
-        "Fintech",
-        "Mobile Development",
-        "DevOps",
-        "AI Ethics",
-        "Leadership",
-        "Cloud Solutions"
+        "Data Science", "Computer Science", "Cloud Computing", "Web Development", "Artificial Intelligence",
+        "Machine Learning", "Data Engineering", "Quantum Computing", "Business Analytics", "Cybersecurity",
+        "UX Design", "Blockchain", "AR/VR Development", "Financial Engineering", "Deep Learning",
+        "Data Analysis", "Fintech", "Mobile Development", "DevOps", "AI Ethics", "Leadership", "Cloud Solutions"
     ];
 
-    const [showAll, setShowAll] = useState(false);
+    const [visibility, setVisibility] = useState({
+        subjects: false,
+        skills: false,
+    });
 
-    const visibleSubjects = showAll ? subjects : subjects.slice(0, 5);
+    const visibleSubjects = visibility.subjects ? subjects : subjects.slice(0, 5);
+    const visibleSkills = visibility.skills ? skills : skills.slice(0, 5);
 
-    const handleToggle = () => {
-        setShowAll(prev => !prev);
+    const handleToggle = (type) => {
+        setVisibility(prev => ({
+            ...prev,
+            [type]: !prev[type]
+        }));
     };
 
     return (
@@ -92,28 +44,28 @@ export default function SideBar({ onFilterChange }) {
 
             {/* Subject Filter */}
             <div className="mb-4">
-            <h6 className="fw-bold">Subject</h6>
-            {visibleSubjects.map((subject, index) => (
-                <div className="form-check" key={index}>
-                    <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value={subject}
-                        id={`subject${index}`}
-                        onChange={() => onFilterChange('subjects', subject)}
-                    />
-                    <label className="form-check-label" htmlFor={`subject${index}`}>
-                        {subject} (0) {/* Replace (0) with the actual count if needed */}
-                    </label>
-                </div>
-            ))}
-            <button
-                className="btn btn-link"
-                onClick={handleToggle}
-            >
-                {showAll ? 'Show Less' : 'Show More'}
-            </button>
-        </div>
+                <h6 className="fw-bold">Subject</h6>
+                {visibleSubjects.map((subject, index) => (
+                    <div className="form-check" key={index}>
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value={subject}
+                            id={`subject${index}`}
+                            onChange={() => onFilterChange('subjects', subject)}
+                        />
+                        <label className="form-check-label" htmlFor={`subject${index}`}>
+                            {subject} (0) {/* Replace (0) with the actual count if needed */}
+                        </label>
+                    </div>
+                ))}
+                <button
+                    className="btn btn-link"
+                    onClick={() => handleToggle('subjects')}
+                >
+                    {visibility.subjects ? 'Show Less' : 'Show More'}
+                </button>
+            </div>
 
             {/* Language Filter */}
             <div className="mb-4">
@@ -143,22 +95,28 @@ export default function SideBar({ onFilterChange }) {
 
             {/* Skills Filter */}
             <div className="mb-4">
-            <h6 className="fw-bold">Skills</h6>
-            {skills.map((skill, index) => (
-                <div className="form-check" key={index}>
-                    <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value={skill}
-                        id={`skill${index}`}
-                        onChange={() => onFilterChange('skills', skill)}
-                    />
-                    <label className="form-check-label" htmlFor={`skill${index}`}>
-                        {skill} (0) {/* Replace (0) with the actual count if needed */}
-                    </label>
-                </div>
-            ))}
-        </div>
+                <h6 className="fw-bold">Skills</h6>
+                {visibleSkills.map((skill, index) => (
+                    <div className="form-check" key={index}>
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value={skill}
+                            id={`skill${index}`}
+                            onChange={() => onFilterChange('skills', skill)}
+                        />
+                        <label className="form-check-label" htmlFor={`skill${index}`}>
+                            {skill} (0) {/* Replace (0) with the actual count if needed */}
+                        </label>
+                    </div>
+                ))}
+                <button
+                    className="btn btn-link"
+                    onClick={() => handleToggle('skills')}
+                >
+                    {visibility.skills ? 'Show Less' : 'Show More'}
+                </button>
+            </div>
 
             {/* University Filter */}
             <div className="mb-4">
