@@ -57,12 +57,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <form className="d-flex" role="search">
-                  <input
-                    className="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
+                  <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                   <button className="btn btn-outline-success custom-button" type="submit">Search</button>
                 </form>
               </li>

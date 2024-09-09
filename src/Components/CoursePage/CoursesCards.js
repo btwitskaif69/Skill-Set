@@ -410,11 +410,8 @@ export default function CoursesCards({ selectedFilters }) {
       }
     ];
     
-    
-    
-
       // Filter courses based on selected filters
-const filteredCourses = courses.filter(course => {
+    const filteredCourses = courses.filter(course => {
     const subjectMatch = selectedFilters.subjects.length === 0 || selectedFilters.subjects.includes(course.subject);
     const languageMatch = selectedFilters.languages.length === 0 || selectedFilters.languages.includes(course.language);
     const productMatch = selectedFilters.learningProducts.length === 0 || selectedFilters.learningProducts.includes(course.product);
@@ -423,11 +420,8 @@ const filteredCourses = courses.filter(course => {
     const durationsMatch = selectedFilters.durations.length === 0 || selectedFilters.durations.includes(course.duration);
     const ratingsMatch = selectedFilters.ratings.length === 0 || selectedFilters.ratings.includes(course.rating);
 
-
     return subjectMatch && languageMatch && productMatch && skillsMatch && universitiesMatch && durationsMatch & ratingsMatch;
 });
-
-    
 
     // Rendering the course cards
     return (

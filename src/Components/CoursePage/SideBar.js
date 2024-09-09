@@ -197,13 +197,4 @@ export default function SideBar({ onFilterChange }) {
     );
 }
 
-<style>{`
-.sidebar-container {
-    height: 400px; /* Set height for the sidebar */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding-right: 15px; /* Optional: Add space for scrollbar */
-    background-color: red; /* Optional: Background color for visibility */
-    border: 1px solid red;
-}
-`}</style>
 
