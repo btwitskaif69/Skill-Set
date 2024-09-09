@@ -9,7 +9,14 @@ export default function MainLayout() {
         languages: [],
         learningProducts: [],
         skills: [],
-        logo: []  // Use 'universities' instead of 'imgSrc'
+        logo: [],
+        universities: [],
+        durations: [],
+        ratings:[]
+
+
+
+          // Use 'universities' instead of 'imgSrc'
     });
 
     // Function to handle filter changes

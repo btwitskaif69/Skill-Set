@@ -6,8 +6,10 @@ export default function CoursesCards({ selectedFilters }) {
         Aws: '/Assets/University_Logos/Aws.svg',
         Duke_University: '/Assets/University_Logos/Duke_University.svg',
         Google: '/Assets/University_Logos/Google.svg',
+        Harvard_University: '/Assets/University_Logos/Harvard_University.svg',
         IBM: '/Assets/University_Logos/IBM.svg',
         Meta: '/Assets/University_Logos/Meta.svg',
+        MIT: '/Assets/University_Logos/Mit.svg',
         Stanford_University: '/Assets/University_Logos/Stanford_University.svg',
         University_of_Cambridge: '/Assets/University_Logos/University_of_Cambridge.svg',
         University_of_Michigan: '/Assets/University_Logos/University_of_Michigan.svg',
@@ -27,6 +29,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Data Science",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 2,
@@ -39,6 +42,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Data Science",
         language: "English",
         product: "Courses",
+        duration: "3-6 months",
       },
       {
         id: 3,
@@ -51,6 +55,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Cloud Computing",
         language: "English",
         product: "Courses",
+        duration: "3-6 months",
       },
       {
         id: 4,
@@ -63,6 +68,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Web Development",
         language: "English",
         product: "Courses",
+        duration: "1-3 months",
       },
       {
         id: 5,
@@ -75,6 +81,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Artificial Intelligence",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 6,
@@ -87,6 +94,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Machine Learning",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 7,
@@ -99,6 +107,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Data Science",
         language: "English",
         product: "Courses",
+        duration: "3-6 months",
       },
       {
         id: 8,
@@ -111,90 +120,98 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Cybersecurity",
         language: "English",
         product: "Courses",
+        duration: "3-6 months",
       },
       {
         id: 9,
-        title: "Google UX Design",
+        title: "Harvard Business Analytics",
         imgSrc: "/Assets/Course/course9.jpg",
-        logo: University_Logos.Google,
-        skills: "UX Design, Prototyping, User Research",
+        logo: University_Logos.Harvard_University,
+        skills: "Business Analytics, Data Visualization, Excel",
         rating: "4.8",
         reviews: "(9K reviews)",
-        subject: "UX Design",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 10,
-        title: "IBM Cloud Computing",
-        imgSrc: "/Assets/Course/course10.jpg",
-        logo: University_Logos.IBM,
-        skills: "Cloud Computing, Docker, Kubernetes",
-        rating: "4.6",
-        reviews: "(6.5K reviews)",
-        subject: "Cloud Computing",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 11,
-        title: "Meta Advanced React",
-        imgSrc: "/Assets/Course/course11.jpg",
-        logo: University_Logos.Meta,
-        skills: "React, Redux, Web Development",
-        rating: "4.9",
-        reviews: "(10.5K reviews)",
-        subject: "Web Development",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 12,
-        title: "AWS Data Engineering",
-        imgSrc: "/Assets/Course/course12.jpg",
-        logo: University_Logos.Aws,
-        skills: "Data Engineering, AWS, Python",
-        rating: "4.7",
-        reviews: "(8.5K reviews)",
-        subject: "Data Engineering",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 13,
-        title: "Stanford Artificial Intelligence",
-        imgSrc: "/Assets/Course/course13.jpg",
-        logo: University_Logos.Stanford_University,
-        skills: "Artificial Intelligence, Robotics, Machine Learning",
-        rating: "4.9",
-        reviews: "(13K reviews)",
-        subject: "Artificial Intelligence",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 14,
-        title: "Quantum Computing",
-        imgSrc: "/Assets/Course/course14.jpg",
-        logo: University_Logos.University_of_Cambridge,
-        skills: "Quantum Computing, Python, Algorithms",
-        rating: "4.8",
-        reviews: "(7.5K reviews)",
-        subject: "Quantum Computing",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 15,
-        title: "Oxford Business Analytics",
-        imgSrc: "/Assets/Course/course15.jpg",
-        logo: University_Logos.University_of_Oxford,
-        skills: "Business Analytics, Data Science, Excel",
-        rating: "4.6",
-        reviews: "(5.5K reviews)",
         subject: "Business Analytics",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
+      },
+      {
+        id: 10,
+        title: "MIT Blockchain Technology",
+        imgSrc: "/Assets/Course/course10.jpg",
+        logo: University_Logos.MIT,
+        skills: "Blockchain, Cryptography, Decentralization",
+        rating: "4.9",
+        reviews: "(7K reviews)",
+        subject: "Blockchain",
+        language: "English",
+        product: "Courses",
+        duration: "1-3 months",
+      },
+      {
+        id: 11,
+        title: "AR/VR Development",
+        imgSrc: "/Assets/Course/course11.jpg",
+        logo: University_Logos.Meta,
+        skills: "Augmented Reality, Virtual Reality, Unity",
+        rating: "4.6",
+        reviews: "(4K reviews)",
+        subject: "AR/VR Development",
+        language: "English",
+        product: "Courses",
+        duration: "3-6 months",
+      },
+      {
+        id: 12,
+        title: "Quantum Computing",
+        imgSrc: "/Assets/Course/course12.jpg",
+        logo: University_Logos.IBM,
+        skills: "Quantum Computing, Qiskit, Python",
+        rating: "4.7",
+        reviews: "(5K reviews)",
+        subject: "Quantum Computing",
+        language: "English",
+        product: "Courses",
+        duration: "6-12 months",
+      },
+      {
+        id: 13,
+        title: "Leadership and Management",
+        imgSrc: "/Assets/Course/course13.jpg",
+        logo: University_Logos.Harvard_University,
+        skills: "Leadership, Decision-Making, Communication",
+        rating: "4.8",
+        reviews: "(6K reviews)",
+        subject: "Leadership",
+        language: "English",
+        product: "Courses",
+        duration: "3-6 months",
+      },
+      {
+        id: 14,
+        title: "Mobile App Development",
+        imgSrc: "/Assets/Course/course14.jpg",
+        logo: University_Logos.Google,
+        skills: "Android Development, Kotlin, Java",
+        rating: "4.7",
+        reviews: "(8K reviews)",
+        subject: "Mobile Development",
+        language: "English",
+        product: "Courses",
+        duration: "6-12 months",
+      },
+      {
+        id: 15,
+        title: "AI Ethics",
+        imgSrc: "/Assets/Course/course15.jpg",
+        logo: University_Logos.Stanford_University,
+        skills: "Ethics, Artificial Intelligence, Policy",
+        rating: "4.9",
+        reviews: "(7K reviews)",
+        subject: "AI Ethics",
+        language: "English",
+        product: "Courses",
+        duration: "1-3 months",
       },
       {
         id: 16,
@@ -207,6 +224,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Machine Learning",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 17,
@@ -219,6 +237,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Blockchain",
         language: "English",
         product: "Courses",
+        duration: "3-6 months",
       },
       {
         id: 18,
@@ -231,6 +250,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "AR/VR Development",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 19,
@@ -243,6 +263,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Financial Engineering",
         language: "English",
         product: "Courses",
+        duration: "1-3 months",
       },
       {
         id: 20,
@@ -255,6 +276,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Deep Learning",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 21,
@@ -267,6 +289,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Data Analysis",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 22,
@@ -279,6 +302,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Fintech",
         language: "English",
         product: "Courses",
+        duration: "3-6 months",
       },
       {
         id: 23,
@@ -291,6 +315,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Mobile Development",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 24,
@@ -303,6 +328,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Artificial Intelligence",
         language: "English",
         product: "Courses",
+        duration: "3-6 months",
       },
       {
         id: 25,
@@ -315,6 +341,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Web Development",
         language: "English",
         product: "Courses",
+        duration: "1-3 months",
       },
       {
         id: 26,
@@ -327,6 +354,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "DevOps",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 27,
@@ -339,6 +367,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Cybersecurity",
         language: "English",
         product: "Courses",
+        duration: "3-6 months",
       },
       {
         id: 28,
@@ -351,6 +380,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "AI Ethics",
         language: "English",
         product: "Courses",
+        duration: "6-12 months",
       },
       {
         id: 29,
@@ -363,6 +393,7 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Leadership",
         language: "English",
         product: "Courses",
+        duration: "1-3 months",
       },
       {
         id: 30,
@@ -375,247 +406,8 @@ export default function CoursesCards({ selectedFilters }) {
         subject: "Cloud Solutions",
         language: "English",
         product: "Courses",
-      },
-      {
-        id: 31,
-        title: "AWS Big Data",
-        imgSrc: "/Assets/Course/course31.jpg",
-        logo: University_Logos.Aws,
-        skills: "Big Data, AWS, Data Analysis",
-        rating: "4.8",
-        reviews: "(7K reviews)",
-        subject: "Data Science",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 32,
-        title: "Duke AI Fundamentals",
-        imgSrc: "/Assets/Course/course32.jpg",
-        logo: University_Logos.Duke_University,
-        skills: "AI Basics, Python, Machine Learning",
-        rating: "4.7",
-        reviews: "(6K reviews)",
-        subject: "Artificial Intelligence",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 33,
-        title: "Meta Web Design",
-        imgSrc: "/Assets/Course/course33.jpg",
-        logo: University_Logos.Meta,
-        skills: "Web Design, UX/UI, HTML/CSS",
-        rating: "4.6",
-        reviews: "(5K reviews)",
-        subject: "Web Development",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 34,
-        title: "Stanford Quantum Computing",
-        imgSrc: "/Assets/Course/course34.jpg",
-        logo: University_Logos.Stanford_University,
-        skills: "Quantum Algorithms, Quantum Computing",
-        rating: "4.8",
-        reviews: "(6.5K reviews)",
-        subject: "Quantum Computing",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 35,
-        title: "Oxford Data Engineering",
-        imgSrc: "/Assets/Course/course35.jpg",
-        logo: University_Logos.University_of_Oxford,
-        skills: "Data Engineering, Big Data, Python",
-        rating: "4.7",
-        reviews: "(7K reviews)",
-        subject: "Data Engineering",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 36,
-        title: "Google Blockchain",
-        imgSrc: "/Assets/Course/course36.jpg",
-        logo: University_Logos.Google,
-        skills: "Blockchain, Cryptography, Smart Contracts",
-        rating: "4.8",
-        reviews: "(6.5K reviews)",
-        subject: "Blockchain",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 37,
-        title: "IBM Mobile Development",
-        imgSrc: "/Assets/Course/course37.jpg",
-        logo: University_Logos.IBM,
-        skills: "Mobile Apps, Java, Kotlin",
-        rating: "4.6",
-        reviews: "(5.5K reviews)",
-        subject: "Mobile Development",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 38,
-        title: "Meta AI Ethics",
-        imgSrc: "/Assets/Course/course38.jpg",
-        logo: University_Logos.Meta,
-        skills: "Ethical AI, Policy, Machine Learning",
-        rating: "4.7",
-        reviews: "(6K reviews)",
-        subject: "AI Ethics",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 39,
-        title: "Stanford Leadership",
-        imgSrc: "/Assets/Course/course39.jpg",
-        logo: University_Logos.Stanford_University,
-        skills: "Leadership Skills, Management, Strategy",
-        rating: "4.8",
-        reviews: "(7.5K reviews)",
-        subject: "Leadership",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 40,
-        title: "Duke Data Engineering",
-        imgSrc: "/Assets/Course/course40.jpg",
-        logo: University_Logos.Duke_University,
-        skills: "Data Engineering, SQL, Big Data",
-        rating: "4.7",
-        reviews: "(6K reviews)",
-        subject: "Data Engineering",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 41,
-        title: "Cambridge Deep Learning",
-        imgSrc: "/Assets/Course/course41.jpg",
-        logo: University_Logos.University_of_Cambridge,
-        skills: "Deep Learning, Neural Networks, TensorFlow",
-        rating: "4.9",
-        reviews: "(8K reviews)",
-        subject: "Deep Learning",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 42,
-        title: "Oxford Fintech Innovations",
-        imgSrc: "/Assets/Course/course42.jpg",
-        logo: University_Logos.University_of_Oxford,
-        skills: "Fintech Innovations, Blockchain, Cryptocurrency",
-        rating: "4.8",
-        reviews: "(7K reviews)",
-        subject: "Fintech",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 43,
-        title: "AWS AI Solutions",
-        imgSrc: "/Assets/Course/course43.jpg",
-        logo: University_Logos.Aws,
-        skills: "AI Solutions, AWS, Machine Learning",
-        rating: "4.9",
-        reviews: "(8.5K reviews)",
-        subject: "Artificial Intelligence",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 44,
-        title: "Meta Data Science",
-        imgSrc: "/Assets/Course/course44.jpg",
-        logo: University_Logos.Meta,
-        skills: "Data Science, Analytics, Data Visualization",
-        rating: "4.8",
-        reviews: "(9K reviews)",
-        subject: "Data Science",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 45,
-        title: "Stanford Mobile Development",
-        imgSrc: "/Assets/Course/course45.jpg",
-        logo: University_Logos.Stanford_University,
-        skills: "Mobile Development, Android, iOS",
-        rating: "4.6",
-        reviews: "(5.5K reviews)",
-        subject: "Mobile Development",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 46,
-        title: "IBM Financial Engineering",
-        imgSrc: "/Assets/Course/course46.jpg",
-        logo: University_Logos.IBM,
-        skills: "Financial Engineering, Risk Management, Python",
-        rating: "4.7",
-        reviews: "(6K reviews)",
-        subject: "Financial Engineering",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 47,
-        title: "Google DevOps",
-        imgSrc: "/Assets/Course/course47.jpg",
-        logo: University_Logos.Google,
-        skills: "DevOps, Google Cloud, CI/CD",
-        rating: "4.9",
-        reviews: "(9K reviews)",
-        subject: "DevOps",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 48,
-        title: "Cambridge Blockchain",
-        imgSrc: "/Assets/Course/course48.jpg",
-        logo: University_Logos.University_of_Cambridge,
-        skills: "Blockchain Technology, Hyperledger, Smart Contracts",
-        rating: "4.8",
-        reviews: "(7.5K reviews)",
-        subject: "Blockchain",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 49,
-        title: "Oxford Data Science",
-        imgSrc: "/Assets/Course/course49.jpg",
-        logo: University_Logos.University_of_Oxford,
-        skills: "Data Science, Analytics, Python",
-        rating: "4.7",
-        reviews: "(8K reviews)",
-        subject: "Data Science",
-        language: "English",
-        product: "Courses",
-      },
-      {
-        id: 50,
-        title: "Meta UX Design",
-        imgSrc: "/Assets/Course/course50.jpg",
-        logo: University_Logos.Meta,
-        skills: "UX Design, User Research, Prototyping",
-        rating: "4.9",
-        reviews: "(9K reviews)",
-        subject: "UX Design",
-        language: "English",
-        product: "Courses",
-      },
+        duration: "3-6 months",
+      }
     ];
     
     
@@ -654,14 +446,25 @@ const filteredCourses = courses.filter(course => {
                     filteredCourses.map(course => (
                         <div key={course.id} className="col-lg-4 col-md-6 col-sm-12">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card h-100 fade-in">
+                                <div className="card h-100 fade-in"
+                                style={{
+                                  transition:'transform 0.3s ease, box-shadow 0.3s ease',
+                                  padding: '7px',
+                                  borderRadius:'7px',
+                                  height: '100%'
+                                  }}>
                                     <img 
                                         src={course.imgSrc} 
                                         className="card-img-top" 
                                         alt={course.title || 'Course Image'} 
-                                    />
+                                    style={{
+                                      height:'200px',
+                                      width:'100%',
+                                      objectFit:'cover',
+                                      borderRadius: '7px'
+                                    }}/>
                                     <div className="card-body d-flex flex-column">
-                                        <div className="course-logos mb-3">
+                                        <div className="course-logos mb-3" style={{display:'flex', marginBottom:'8px', justifyContent:'left'}}>
                                             {course.logo && (
                                                 <img 
                                                     src={course.logo} 
@@ -669,20 +472,21 @@ const filteredCourses = courses.filter(course => {
                                                 />
                                             )}
                                         </div>
-                                        <h5 className="card-title mb-0" style={{ color: 'Black' }}>{course.title}</h5>
-                                        <p className="card-text" style={{ color: '#636363' }}>
+                                        <h5 className="card-title mb-0"
+                                        style={{ color: 'Black', minHeight:'30px', fontSize:'16px', fontWeight:'600' }}>{course.title}</h5>
+                                        <p className="card-text-skills" style={{ color: '#636363', fontSize: '0.8rem' }}>
                                             <b style={{ color: 'black', fontWeight: '600' }}>Skills you'll gain:</b> {course.skills}
                                         </p>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>
+                                            <p className="review-rating mb-0 bi bi-award" style={{ color: '#210BE3', fontSize: '0.7rem' }}>
                                                 &nbsp;Advance your degree journey
                                             </p>
-                                            <p className="card-text mb-0">
-                                                <i className="bi bi-star-fill" style={{ color: '#f59e0b' }}></i>&nbsp;
+                                            <p className="card-text mb-0" style={{fontSize: '0.7rem'}}>
+                                                <i className="bi bi-star-fill" style={{ color: '#f59e0b'}}></i>&nbsp;
                                                 <b>{course.rating}</b> {course.reviews}
                                             </p>
-                                            <p className="card-text mb-0" style={{ color: '#636363' }}>
-                                                Beginner · Career Certificate · 3-6 Months
+                                            <p className="card-text mb-0" style={{ color: '#636363', fontSize: '0.7rem' }}>
+                                                Beginner · Career Certificate · {course.duration}
                                             </p>
                                         </div>
                                     </div>
@@ -707,39 +511,14 @@ const filteredCourses = courses.filter(course => {
                         transform: translateY(0);
                     }
                 }
-                .card {
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    padding: 7px;
-                    border-radius: 7px;
-                    height: 100%; /* Ensure cards take full height */
-                }
                 .card:hover {
                     transform: scale(1.05);
                     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
-                }
-                .card-img-top {
-                    height: 200px; /* Set a fixed height for the image */
-                    width: 100%; /* Make sure the image takes up the full width */
-                    object-fit: cover; /* Ensures the image covers the area without stretching */
-                    border-radius: 7px;
-                }
-                .course-logos {
-                    display: flex;
-                    margin-bottom: 8px;
-                    justify-content: left;
                 }
                 .course-logos img {
                     height: 24px; /* Slightly increased logo height */
                     width: auto;
                     margin-right: 8px;
-                }
-                .card-title {
-                    min-height: 30px; /* Set a minimum height for the title */
-                    font-size: 16px;
-                    font-weight: 600;
-                }
-                .card-text {
-                    font-size: 0.75rem; /* Slightly larger for readability */
                 }
                 .fade-in {
                     animation: fadeIn 0.5s ease-out;

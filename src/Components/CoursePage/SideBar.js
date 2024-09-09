@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 export default function SideBar({ onFilterChange }) {
-
     const skills = [
         "Data Analysis", "Google Analytics", "Data Visualization", "Python", "Machine Learning",
         "Cloud Computing", "AWS", "Architecture Design", "HTML", "CSS", "JavaScript", "React",
@@ -20,13 +19,37 @@ export default function SideBar({ onFilterChange }) {
         "Data Analysis", "Fintech", "Mobile Development", "DevOps", "AI Ethics", "Leadership", "Cloud Solutions"
     ];
 
+    const languages = [
+        "English", "Spanish", "French", "German", "Chinese"
+    ];
+
+    const universities = [
+        "Google", "IBM", "Stanford University", "Harvard University", "MIT"
+    ];
+
+    const durations = [
+        "1-3 months", "3-6 months", "6-12 months"
+    ];
+
+    const ratings = [
+        "4.5 & up", "4.0 & up", "3.5 & up"
+    ];
+
     const [visibility, setVisibility] = useState({
         subjects: false,
         skills: false,
+        languages: false,
+        universities: false,
+        durations: false,
+        ratings: false,
     });
 
     const visibleSubjects = visibility.subjects ? subjects : subjects.slice(0, 5);
     const visibleSkills = visibility.skills ? skills : skills.slice(0, 5);
+    const visibleLanguages = visibility.languages ? languages : languages.slice(0, 3);
+    const visibleUniversities = visibility.universities ? universities : universities.slice(0, 3);
+    const visibleDurations = visibility.durations ? durations : durations.slice(0, 2);
+    const visibleRatings = visibility.ratings ? ratings : ratings.slice(0, 2);
 
     const handleToggle = (type) => {
         setVisibility(prev => ({
@@ -36,10 +59,7 @@ export default function SideBar({ onFilterChange }) {
     };
 
     return (
-        <div className="sidebar-container mb-5 ms-n5" style={{
-            scrollbarWidth: 'thin', /* For Firefox */
-            scrollbarColor: '#888 #f1f1f1',
-        }}>
+        <div className="sidebar-container mb-5 ms-n5">
             <h5 className="mb-4">Filter by</h5>
 
             {/* Subject Filter */}
@@ -55,42 +75,13 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('subjects', subject)}
                         />
                         <label className="form-check-label" htmlFor={`subject${index}`}>
-                            {subject} (0) {/* Replace (0) with the actual count if needed */}
+                            {subject} (0)
                         </label>
                     </div>
                 ))}
-                <button
-                    className="btn btn-link"
-                    onClick={() => handleToggle('subjects')}
-                >
+                <button className="btn btn-link" onClick={() => handleToggle('subjects')}>
                     {visibility.subjects ? 'Show Less' : 'Show More'}
                 </button>
-            </div>
-
-            {/* Language Filter */}
-            <div className="mb-4">
-                <h6 className="fw-bold">Language</h6>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="English" id="lang1"
-                        onChange={() => onFilterChange('languages', 'English')} />
-                    <label className="form-check-label" htmlFor="lang1">
-                        English (1,584)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Spanish" id="lang2"
-                        onChange={() => onFilterChange('languages', 'Spanish')} />
-                    <label className="form-check-label" htmlFor="lang2">
-                        Spanish (532)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="French" id="lang3"
-                        onChange={() => onFilterChange('languages', 'French')} />
-                    <label className="form-check-label" htmlFor="lang3">
-                        French (276)
-                    </label>
-                </div>
             </div>
 
             {/* Skills Filter */}
@@ -106,108 +97,101 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('skills', skill)}
                         />
                         <label className="form-check-label" htmlFor={`skill${index}`}>
-                            {skill} (0) {/* Replace (0) with the actual count if needed */}
+                            {skill} (0)
                         </label>
                     </div>
                 ))}
-                <button
-                    className="btn btn-link"
-                    onClick={() => handleToggle('skills')}
-                >
+                <button className="btn btn-link" onClick={() => handleToggle('skills')}>
                     {visibility.skills ? 'Show Less' : 'Show More'}
+                </button>
+            </div>
+
+            {/* Language Filter */}
+            <div className="mb-4">
+                <h6 className="fw-bold">Language</h6>
+                {visibleLanguages.map((language, index) => (
+                    <div className="form-check" key={index}>
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value={language}
+                            id={`language${index}`}
+                            onChange={() => onFilterChange('languages', language)}
+                        />
+                        <label className="form-check-label" htmlFor={`language${index}`}>
+                            {language} (0)
+                        </label>
+                    </div>
+                ))}
+                <button className="btn btn-link" onClick={() => handleToggle('languages')}>
+                    {visibility.languages ? 'Show Less' : 'Show More'}
                 </button>
             </div>
 
             {/* University Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">University</h6>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Google" id="uni1"
-                        onChange={() => onFilterChange('logo', 'Google')} />
-                    <label className="form-check-label" htmlFor="uni1">
-                        Google (580)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="IBM" id="uni2"
-                        onChange={() => onFilterChange('logo', 'IBM')} />
-                    <label className="form-check-label" htmlFor="uni2">
-                        IBM (325)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Stanford University" id="uni3"
-                        onChange={() => onFilterChange('logo', 'Stanford University')} />
-                    <label className="form-check-label" htmlFor="uni3">
-                        Stanford University (280)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Harvard University" id="uni4"
-                        onChange={() => onFilterChange('logo', 'Harvard University')} />
-                    <label className="form-check-label" htmlFor="uni4">
-                        Harvard University (470)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="MIT" id="uni5"
-                        onChange={() => onFilterChange('logo', 'MIT')} />
-                    <label className="form-check-label" htmlFor="uni5">
-                        MIT (310)
-                    </label>
-                </div>
+                {visibleUniversities.map((university, index) => (
+                    <div className="form-check" key={index}>
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value={university}
+                            id={`university${index}`}
+                            onChange={() => onFilterChange('universities', university)}
+                        />
+                        <label className="form-check-label" htmlFor={`university${index}`}>
+                            {university} (0)
+                        </label>
+                    </div>
+                ))}
+                <button className="btn btn-link" onClick={() => handleToggle('universities')}>
+                    {visibility.universities ? 'Show Less' : 'Show More'}
+                </button>
             </div>
 
             {/* Duration Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">Duration</h6>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="Less than 3 months" id="duration1"
-                        onChange={() => onFilterChange('duration', 'Less than 3 months')} />
-                    <label className="form-check-label" htmlFor="duration1">
-                        Less than 3 months (423)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="3-6 months" id="duration2"
-                        onChange={() => onFilterChange('duration', '3-6 months')} />
-                    <label className="form-check-label" htmlFor="duration2">
-                        3-6 months (312)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="6+ months" id="duration3"
-                        onChange={() => onFilterChange('duration', '6+ months')} />
-                    <label className="form-check-label" htmlFor="duration3">
-                        6+ months (112)
-                    </label>
-                </div>
+                {visibleDurations.map((duration, index) => (
+                    <div className="form-check" key={index}>
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value={duration}
+                            id={`duration${index}`}
+                            onChange={() => onFilterChange('durations', duration)}
+                        />
+                        <label className="form-check-label" htmlFor={`duration${index}`}>
+                            {duration} (0)
+                        </label>
+                    </div>
+                ))}
+                <button className="btn btn-link" onClick={() => handleToggle('durations')}>
+                    {visibility.durations ? 'Show Less' : 'Show More'}
+                </button>
             </div>
 
             {/* Rating Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">Rating</h6>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="4.5 & up" id="rating1"
-                        onChange={() => onFilterChange('rating', '4.5 & up')} />
-                    <label className="form-check-label" htmlFor="rating1">
-                        4.5 & up (1,045)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="4.0 & up" id="rating2"
-                        onChange={() => onFilterChange('rating', '4.0 & up')} />
-                    <label className="form-check-label" htmlFor="rating2">
-                        4.0 & up (872)
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="3.5 & up" id="rating3"
-                        onChange={() => onFilterChange('rating', '3.5 & up')} />
-                    <label className="form-check-label" htmlFor="rating3">
-                        3.5 & up (692)
-                    </label>
-                </div>
+                {visibleRatings.map((rating, index) => (
+                    <div className="form-check" key={index}>
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value={rating}
+                            id={`rating${index}`}
+                            onChange={() => onFilterChange('ratings', rating)}
+                        />
+                        <label className="form-check-label" htmlFor={`rating${index}`}>
+                            {rating} (0)
+                        </label>
+                    </div>
+                ))}
+                <button className="btn btn-link" onClick={() => handleToggle('ratings')}>
+                    {visibility.ratings ? 'Show Less' : 'Show More'}
+                </button>
             </div>
         </div>
     );
@@ -217,30 +201,5 @@ export default function SideBar({ onFilterChange }) {
 .sidebar-container {
     height: 400px; /* Set a fixed height for the sidebar */
     overflow-y: auto; /* Enable vertical scrolling */
-}
-
-/* Customize the scrollbar for Webkit browsers (Chrome, Safari) */
-.sidebar-container::-webkit-scrollbar {
-    width: 10px;
-}
-
-.sidebar-container::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-}
-
-.sidebar-container::-webkit-scrollbar-thumb {
-    background-color: #888; 
-    border-radius: 10px;
-    border: 2px solid #f1f1f1;
-}
-
-.sidebar-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* For Firefox */
-.sidebar-container {
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
 }
 `}</style>
