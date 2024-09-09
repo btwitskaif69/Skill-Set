@@ -24,7 +24,7 @@ export default function CoursesCards({ selectedFilters }) {
         imgSrc: "/Assets/Course/course1.jpg",
         logo: University_Logos.Google,
         skills: "Data Analysis, Google Analytics, Data Visualization",
-        rating: "4.8",
+        rating: "5.0",
         reviews: "(10K reviews)",
         subject: "Data Science",
         language: "English",
@@ -415,22 +415,16 @@ export default function CoursesCards({ selectedFilters }) {
 
       // Filter courses based on selected filters
 const filteredCourses = courses.filter(course => {
-    // Check if the course subject matches any of the selected subjects or if no subjects are selected
     const subjectMatch = selectedFilters.subjects.length === 0 || selectedFilters.subjects.includes(course.subject);
-    
-    // Check if the course language matches any of the selected languages or if no languages are selected
     const languageMatch = selectedFilters.languages.length === 0 || selectedFilters.languages.includes(course.language);
-    
-    // Check if the course product matches any of the selected learning products or if no learning products are selected
     const productMatch = selectedFilters.learningProducts.length === 0 || selectedFilters.learningProducts.includes(course.product);
-    
-    // Check if the course skills match any of the selected skills or if no skills are selected
     const skillsMatch = selectedFilters.skills.length === 0 || selectedFilters.skills.some(skill => course.skills.includes(skill));
+    const universitiesMatch = selectedFilters.universities.length === 0 || selectedFilters.universities.includes(course.logo);
+    const durationsMatch = selectedFilters.durations.length === 0 || selectedFilters.durations.includes(course.duration);
+    const ratingsMatch = selectedFilters.ratings.length === 0 || selectedFilters.ratings.includes(course.rating);
 
-    // Check if the course university matches any of the selected universities or if no universities are selected
-    const logoMatch = selectedFilters.logo.length === 0 || selectedFilters.logo.includes(course.logo);
 
-    return subjectMatch && languageMatch && productMatch && skillsMatch &logoMatch;
+    return subjectMatch && languageMatch && productMatch && skillsMatch && universitiesMatch && durationsMatch & ratingsMatch;
 });
 
     

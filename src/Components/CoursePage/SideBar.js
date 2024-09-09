@@ -24,7 +24,7 @@ export default function SideBar({ onFilterChange }) {
     ];
 
     const universities = [
-        "Google", "IBM", "Stanford University", "Harvard University", "MIT"
+        "Aws", "Duke University", "Google", "Harvard University", "IBM", "Meta", "MIT", "Stanford University", "University of Cambridge", "University of Michigan", "University of Oxford", "University of Pennsylvania"
     ];
 
     const durations = [
@@ -32,7 +32,7 @@ export default function SideBar({ onFilterChange }) {
     ];
 
     const ratings = [
-        "4.5 & up", "4.0 & up", "3.5 & up"
+        "4.5", "4.6", "4.7", "4.8", "4.9", "5.0"
     ];
 
     const [visibility, setVisibility] = useState({
@@ -47,9 +47,9 @@ export default function SideBar({ onFilterChange }) {
     const visibleSubjects = visibility.subjects ? subjects : subjects.slice(0, 5);
     const visibleSkills = visibility.skills ? skills : skills.slice(0, 5);
     const visibleLanguages = visibility.languages ? languages : languages.slice(0, 3);
-    const visibleUniversities = visibility.universities ? universities : universities.slice(0, 3);
+    const visibleUniversities = visibility.universities ? universities : universities.slice(0, 5);
     const visibleDurations = visibility.durations ? durations : durations.slice(0, 2);
-    const visibleRatings = visibility.ratings ? ratings : ratings.slice(0, 2);
+    const visibleRatings = visibility.ratings ? ratings : ratings.slice(0, 3);
 
     const handleToggle = (type) => {
         setVisibility(prev => ({
@@ -97,7 +97,7 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('skills', skill)}
                         />
                         <label className="form-check-label" htmlFor={`skill${index}`}>
-                            {skill} (0)
+                            {skill} ()
                         </label>
                     </div>
                 ))}
@@ -141,7 +141,7 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('universities', university)}
                         />
                         <label className="form-check-label" htmlFor={`university${index}`}>
-                            {university} (0)
+                            {university} ()
                         </label>
                     </div>
                 ))}
@@ -199,7 +199,11 @@ export default function SideBar({ onFilterChange }) {
 
 <style>{`
 .sidebar-container {
-    height: 400px; /* Set a fixed height for the sidebar */
+    height: 400px; /* Set height for the sidebar */
     overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 15px; /* Optional: Add space for scrollbar */
+    background-color: red; /* Optional: Background color for visibility */
+    border: 1px solid red;
 }
 `}</style>
+
