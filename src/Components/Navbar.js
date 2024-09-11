@@ -63,8 +63,8 @@ export default function Navbar() {
               </li>
             </ul>
             <div className="d-flex gap-2">
-              <button onClick={handleOnLogIn} type="button" className="btn btn-outline-primary custom-button">Log In</button>
-              <button onClick={handleOnSignUp} type="button" className="btn btn-primary" style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>Sign Up</button>
+              <button onClick={handleOnLogIn} type="button" className="btn btn-outline-custom-button">Log In</button>
+              <button onClick={handleOnSignUp} type="button" className="btn custom-button-default">Sign Up</button>
             </div>
           </div>
         </div>

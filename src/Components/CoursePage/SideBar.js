@@ -197,4 +197,25 @@ export default function SideBar({ onFilterChange }) {
     );
 }
 
+<style>{`
+.sidebar-container {
+    max-height: 400px; /* Limit the height */
+    overflow-y: scroll; /* Scroll when the content exceeds */
+    border: 1px solid #ddd; /* Optional border for visibility */
+    padding-right: 15px; /* Prevent content from hiding under the scrollbar */
+    scrollbar-width: thin; /* Firefox specific */
+}
 
+.sidebar-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.sidebar-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 4px; /* Optional rounded corners */
+}
+
+.sidebar-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker on hover */
+}
+`}</style>

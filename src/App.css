@@ -78,32 +78,6 @@
   }
 }
 
-.custom-button {
-  background-color: white;
-  color: #210BE3;
-  border-color: #210BE3;
-}
-.custom-button-transperent {
-  color: #210BE3;
-  border-color: #210BE3;
-}
-
-.custom-button:hover {
-  background-color: #210BE3;
-  color: white;
-}
-
-
-.custom-join-btn {
-  color: #ffffff;
-  border-color: #ffffff;
-}
-
-.custom-join-btn:hover {
-  background-color: #ffffff;
-  color: #210BE3;
-  border-color: #ffffff; /* Ensure the border remains #210BE3 on hover */
-}
 
 .follow-us h6 {
   margin-bottom: 10px; /* Adjusts space below "Follow Us" heading */
@@ -113,3 +87,61 @@
   margin-top: 5px; /* Reduces space above each button */
   padding: 8px 16px; /* Adjusts button padding */
 }
+
+/* Default Button */
+.custom-button-default {
+  background-color: #210BE3;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-button-default:hover {
+  background-color: #ffffff;
+  color: #210BE3;
+  border-color: #210BE3;
+}
+
+.custom-button-default:active {
+  background-color: #ffffff !important;
+  color: #210BE3 !important;
+  border-color: #210BE3 !important;
+}
+
+.custom-button-default:focus:not(:hover) {
+  background-color: #210BE3;
+  color: #ffffff;
+  border-color: #210BE3;
+}
+
+
+/* Default Transparent */
+
+.custom-button-default-transparent {
+  background-color: #210BE3;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-button-default-transparent:hover {
+  color: #210BE3;
+  border-color: #210BE3;
+}
+
+.custom-button-default-transparent:active {
+  color: #210BE3 !important;
+  border-color: #210BE3 !important;
+}
+
+.custom-button-default-transparent:focus:not(:hover) {
+  background-color: #210BE3;
+  color: #ffffff;
+  border-color: #210BE3;
+}
+
+
+
+
+
+

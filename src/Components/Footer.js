@@ -15,7 +15,7 @@ export default function Footer() {
               <img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '25px' }} />
             </h4>
             <p style={{ color: 'black' }}>Start your journey now.</p>
-            <button className="btn btn-light"style={{ backgroundColor: '#210BE3', color: '#FFFFFF'}}>Try for Free</button>
+            <button className="btn custom-button-default">Try for Free</button>
             <button className="btn btn-outline-light ms-2 custom-button">Get a Demo</button>
           </div>
 
@@ -33,9 +33,9 @@ export default function Footer() {
           <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3', marginBottom: '10px' }}>Follow Us</h6>
             <div className="d-grid gap-2">
-            <a href="https://www.linkedin.com/in/btwitskaif69/" target="_blank" rel="noreferrer"className="btn btn-primary btn-lg mb-2 bi bi-linkedin custom-button">&nbsp;</a>
-            <a href="https://x.com/btwitskaif69/" target="_blank" rel="noreferrer"className="btn btn-primary btn-lg mb-2 bi bi-twitter-x custom-button">&nbsp;</a>
-            <a href="https://github.com/btwitskaif69" target="_blank" rel="noreferrer"className="btn btn-primary btn-lg mb-2  bi bi-github custom-button">&nbsp;</a>
+            <a href="https://www.linkedin.com/in/btwitskaif69/" target="_blank" rel="noreferrer"className="btn custom-button-default btn-lg mb-2 bi bi-linkedin custom-button">&nbsp;</a>
+            <a href="https://x.com/btwitskaif69/" target="_blank" rel="noreferrer"className="btn custom-button-default btn-lg mb-2 bi bi-twitter-x custom-button">&nbsp;</a>
+            <a href="https://github.com/btwitskaif69" target="_blank" rel="noreferrer"className="btn custom-button-default btn-lg mb-2  bi bi-github custom-button">&nbsp;</a>
             </div>
           </div>
         </div>
