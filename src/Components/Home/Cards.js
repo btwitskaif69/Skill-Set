@@ -140,7 +140,7 @@ export default function Cards() {
                     <button type="button" className="btn custom-button-default me-2" onClick={toggleAdditionalCourses}>
                         {showAdditionalCourses ? 'Show Less' : 'Show More'}
                     </button>
-                    <Link to="/courses"><button type="button" className="btn btn-outline-primary custom-button"
+                    <Link to="/courses"><button type="button" className="btn custom-button-default-white"
                     onClick={() => window.scrollTo(0, 0)}>View all</button></Link>
                 </div>
             </div>

@@ -16,7 +16,7 @@ export default function Footer() {
             </h4>
             <p style={{ color: 'black' }}>Start your journey now.</p>
             <button className="btn custom-button-default">Try for Free</button>
-            <button className="btn btn-outline-light ms-2 custom-button">Get a Demo</button>
+            <button className="btn custom-button-default-white ms-2 custom-button">Get a Demo</button>
           </div>
 
           {/* Company Links Section */}

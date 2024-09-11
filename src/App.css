@@ -89,6 +89,61 @@
 }
 
 /* Default Button */
+.custom-button-default-white {
+  background-color: #ffffff;
+  color: #210BE3;
+  border-color: #210BE3;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-button-default-white:hover {
+  background-color: #210BE3;
+  color: #ffffff;
+  border-color: #210BE3;
+}
+
+.custom-button-default-white:active {
+  background-color: #210BE3 !important;
+  color: #ffffff !important;
+  border-color: #210BE3 !important;
+}
+
+.custom-button-default-white:focus:not(:hover) {
+  background-color: #ffffff;
+  color: #210BE3;
+  border-color: #210BE3;
+}
+
+
+/* Default Button Transparent */
+
+.custom-button-default-transparent {
+  background-color: #210BE3;
+  color: #ffffff;
+  cursor: pointer;
+  /* transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; */
+}
+
+.custom-button-default-transparent:hover {
+  color: #210BE3;
+  border-color: #210BE3;
+}
+
+.custom-button-default-transparent:active {
+  color: #210BE3 !important;
+  border-color: #210BE3 !important;
+}
+
+.custom-button-default-transparent:focus:not(:hover) {
+  background-color: #210BE3;
+  color: #ffffff;
+  border-color: #210BE3;
+}
+
+
+
+/* Default Button White */
 .custom-button-default {
   background-color: #210BE3;
   color: #ffffff;
@@ -115,29 +170,30 @@
 }
 
 
-/* Default Transparent */
+/* Default Button White Transparent */
 
-.custom-button-default-transparent {
-  background-color: #210BE3;
+.custom-button-default-white-transparent {
   color: #ffffff;
+  border-color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.custom-button-default-transparent:hover {
-  color: #210BE3;
-  border-color: #210BE3;
-}
-
-.custom-button-default-transparent:active {
-  color: #210BE3 !important;
-  border-color: #210BE3 !important;
-}
-
-.custom-button-default-transparent:focus:not(:hover) {
-  background-color: #210BE3;
+.custom-button-default-white-transparent:hover {
   color: #ffffff;
   border-color: #210BE3;
+  background-color: #210BE3;
+}
+
+.custom-button-default-white-transparent:active {
+  color: #ffffff !important;
+  border-color: #210BE3 !important;
+  background-color: #210BE3 !important;
+}
+
+.custom-button-default-white-transparent:focus:not(:hover) {
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 
