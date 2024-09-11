@@ -25,7 +25,7 @@ export default function SignUp({ onClose, switchToLogin }) {
                       className="form-control"
                       id="firstNameInput"
                       placeholder="Enter your first name"
-                      {...register("firstName", { required: "Name is Required", minLength: { value: 4, message: "Name must be 4 Characters" } })}
+                      {...register("firstName", { required: "Name is Required", minLength: { value: 4, message: "Name must be 4 Characters long" } })}
                     />
                     {errors.firstName && <p>{errors.firstName.message}</p>}
                   </div>
@@ -36,7 +36,7 @@ export default function SignUp({ onClose, switchToLogin }) {
                       className="form-control"
                       id="lastNameInput"
                       placeholder="Enter your last name"
-                      {...register("lastName", { required: "Lastname is Required", minLength: { value: 4, message: "Lastname Must be 4 Characters" } })}
+                      {...register("lastName", { required: "Lastname is Required", minLength: { value: 4, message: "Lastname Must be 4 Characters long" } })}
                     />
                   </div>
                 </div>
@@ -77,10 +77,10 @@ export default function SignUp({ onClose, switchToLogin }) {
                     </span>
                   </div>
                 </div>
-                <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+                <button type="submit" className="btn custom-button-basic w-100">Sign Up</button>
                 <div className="mt-3 text-center">Already on Skill Set? 
                   {/* Instead of using a Link, we use a function to switch the form */}
-                  <span className="text-primary" style={{ cursor: 'pointer' }} onClick={switchToLogin}> Log In</span>
+                  <span className="login" style={{ cursor: 'pointer', color: '#210BE3' }} onClick={switchToLogin}> Log In</span>
                 </div>
               </form>
             </div>

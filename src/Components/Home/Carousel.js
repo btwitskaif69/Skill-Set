@@ -40,7 +40,7 @@ export default function Carousel() {
                         <p className="lead text-dark" style={{ fontWeight: '400' }}>Earn credentials that showcase your expertise in AI and data science, opening doors to new career opportunities.</p>
                         <div>
                             <button className="btn custom-button-default-transparent btn-lg custom-button-normal me-3">Start learning</button>
-                            <button className="btn custom-button-default-white-transparent btn-lg custom-join-btn">Discover more</button>
+                            <button className="btn custom-button-default-white-transparent btn-lg custom-join-btn"><Link Courses to='/Courses' className="nav-link">Discover more</Link></button>
                         </div>
                     </div>
                 </div>

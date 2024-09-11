@@ -197,6 +197,34 @@
 }
 
 
+/* Default Button Basic For login And Signup */
+.custom-button-basic {
+  background-color: #210BE3;
+  color: #ffffff;
+  border-color: #210BE3;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-button-basic:hover {
+  background-color: #1d0aca;
+  color: #ffffff;
+  border-color: #1d0aca;
+}
+
+.custom-button-basic:active {
+  background-color: #1d0aca !important;
+  color: #ffffff !important;
+  border-color: #1d0aca !important;
+}
+
+.custom-button-basic:focus:not(:hover) {
+  background-color: #210BE3;
+  color: #ffffff;
+  border-color: #210BE3;
+}
+
+
 
 
 
