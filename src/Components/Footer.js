@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const Logo = {
@@ -15,8 +16,8 @@ export default function Footer() {
               <img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '25px' }} />
             </h4>
             <p style={{ color: 'black' }}>Start your journey now.</p>
-            <button className="btn custom-button-default">Try for Free</button>
-            <button className="btn custom-button-default-white ms-2 custom-button">Get a Demo</button>
+            <button className="btn custom-button-default"><Link Courses to='/Courses' className='nav-link'>Explore Courses</Link></button>
+            <button className="btn custom-button-default-white ms-2 custom-button">Join Us Now</button>
           </div>
 
           {/* Company Links Section */}

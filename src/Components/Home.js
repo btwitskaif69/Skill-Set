@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import Marquee from './Home/Marquee';
+import Marquee from './Home/PartnerLogos';
 import Carousel from './Home/Carousel';
 import Cards from './Home/Cards';
 import NewCards from './Home/NewCards';
