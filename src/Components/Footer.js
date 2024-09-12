@@ -1,9 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Footer() {
   const Logo = {
     SKILL_SET: '/Assets/Logo/Skill_Set.svg',
+  };
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+    navigate('/Home'); 
   };
 
   return (
@@ -16,27 +23,29 @@ export default function Footer() {
               <img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '25px' }} />
             </h4>
             <p style={{ color: 'black' }}>Start your journey now.</p>
-            <button className="btn custom-button-default"><Link Courses to='/Courses' className='nav-link'>Explore Courses</Link></button>
+            <button className="btn custom-button-default">
+              <Link to='/Courses' className='nav-link' style={{ color: 'inherit', textDecoration: 'none' }}>Explore Courses</Link>
+            </button>
             <button className="btn custom-button-default-white ms-2 custom-button">Join Us Now</button>
           </div>
 
           {/* Company Links Section */}
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3' }}>Company</h6>
-            <p><a href="#!" style={{ color: 'Black', textDecoration:'none'}}>Home</a></p>
-            <p><a href="#!" style={{ color: 'Black', textDecoration:'none' }}>Contact</a></p>
-            <p><a href="#!" style={{ color: 'Black', textDecoration:'none' }}>Blog</a></p>
-            <p><a href="#!" style={{ color: 'Black', textDecoration:'none' }}>Terms of Service</a></p>
-            <p><a href="#!" style={{ color: 'Black', textDecoration:'none' }}>Privacy Policy</a></p>
+            <p><Link to='/Home' onClick={handleClick} className='nav-link' style={{ color: 'Black', textDecoration: 'none' }}>Home</Link></p>
+            <p><Link to='/Courses' onClick={handleClick} className='nav-link'  style={{ color: 'Black', textDecoration: 'none' }}>Courses</Link></p>
+            <p><Link style={{ color: 'Black', textDecoration: 'none' }}>Blog</Link></p>
+            <p><Link style={{ color: 'Black', textDecoration: 'none' }}>Terms of Service</Link></p>
+            <p><Link style={{ color: 'Black', textDecoration: 'none' }}>Privacy Policy</Link></p>
           </div>
 
           {/* Follow Us Section */}
           <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3', marginBottom: '10px' }}>Follow Us</h6>
             <div className="d-grid gap-2">
-            <a href="https://www.linkedin.com/in/btwitskaif69/" target="_blank" rel="noreferrer"className="btn custom-button-default btn-lg mb-2 bi bi-linkedin custom-button">&nbsp;</a>
-            <a href="https://x.com/btwitskaif69/" target="_blank" rel="noreferrer"className="btn custom-button-default btn-lg mb-2 bi bi-twitter-x custom-button">&nbsp;</a>
-            <a href="https://github.com/btwitskaif69" target="_blank" rel="noreferrer"className="btn custom-button-default btn-lg mb-2  bi bi-github custom-button">&nbsp;</a>
+              <a href="https://www.linkedin.com/in/btwitskaif69/" target="_blank" rel="noreferrer" className="btn custom-button-default btn-lg mb-2 bi bi-linkedin custom-button">&nbsp;</a>
+              <a href="https://x.com/btwitskaif69/" target="_blank" rel="noreferrer" className="btn custom-button-default btn-lg mb-2 bi bi-twitter-x custom-button">&nbsp;</a>
+              <a href="https://github.com/btwitskaif69" target="_blank" rel="noreferrer" className="btn custom-button-default btn-lg mb-2 bi bi-github custom-button">&nbsp;</a>
             </div>
           </div>
         </div>
@@ -59,119 +68,8 @@ const styles = {
     bottom: 0,
     width: '100%',
   },
-  hr: {
-    width: '60px',
-    backgroundColor: '#fff',
-    height: '2px',
-    color: 'red',
-  },
   bottomBar: {
     backgroundColor: '#210BE3',
     paddingBottom: '0px',
   },
 };
-
-
-// import React from 'react';
-
-// export default function Footer() {
-//   return (
-//     <footer className="text-center text-lg-start text-dark" style={styles.footer}>
-//       <section className="d-flex justify-content-between p-4" style={styles.socialSection}>
-//         <div className="me-5">
-//           <span>Get connected with us on social networks:</span>
-//         </div>
-//         <div>
-//           <a href="/" className="text-dark me-4">
-//             <i className="fab fa-facebook-f"></i>
-//           </a>
-//           <a href="/" className="text-dark me-4">
-//             <i className="fab fa-twitter"></i>
-//           </a>
-//           <a href="/" className="text-dark me-4">
-//             <i className="fab fa-google"></i>
-//           </a>
-//           <a href="/" className="text-dark me-4">
-//             <i className="fab fa-instagram"></i>
-//           </a>
-//           <a href="/" className="text-dark me-4">
-//             <i className="fab fa-linkedin"></i>
-//           </a>
-//           <a href="/" className="text-dark me-4">
-//             <i className="fab fa-github"></i>
-//           </a>
-//         </div>
-//       </section>
-
-//       <section>
-//         <div className="container text-center text-md-start mt-5">
-//           <div className="row mt-3">
-//             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-//               <h4 className="text-uppercase fw-bold">Skill Set</h4>
-//               <hr className="mb-4 mt-0 d-inline-block mx-auto" style={styles.hr} />
-//               <p>
-//                 Here you can use rows and columns to organize your footer
-//                 content. Lorem ipsum dolor sit amet, consectetur adipisicing
-//                 elit.
-//               </p>
-//             </div>
-
-//             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-//               <h6 className="text-uppercase fw-bold">Products</h6>
-//               <hr className="mb-4 mt-0 d-inline-block mx-auto" style={styles.hr} />
-//               <p><a href="#!" className="text-dark">MDBootstrap</a></p>
-//               <p><a href="#!" className="text-dark">MDWordPress</a></p>
-//               <p><a href="#!" className="text-dark">BrandFlow</a></p>
-//               <p><a href="#!" className="text-dark">Bootstrap Angular</a></p>
-//             </div>
-
-//             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-//               <h6 className="text-uppercase fw-bold">Useful links</h6>
-//               <hr className="mb-4 mt-0 d-inline-block mx-auto" style={styles.hr} />
-//               <p><a href="#!" className="text-dark">Your Account</a></p>
-//               <p><a href="#!" className="text-dark">Become an Affiliate</a></p>
-//               <p><a href="#!" className="text-dark">Shipping Rates</a></p>
-//               <p><a href="#!" className="text-dark">Help</a></p>
-//             </div>
-
-//             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-//               <h6 className="text-uppercase fw-bold">Contact</h6>
-//               <hr className="mb-4 mt-0 d-inline-block mx-auto" style={styles.hr} />
-//               <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
-//               <p><i className="fas fa-envelope me-3"></i> info@example.com</p>
-//               <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-//               <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       <div className="text-center p-3" style={styles.bottomBar}>
-//         <a className="text-dark" href="https://mdbootstrap.com/">© 2024 Skill Set</a>
-//       </div>
-//     </footer>
-//   );
-// }
-
-// const styles = {
-//   footer: {
-//     backgroundColor: '#f8f9fa', // Light background color
-//     marginTop: 'auto',
-//     position: 'relative',
-//     bottom: 0,
-//     width: '100%',
-//     paddingTop: '20px',
-//     paddingBottom: '20px', // Added bottom padding
-//   },
-//   socialSection: {
-//     backgroundColor: '#007bff', // Primary blue color
-//   },
-//   hr: {
-//     width: '60px',
-//     backgroundColor: '#343a40', // Darker color for the horizontal line
-//     height: '2px',
-//   },
-//   bottomBar: {
-//     backgroundColor: '#e9ecef', // Light grey background
-//   },
-// };

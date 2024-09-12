@@ -56,6 +56,12 @@ export default function Navbar() {
                 <Link Courses to='/Courses' className="nav-link fs-6 text-dark">Courses</Link>
               </li>
               <li className="nav-item">
+                <Link Courses to='/Courses' className="nav-link fs-6 text-dark">About</Link>
+              </li>
+              <li className="nav-item">
+                <Link Courses to='/Contactus' className="nav-link fs-6 text-dark">Contact Us</Link>
+              </li>
+              <li className="nav-item">
                 <form className="d-flex" role="search">
                   <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                   <button className="btn custom-button-default-white" type="submit">Search</button>

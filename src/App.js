@@ -7,6 +7,7 @@ import LogIn from './Components/LogIn';
 import Home from './Components/Home'; 
 import Courses from './Components/CoursePage/Courses';
 import CoursesPage from './Components/CoursesPage';
+import ContactUs from './Components/ContactUs';
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} /> {/* Default redirect to Home */}
           <Route path="/home" element={<Home />} /> {/* Ensure Home component is valid */}
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/Contactus" element={<ContactUs />} />
           <Route path="/signup" element={<SignUp />} /> {/* Ensure SignUp component is valid */}
           <Route path="/login" element={<LogIn />} /> {/* Ensure LogIn component is valid */}
-          <Route path="/courses" element={<Courses />} />
+          
           <Route path="/CoursesPage" element={<CoursesPage />} />
         </Routes>
       </div>
