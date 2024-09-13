@@ -50,21 +50,21 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link Home to='/home' className="nav-link fs-6 text-dark" aria-current="page">Home</Link>
+                <Link Home to='/home' className="nav-link fs-6 text-dark me-0" aria-current="page">Home</Link>
               </li>
               <li className="nav-item">
-                <Link Courses to='/courses' className="nav-link fs-6 text-dark">Courses</Link>
+                <Link Courses to='/courses' className="nav-link fs-6 text-dark mx-2">Courses</Link>
               </li>
               <li className="nav-item">
-                <Link AboutUs to='/about-us' className="nav-link fs-6 text-dark">About Us</Link>
+                <Link AboutUs to='/about-us' className="nav-link fs-6 text-dark" mx-2>About Us</Link>
               </li>
               <li className="nav-item">
-                <Link ContactUs to='/contact-us' className="nav-link fs-6 text-dark">Contact Us</Link>
+                <Link ContactUs to='/contact-us' className="nav-link fs-6 text-dark" mx-2>Contact Us</Link>
               </li>
               <li className="nav-item">
                 <form className="d-flex" role="search">
-                  <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                  <button className="btn custom-button-default-white" type="submit">Search</button>
+                  <input className="form-control me-2 mx-2" type="search" placeholder="Search" aria-label="Search"/>
+                  <button className="btn custom-button-default-white" type="submit" mx-2>Search</button>
                 </form>
               </li>
             </ul>

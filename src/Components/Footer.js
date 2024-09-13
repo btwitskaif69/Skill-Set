@@ -26,7 +26,7 @@ export default function Footer() {
             <button className="btn custom-button-default">
               <Link to='/Courses' className='nav-link' style={{ color: 'inherit', textDecoration: 'none' }}>Explore Courses</Link>
             </button>
-            <button className="btn custom-button-default-white ms-2 custom-button">Join Us Now</button>
+            <button  className="btn custom-button-default-white ms-2 custom-button">Join Us Now</button>
           </div>
 
           {/* Company Links Section */}

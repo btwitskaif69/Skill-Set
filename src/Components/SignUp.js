@@ -78,8 +78,8 @@ export default function SignUp({ onClose, switchToLogin }) {
                   </div>
                 </div>
                 <button type="submit" className="btn custom-button-basic w-100">Sign Up</button>
-                <div className="mt-3 text-center">Already on Skill Set? 
-                  {/* Instead of using a Link, we use a function to switch the form */}
+                <div className="mt-3 text-center">
+                  Already on Skill Set? 
                   <span className="login" style={{ cursor: 'pointer', color: '#210BE3' }} onClick={switchToLogin}> Log In</span>
                 </div>
               </form>
