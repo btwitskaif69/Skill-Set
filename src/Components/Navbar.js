@@ -34,7 +34,7 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div className="container-fluid">
-          <Link Home to='/Home' className="navbar-brand"><img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '30px' }} /></Link>
+          <Link Home to='/home' className="navbar-brand"><img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '30px' }} /></Link>
 
           <button
             className="navbar-toggler"
@@ -50,16 +50,16 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link Home to='/Home' className="nav-link fs-6 text-dark" aria-current="page">Home</Link>
+                <Link Home to='/home' className="nav-link fs-6 text-dark" aria-current="page">Home</Link>
               </li>
               <li className="nav-item">
-                <Link Courses to='/Courses' className="nav-link fs-6 text-dark">Courses</Link>
+                <Link Courses to='/courses' className="nav-link fs-6 text-dark">Courses</Link>
               </li>
               <li className="nav-item">
-                <Link Courses to='/Courses' className="nav-link fs-6 text-dark">About</Link>
+                <Link AboutUs to='/about-us' className="nav-link fs-6 text-dark">About Us</Link>
               </li>
               <li className="nav-item">
-                <Link Courses to='/Contactus' className="nav-link fs-6 text-dark">Contact Us</Link>
+                <Link ContactUs to='/contact-us' className="nav-link fs-6 text-dark">Contact Us</Link>
               </li>
               <li className="nav-item">
                 <form className="d-flex" role="search">
