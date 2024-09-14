@@ -45,59 +45,6 @@ export default function CourseBanner() {
             </p>
           </div>
         </div>
-
-        {/* Course Features & Degree Credit Section */}
-        <div className="row shadow rounded-3 p-4 mb-5 bg-white course-features">
-          {/* Course Series */}
-          <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end text-center">
-            <h5 className="fw-bold fs-6 mb-1">9 Course Series</h5>
-            <p className="text-muted mb-0" style={{ fontSize: "0.7rem" }}>
-              Earn a career credential that demonstrates your expertise
-            </p>
-          </div>
-
-          {/* Rating Section */}
-          <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end text-center">
-            <h5 className="fw-bold fs-6 d-flex justify-content-center align-items-center mb-1">
-              <i
-                className="bi bi-star-fill me-1"
-                style={{ color: "#f59e0b", fontSize: "15px" }}
-              ></i>{" "}
-              4.7
-            </h5>
-            <p className="text-muted mb-0" style={{ fontSize: "0.7rem" }}>
-              16,680 reviews
-            </p>
-          </div>
-
-          {/* Beginner Level Section */}
-          <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end text-center">
-            <h5 className="fw-bold fs-6 mb-1">Beginner Level</h5>
-            <p className="text-muted mb-0" style={{ fontSize: "0.7rem" }}>
-              No prior experience required
-            </p>
-          </div>
-
-          {/* Flexible Schedule */}
-          <div className="col-lg-3 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end text-center">
-            <h5 className="fw-bold fs-6 mb-1">Flexible Schedule</h5>
-            <p className="text-muted mb-0" style={{ fontSize: "0.7rem" }}>
-              7 months, 6 hours per week. Learn at your own pace
-            </p>
-          </div>
-
-          {/* Degree Credit */}
-          <div className="col-lg-3 col-md-4 col-sm-12 d-flex flex-column justify-content-center text-center">
-            <h5 className="fw-bold fs-6 mb-1">Earn Degree Credit</h5>
-            <a
-              href="/"
-              className="text"
-              style={{ fontSize: "0.7rem", color: "#210BE3" }}
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

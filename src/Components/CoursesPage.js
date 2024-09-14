@@ -11,6 +11,7 @@ import ScrollSpy from "./CourseEnrollmentPage/ScrollSpy";
 import CourseAbout from "./CourseEnrollmentPage/CourseAbout";
 import LearningOutcomes from "./CourseEnrollmentPage/LearningOutcomes";
 import FAQ from "./CourseEnrollmentPage/FAQ";
+import MetaFrontEndDeveloper from "./CourseEnrollmentPage/MetaFrontEndDeveloper";
 
 export default function CoursesPage() {
     // Define the refs using the useRef hook
@@ -20,6 +21,7 @@ export default function CoursesPage() {
     return (
       <div>
         <CourseBanner/>
+        <MetaFrontEndDeveloper/>
         <ScrollSpy courseDescriptionRef={courseDescriptionRef} testimonialsRef={testimonialsRef}/>
         <CourseAbout/>
         <LearningOutcomes/>
