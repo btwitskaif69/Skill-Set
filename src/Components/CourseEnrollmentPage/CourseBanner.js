@@ -32,15 +32,12 @@ export default function CourseBanner() {
             <h1 className="mb-1 display-4 fw-semibold">
               Meta Front-End Developer Professional Certificate
             </h1>
-            <p className="mb-2 fs-6">
+            <p className="mb-4 fs-6">
               Launch your career as a front-end developer. Build job-ready
               skills for an in-demand career and earn a credential from Meta. No
               degree or prior experience required to get started.
             </p>
-            <p className="text-muted">
-              Instructor: <a href="/">Taught by Meta Staff</a>
-            </p>
-            <button className="btn custom-button-default btn-lg btn-xxlg mt-3">
+            <button className="btn custom-button-default btn-lg">
               Enroll for Free
             </button>
             <p className="mt-3">
@@ -50,7 +47,7 @@ export default function CourseBanner() {
         </div>
 
         {/* Course Features & Degree Credit Section */}
-        <div className="row mt-5 shadow rounded-3 p-4 mb-5 bg-white course-features">
+        <div className="row shadow rounded-3 p-4 mb-5 bg-white course-features">
           {/* Course Series */}
           <div className="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center border-end text-center">
             <h5 className="fw-bold fs-6 mb-1">9 Course Series</h5>

@@ -7,11 +7,10 @@ import CompanyLogos from "./CourseEnrollmentPage/CompanyLogos";
 import CourseDescription from "./CourseEnrollmentPage/CourseDescription";
 import Accordian from "./CourseEnrollmentPage/Accordion";
 import CourseBenefit from "./CourseEnrollmentPage/CourseBenefit";
-import Footer from './Footer';
-import Testimonial from "./Testimonial";
 import ScrollSpy from "./CourseEnrollmentPage/ScrollSpy";
 import CourseAbout from "./CourseEnrollmentPage/CourseAbout";
-import Navbar from "./Navbar";
+import LearningOutcomes from "./CourseEnrollmentPage/LearningOutcomes";
+import FAQ from "./CourseEnrollmentPage/FAQ";
 
 export default function CoursesPage() {
     // Define the refs using the useRef hook
@@ -20,19 +19,18 @@ export default function CoursesPage() {
 
     return (
       <div>
-        <Navbar/>
         <CourseBanner/>
         <ScrollSpy courseDescriptionRef={courseDescriptionRef} testimonialsRef={testimonialsRef}/>
         <CourseAbout/>
+        <LearningOutcomes/>
+        <FAQ/>
         <InstructorDetails/> {/* New Component */}
         <CourseSkills/>
-        <CourseReviews/>   {/* New Component */}
         <CompanyLogos/>
         <CourseBenefit/>
         <CourseDescription ref={courseDescriptionRef}/>
         <Accordian/>
-        <Testimonial ref={testimonialsRef}/>
-        <Footer/>
+        <CourseReviews/>   {/* New Component */}
       </div>
     );
 }

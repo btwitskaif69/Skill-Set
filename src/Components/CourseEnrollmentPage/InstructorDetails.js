@@ -1,37 +1,40 @@
 import React from 'react';
 
 export default function InstructorDetails() {
-  const instructors = [
-    {
-      name: "John Doe",
-      title: "Lead Instructor",
-      bio: "John has over 10 years of experience in software development and is passionate about teaching and mentoring.",
-      image: '/Assets/Profile/image1.jpg'
-    },
-    {
-      name: "Jane Smith",
-      title: "Co-Instructor",
-      bio: "Jane is a front-end expert with a deep understanding of React and modern web technologies.",
-      image: '/Assets/Profile/image2.jpg'
-    }
-  ];
+  const instructor = {
+    name: "Dr. Jane Smith, Ph.D.",
+    title: "15+ years of experience in web development and software engineering. Former lead developer at Tech Giant Inc. and author of 'Mastering Modern Web Development'.",
+    skills: ["JavaScript Expert", "React Guru", "Node.js Specialist"],
+    image: '/Assets/Profile/image2.jpg' // Make sure the image path is correct
+  };
 
   return (
     <div className="container my-5">
-      <h2 className="text-center mb-4">Meet the Instructors</h2>
-      <div className="row">
-        {instructors.map((instructor, index) => (
-          <div className="col-md-6 mb-4" key={index}>
-            <div className="card h-100">
-              <img src={instructor.image} className="card-img-top" alt={instructor.name} />
-              <div className="card-body">
-                <h5 className="card-title">{instructor.name}</h5>
-                <p className="card-text">{instructor.title}</p>
-                <p className="card-text">{instructor.bio}</p>
-              </div>
-            </div>
+      <h3 className="text-center mb-4">Meet Your Instructor</h3>
+      <div className="d-flex justify-content-center align-items-start">
+        <div className="me-4">
+          <img
+            src={instructor.image}
+            alt={instructor.name}
+            className="rounded-circle"
+            style={{ width: '120px', height: '120px', objectFit: 'cover' }}
+          />
+        </div>
+        <div>
+          <h4 className="fw-bold">{instructor.name}</h4>
+          <p className="text-muted mb-2" style={{ fontSize: '14px' }}>{instructor.title}</p>
+          <div className="mb-3">
+            {instructor.skills.map((skill, index) => (
+              <span key={index} className="badge bg-dark me-2" style={{ fontSize: '12px' }}>
+                {skill}
+              </span>
+            ))}
           </div>
-        ))}
+          <button className="btn btn-outline-secondary d-flex align-items-center">
+            <i className="bi bi-telephone-fill me-2"></i>
+            Schedule a call with Dr. Smith
+          </button>
+        </div>
       </div>
     </div>
   );
