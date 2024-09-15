@@ -225,6 +225,17 @@
 }
 
 
+/* Add this CSS to your stylesheet */
+.accordion-button.custom-color {
+  background-color: transparent; /* Default color */
+  box-shadow: none; /* Remove shadow */
+  color: #000000; /* Default text color */
+}
+
+.accordion-button.custom-color:not(.collapsed) {
+  background-color: #ffffff; /* Color when active */
+  color: #210BE3; /* Text color when active */
+}
 
 
 

@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function ScrollSpy({ courseDescriptionRef, testimonialsRef }) {
+export default function ScrollSpy({ courseDescriptionRef, coursereviewsRef }) {
   const aboutRef = React.useRef(null);
   const outcomeRef = React.useRef(null);
 
   const ScrollToAbout = () => aboutRef.current.scrollIntoView({ behavior: 'smooth' });
   const ScrollToOutcome = () => outcomeRef.current.scrollIntoView({ behavior: 'smooth' });
   const ScrollToCourses = () => courseDescriptionRef.current.scrollIntoView({ behavior: 'smooth' });
-  const ScrollToTestimonials = () => testimonialsRef.current.scrollIntoView({ behavior: 'smooth' });
+  const ScrollToCourseReviews = () => coursereviewsRef.current.scrollIntoView({ behavior: 'smooth' });
 
   return (
     <div className='container'>
@@ -23,7 +23,7 @@ export default function ScrollSpy({ courseDescriptionRef, testimonialsRef }) {
             <button className="nav-link" onClick={ScrollToCourses}>Courses</button> {/* Scroll to CourseDescription */}
           </li>
           <li className="nav-item">
-            <button className="nav-link" onClick={ScrollToTestimonials}>Testimonials</button> {/* Scroll to Testimonial */}
+            <button className="nav-link" onClick={ScrollToCourseReviews}>Student Reviews</button> {/* Scroll to CourseReviews */}
           </li>
         </ul>
       </nav>
@@ -35,6 +35,7 @@ export default function ScrollSpy({ courseDescriptionRef, testimonialsRef }) {
       <div ref={outcomeRef} id="outcome-section">
         {/* Content for Outcome section */}
       </div>
+      {/* No need to add CourseDescription and CourseReviews sections here as they are included in CoursesPage */}
     </div>
   );
 }

@@ -18,20 +18,13 @@ export default function CourseBanner() {
   };
 
   return (
-    <div className="container mb-5">
-      <div className="container mt-5">
+    <div className="container mb-4">
+      <div className="container mt-4">
         <div className="row" style={{}}>
           {/* Left Column: Meta Logo and Course Information */}
           <div className="col-md-9">
-            <img
-              src={University_Logos.Meta}
-              alt="Meta Logo"
-              style={{ width: "150px" }}
-              className="mb-3"
-            />
-            <h1 className="mb-1 display-4 fw-semibold">
-              Meta Front-End Developer Professional Certificate
-            </h1>
+            <img src={University_Logos.Meta} alt="Meta Logo" style={{ width: "9rem" }} className="mb-2"/>
+            <h1 className="mb-1 display-4 fw-semibold">Meta Front-End Developer Professional Certificate</h1>
             <p className="mb-4 fs-6">
               Launch your career as a front-end developer. Build job-ready
               skills for an in-demand career and earn a credential from Meta. No

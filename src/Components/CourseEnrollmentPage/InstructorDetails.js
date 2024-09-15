@@ -10,7 +10,7 @@ export default function InstructorDetails() {
 
   return (
     <div className="container my-5">
-      <h3 className="text-center mb-4">Meet Your Instructor</h3>
+      <h3 className="display-6 fw-medium mb-4">Meet Your Instructor</h3>
       <div className="d-flex justify-content-center align-items-start">
         <div className="me-4">
           <img
@@ -21,19 +21,15 @@ export default function InstructorDetails() {
           />
         </div>
         <div>
-          <h4 className="fw-bold">{instructor.name}</h4>
+          <h4 className="fw-semibold">{instructor.name}</h4>
           <p className="text-muted mb-2" style={{ fontSize: '14px' }}>{instructor.title}</p>
           <div className="mb-3">
             {instructor.skills.map((skill, index) => (
-              <span key={index} className="badge bg-dark me-2" style={{ fontSize: '12px' }}>
+              <span key={index} className="badge me-2 mb-2" style={{ fontSize: '12px', backgroundColor:'#210BE3' }}>
                 {skill}
               </span>
             ))}
           </div>
-          <button className="btn btn-outline-secondary d-flex align-items-center">
-            <i className="bi bi-telephone-fill me-2"></i>
-            Schedule a call with Dr. Smith
-          </button>
         </div>
       </div>
     </div>

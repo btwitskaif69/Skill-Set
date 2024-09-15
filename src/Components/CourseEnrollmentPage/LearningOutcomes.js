@@ -12,12 +12,12 @@ export default function LearningOutcomes() {
     ];
 
     return (
-        <div className="container my-5">
+        <div className="container">
             {/* Title */}
-            <h3 className="fw-bold">Learning Outcomes</h3>
+            <h3 className="display-6 fw-medium">Learning Outcomes</h3>
             
             {/* Outcome List */}
-            <ul className="list-unstyled mt-3" style={{ fontSize: '18px', color: '#555' }}>
+            <ul className="list-unstyled mt-3">
                 {outcomes.map((outcome, index) => (
                     <li key={index} className="d-flex align-items-start mb-2">
                         <span className="me-2">•</span>

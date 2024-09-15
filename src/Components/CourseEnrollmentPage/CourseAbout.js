@@ -6,15 +6,15 @@ export default function CourseAbout() {
     return (
         <div className="container mt-4">
             {/* Course Overview */}
-            <h2 className="fw-medium">Course Overview</h2>
+            <h2 className="display-6 fw-medium">Course Overview</h2>
             <p className="lead text-muted">Comprehensive training in full-stack web development</p>
 
             {/* Badges */}
             <div className="d-flex flex-wrap mb-4">
-                <span className="badge 0.95rem border me-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-clock me-1"></i>12 weeks</span>
-                <span className="badge 0.95rem border me-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-calendar3 me-1"></i>Starts: September 1, 2023</span>
-                <span className="badge 0.95rem border me-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-mortarboard me-1"></i>Intermediate to Advanced</span>
-                <span className="badge 0.95rem border" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-people me-1"></i>Max 20 students</span>
+                <span className="badge 0.95rem border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-clock me-1"></i>12 weeks</span>
+                <span className="badge 0.95rem border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-calendar3 me-1"></i>Starts: September 1, 2023</span>
+                <span className="badge 0.95rem border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-mortarboard me-1"></i>Intermediate to Advanced</span>
+                <span className="badge 0.95rem border mb-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-people me-1"></i>Max 20 students</span>
             </div>
 
             {/* Description */}

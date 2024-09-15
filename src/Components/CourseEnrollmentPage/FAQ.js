@@ -26,19 +26,18 @@ export default function FAQ() {
 
   return (
     <div className="container my-5">
-      <h3 className="text-center mb-4">Frequently Asked Questions</h3>
+      <h3 className="display-6 fw-medium mb-4">Frequently Asked Questions</h3>
       <div className="accordion" id="faqAccordion">
         {faqs.map((faq, index) => (
-          <div className="accordion-item" key={index}>
+          <div className="accordion-item border-bottom" key={index}>
             <h2 className="accordion-header" id={`heading${index}`}>
               <button
-                className="accordion-button collapsed"
+                className="fw-semibold accordion-button custom-color collapsed"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target={`#collapse${index}`}
                 aria-expanded="false"
                 aria-controls={`collapse${index}`}
-                style={{ fontWeight: '500' }}
               >
                 {faq.question}
               </button>
@@ -49,7 +48,7 @@ export default function FAQ() {
               aria-labelledby={`heading${index}`}
               data-bs-parent="#faqAccordion"
             >
-              <div className="accordion-body">
+              <div className="accordion-body" style={{ paddingLeft: "20px" }}>
                 {faq.answer}
               </div>
             </div>
