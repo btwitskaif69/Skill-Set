@@ -25,8 +25,8 @@ export default function CoursesPage() {
         <ScrollSpy courseDescriptionRef={courseDescriptionRef} testimonialsRef={testimonialsRef}/>
         <CourseAbout/>
         <LearningOutcomes/>
-        <FAQ/>
         <InstructorDetails/> {/* New Component */}
+        <FAQ/>
         <CourseSkills/>
         <CompanyLogos/>
         <CourseBenefit/>

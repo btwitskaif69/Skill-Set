@@ -98,7 +98,8 @@ export default function Accordion() {
                   <div className="accordion-body" style={{ paddingLeft: "20px" }}
                   >
                     <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                      <li className="bi bi-check-lg  mb-1">&nbsp;Create a simple form with a responsive layout using HTML5 and CSS.</li>
+                      <li className="mb-1"><i className="bi bi-check-circle-fill text-success"></i>
+                        &nbsp;Create a simple form with a responsive layout using HTML5 and CSS.</li>
                       <li className="bi bi-check-lg  mb-1">&nbsp;Create a responsive layout using CSS .</li>
                       <li className="bi bi-check-lg  mb-1">&nbsp;Create a UI using Bootstraps.</li>
                       <li className="bi bi-check-lg  mb-1">&nbsp;CImplement debugging tools.</li>

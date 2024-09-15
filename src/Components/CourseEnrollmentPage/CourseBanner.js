@@ -18,8 +18,8 @@ export default function CourseBanner() {
   };
 
   return (
-    <div className=" container">
-      <div className="container my-5">
+    <div className="container mb-5">
+      <div className="container mt-5">
         <div className="row" style={{}}>
           {/* Left Column: Meta Logo and Course Information */}
           <div className="col-md-9">
@@ -46,6 +46,70 @@ export default function CourseBanner() {
           </div>
         </div>
       </div>
+
+
+
+
+      <div className="container mt-4">
+      {/* Course Information Grid */}
+      <div className="row g-4">
+        {/* Course Information Item 1 */}
+        <div className="col-6 col-md-3 d-flex align-items-center">
+          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 border-black" 
+               style={{  fontSize: '1.75rem',  width: '3.75rem',  height: '3.75rem', }}><i className="bi bi-journals"></i>
+          </div>
+
+          <div className="ms-3">
+            <p className="fw-semibold mb-0" style={{color:'#210BE3', fontSize:'0.95rem'}}>9 Courses</p>
+            <p className="text-muted mb-0" style={{fontSize:'0.85rem'}}>Detailed Series</p>
+          </div>
+        </div>
+
+
+        {/* Course Information Item 2 */}
+        <div className="col-6 col-md-3 d-flex align-items-center">
+          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 border-black" 
+               style={{ fontSize: '1.75rem', width: '3.75rem', height: ' 3.75rem'}}><i className="bi bi-mortarboard"></i>
+
+          </div>
+          <div className="ms-3">
+            <p className="fw-semibold mb-0" style={{color:'#210BE3', fontSize:'0.95rem'}}>Beginner</p>
+            <p className="text-muted mb-0" style={{fontSize:'0.85rem'}}>No experience needed</p>
+          </div>
+        </div>
+
+
+        {/* Course Information Item 3 */}
+        <div className="col-6 col-md-3 d-flex align-items-center">
+          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 border-black" 
+               style={{ fontSize: '1.75rem', width: '3.75rem', height: '3.75rem', }}><i className="bi bi-alarm"></i>
+          </div>
+          
+          <div className="ms-3">
+            <p className="fw-semibold mb-0" style={{color:'#210BE3', fontSize:'0.95rem'}}>7 Months</p>
+            <p className="text-muted mb-0" style={{fontSize:'0.85rem'}}>6 hours/week</p>
+          </div>
+        </div>
+        
+
+        {/* Course Information Item 4 */}
+        <div className="col-6 col-md-3 d-flex align-items-center">
+          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 border-black" 
+               style={{ fontSize: '1.75rem', width: '3.75rem', height: '3.75rem', }}><i className="bi bi-people"></i>
+          </div>
+          
+          <div className="ms-3">
+            <p className="fw-semibold mb-0" style={{color:'#210BE3', fontSize:'0.95rem'}}>304,498</p>
+            <p className="text-muted mb-0" style={{fontSize:'0.85rem'}}>Enrolled students</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
     </div>
   );
 }
