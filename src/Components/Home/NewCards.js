@@ -44,7 +44,7 @@ export default function NewCards() {
                 <p className="mb-4 fs-5">Discover our latest courses, designed to build critical skills.</p>
                 <div className="row">
                     {newmainCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6">
+                        <div key={course.id} className="col-md-3 col-sm-6 mb-3">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card">
                                     <img src={course.imgSrc} className="card-img-top" alt={course.title} />
@@ -54,7 +54,7 @@ export default function NewCards() {
                                         </div>
                                         <h5 className="card-title">{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0" style={{color: '#210BE3'}}>Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0 bi bi-award" style={{color: '#210BE3'}}>&nbsp;Advance in Your Degree Program</p>
                                             <p className="card-text mb-0 text-muted">Professional Certificate</p>
                                         </div>
                                     </div>
@@ -67,7 +67,7 @@ export default function NewCards() {
                 {/* Additional Courses */}
                 <div className={`row mt-4 ${showAdditionalCourses ? 'fade-in' : 'd-none'}`}>
                     {additionalCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6">
+                        <div key={course.id} className="col-md-3 col-sm-6 mb-3">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card">
                                     <img src={course.imgSrc} className="card-img-top" alt={course.title} />
@@ -77,7 +77,7 @@ export default function NewCards() {
                                         </div>
                                         <h5 className="card-title">{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0" style={{color: '#210BE3'}}>Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0 bi bi-award" style={{color: '#210BE3'}}>&nbsp;Advance in Your Degree Program</p>
                                             <p className="card-text mb-0 text-muted">Professional Certificate</p>
                                         </div>
                                     </div>

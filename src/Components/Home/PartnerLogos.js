@@ -15,26 +15,31 @@ export default function PartnerLogos() {
     };
 
     return (
-        <div className='logos p-5' style={{backgroundColor: '#f5f7fa', height: 'auto'}}>
+        <div className='logos p-5' style={{ backgroundColor: '#f5f7fa', height: 'auto' }}>
             <div className='container'>
                 <div className="text-center">
-                <h3 className="marquee-heading text-center fs-1 fw-semibold" style={{color: '#210BE3',}}>
-                    Partnering with 10+ Top Universities and Companies
-                </h3>
+                    <h3 className="marquee-heading text-center fs-1 fw-semibold" style={{ color: '#210BE3' }}>
+                        Partnering with 10+ Top Universities and Companies
+                    </h3>
                     <div className="d-flex justify-content-center flex-wrap my-2">
                         {Object.values(University_Logos).map((logo, index) => (
                             <div key={index} className="p-2">
                                 <img 
                                     src={logo} 
-                                    style={{ height: "40px" }} 
                                     alt={`Company ${index + 1}`} 
-                                    className="img-fluid m-2"
+                                    className="img-fluid m-1 logo-size"
                                 />
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                .logo-size {
+                    height: 30px; /* Default logo size */
+                }
+            `}</style>
         </div>
     );
 }

@@ -86,13 +86,13 @@ export default function Cards() {
     return (
         <div>
              {/* Course Cards */}
-             <div className="container my-5 ">
+             <div className="container my-5">
              <p className="mb-1 fs-5 fw-semibold" style={{color: '#210BE3'}}>Professional Specializations and Certification Courses</p>
                 <h1 className="mb-1 display-4 fw-normal" style={{color: 'Black'}}>Most Popular Certificates</h1>
                 <p className="mb-4 fs-5" style={{color: 'Black'}}>Explore our most popular programs, get job-ready for an in-demand career.</p>
                 <div className="row">
                     {mainCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6">
+                        <div key={course.id} className="col-md-3 col-sm-6 mb-3">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card">
                                     <img src={course.imgSrc} className="card-img-top" alt={course.title} />
@@ -102,7 +102,7 @@ export default function Cards() {
                                         </div>
                                         <h5 className="card-title" style={{color: 'Black'}}>{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0" style={{color: '#210BE3'}}>Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0 bi bi-award" style={{color: '#210BE3'}}>&nbsp;Advance in Your Degree Program</p>
                                             <p className="card-text mb-0" style={{color: '#636363'}}>Professional Certificate</p>
                                         </div>
                                     </div>
@@ -115,7 +115,7 @@ export default function Cards() {
                 {/* Additional Courses */}
                 <div className={`row mt-4 ${showAdditionalCourses ? 'fade-in' : 'd-none'}`}>
                     {additionalCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6">
+                        <div key={course.id} className="col-md-3 col-sm-6 mb-3">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card">
                                     <img src={course.imgSrc} className="card-img-top" alt={course.title} />
@@ -125,7 +125,7 @@ export default function Cards() {
                                         </div>
                                         <h5 className="card-title" style={{color: 'Black'}}>{course.title}</h5>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0" style={{color: '#210BE3'}}>Advance in Your Degree Program</p>
+                                            <p className="card-text mb-0 bi bi-award" style={{color: '#210BE3'}}>&nbsp;Advance in Your Degree Program</p>
                                             <p className="card-text mb-0" style={{color: '#636363'}}>Professional Certificate</p>
                                         </div>
                                     </div>
