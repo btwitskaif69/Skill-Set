@@ -9,16 +9,17 @@ export default function SideBar({ onFilterChange }) {
         "Data Engineering", "Robotics", "Neural Networks", "Quantum Computing", "Business Analytics",
         "Excel", "TensorFlow", "Deep Learning", "Advanced Data Analysis", "Fintech", "Cryptocurrency",
         "Blockchain", "Android Development", "Kotlin", "Java", "Node.js", "DevOps", "CI/CD",
-        "AI Ethics", "Policy", "Leadership", "Management", "Strategy",
+        "AI Ethics", "Policy", "Leadership", "Management", "Strategy", "Financial Analysis", "Data Mining"
     ];
-
+    
     const subjects = [
         "Data Science", "Computer Science", "Cloud Computing", "Web Development", "Artificial Intelligence",
         "Machine Learning", "Data Engineering", "Quantum Computing", "Business Analytics", "Cybersecurity",
         "UX Design", "Blockchain", "AR/VR Development", "Financial Engineering", "Deep Learning",
-        "Data Analysis", "Fintech", "Mobile Development", "DevOps", "AI Ethics", "Leadership", "Cloud Solutions"
+        "Data Analysis", "Fintech", "Mobile Development", "DevOps", "AI Ethics", "Leadership", 
+        "Cloud Solutions", "Information Technology", "Robotics", "Automation"
     ];
-
+    
     const languages = [
         "English", "Spanish", "French", "German", "Chinese"
     ];
@@ -44,12 +45,35 @@ export default function SideBar({ onFilterChange }) {
         ratings: false,
     });
 
-    const visibleSubjects = visibility.subjects ? subjects : subjects.slice(0, 5);
-    const visibleSkills = visibility.skills ? skills : skills.slice(0, 5);
-    const visibleLanguages = visibility.languages ? languages : languages.slice(0, 3);
+    const [searchTerms, setSearchTerms] = useState({
+        subjects: '',
+        skills: '',
+        languages: '',
+        universities: '',
+        durations: '',
+        ratings: '',
+    });
+
+    const handleSearch = (type, value) => {
+        setSearchTerms(prev => ({
+            ...prev,
+            [type]: value
+        }));
+    };
+
+    const visibleSubjects = visibility.subjects ? subjects : subjects.slice(0, 10);
+    const visibleSkills = visibility.skills ? skills : skills.slice(0, 10);
+    const visibleLanguages = visibility.languages ? languages : languages.slice(0, 2);
     const visibleUniversities = visibility.universities ? universities : universities.slice(0, 5);
     const visibleDurations = visibility.durations ? durations : durations.slice(0, 2);
     const visibleRatings = visibility.ratings ? ratings : ratings.slice(0, 3);
+
+    const filteredSubjects = visibleSubjects.filter(subject => subject.toLowerCase().includes(searchTerms.subjects.toLowerCase()));
+    const filteredSkills = visibleSkills.filter(skill => skill.toLowerCase().includes(searchTerms.skills.toLowerCase()));
+    const filteredLanguages = visibleLanguages.filter(language => language.toLowerCase().includes(searchTerms.languages.toLowerCase()));
+    const filteredUniversities = visibleUniversities.filter(university => university.toLowerCase().includes(searchTerms.universities.toLowerCase()));
+    const filteredDurations = visibleDurations.filter(duration => duration.toLowerCase().includes(searchTerms.durations.toLowerCase()));
+    const filteredRatings = visibleRatings.filter(rating => rating.toLowerCase().includes(searchTerms.ratings.toLowerCase()));
 
     const handleToggle = (type) => {
         setVisibility(prev => ({
@@ -65,7 +89,7 @@ export default function SideBar({ onFilterChange }) {
             {/* Subject Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">Subject</h6>
-                {visibleSubjects.map((subject, index) => (
+                {filteredSubjects.map((subject, index) => (
                     <div className="form-check" key={index}>
                         <input
                             className="form-check-input"
@@ -87,7 +111,13 @@ export default function SideBar({ onFilterChange }) {
             {/* Skills Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">Skills</h6>
-                {visibleSkills.map((skill, index) => (
+                <input
+                    type="text"
+                    className="form-control mb-2"
+                    placeholder="Search Skills..."
+                    onChange={(e) => handleSearch('skills', e.target.value)}
+                />
+                {filteredSkills.map((skill, index) => (
                     <div className="form-check" key={index}>
                         <input
                             className="form-check-input"
@@ -109,7 +139,7 @@ export default function SideBar({ onFilterChange }) {
             {/* Language Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">Language</h6>
-                {visibleLanguages.map((language, index) => (
+                {filteredLanguages.map((language, index) => (
                     <div className="form-check" key={index}>
                         <input
                             className="form-check-input"
@@ -130,8 +160,14 @@ export default function SideBar({ onFilterChange }) {
 
             {/* University Filter */}
             <div className="mb-4">
-                <h6 className="fw-bold">University</h6>
-                {visibleUniversities.map((university, index) => (
+                <h6 className="fw-bold">Educator</h6>
+                <input
+                    type="text"
+                    className="form-control mb-2"
+                    placeholder="Search Universities..."
+                    onChange={(e) => handleSearch('universities', e.target.value)}
+                />
+                {filteredUniversities.map((university, index) => (
                     <div className="form-check" key={index}>
                         <input
                             className="form-check-input"
@@ -153,7 +189,7 @@ export default function SideBar({ onFilterChange }) {
             {/* Duration Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">Duration</h6>
-                {visibleDurations.map((duration, index) => (
+                {filteredDurations.map((duration, index) => (
                     <div className="form-check" key={index}>
                         <input
                             className="form-check-input"
@@ -175,7 +211,7 @@ export default function SideBar({ onFilterChange }) {
             {/* Rating Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">Rating</h6>
-                {visibleRatings.map((rating, index) => (
+                {filteredRatings.map((rating, index) => (
                     <div className="form-check" key={index}>
                         <input
                             className="form-check-input"
@@ -196,26 +232,3 @@ export default function SideBar({ onFilterChange }) {
         </div>
     );
 }
-
-<style>{`
-.sidebar-container {
-    max-height: 400px; /* Limit the height */
-    overflow-y: scroll; /* Scroll when the content exceeds */
-    border: 1px solid #ddd; /* Optional border for visibility */
-    padding-right: 15px; /* Prevent content from hiding under the scrollbar */
-    scrollbar-width: thin; /* Firefox specific */
-}
-
-.sidebar-container::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-}
-
-.sidebar-container::-webkit-scrollbar-thumb {
-    background-color: #888; /* Scrollbar color */
-    border-radius: 4px; /* Optional rounded corners */
-}
-
-.sidebar-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Darker on hover */
-}
-`}</style>

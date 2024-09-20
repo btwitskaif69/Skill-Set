@@ -438,7 +438,7 @@ const courses = [
       {
         id: 31,
         title: "Data Science with Python",
-        imgSrc: "/Assets/Course/course31.jpg",
+        imgSrc: "/Assets/Course/course9.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "Python, Data Analysis, Data Visualization",
@@ -452,7 +452,7 @@ const courses = [
     {
         id: 32,
         title: "Introduction to AI",
-        imgSrc: "/Assets/Course/course32.jpg",
+        imgSrc: "/Assets/Course/course8.jpg",
         logo: University_Logos.Duke_University,
         universities: "Duke University",
         skills: "AI Fundamentals, Python, Ethics",
@@ -466,7 +466,7 @@ const courses = [
     {
         id: 33,
         title: "Full-Stack Web Development",
-        imgSrc: "/Assets/Course/course33.jpg",
+        imgSrc: "/Assets/Course/course7.jpg",
         logo: University_Logos.Meta,
         universities: "Meta",
         skills: "HTML, CSS, JavaScript, Node.js",
@@ -480,7 +480,7 @@ const courses = [
     {
         id: 34,
         title: "Data Visualization with Tableau",
-        imgSrc: "/Assets/Course/course34.jpg",
+        imgSrc: "/Assets/Course/course6.jpg",
         logo: University_Logos.University_of_Cambridge,
         universities: "University of Cambridge",
         skills: "Tableau, Data Visualization, Data Analysis",
@@ -494,7 +494,7 @@ const courses = [
     {
         id: 35,
         title: "Advanced JavaScript Concepts",
-        imgSrc: "/Assets/Course/course35.jpg",
+        imgSrc: "/Assets/Course/course5.jpg",
         logo: University_Logos.Meta,
         universities: "Meta",
         skills: "JavaScript, ES6, Asynchronous Programming",
@@ -508,7 +508,7 @@ const courses = [
     {
         id: 36,
         title: "Cybersecurity Fundamentals",
-        imgSrc: "/Assets/Course/course36.jpg",
+        imgSrc: "/Assets/Course/course4.jpg",
         logo: University_Logos.University_of_Oxford,
         universities: "University of Oxford",
         skills: "Network Security, Ethical Hacking, Risk Management",
@@ -522,7 +522,7 @@ const courses = [
     {
         id: 37,
         title: "Deep Learning with TensorFlow",
-        imgSrc: "/Assets/Course/course37.jpg",
+        imgSrc: "/Assets/Course/course3.jpg",
         logo: University_Logos.Stanford_University,
         universities: "Stanford University",
         skills: "Deep Learning, TensorFlow, Neural Networks",
@@ -536,7 +536,7 @@ const courses = [
     {
         id: 38,
         title: "Robotics Process Automation",
-        imgSrc: "/Assets/Course/course38.jpg",
+        imgSrc: "/Assets/Course/course2.jpg",
         logo: University_Logos.IBM,
         universities: "IBM",
         skills: "RPA, Automation, Business Process",
@@ -550,7 +550,7 @@ const courses = [
     {
         id: 39,
         title: "Natural Language Processing",
-        imgSrc: "/Assets/Course/course39.jpg",
+        imgSrc: "/Assets/Course/course1.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "NLP, Python, Machine Learning",
@@ -564,7 +564,7 @@ const courses = [
     {
         id: 40,
         title: "DevOps Fundamentals",
-        imgSrc: "/Assets/Course/course40.jpg",
+        imgSrc: "/Assets/Course/course30.jpg",
         logo: University_Logos.Aws,
         universities: "Aws",
         skills: "DevOps, CI/CD, AWS",
@@ -578,7 +578,7 @@ const courses = [
     {
         id: 41,
         title: "Financial Data Analysis",
-        imgSrc: "/Assets/Course/course41.jpg",
+        imgSrc: "/Assets/Course/course29.jpg",
         logo: University_Logos.Harvard_University,
         universities: "Harvard University",
         skills: "Finance, Data Analysis, Excel",
@@ -592,7 +592,7 @@ const courses = [
     {
         id: 42,
         title: "Advanced Python Programming",
-        imgSrc: "/Assets/Course/course42.jpg",
+        imgSrc: "/Assets/Course/course28.jpg",
         logo: University_Logos.MIT,
         universities: "MIT",
         skills: "Python, OOP, Data Structures",
@@ -606,7 +606,7 @@ const courses = [
     {
         id: 43,
         title: "Building Scalable Web Apps",
-        imgSrc: "/Assets/Course/course43.jpg",
+        imgSrc: "/Assets/Course/course27.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "Node.js, Express, MongoDB",
@@ -620,7 +620,7 @@ const courses = [
     {
         id: 44,
         title: "Introduction to Cloud Computing",
-        imgSrc: "/Assets/Course/course44.jpg",
+        imgSrc: "/Assets/Course/course26.jpg",
         logo: University_Logos.Aws,
         universities: "Aws",
         skills: "Cloud Computing, AWS, Azure",
@@ -634,7 +634,7 @@ const courses = [
     {
         id: 45,
         title: "Blockchain Basics",
-        imgSrc: "/Assets/Course/course45.jpg",
+        imgSrc: "/Assets/Course/course25.jpg",
         logo: University_Logos.MIT,
         universities: "MIT",
         skills: "Blockchain, Smart Contracts, Cryptography",
@@ -648,7 +648,7 @@ const courses = [
     {
         id: 46,
         title: "Ethical Hacking Bootcamp",
-        imgSrc: "/Assets/Course/course46.jpg",
+        imgSrc: "/Assets/Course/course24.jpg",
         logo: University_Logos.University_of_Oxford,
         universities: "University of Oxford",
         skills: "Ethical Hacking, Penetration Testing, Security",
@@ -662,7 +662,7 @@ const courses = [
     {
         id: 47,
         title: "Data Science for Business",
-        imgSrc: "/Assets/Course/course47.jpg",
+        imgSrc: "/Assets/Course/course23.jpg",
         logo: University_Logos.Harvard_University,
         universities: "Harvard University",
         skills: "Business Analytics, Data Science, Strategy",
@@ -676,7 +676,7 @@ const courses = [
     {
         id: 48,
         title: "Machine Learning for Finance",
-        imgSrc: "/Assets/Course/course48.jpg",
+        imgSrc: "/Assets/Course/course22.jpg",
         logo: University_Logos.IBM,
         universities: "IBM",
         skills: "Machine Learning, Finance, Data Analysis",
@@ -690,7 +690,7 @@ const courses = [
     {
         id: 49,
         title: "Web Accessibility Essentials",
-        imgSrc: "/Assets/Course/course49.jpg",
+        imgSrc: "/Assets/Course/course21.jpg",
         logo: University_Logos.Meta,
         universities: "Meta",
         skills: "Web Accessibility, UX, Design Principles",
@@ -704,7 +704,7 @@ const courses = [
     {
         id: 50,
         title: "Introduction to Data Science",
-        imgSrc: "/Assets/Course/course50.jpg",
+        imgSrc: "/Assets/Course/course20.jpg",
         logo: University_Logos.University_of_Cambridge,
         universities: "University of Cambridge",
         skills: "Data Science, R, Data Analysis",
@@ -718,7 +718,7 @@ const courses = [
     {
         id: 51,
         title: "Cloud Architecture Basics",
-        imgSrc: "/Assets/Course/course51.jpg",
+        imgSrc: "/Assets/Course/course19.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "Cloud Architecture, AWS, GCP",
@@ -732,7 +732,7 @@ const courses = [
     {
         id: 52,
         title: "Fundamentals of Data Science",
-        imgSrc: "/Assets/Course/course52.jpg",
+        imgSrc: "/Assets/Course/course18.jpg",
         logo: University_Logos.MIT,
         universities: "MIT",
         skills: "Data Science, Statistics, Python",
@@ -746,7 +746,7 @@ const courses = [
     {
         id: 53,
         title: "Introduction to Quantum Computing",
-        imgSrc: "/Assets/Course/course53.jpg",
+        imgSrc: "/Assets/Course/course17.jpg",
         logo: University_Logos.Stanford_University,
         universities: "Stanford University",
         skills: "Quantum Computing, Qubits, Algorithms",
@@ -760,7 +760,7 @@ const courses = [
     {
         id: 54,
         title: "Full-Stack Development with MERN",
-        imgSrc: "/Assets/Course/course54.jpg",
+        imgSrc: "/Assets/Course/course16.jpg",
         logo: University_Logos.Meta,
         universities: "Meta",
         skills: "MongoDB, Express, React, Node.js",
@@ -774,7 +774,7 @@ const courses = [
     {
         id: 55,
         title: "Ethics in AI",
-        imgSrc: "/Assets/Course/course55.jpg",
+        imgSrc: "/Assets/Course/course15.jpg",
         logo: University_Logos.Duke_University,
         universities: "Duke University",
         skills: "AI Ethics, Data Privacy, Policy",
@@ -788,7 +788,7 @@ const courses = [
     {
         id: 56,
         title: "Data Mining Techniques",
-        imgSrc: "/Assets/Course/course56.jpg",
+        imgSrc: "/Assets/Course/course14.jpg",
         logo: University_Logos.University_of_Cambridge,
         universities: "University of Cambridge",
         skills: "Data Mining, R, SQL",
@@ -802,7 +802,7 @@ const courses = [
     {
         id: 57,
         title: "Game Development with Unity",
-        imgSrc: "/Assets/Course/course57.jpg",
+        imgSrc: "/Assets/Course/course13.jpg",
         logo: University_Logos.University_of_Oxford,
         universities: "University of Oxford",
         skills: "Unity, C#, Game Design",
@@ -816,7 +816,7 @@ const courses = [
     {
         id: 58,
         title: "Web Development Bootcamp",
-        imgSrc: "/Assets/Course/course58.jpg",
+        imgSrc: "/Assets/Course/course12.jpg",
         logo: University_Logos.Harvard_University,
         universities: "Harvard University",
         skills: "HTML, CSS, JavaScript, React",
@@ -830,7 +830,7 @@ const courses = [
     {
         id: 59,
         title: "Artificial Intelligence for Beginners",
-        imgSrc: "/Assets/Course/course59.jpg",
+        imgSrc: "/Assets/Course/course11.jpg",
         logo: University_Logos.Aws,
         universities: "Aws",
         skills: "AI Basics, Python, Machine Learning",
@@ -844,7 +844,7 @@ const courses = [
     {
         id: 60,
         title: "Data Analytics for Business",
-        imgSrc: "/Assets/Course/course60.jpg",
+        imgSrc: "/Assets/Course/course10.jpg",
         logo: University_Logos.IBM,
         universities: "IBM",
         skills: "Business Analytics, Excel, Tableau",
@@ -858,7 +858,7 @@ const courses = [
     {
         id: 61,
         title: "Introduction to Blockchain Technology",
-        imgSrc: "/Assets/Course/course61.jpg",
+        imgSrc: "/Assets/Course/course9.jpg",
         logo: University_Logos.MIT,
         universities: "MIT",
         skills: "Blockchain, Cryptography, Smart Contracts",
@@ -872,7 +872,7 @@ const courses = [
     {
         id: 62,
         title: "Data Science with R",
-        imgSrc: "/Assets/Course/course62.jpg",
+        imgSrc: "/Assets/Course/course8.jpg",
         logo: University_Logos.University_of_Cambridge,
         universities: "University of Cambridge",
         skills: "R, Data Analysis, Visualization",
@@ -886,7 +886,7 @@ const courses = [
     {
         id: 63,
         title: "Machine Learning with R",
-        imgSrc: "/Assets/Course/course63.jpg",
+        imgSrc: "/Assets/Course/course7.jpg",
         logo: University_Logos.Stanford_University,
         universities: "Stanford University",
         skills: "R, Machine Learning, Data Analysis",
@@ -900,7 +900,7 @@ const courses = [
     {
         id: 64,
         title: "Digital Marketing Strategies",
-        imgSrc: "/Assets/Course/course64.jpg",
+        imgSrc: "/Assets/Course/course6.jpg",
         logo: University_Logos.Meta,
         universities: "Meta",
         skills: "Digital Marketing, SEO, Analytics",
@@ -914,7 +914,7 @@ const courses = [
     {
         id: 65,
         title: "Introduction to Mobile Development",
-        imgSrc: "/Assets/Course/course65.jpg",
+        imgSrc: "/Assets/Course/course5.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "Android, iOS, React Native",
@@ -928,7 +928,7 @@ const courses = [
     {
         id: 66,
         title: "Cybersecurity Risk Management",
-        imgSrc: "/Assets/Course/course66.jpg",
+        imgSrc: "/Assets/Course/course4.jpg",
         logo: University_Logos.University_of_Oxford,
         universities: "University of Oxford",
         skills: "Risk Management, Compliance, Security",
@@ -942,7 +942,7 @@ const courses = [
     {
         id: 67,
         title: "Data Visualization with Python",
-        imgSrc: "/Assets/Course/course67.jpg",
+        imgSrc: "/Assets/Course/course3.jpg",
         logo: University_Logos.MIT,
         universities: "MIT",
         skills: "Python, Data Visualization, Matplotlib",
@@ -956,7 +956,7 @@ const courses = [
     {
         id: 68,
         title: "Foundations of DevOps",
-        imgSrc: "/Assets/Course/course68.jpg",
+        imgSrc: "/Assets/Course/course2.jpg",
         logo: University_Logos.Aws,
         universities: "Aws",
         skills: "DevOps, CI/CD, Cloud Services",
@@ -970,7 +970,7 @@ const courses = [
     {
         id: 69,
         title: "Data-Driven Decision Making",
-        imgSrc: "/Assets/Course/course69.jpg",
+        imgSrc: "/Assets/Course/course2.jpg",
         logo: University_Logos.Harvard_University,
         universities: "Harvard University",
         skills: "Data Analysis, Business Strategy, Excel",
@@ -984,7 +984,7 @@ const courses = [
     {
         id: 70,
         title: "Introduction to AI Programming",
-        imgSrc: "/Assets/Course/course70.jpg",
+        imgSrc: "/Assets/Course/course1.jpg",
         logo: University_Logos.Duke_University,
         universities: "Duke University",
         skills: "AI Programming, Python, TensorFlow",
@@ -998,7 +998,7 @@ const courses = [
     {
         id: 71,
         title: "Advanced Cloud Solutions",
-        imgSrc: "/Assets/Course/course71.jpg",
+        imgSrc: "/Assets/Course/course30.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "Cloud Solutions, AWS, Azure",
@@ -1012,7 +1012,7 @@ const courses = [
     {
         id: 72,
         title: "Introduction to Robotics",
-        imgSrc: "/Assets/Course/course72.jpg",
+        imgSrc: "/Assets/Course/course29.jpg",
         logo: University_Logos.IBM,
         universities: "IBM",
         skills: "Robotics, Programming, Automation",
@@ -1026,7 +1026,7 @@ const courses = [
     {
         id: 73,
         title: "Understanding Neural Networks",
-        imgSrc: "/Assets/Course/course73.jpg",
+        imgSrc: "/Assets/Course/course28.jpg",
         logo: University_Logos.Stanford_University,
         universities: "Stanford University",
         skills: "Neural Networks, Deep Learning, TensorFlow",
@@ -1040,7 +1040,7 @@ const courses = [
     {
         id: 74,
         title: "Social Media Marketing",
-        imgSrc: "/Assets/Course/course74.jpg",
+        imgSrc: "/Assets/Course/course27.jpg",
         logo: University_Logos.Meta,
         universities: "Meta",
         skills: "Social Media, Marketing Strategies, Analytics",
@@ -1054,7 +1054,7 @@ const courses = [
     {
         id: 75,
         title: "Introduction to Computer Vision",
-        imgSrc: "/Assets/Course/course75.jpg",
+        imgSrc: "/Assets/Course/course26.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "Computer Vision, OpenCV, Machine Learning",
@@ -1068,7 +1068,7 @@ const courses = [
     {
         id: 76,
         title: "Data Privacy and Security",
-        imgSrc: "/Assets/Course/course76.jpg",
+        imgSrc: "/Assets/Course/course25.jpg",
         logo: University_Logos.University_of_Oxford,
         universities: "University of Oxford",
         skills: "Data Privacy, Compliance, Security",
@@ -1082,7 +1082,7 @@ const courses = [
     {
         id: 77,
         title: "Intro to Software Engineering",
-        imgSrc: "/Assets/Course/course77.jpg",
+        imgSrc: "/Assets/Course/course24.jpg",
         logo: University_Logos.Harvard_University,
         universities: "Harvard University",
         skills: "Software Engineering, Agile, Development",
@@ -1096,7 +1096,7 @@ const courses = [
     {
         id: 78,
         title: "Advanced Data Analysis with Python",
-        imgSrc: "/Assets/Course/course78.jpg",
+        imgSrc: "/Assets/Course/course23.jpg",
         logo: University_Logos.MIT,
         universities: "MIT",
         skills: "Data Analysis, Python, Pandas",
@@ -1110,7 +1110,7 @@ const courses = [
     {
         id: 79,
         title: "Financial Technologies Overview",
-        imgSrc: "/Assets/Course/course79.jpg",
+        imgSrc: "/Assets/Course/course22.jpg",
         logo: University_Logos.IBM,
         universities: "IBM",
         skills: "Fintech, Blockchain, Data Analysis",
@@ -1124,7 +1124,7 @@ const courses = [
     {
         id: 80,
         title: "Digital Product Management",
-        imgSrc: "/Assets/Course/course80.jpg",
+        imgSrc: "/Assets/Course/course21.jpg",
         logo: University_Logos.Aws,
         universities: "Aws",
         skills: "Product Management, Agile, Development",
@@ -1138,7 +1138,7 @@ const courses = [
     {
         id: 81,
         title: "Web Performance Optimization",
-        imgSrc: "/Assets/Course/course81.jpg",
+        imgSrc: "/Assets/Course/course20.jpg",
         logo: University_Logos.Meta,
         universities: "Meta",
         skills: "Web Performance, Optimization, Analytics",
@@ -1152,7 +1152,7 @@ const courses = [
     {
         id: 82,
         title: "Artificial Intelligence in Healthcare",
-        imgSrc: "/Assets/Course/course82.jpg",
+        imgSrc: "/Assets/Course/course19.jpg",
         logo: University_Logos.Duke_University,
         universities: "Duke University",
         skills: "AI in Healthcare, Data Analysis, Ethics",
@@ -1166,7 +1166,7 @@ const courses = [
     {
         id: 83,
         title: "Introduction to AR/VR Development",
-        imgSrc: "/Assets/Course/course83.jpg",
+        imgSrc: "/Assets/Course/course18.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "AR, VR, Game Development",
@@ -1180,7 +1180,7 @@ const courses = [
     {
         id: 84,
         title: "Developing RESTful APIs with Node.js",
-        imgSrc: "/Assets/Course/course84.jpg",
+        imgSrc: "/Assets/Course/course17.jpg",
         logo: University_Logos.Meta,
         universities: "Meta",
         skills: "Node.js, RESTful APIs, Express",
@@ -1194,7 +1194,7 @@ const courses = [
     {
         id: 85,
         title: "Data Governance and Compliance",
-        imgSrc: "/Assets/Course/course85.jpg",
+        imgSrc: "/Assets/Course/course6.jpg",
         logo: University_Logos.University_of_Oxford,
         universities: "University of Oxford",
         skills: "Data Governance, Compliance, Privacy",
@@ -1208,7 +1208,7 @@ const courses = [
     {
         id: 86,
         title: "Introduction to Game Design",
-        imgSrc: "/Assets/Course/course86.jpg",
+        imgSrc: "/Assets/Course/course15.jpg",
         logo: University_Logos.MIT,
         universities: "MIT",
         skills: "Game Design, Unity, C#",
@@ -1222,7 +1222,7 @@ const courses = [
     {
         id: 87,
         title: "Cybersecurity Threats and Defense",
-        imgSrc: "/Assets/Course/course87.jpg",
+        imgSrc: "/Assets/Course/course14.jpg",
         logo: University_Logos.Harvard_University,
         universities: "Harvard University",
         skills: "Threat Detection, Defense Strategies",
@@ -1236,7 +1236,7 @@ const courses = [
     {
         id: 88,
         title: "Machine Learning in Python",
-        imgSrc: "/Assets/Course/course88.jpg",
+        imgSrc: "/Assets/Course/course13.jpg",
         logo: University_Logos.Aws,
         universities: "Aws",
         skills: "Python, Machine Learning, Data Science",
@@ -1250,7 +1250,7 @@ const courses = [
     {
         id: 89,
         title: "Effective Data Storytelling",
-        imgSrc: "/Assets/Course/course89.jpg",
+        imgSrc: "/Assets/Course/course12.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "Data Visualization, Storytelling, Presentation",
@@ -1264,7 +1264,7 @@ const courses = [
     {
         id: 90,
         title: "Introduction to Internet of Things (IoT)",
-        imgSrc: "/Assets/Course/course90.jpg",
+        imgSrc: "/Assets/Course/course11.jpg",
         logo: University_Logos.IBM,
         universities: "IBM",
         skills: "IoT, Sensors, Data Collection",
@@ -1278,7 +1278,7 @@ const courses = [
     {
         id: 91,
         title: "Data Analysis with SQL",
-        imgSrc: "/Assets/Course/course91.jpg",
+        imgSrc: "/Assets/Course/course10.jpg",
         logo: University_Logos.University_of_Cambridge,
         universities: "University of Cambridge",
         skills: "SQL, Data Analysis, Databases",
@@ -1292,7 +1292,7 @@ const courses = [
     {
         id: 92,
         title: "Fundamentals of Web Accessibility",
-        imgSrc: "/Assets/Course/course92.jpg",
+        imgSrc: "/Assets/Course/course9.jpg",
         logo: University_Logos.Harvard_University,
         universities: "Harvard University",
         skills: "Web Accessibility, UX Design, Compliance",
@@ -1306,7 +1306,7 @@ const courses = [
     {
         id: 93,
         title: "Digital Forensics and Cybersecurity",
-        imgSrc: "/Assets/Course/course93.jpg",
+        imgSrc: "/Assets/Course/course8.jpg",
         logo: University_Logos.Duke_University,
         universities: "Duke University",
         skills: "Digital Forensics, Cybersecurity, Investigation",
@@ -1320,7 +1320,7 @@ const courses = [
     {
         id: 94,
         title: "Mobile Application Development",
-        imgSrc: "/Assets/Course/course94.jpg",
+        imgSrc: "/Assets/Course/course7.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "Android, iOS, App Development",
@@ -1334,7 +1334,7 @@ const courses = [
     {
         id: 95,
         title: "AI-Powered Chatbots",
-        imgSrc: "/Assets/Course/course95.jpg",
+        imgSrc: "/Assets/Course/course6.jpg",
         logo: University_Logos.Aws,
         universities: "Aws",
         skills: "Chatbots, AI, Python",
@@ -1348,7 +1348,7 @@ const courses = [
     {
         id: 96,
         title: "Natural Language Processing (NLP)",
-        imgSrc: "/Assets/Course/course96.jpg",
+        imgSrc: "/Assets/Course/course5.jpg",
         logo: University_Logos.Meta,
         universities: "Meta",
         skills: "NLP, Python, AI",
@@ -1362,7 +1362,7 @@ const courses = [
     {
         id: 97,
         title: "Data Warehousing and ETL",
-        imgSrc: "/Assets/Course/course97.jpg",
+        imgSrc: "/Assets/Course/course4.jpg",
         logo: University_Logos.IBM,
         universities: "IBM",
         skills: "ETL, Data Warehousing, SQL",
@@ -1376,7 +1376,7 @@ const courses = [
     {
         id: 98,
         title: "Introduction to Ethical Hacking",
-        imgSrc: "/Assets/Course/course98.jpg",
+        imgSrc: "/Assets/Course/course3.jpg",
         logo: University_Logos.University_of_Oxford,
         universities: "University of Oxford",
         skills: "Ethical Hacking, Security Testing",
@@ -1390,7 +1390,7 @@ const courses = [
     {
         id: 99,
         title: "Augmented Reality for Beginners",
-        imgSrc: "/Assets/Course/course99.jpg",
+        imgSrc: "/Assets/Course/course2.jpg",
         logo: University_Logos.Google,
         universities: "Google",
         skills: "AR Development, Unity, Design",
@@ -1404,7 +1404,7 @@ const courses = [
     {
         id: 100,
         title: "Introduction to SaaS Products",
-        imgSrc: "/Assets/Course/course100.jpg",
+        imgSrc: "/Assets/Course/course1.jpg",
         logo: University_Logos.Aws,
         universities: "Aws",
         skills: "SaaS, Cloud Computing, Business Model",

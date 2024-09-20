@@ -56,7 +56,7 @@ export default function CoursesCards({ selectedFilters }) {
                                             width: '100%',
                                             objectFit: 'cover',
                                             borderRadius: '7px'
-                                        }}/>
+                                        }} />
                                     <div className="card-body d-flex flex-column">
                                         <div className="course-logos mb-3" style={{ display: 'flex', marginBottom: '8px', justifyContent: 'left' }}>
                                             {course.logo && (
@@ -94,41 +94,44 @@ export default function CoursesCards({ selectedFilters }) {
             </div>
 
             {/* Pagination */}
-            <nav aria-label="Page navigation example" className="mt-4">
-    <ul className="pagination">
-        <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-            <button 
-              className="page-link" 
-              onClick={() => {
-                  if (currentPage > 1) handlePageChange(currentPage - 1);
-              }}>
-              Previous
-            </button>
-        </li>
-        {[...Array(Math.ceil(filteredCourses.length / coursesPerPage)).keys()].map(number => (
-            <li key={number + 1} className={`page-item ${currentPage === number + 1 ? 'active' : ''}`}>
+<nav aria-label="Page navigation example" className="mt-4">
+    <div className="d-flex justify-content-center">
+        <ul className="pagination">
+            <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
                 <button 
-                  className="page-link" 
-                  onClick={() => {
-                      handlePageChange(number + 1);
-                  }}>
-                  {number + 1}
+                    className="page-link" 
+                    onClick={() => {
+                        if (currentPage > 1) handlePageChange(currentPage - 1);
+                    }}>
+                    Previous
                 </button>
             </li>
-        ))}
-        <li className={`page-item ${currentPage === Math.ceil(filteredCourses.length / coursesPerPage) ? 'disabled' : ''}`}>
-            <button 
-              className="page-link" 
-              onClick={() => {
-                  if (currentPage < Math.ceil(filteredCourses.length / coursesPerPage)) {
-                      handlePageChange(currentPage + 1);
-                  }
-              }}>
-              Next
-            </button>
-        </li>
-    </ul>
+            {[...Array(Math.ceil(filteredCourses.length / coursesPerPage)).keys()].map(number => (
+                <li key={number + 1} className={`page-item ${currentPage === number + 1 ? 'active' : ''}`}>
+                    <button 
+                        className="page-link" 
+                        onClick={() => {
+                            handlePageChange(number + 1);
+                        }}>
+                        {number + 1}
+                    </button>
+                </li>
+            ))}
+            <li className={`page-item ${currentPage === Math.ceil(filteredCourses.length / coursesPerPage) ? 'disabled' : ''}`}>
+                <button 
+                    className="page-link" 
+                    onClick={() => {
+                        if (currentPage < Math.ceil(filteredCourses.length / coursesPerPage)) {
+                            handlePageChange(currentPage + 1);
+                        }
+                    }}>
+                    Next
+                </button>
+            </li>
+        </ul>
+    </div>
 </nav>
+
 
             {/* Inline styling for card effects */}
             <style>{`
@@ -159,6 +162,26 @@ export default function CoursesCards({ selectedFilters }) {
                         height: 20px; /* Smaller logos for small screens */
                     }
                 }
+                    .pagination {
+        border-radius: 0.5rem;
+        background-color: #f8f9fa; /* Light background */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    .page-item .page-link {
+        color: #210BE3; /* Link color */
+        padding: 10px 15px; /* Increased padding */
+    }
+    .page-item.active .page-link {
+        background-color: #210BE3; /* Active page background */
+        color: white; /* Active page text color */
+    }
+    .page-item.disabled .page-link {
+        color: #210BE3; /* Disabled state text color */
+    }
+    .page-item .page-link:hover {
+        background-color: #e2e6ea; /* Hover effect */
+        color: #210BE3; /* Hover text color */
+    }
             `}</style>
         </div>
     );
