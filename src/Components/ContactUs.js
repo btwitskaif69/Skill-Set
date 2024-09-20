@@ -81,30 +81,9 @@ export default function ContactUs() {
               </div>
               <div className="mb-3">
                 <label htmlFor="message" className="form-label" style={{ fontSize: '16px', color: '#555' }}>Message</label>
-                <textarea
-                  className="form-control"
-                  id="message"
-                  name="message"
-                  rows="4"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
+                <textarea className="form-control" id="message" name="message" rows="4" placeholder="Your Message" value={formData.message} onChange={handleChange} required></textarea>
               </div>
-              <button
-                type="submit"
-                className="btn custom-button-default"
-                style={{
-                  backgroundColor: '#210BE3',
-                  borderColor: '#210BE3',
-                  padding: '10px 20px',
-                  fontSize: '18px',
-                  fontWeight: 'bold'
-                }}
-              >
-                Send Message
-              </button>
+              <button type="submit" className="btn custom-button-default"> Send Message</button>
             </form>
           </div>
         </div>
