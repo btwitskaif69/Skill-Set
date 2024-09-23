@@ -2,8 +2,17 @@ import React, { forwardRef, useState } from 'react';
 
 const CourseReviews = forwardRef((props, ref) => {
   const [visibleReviews, setVisibleReviews] = useState(3);
+  const [filter, setFilter] = useState('all'); // Filter state
+  const [newReview, setNewReview] = useState({
+    name: '',
+    date: '',
+    rating: 5,
+    comment: '',
+    helpfulCount: 0,
+    image: '/Assets/Profile/default.jpg', // Default image
+  });
 
-  const reviews = [
+  const [reviews, setReviews] = useState([
     {
       name: "Emily Johnson",
       date: "2023-05-05",
@@ -27,49 +36,95 @@ const CourseReviews = forwardRef((props, ref) => {
       comment: "Great course, very comprehensive. I learned a lot, although there were some technical issues with the platform at times.",
       helpfulCount: 33,
       image: '/Assets/Profile/image3.jpg'
+    },
+    {
+      name: "Michael Brown",
+      date: "2023-06-10",
+      rating: 4,
+      comment: "The content is good, but I wish there were more practical examples. Overall, I learned a lot.",
+      helpfulCount: 28,
+      image: '/Assets/Profile/image4.jpg'
     }
-  ];
+  ]);
 
-  const totalReviews = reviews.length;
-  const averageRating = (reviews.reduce((acc, review) => acc + review.rating, 0) / totalReviews).toFixed(1);
+  // Sort reviews by rating (descending)
+  const sortedReviews = [...reviews].sort((a, b) => b.rating - a.rating);
+
+  // Apply filter
+  const filteredReviews = filter === 'all'
+    ? sortedReviews
+    : sortedReviews.filter(review => review.rating === parseInt(filter));
+
+  const totalReviews = filteredReviews.length;
+  const averageRating = (filteredReviews.reduce((acc, review) => acc + review.rating, 0) / totalReviews).toFixed(1);
 
   const ratingSummary = {
-    5: 60, // Example percentage
+    5: 60,
     4: 40,
     3: 0,
     2: 0,
     1: 0,
   };
 
-  // Helper function to render star rating
   const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 !== 0;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
     return (
       <>
-        {[...Array(rating)].map((_, i) => (
+        {[...Array(fullStars)].map((_, i) => (
           <i key={i} className="bi bi-star-fill text-warning"></i>
         ))}
-        {[...Array(5 - rating)].map((_, i) => (
+        {halfStar && <i className="bi bi-star-half text-warning"></i>}
+        {[...Array(emptyStars)].map((_, i) => (
           <i key={i} className="bi bi-star text-muted"></i>
         ))}
       </>
     );
   };
 
-  // Function to handle loading more reviews
   const loadMoreReviews = () => {
     setVisibleReviews((prev) => prev + 3);
+  };
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value); // Update filter based on dropdown selection
+    setVisibleReviews(3); // Reset visible reviews when filter changes
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setNewReview(prev => ({
+      ...prev,
+      [name]: name === 'rating' ? parseInt(value) : value // Parse rating to integer
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const date = new Date().toISOString().split('T')[0]; // Get today's date
+    const submittedReview = { ...newReview, date };
+    setReviews(prev => [...prev, submittedReview]);
+    setNewReview({ name: '', date: '', rating: 5, comment: '', helpfulCount: 0, image: '/Assets/Profile/default.jpg' }); // Reset form
   };
 
   return (
     <div ref={ref} id="course-reviews-section" className="container my-5">
       {/* Rating Summary */}
       <div className="rating-summary p-4 rounded shadow-sm mb-5 bg-light">
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex justify-content-between align-items-center mb-3">
           <h5 className="section-title">Student Feedback</h5>
+          <h2 className="text-primary d-flex align-items-center">
+            {averageRating} 
+            <span className="ms-2">{renderStars(averageRating)}</span>
+          </h2>
         </div>
-        <div className="d-flex align-items-center my-3">
-          <h2 className="me-2">{averageRating}</h2>
-          <div>{renderStars(Math.round(averageRating))}</div>
+        <div className="d-flex align-items-center mb-4">
+          {renderStars(Math.round(averageRating))}
+          <span className="ms-2 text-muted" style={{ fontSize: '16px' }}>
+            Based on {totalReviews} reviews
+          </span>
         </div>
 
         {/* Rating Breakdown */}
@@ -99,21 +154,21 @@ const CourseReviews = forwardRef((props, ref) => {
         <div className="d-flex mt-4">
           <div className="me-3">
             <img
-              src={reviews[0].image}
-              alt={reviews[0].name}
+              src={sortedReviews[0].image}
+              alt={sortedReviews[0].name}
               className="rounded-circle"
               style={{ width: '50px', height: '50px', objectFit: 'cover' }}
             />
           </div>
           <div>
-            <h6 className="fw-bold mb-1">{reviews[0].name}</h6>
-            <span className="text-muted" style={{ fontSize: '14px' }}>{reviews[0].date}</span>
-            <div className="mb-2">{renderStars(reviews[0].rating)}</div>
+            <h6 className="fw-bold mb-1">{sortedReviews[0].name}</h6>
+            <span className="text-muted" style={{ fontSize: '14px' }}>{sortedReviews[0].date}</span>
+            <div className="mb-2">{renderStars(sortedReviews[0].rating)}</div>
             <p className="text-muted" style={{ fontSize: '14px' }}>
-              "{reviews[0].comment}"
+              "{sortedReviews[0].comment}"
             </p>
             <div className="text-muted helpful-count" style={{ fontSize: '12px' }}>
-              {reviews[0].helpfulCount} people found this helpful
+              {sortedReviews[0].helpfulCount} people found this helpful
             </div>
           </div>
         </div>
@@ -123,7 +178,7 @@ const CourseReviews = forwardRef((props, ref) => {
       <div className="student-reviews mb-4">
         <div className="d-flex justify-content-between align-items-center mb-3">
           <h5 className="section-title">Student Reviews</h5>
-          <select className="form-select w-auto custom-select">
+          <select className="form-select w-auto custom-select" value={filter} onChange={handleFilterChange}>
             <option value="all">All Ratings</option>
             <option value="5">5 Stars</option>
             <option value="4">4 Stars</option>
@@ -131,7 +186,7 @@ const CourseReviews = forwardRef((props, ref) => {
           </select>
         </div>
 
-        {reviews.slice(0, visibleReviews).map((review, index) => (
+        {filteredReviews.slice(0, visibleReviews).map((review, index) => (
           <div className="d-flex mb-4 review-card p-3 bg-light rounded shadow-sm" key={index}>
             <div className="me-3">
               <img
@@ -155,11 +210,37 @@ const CourseReviews = forwardRef((props, ref) => {
           </div>
         ))}
 
-        {visibleReviews < reviews.length && (
+        {visibleReviews < filteredReviews.length && (
           <button className="btn btn-dark w-100 load-more-btn" onClick={loadMoreReviews}>
             Load More Reviews
           </button>
         )}
+      </div>
+
+      {/* Add Review Form */}
+      <div className="add-review mb-4">
+        <h5 className="section-title">Add Your Review</h5>
+        <form onSubmit={handleSubmit} className="p-3 bg-light rounded shadow-sm">
+          <div className="mb-3">
+            <label className="form-label">Your Name</label>
+            <input type="text" name="name" value={newReview.name} onChange={handleInputChange} className="form-control" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Rating</label>
+            <select name="rating" value={newReview.rating} onChange={handleInputChange} className="form-select" required>
+              <option value={5}>5 Stars</option>
+              <option value={4}>4 Stars</option>
+              <option value={3}>3 Stars</option>
+              <option value={2}>2 Stars</option>
+              <option value={1}>1 Star</option>
+            </select>
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Comment</label>
+            <textarea name="comment" value={newReview.comment} onChange={handleInputChange} className="form-control" rows="3" required />
+          </div>
+          <button type="submit" className="btn btn-primary">Submit Review</button>
+        </form>
       </div>
 
       {/* Additional Styles */}
