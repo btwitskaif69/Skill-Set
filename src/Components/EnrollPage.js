@@ -10,7 +10,7 @@ import CourseAbout from "./CourseEnrollmentPage/CourseAbout";
 import LearningOutcomes from "./CourseEnrollmentPage/LearningOutcomes";
 import FAQ from "./CourseEnrollmentPage/FAQ";
 
-export default function CoursesPage() {
+export default function CoursePage() {
   // Define the refs using the useRef hook
   const courseDescriptionRef = useRef(null);
   const coursereviewsRef = useRef(null);

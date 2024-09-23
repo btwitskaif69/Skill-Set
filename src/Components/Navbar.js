@@ -53,7 +53,7 @@ export default function Navbar() {
                 <Link Home to='/home' className="nav-link fs-6 text-dark me-0" aria-current="page">Home</Link>
               </li>
               <li className="nav-item">
-                <Link Courses to='/courses' className="nav-link fs-6 text-dark mx-2">Courses</Link>
+                <Link Course to='/courses' className="nav-link fs-6 text-dark mx-2">Course</Link>
               </li>
               <li className="nav-item">
                 <Link AboutUs to='/about-us' className="nav-link fs-6 text-dark" mx-2>About Us</Link>

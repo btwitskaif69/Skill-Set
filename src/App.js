@@ -6,7 +6,7 @@ import SignUp from './Components/SignUp';
 import LogIn from './Components/LogIn'; 
 import Home from './Components/Home'; 
 import Courses from './Components/CoursePage/Courses';
-import CoursesPage from './Components/CoursesPage';
+import EnrollPage from './Components/EnrollPage';
 import ContactUs from './Components/ContactUs';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
@@ -25,7 +25,8 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/signup" element={<SignUp />} /> {/* Ensure SignUp component is valid */}
           <Route path="/login" element={<LogIn />} /> {/* Ensure LogIn component is valid */}
-          <Route path="/courses-page" element={<CoursesPage />} />
+          <Route path="/courses-page" element={<Courses/>} />
+          <Route path="/courses/:title" element={<EnrollPage />} />  {/* Route for enrollment page */}
         </Routes>
         <Footer/>
       </div>
