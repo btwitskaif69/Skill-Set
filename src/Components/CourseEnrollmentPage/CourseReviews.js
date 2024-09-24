@@ -194,7 +194,7 @@ const CourseReviews = forwardRef((props, ref) => {
   return (
     <div ref={ref} id="course-reviews-section" className="container my-5">
       {/* Rating Summary */}
-      <div className="rating-summary p-3 rounded shadow-sm mb-5 bg-light">
+      <div className="rating-summary p-3 rounded shadow-sm mb-5">
         <div className="d-flex justify-content-between align-items-center mb-0">
           <h5 className="fs-4 fw-medium">Student Feedback</h5>
           <h2 className="fs-4 fw-medium d-flex align-items-center">
@@ -284,7 +284,7 @@ const CourseReviews = forwardRef((props, ref) => {
 
 
         {filteredReviews.slice(0, visibleReviews).map((review, index) => (
-          <div className="d-flex mb-4 review-card p-3 bg-light rounded shadow-sm" key={index}>
+          <div className="d-flex mb-4 review-card p-4 border-bottom" key={index}>
             <div className="me-3">
               <img
                 src={review.image}
@@ -295,12 +295,12 @@ const CourseReviews = forwardRef((props, ref) => {
             </div>
             <div>
               <h6 className="fw-bold mb-1">{review.name}</h6>
-              <span className="text-muted" style={{ fontSize: '14px' }}>{review.date}</span>
+              <span className="text-muted" style={{ fontSize: '15px' }}>{review.date}</span>
               <div className="mb-2">{renderStars(review.rating)}</div>
-              <p className="text-muted" style={{ fontSize: '14px' }}>
+              <p className="text-muted" style={{ fontSize: '17px' }}>
                 "{review.comment}"
               </p>
-              <div className="text-muted helpful-count" style={{ fontSize: '12px' }}>
+              <div className="text-muted helpful-count bi bi-hand-thumbs-up" style={{ fontSize: '14px' }}>&nbsp;
                 {review.helpfulCount} people found this helpful
               </div>
             </div>
@@ -308,7 +308,7 @@ const CourseReviews = forwardRef((props, ref) => {
         ))}
 
         {visibleReviews < filteredReviews.length && (
-          <button className="btn btn-dark w-100 load-more-btn" onClick={loadMoreReviews}>
+          <button className="btn custom-button-basic w-100" onClick={loadMoreReviews}>
             Load More Reviews
           </button>
         )}
@@ -352,26 +352,14 @@ const CourseReviews = forwardRef((props, ref) => {
           font-size: 14px;
           padding: 4px 12px;
         }
-        .most-helpful-review, .review-card {
-          transition: box-shadow 0.3s ease;
-        }
-        .most-helpful-review:hover, .review-card:hover {
-          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
+        
         .custom-select {
           padding: 4px 12px;
           border-radius: 5px;
           background-color: #fff;
           border: 1px solid #ddd;
         }
-        .load-more-btn {
-          background-color: #000;
-          color: #fff;
-          font-weight: bold;
-        }
-        .load-more-btn:hover {
-          background-color: #333;
-        }
+
         .section-title {
           font-size: 18px;
           font-weight: bold;
@@ -380,7 +368,7 @@ const CourseReviews = forwardRef((props, ref) => {
           color: #6c757d;
         }
         .rating-summary {
-          background-color: #f0f8ff;
+          background-color: #f5f7fa;
         }
         .rating-breakdown .progress-bar {
           transition: width 0.4s ease;
