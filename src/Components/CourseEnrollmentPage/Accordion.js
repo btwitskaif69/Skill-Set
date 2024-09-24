@@ -137,6 +137,38 @@ export default function Accordion() {
               </div>
             </div>
           </div>
+                    {/* Accordion Item #5 */}
+                    <div className="accordion-item">
+            <h2 className="accordion-header">
+              <button
+                className="accordion-button custom-color collapsed fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseFive"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseFive"
+              >
+                React
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFive" className="accordion-collapse collapse">
+              <div className="accordion-body" style={{ paddingLeft: "20px" }}>
+                <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
+                  <li className="bi bi-check-lg mb-1">&nbsp;Use reusable components to render views where data changes over time.</li>
+                  <li className="bi bi-check-lg mb-1">&nbsp;Organize React projects to create more scalable and maintainable websites and apps.</li>
+                  <li className="bi bi-check-lg mb-1">&nbsp;Use props to pass data between components. Create dynamic and interactive web pages and apps.</li>
+                  <li className="bi bi-check-lg mb-1">&nbsp;Use forms to allow users to interact with the app. Build an application in React.</li>
+                </ul>
+                <h6>Knowledge You'll Gain</h6>
+                <div className="skills-tags">
+                  <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>Test-Driven Development</span>
+                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>JavaScript</span>
+                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Front-End Web Development</span>
+                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Object-Oriented Programming (OOP)</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
