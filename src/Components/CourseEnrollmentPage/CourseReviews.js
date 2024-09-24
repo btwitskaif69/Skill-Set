@@ -44,8 +44,90 @@ const CourseReviews = forwardRef((props, ref) => {
       comment: "The content is good, but I wish there were more practical examples. Overall, I learned a lot.",
       helpfulCount: 28,
       image: '/Assets/Profile/image4.jpg'
+    },
+    {
+      name: "David Smith",
+      date: "2023-07-05",
+      rating: 5,
+      comment: "An excellent course that covers everything you need to know. The quizzes and assignments were particularly useful for testing my knowledge. Would definitely recommend.",
+      helpfulCount: 37,
+      image: '/Assets/Profile/image5.jpg'
+    },
+    {
+      name: "Sophia Lee",
+      date: "2023-06-20",
+      rating: 3,
+      comment: "The course content is good, but I felt the pace was a bit slow. I would have liked more advanced topics to be covered.",
+      helpfulCount: 21,
+      image: '/Assets/Profile/image6.jpg'
+    },
+    {
+      name: "John Doe",
+      date: "2023-05-30",
+      rating: 5,
+      comment: "Very informative and well-structured course. The instructor was very knowledgeable and the real-world examples were invaluable. Highly recommend!",
+      helpfulCount: 50,
+      image: '/Assets/Profile/image7.jpg'
+    },
+    {
+      name: "Alice Cooper",
+      date: "2023-07-15",
+      rating: 4,
+      comment: "Good course, but some of the lessons felt repetitive. The forums were very helpful for additional learning.",
+      helpfulCount: 30,
+      image: '/Assets/Profile/image8.jpg'
+    },
+    {
+      name: "Chris Martin",
+      date: "2023-06-05",
+      rating: 5,
+      comment: "Fantastic course! The instructor explains concepts clearly and the exercises are very practical. I feel much more confident in my skills now.",
+      helpfulCount: 43,
+      image: '/Assets/Profile/image9.jpg'
+    },
+    {
+      name: "Jessica Taylor",
+      date: "2023-05-25",
+      rating: 3,
+      comment: "The course is okay, but I found the lectures a bit too long and sometimes monotonous. However, the content is solid and informative.",
+      helpfulCount: 18,
+      image: '/Assets/Profile/image10.jpg'
+    },
+    {
+      name: "Oliver Scott",
+      date: "2023-07-20",
+      rating: 2,
+      comment: "The course did not meet my expectations. The content was too basic, and the instructor seemed unprepared. I don't think it was worth the time and money.",
+      helpfulCount: 15,
+      image: '/Assets/Profile/image1.jpg'
+    },
+    {
+      name: "Emma Davis",
+      date: "2023-08-01",
+      rating: 1,
+      comment: "Very disappointed with the course. The explanations were confusing and the content was outdated. Would not recommend.",
+      helpfulCount: 12,
+      image: '/Assets/Profile/image2.jpg'
+    },
+    {
+      name: "Liam Turner",
+      date: "2023-07-18",
+      rating: 2,
+      comment: "The course has potential but lacks depth. Some sections were good, but overall it felt lacking in content and detail.",
+      helpfulCount: 9,
+      image: '/Assets/Profile/image3.jpg'
+    },
+    {
+      name: "Ava Wilson",
+      date: "2023-06-30",
+      rating: 1,
+      comment: "I did not learn anything new. The course was poorly structured, and the instructor was not engaging. I would not recommend it.",
+      helpfulCount: 20,
+      image: '/Assets/Profile/image4.jpg'
     }
   ]);
+  
+  
 
   // Sort reviews by rating (descending)
   const sortedReviews = [...reviews].sort((a, b) => b.rating - a.rating);
@@ -112,17 +194,17 @@ const CourseReviews = forwardRef((props, ref) => {
   return (
     <div ref={ref} id="course-reviews-section" className="container my-5">
       {/* Rating Summary */}
-      <div className="rating-summary p-4 rounded shadow-sm mb-5 bg-light">
-        <div className="d-flex justify-content-between align-items-center mb-3">
-          <h5 className="section-title">Student Feedback</h5>
-          <h2 className="text-primary d-flex align-items-center">
+      <div className="rating-summary p-3 rounded shadow-sm mb-5 bg-light">
+        <div className="d-flex justify-content-between align-items-center mb-0">
+          <h5 className="fs-4 fw-medium">Student Feedback</h5>
+          <h2 className="fs-4 fw-medium d-flex align-items-center">
             {averageRating} 
-            <span className="ms-2">{renderStars(averageRating)}</span>
+            <span className="fs-6 ms-2">{renderStars(averageRating)}</span>
           </h2>
         </div>
         <div className="d-flex align-items-center mb-4">
-          {renderStars(Math.round(averageRating))}
-          <span className="ms-2 text-muted" style={{ fontSize: '16px' }}>
+         
+          <span className="text-muted fw-medium" style={{ fontSize: '16px' }}>
             Based on {totalReviews} reviews
           </span>
         </div>
@@ -149,8 +231,8 @@ const CourseReviews = forwardRef((props, ref) => {
       </div>
 
       {/* Most Helpful Review */}
-      <div className="most-helpful-review mb-5 p-4 rounded shadow-sm bg-light">
-        <h5 className="section-title">Most Helpful Review</h5>
+      <div className="most-helpful-review mb-5 p-4 rounded shadow-sm" style={{ background: 'linear-gradient(135deg, #4B0FD9 15%, #210BE3 25%, #7A00E2 40%, #A500FF 60%, #4B0FD9 80%, #1A00B5 95%)' }}>
+        <h5 className="section-title" style={{color: 'white' }}>Most Helpful Review</h5>
         <div className="d-flex mt-4">
           <div className="me-3">
             <img
@@ -161,13 +243,13 @@ const CourseReviews = forwardRef((props, ref) => {
             />
           </div>
           <div>
-            <h6 className="fw-bold mb-1">{sortedReviews[0].name}</h6>
-            <span className="text-muted" style={{ fontSize: '14px' }}>{sortedReviews[0].date}</span>
+            <h6 className="fw-bold mb-1" style={{color: 'white' }}>{sortedReviews[0].name}</h6>
+            <span className="" style={{ fontSize: '14px', color: 'white' }}>{sortedReviews[0].date}</span>
             <div className="mb-2">{renderStars(sortedReviews[0].rating)}</div>
-            <p className="text-muted" style={{ fontSize: '14px' }}>
+            <p className="" style={{ fontSize: '14px', color: 'white' }}>
               "{sortedReviews[0].comment}"
             </p>
-            <div className="text-muted helpful-count" style={{ fontSize: '12px' }}>
+            <div className=" helpful-count" style={{ fontSize: '12px', color: 'white' }}>
               {sortedReviews[0].helpfulCount} people found this helpful
             </div>
           </div>
@@ -175,16 +257,31 @@ const CourseReviews = forwardRef((props, ref) => {
       </div>
 
       {/* Student Reviews */}
-      <div className="student-reviews mb-4">
-        <div className="d-flex justify-content-between align-items-center mb-3">
-          <h5 className="section-title">Student Reviews</h5>
-          <select className="form-select w-auto custom-select" value={filter} onChange={handleFilterChange}>
-            <option value="all">All Ratings</option>
-            <option value="5">5 Stars</option>
-            <option value="4">4 Stars</option>
-            <option value="3">3 Stars</option>
-          </select>
-        </div>
+<div className="student-reviews mb-4">
+  <div className="d-flex justify-content-between align-items-center mb-3">
+    <h5 className="section-title">Student Reviews</h5>
+    <div className="dropdown">
+      <button 
+        className="btn custom-button-default dropdown-toggle" 
+        type="button" 
+        id="filterDropdown" 
+        data-bs-toggle="dropdown" 
+        aria-expanded="false"
+      >
+        {filter === "all" ? "All Ratings" : `${filter} Stars`}
+      </button>
+      <ul className="dropdown-menu" aria-labelledby="filterDropdown">
+        <li><button className="dropdown-item" onClick={() => handleFilterChange({ target: { value: 'all' } })}>All Ratings</button></li>
+        <li><button className="dropdown-item" onClick={() => handleFilterChange({ target: { value: '5' } })}>5 Stars</button></li>
+        <li><button className="dropdown-item" onClick={() => handleFilterChange({ target: { value: '4' } })}>4 Stars</button></li>
+        <li><button className="dropdown-item" onClick={() => handleFilterChange({ target: { value: '3' } })}>3 Stars</button></li>
+        <li><button className="dropdown-item" onClick={() => handleFilterChange({ target: { value: '2' } })}>2 Stars</button></li>
+        <li><button className="dropdown-item" onClick={() => handleFilterChange({ target: { value: '1' } })}>1 Stars</button></li>
+      </ul>
+    </div>
+  </div>
+
+
 
         {filteredReviews.slice(0, visibleReviews).map((review, index) => (
           <div className="d-flex mb-4 review-card p-3 bg-light rounded shadow-sm" key={index}>
