@@ -3,6 +3,7 @@ import React, { forwardRef, useState } from 'react';
 const CourseReviews = forwardRef((props, ref) => {
   const [visibleReviews, setVisibleReviews] = useState(3);
   const [filter, setFilter] = useState('all'); // Filter state
+  const [showForm, setShowForm] = useState(false);
   const [newReview, setNewReview] = useState({
     name: '',
     date: '',
@@ -124,9 +125,136 @@ const CourseReviews = forwardRef((props, ref) => {
       comment: "I did not learn anything new. The course was poorly structured, and the instructor was not engaging. I would not recommend it.",
       helpfulCount: 20,
       image: '/Assets/Profile/image4.jpg'
-    }
+    },
+    {
+      name: "Daniel Brown",
+      date: "2023-08-15",
+      rating: 4,
+      comment: "A solid course with a good overview of the subject. The assignments were challenging but rewarding.",
+      helpfulCount: 25,
+      image: '/Assets/Profile/image5.jpg'
+    },
+    {
+      name: "Mia Johnson",
+      date: "2023-08-10",
+      rating: 5,
+      comment: "Incredible learning experience! The materials were well-organized and easy to follow. Would definitely enroll in another course.",
+      helpfulCount: 60,
+      image: '/Assets/Profile/image6.jpg'
+    },
+    {
+      name: "Lucas White",
+      date: "2023-08-20",
+      rating: 3,
+      comment: "Good course but could use some updates. Some content felt outdated, but overall it was useful.",
+      helpfulCount: 29,
+      image: '/Assets/Profile/image7.jpg'
+    },
+    {
+      name: "Olivia Martin",
+      date: "2023-08-25",
+      rating: 5,
+      comment: "Excellent content and well-structured lessons. The instructor was very engaging!",
+      helpfulCount: 55,
+      image: '/Assets/Profile/image8.jpg'
+    },
+    {
+      name: "Ethan Davis",
+      date: "2023-08-30",
+      rating: 4,
+      comment: "I enjoyed the course. The quizzes were a great way to test my knowledge. Would recommend!",
+      helpfulCount: 36,
+      image: '/Assets/Profile/image9.jpg'
+    },
+    {
+      name: "Charlotte Garcia",
+      date: "2023-09-05",
+      rating: 3,
+      comment: "The course was decent but not as engaging as I expected. Some areas could be improved.",
+      helpfulCount: 20,
+      image: '/Assets/Profile/image10.jpg'
+    },
+    {
+      name: "James Rodriguez",
+      date: "2023-09-10",
+      rating: 2,
+      comment: "Not what I expected. The content was too basic for my level. I would not recommend it.",
+      helpfulCount: 10,
+      image: '/Assets/Profile/image1.jpg'
+    },
+    {
+      name: "Avery Martinez",
+      date: "2023-09-15",
+      rating: 4,
+      comment: "A good course with a lot of helpful information. The instructor was knowledgeable.",
+      helpfulCount: 42,
+      image: '/Assets/Profile/image2.jpg'
+    },
+    {
+      name: "Henry Wilson",
+      date: "2023-09-20",
+      rating: 5,
+      comment: "Fantastic course! I learned a lot and would highly recommend it to anyone interested in the topic.",
+      helpfulCount: 70,
+      image: '/Assets/Profile/image3.jpg'
+    },
+    {
+      name: "Isabella Lee",
+      date: "2023-09-25",
+      rating: 4,
+      comment: "I found the course to be informative and well-paced. Some technical difficulties, but overall a great experience.",
+      helpfulCount: 38,
+      image: '/Assets/Profile/image4.jpg'
+    },
+    {
+      name: "Jack Walker",
+      date: "2023-09-30",
+      rating: 3,
+      comment: "The course was good but not amazing. I expected more in-depth content.",
+      helpfulCount: 15,
+      image: '/Assets/Profile/image5.jpg'
+    },
+    {
+      name: "Sophia Kim",
+      date: "2023-10-01",
+      rating: 5,
+      comment: "Amazing experience! The instructor was very supportive and the community was great!",
+      helpfulCount: 65,
+      image: '/Assets/Profile/image6.jpg'
+    },
+    {
+      name: "Michael Lewis",
+      date: "2023-10-05",
+      rating: 1,
+      comment: "Very disappointed. I did not gain any valuable skills from this course.",
+      helpfulCount: 8,
+      image: '/Assets/Profile/image7.jpg'
+    },
+    {
+      name: "Ella White",
+      date: "2023-10-10",
+      rating: 4,
+      comment: "Overall a good course with some valuable insights. Would recommend to beginners.",
+      helpfulCount: 33,
+      image: '/Assets/Profile/image8.jpg'
+    },
+    {
+      name: "Joshua Clark",
+      date: "2023-10-15",
+      rating: 2,
+      comment: "The course was okay, but I expected more interaction and feedback from the instructor.",
+      helpfulCount: 11,
+      image: '/Assets/Profile/image9.jpg'
+    },
+    {
+      name: "Chloe Adams",
+      date: "2023-10-20",
+      rating: 5,
+      comment: "One of the best courses I’ve taken! The content was engaging and relevant.",
+      helpfulCount: 77,
+      image: '/Assets/Profile/image10.jpg'
+    },
   ]);
-  
   
 
   // Sort reviews by rating (descending)
@@ -140,12 +268,18 @@ const CourseReviews = forwardRef((props, ref) => {
   const totalReviews = filteredReviews.length;
   const averageRating = (filteredReviews.reduce((acc, review) => acc + review.rating, 0) / totalReviews).toFixed(1);
 
+  const getRatingPercentage = (rating) => {
+    const total = filteredReviews.length;
+    const count = filteredReviews.filter(review => review.rating === rating).length;
+    return total ? ((count / total) * 100).toFixed(1) : 0;
+  };
+
   const ratingSummary = {
-    5: 60,
-    4: 40,
-    3: 0,
-    2: 0,
-    1: 0,
+    5: getRatingPercentage(5),
+    4: getRatingPercentage(4),
+    3: getRatingPercentage(3),
+    2: getRatingPercentage(2),
+    1: getRatingPercentage(1),
   };
 
   const renderStars = (rating) => {
@@ -193,6 +327,9 @@ const CourseReviews = forwardRef((props, ref) => {
 
   return (
     <div ref={ref} id="course-reviews-section" className="container my-5">
+      <div className="heading mb-4">
+        <h1 className="mb-1 display-4 fw-medium" style={{color: 'Black'}}>Students Review</h1>
+      </div>
       {/* Rating Summary */}
       <div className="rating-summary p-3 rounded shadow-sm mb-5">
         <div className="d-flex justify-content-between align-items-center mb-0">
@@ -203,7 +340,6 @@ const CourseReviews = forwardRef((props, ref) => {
           </h2>
         </div>
         <div className="d-flex align-items-center mb-4">
-         
           <span className="text-muted fw-medium" style={{ fontSize: '16px' }}>
             Based on {totalReviews} reviews
           </span>
@@ -216,7 +352,7 @@ const CourseReviews = forwardRef((props, ref) => {
               <span className="me-2" style={{ width: '40px' }}>{star} stars</span>
               <div className="progress w-100 me-2" style={{ height: '10px' }}>
                 <div
-                  className="progress-bar bg-dark"
+                  className="progress-bar"
                   role="progressbar"
                   style={{ width: `${ratingSummary[star]}%` }}
                   aria-valuenow={ratingSummary[star]}
@@ -257,7 +393,7 @@ const CourseReviews = forwardRef((props, ref) => {
       </div>
 
       {/* Student Reviews */}
-<div className="student-reviews mb-4">
+<div className="student-reviews mb-3">
   <div className="d-flex justify-content-between align-items-center mb-3">
     <h5 className="section-title">Student Reviews</h5>
     <div className="dropdown">
@@ -300,9 +436,11 @@ const CourseReviews = forwardRef((props, ref) => {
               <p className="text-muted" style={{ fontSize: '17px' }}>
                 "{review.comment}"
               </p>
-              <div className="text-muted helpful-count bi bi-hand-thumbs-up" style={{ fontSize: '14px' }}>&nbsp;
+              <div className="text-muted helpful-count bi bi-hand-thumbs-up" style={{fontSize: '14px'}}>&nbsp;
                 {review.helpfulCount} people found this helpful
+                &nbsp;<span className="badge fw-semibold mb-2 bi bi-award rounded-pill" style={{ backgroundColor: "hsl(240 4.8% 95.9%)", color:'black'}}> &nbsp;Verified Purchase</span>
               </div>
+              
             </div>
           </div>
         ))}
@@ -316,15 +454,32 @@ const CourseReviews = forwardRef((props, ref) => {
 
       {/* Add Review Form */}
       <div className="add-review mb-4">
-        <h5 className="section-title">Add Your Review</h5>
+      {!showForm ? (
+        <button className="btn custom-button-basic w-100" onClick={() => setShowForm(true)}>
+          Add Review
+        </button>
+      ) : (
         <form onSubmit={handleSubmit} className="p-3 bg-light rounded shadow-sm">
           <div className="mb-3">
             <label className="form-label">Your Name</label>
-            <input type="text" name="name" value={newReview.name} onChange={handleInputChange} className="form-control" required />
+            <input
+              type="text"
+              name="name"
+              value={newReview.name}
+              onChange={handleInputChange}
+              className="form-control"
+              required
+            />
           </div>
           <div className="mb-3">
             <label className="form-label">Rating</label>
-            <select name="rating" value={newReview.rating} onChange={handleInputChange} className="form-select" required>
+            <select
+              name="rating"
+              value={newReview.rating}
+              onChange={handleInputChange}
+              className="form-select"
+              required
+            >
               <option value={5}>5 Stars</option>
               <option value={4}>4 Stars</option>
               <option value={3}>3 Stars</option>
@@ -334,11 +489,24 @@ const CourseReviews = forwardRef((props, ref) => {
           </div>
           <div className="mb-3">
             <label className="form-label">Comment</label>
-            <textarea name="comment" value={newReview.comment} onChange={handleInputChange} className="form-control" rows="3" required />
+            <textarea
+              name="comment"
+              value={newReview.comment}
+              onChange={handleInputChange}
+              className="form-control"
+              rows="3"
+              required
+            />
           </div>
-          <button type="submit" className="btn btn-primary">Submit Review</button>
+          <button type="submit" className="btn custom-button-default">
+            Submit Review
+          </button>
+          <button type="button" className="btn custom-button-default-white ms-2" onClick={() => setShowForm(false)}>
+            Cancel
+          </button>
         </form>
-      </div>
+      )}
+    </div>
 
       {/* Additional Styles */}
       <style>{`
@@ -372,6 +540,7 @@ const CourseReviews = forwardRef((props, ref) => {
         }
         .rating-breakdown .progress-bar {
           transition: width 0.4s ease;
+          background-color: #210BE3;
         }
       `}</style>
     </div>
