@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-export default function LearningOutcomes() {
-
+const LearningOutcomes = forwardRef((props, ref) => {
     const outcomes = [
         "Master advanced JavaScript concepts and ES6+ features",
         "Build complex, scalable applications with React and state management tools",
@@ -12,7 +11,7 @@ export default function LearningOutcomes() {
     ];
 
     return (
-        <div className="container">
+        <div ref={ref} className="container">
             {/* Title */}
             <h3 className="display-6 fw-medium">Learning Outcomes</h3>
             
@@ -27,4 +26,6 @@ export default function LearningOutcomes() {
             </ul>
         </div>
     );
-}
+});
+
+export default LearningOutcomes;

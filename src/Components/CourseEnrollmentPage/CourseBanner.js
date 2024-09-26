@@ -48,9 +48,12 @@ export default function CourseBanner() {
       <div className="row g-4">
         {/* Course Information Item 1 */}
         <div className="col-6 col-md-3 d-flex align-items-center">
-          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 border-black" 
-               style={{  fontSize: '1.75rem',  width: '3.75rem',  height: '3.75rem', }}><i className="bi bi-journals"></i>
-          </div>
+        <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 custom-border" 
+     style={{ fontSize: '1.75rem', width: '3.75rem', height: '3.75rem', color:'#210BE3' }}>
+  <i className="bi bi-journals"></i>
+</div>
+
+
 
           <div className="ms-3">
             <p className="fw-semibold mb-0" style={{color:'#210BE3', fontSize:'0.95rem'}}>9 Courses</p>
@@ -61,8 +64,8 @@ export default function CourseBanner() {
 
         {/* Course Information Item 2 */}
         <div className="col-6 col-md-3 d-flex align-items-center">
-          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 border-black" 
-               style={{ fontSize: '1.75rem', width: '3.75rem', height: ' 3.75rem'}}><i className="bi bi-mortarboard"></i>
+          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 custom-border" 
+               style={{ fontSize: '1.75rem', width: '3.75rem', height: ' 3.75rem', color:'#210BE3'}}><i className="bi bi-mortarboard"></i>
 
           </div>
           <div className="ms-3">
@@ -74,8 +77,8 @@ export default function CourseBanner() {
 
         {/* Course Information Item 3 */}
         <div className="col-6 col-md-3 d-flex align-items-center">
-          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 border-black" 
-               style={{ fontSize: '1.75rem', width: '3.75rem', height: '3.75rem', }}><i className="bi bi-alarm"></i>
+          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 custom-border" 
+               style={{ fontSize: '1.75rem', width: '3.75rem', height: '3.75rem', color:'#210BE3' }}><i className="bi bi-alarm"></i>
           </div>
           
           <div className="ms-3">
@@ -87,8 +90,8 @@ export default function CourseBanner() {
 
         {/* Course Information Item 4 */}
         <div className="col-6 col-md-3 d-flex align-items-center">
-          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 border-black" 
-               style={{ fontSize: '1.75rem', width: '3.75rem', height: '3.75rem', }}><i className="bi bi-people"></i>
+          <div className="p-3 rounded-circle d-flex align-items-center justify-content-center border border-2 custom-border" 
+               style={{ fontSize: '1.75rem', width: '3.75rem', height: '3.75rem', color:'#210BE3'}}><i className="bi bi-people"></i>
           </div>
           
           <div className="ms-3">

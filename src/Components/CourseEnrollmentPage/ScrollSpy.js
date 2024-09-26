@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useRef } from "react";
 
-export default function ScrollSpy({ courseDescriptionRef, coursereviewsRef }) {
-  const aboutRef = React.useRef(null);
-  const outcomeRef = React.useRef(null);
+export default function ScrollSpy({ courseDescriptionRef, coursereviewsRef, courseOutcomeRef }) {
+  const aboutRef = useRef(null);
 
   const ScrollToAbout = () => aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-  const ScrollToOutcome = () => outcomeRef.current.scrollIntoView({ behavior: 'smooth' });
+  const ScrollToOutcome = () => courseOutcomeRef.current.scrollIntoView({ behavior: 'smooth' });
   const ScrollToCourses = () => courseDescriptionRef.current.scrollIntoView({ behavior: 'smooth' });
   const ScrollToCourseReviews = () => coursereviewsRef.current.scrollIntoView({ behavior: 'smooth' });
 
@@ -14,16 +13,16 @@ export default function ScrollSpy({ courseDescriptionRef, coursereviewsRef }) {
       <nav id="navbar-example2" className="navbar mb-3 border-bottom">
         <ul className="nav nav-pills">
           <li className="nav-item">
-            <button className="nav-link" onClick={ScrollToAbout}>About</button>
+            <button className="nav-link text-custom fs-5 fw-medium" onClick={ScrollToAbout}>About</button>
           </li>
           <li className="nav-item">
-            <button className="nav-link" onClick={ScrollToOutcome}>Outcome</button>
+            <button className="nav-link text-custom fs-5 fw-medium" onClick={ScrollToOutcome}>Outcome</button>
           </li>
           <li className="nav-item">
-            <button className="nav-link" onClick={ScrollToCourses}>Courses</button> {/* Scroll to CourseDescription */}
+            <button className="nav-link text-custom fs-5 fw-medium" onClick={ScrollToCourses}>Courses</button>
           </li>
           <li className="nav-item">
-            <button className="nav-link" onClick={ScrollToCourseReviews}>Student Reviews</button> {/* Scroll to CourseReviews */}
+            <button className="nav-link text-custom fs-5 fw-medium" onClick={ScrollToCourseReviews}>Student Reviews</button>
           </li>
         </ul>
       </nav>
@@ -32,10 +31,6 @@ export default function ScrollSpy({ courseDescriptionRef, coursereviewsRef }) {
       <div ref={aboutRef} id="about-section">
         {/* Content for About section */}
       </div>
-      <div ref={outcomeRef} id="outcome-section">
-        {/* Content for Outcome section */}
-      </div>
-      {/* No need to add CourseDescription and CourseReviews sections here as they are included in CoursesPage */}
     </div>
   );
 }

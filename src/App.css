@@ -38,46 +38,6 @@
     align-items: center;
     z-index: 1000; /* high z-index to overlay other content */
   }
-  
- /* Home.css */
-
-/* Marquee Styles */
-.marquee-container {
-  overflow: hidden;
-  position: relative;
-  background: #f8f9fa; /* Light background color */
-  padding: 10px 0;
-  width: 100%;
-  height: 100px; /* Fixed height for the marquee */
-}
-
-.marquee-heading {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #343a40; /* Darker text color for visibility */
-}
-
-.marquee-content {
-  display: flex;
-  flex-wrap: nowrap;
-  animation: marquee 20s linear infinite;
-}
-
-.marquee-logo {
-  height: 60px; /* Fixed height for logos */
-  margin: 0 15px; /* Space between logos */
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 
 .follow-us h6 {
   margin-bottom: 10px; /* Adjusts space below "Follow Us" heading */
@@ -237,6 +197,23 @@
   color: #210BE3; /* Text color when active */
 }
 
+.custom-border {
+  border-color: #210BE3 !important;
+}
 
+.text-custom {
+  color: #210BE3 !important;
+}
 
+.text-custom:hover {
+  color: #1d0aca !important;
+}
 
+.text-custom:active,
+.text-custom:focus {
+  color: #210BE3 !important;
+}
+
+.text-custom:focus:hover {
+  color: #1d0aca !important;
+}

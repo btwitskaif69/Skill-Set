@@ -328,7 +328,7 @@ const CourseReviews = forwardRef((props, ref) => {
   return (
     <div ref={ref} id="course-reviews-section" className="container my-5">
       <div className="heading mb-4">
-        <h1 className="mb-1 display-4 fw-medium" style={{color: 'Black'}}>Students Review</h1>
+        <h1 className="mb-1 display-4 fw-medium" style={{color: 'Black'}}>Student Reviews</h1>
       </div>
       {/* Rating Summary */}
       <div className="rating-summary p-3 rounded shadow-sm mb-5">

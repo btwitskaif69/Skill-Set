@@ -11,17 +11,17 @@ import LearningOutcomes from "./CourseEnrollmentPage/LearningOutcomes";
 import FAQ from "./CourseEnrollmentPage/FAQ";
 
 export default function CoursePage() {
-  // Define the refs using the useRef hook
+  const courseOutcomeRef = useRef(null);
   const courseDescriptionRef = useRef(null);
   const coursereviewsRef = useRef(null);
 
   return (
     <div>
       <CourseBanner />
-      <ScrollSpy courseDescriptionRef={courseDescriptionRef} coursereviewsRef={coursereviewsRef} />
+      <ScrollSpy courseDescriptionRef={courseDescriptionRef} coursereviewsRef={coursereviewsRef} courseOutcomeRef={courseOutcomeRef} />
       <CourseAbout />
-      <InstructorDetails /> {/* New Component */}
-      <LearningOutcomes />
+      <InstructorDetails />
+      <LearningOutcomes ref={courseOutcomeRef} />
       <FAQ />
       <CompanyLogos />
       <CourseDescription ref={courseDescriptionRef} />
