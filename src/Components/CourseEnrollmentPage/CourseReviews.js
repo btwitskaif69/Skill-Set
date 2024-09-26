@@ -10,7 +10,7 @@ const CourseReviews = forwardRef((props, ref) => {
     rating: 5,
     comment: '',
     helpfulCount: 0,
-    image: '/Assets/Profile/default.jpg', // Default image
+    image: '/Assets/Profile/default_profile.jpg', // Default image
   });
 
   const [reviews, setReviews] = useState([
