@@ -22,7 +22,7 @@ export default function InstructorDetails() {
         </div>
         <div>
           <h4 className="fw-semibold">{instructor.name}</h4>
-          <p className="text-muted mb-2" style={{ fontSize: '14px' }}>{instructor.title}</p>
+          <p className="text-muted fs-6 mb-2" style={{ fontSize: '14px' }}>{instructor.title}</p>
           <div className="mb-3">
             {instructor.skills.map((skill, index) => (
               <span key={index} className="badge me-2 mb-2" style={{ fontSize: '12px', backgroundColor:'#210BE3' }}>

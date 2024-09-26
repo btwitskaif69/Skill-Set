@@ -7,7 +7,7 @@ export default function CourseAbout() {
         <div className="container mt-4">
             {/* Course Overview */}
             <h2 className="display-6 fw-medium">Course Overview</h2>
-            <p className="lead text-muted">Comprehensive training in full-stack web development</p>
+            <p className="fs-5">Comprehensive training in full-stack web development</p>
 
             {/* Badges */}
             <div className="d-flex flex-wrap mb-4">
@@ -64,16 +64,17 @@ export default function CourseAbout() {
             <div className="card-body">
               <h5 className="card-title">Skills You'll Gain</h5>
               <div className="d-flex flex-wrap">
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>HTML</span>
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>CSS</span>
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>JavaScript</span>
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>React</span>
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>Git</span>
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>Web Development</span>
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>Front-End Development</span>
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>UI/UX Design</span>
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>Responsive Web Design</span>
-                <span className="badge 0.95rem me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>Web Application Development</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem" }}>HTML</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>CSS</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>JavaScript</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>React</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Git</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Web Development</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Front-End Development</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>UI/UX Design</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Responsive Web Design</span>
+              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Web Application Development</span>
+
               </div>
             </div>
           </div>
