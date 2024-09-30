@@ -4,28 +4,28 @@ import { Link} from 'react-router-dom';
 export default function NewCards() {
     const [showAdditionalCourses, setShowAdditionalCourses] = useState(false);
 
-    const University_Logos = {
-        Aws: '/Assets/University_Logos/Aws.svg',
-        Duke_University: '/Assets/University_Logos/Duke_University.svg',
-        Google: '/Assets/University_Logos/Google.svg',
-        IBM: '/Assets/University_Logos/IBM.svg',
-        Meta: '/Assets/University_Logos/Meta.svg',
-        Stanford_University: '/Assets/University_Logos/Stanford_University.svg',
-        University_of_Cambridge: '/Assets/University_Logos/University_of_Cambridge.svg',
-        University_of_Michigan: '/Assets/University_Logos/University_of_Michigan.svg',
-        University_of_Oxford: '/Assets/University_Logos/University_of_Oxford.svg',
-        University_of_Pennsylvania: '/Assets/University_Logos/University_of_Pennsylvania.svg',
+    const Educator = {
+        Aws: '/Assets/Educator/Aws.svg',
+        Duke_University: '/Assets/Educator/Duke_University.svg',
+        Google: '/Assets/Educator/Google.svg',
+        IBM: '/Assets/Educator/IBM.svg',
+        Meta: '/Assets/Educator/Meta.svg',
+        Stanford_University: '/Assets/Educator/Stanford_University.svg',
+        University_of_Cambridge: '/Assets/Educator/University_of_Cambridge.svg',
+        University_of_Michigan: '/Assets/Educator/University_of_Michigan.svg',
+        University_of_Oxford: '/Assets/Educator/University_of_Oxford.svg',
+        University_of_Pennsylvania: '/Assets/Educator/University_of_Pennsylvania.svg',
     };
 
     const courses = [
-        { id: 1, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course16.jpg", logo: University_Logos.University_of_Oxford },
-        { id: 2, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course15.jpg", logo: University_Logos.University_of_Cambridge },
-        { id: 3, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course14.jpg", logo: University_Logos.Stanford_University },
-        { id: 4, title: "AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: University_Logos.Duke_University },
-        { id: 5, title: "Meta Front-End Development", imgSrc: "/Assets/Course/course12.jpg", logo: University_Logos.Meta },
-        { id: 6, title: "IBM Data Science", imgSrc: "/Assets/Course/course11.jpg", logo: University_Logos.IBM },
-        { id: 7, title: "Google Data Analytics", imgSrc: "/Assets/Course/course10.jpg", logo: University_Logos.Google },
-        { id: 8, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course9.jpg", logo: University_Logos.Aws },
+        { id: 1, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course16.jpg", logo: Educator.University_of_Oxford },
+        { id: 2, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course15.jpg", logo: Educator.University_of_Cambridge },
+        { id: 3, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course14.jpg", logo: Educator.Stanford_University },
+        { id: 4, title: "AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: Educator.Duke_University },
+        { id: 5, title: "Meta Front-End Development", imgSrc: "/Assets/Course/course12.jpg", logo: Educator.Meta },
+        { id: 6, title: "IBM Data Science", imgSrc: "/Assets/Course/course11.jpg", logo: Educator.IBM },
+        { id: 7, title: "Google Data Analytics", imgSrc: "/Assets/Course/course10.jpg", logo: Educator.Google },
+        { id: 8, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course9.jpg", logo: Educator.Aws },
     ];
 
     const newmainCourses = courses.slice(0, 4);

@@ -39,7 +39,7 @@ export default function CoursesCards({ selectedFilters }) {
                 {currentCourses.length > 0 ? (
                     currentCourses.map(course => (
                         <div key={course.id} className="col-lg-4 col-md-6 col-sm-12">
-                            <Link to={`/courses/${course.id}`} className="text-decoration-none">
+                             <Link to={`/enroll/${course.id}`} className="text-decoration-none">
                                 <div className="card h-100 fade-in"
                                     style={{
                                         transition: 'transform 0.3s ease, box-shadow 0.3s ease',

@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 export default function Cards() {
     const [showAdditionalCourses, setShowAdditionalCourses] = useState(false);
 
-    const University_Logos = {
-        Aws: '/Assets/University_Logos/Aws.svg',
-        Duke_University: '/Assets/University_Logos/Duke_University.svg',
-        Google: '/Assets/University_Logos/Google.svg',
-        IBM: '/Assets/University_Logos/IBM.svg',
-        Meta: '/Assets/University_Logos/Meta.svg',
-        Stanford_University: '/Assets/University_Logos/Stanford_University.svg',
-        University_of_Cambridge: '/Assets/University_Logos/University_of_Cambridge.svg',
-        University_of_Michigan: '/Assets/University_Logos/University_of_Michigan.svg',
-        University_of_Oxford: '/Assets/University_Logos/University_of_Oxford.svg',
-        University_of_Pennsylvania: '/Assets/University_Logos/University_of_Pennsylvania.svg',
+    const Educator = {
+        Aws: '/Assets/Educator/Aws.svg',
+        Duke_University: '/Assets/Educator/Duke_University.svg',
+        Google: '/Assets/Educator/Google.svg',
+        IBM: '/Assets/Educator/IBM.svg',
+        Meta: '/Assets/Educator/Meta.svg',
+        Stanford_University: '/Assets/Educator/Stanford_University.svg',
+        University_of_Cambridge: '/Assets/Educator/University_of_Cambridge.svg',
+        University_of_Michigan: '/Assets/Educator/University_of_Michigan.svg',
+        University_of_Oxford: '/Assets/Educator/University_of_Oxford.svg',
+        University_of_Pennsylvania: '/Assets/Educator/University_of_Pennsylvania.svg',
     };
 
     const courses = [
@@ -22,56 +22,56 @@ export default function Cards() {
             id: 1,
             title: "Google Data Analytics",
             imgSrc: "/Assets/Course/course1.jpg",
-            logo: University_Logos.Google,
+            logo: Educator.Google,
             skills: "Data Analysis, Google Analytics, Data Visualization"
         },
         {
             id: 2,
             title: "IBM Data Science",
             imgSrc: "/Assets/Course/course2.jpg",
-            logo: University_Logos.IBM,
+            logo: Educator.IBM,
             skills: "Python, Machine Learning, Data Visualization"
         },
         {
             id: 3,
             title: "AWS Solutions Architect",
             imgSrc: "/Assets/Course/course3.jpg",
-            logo: University_Logos.Aws,
+            logo: Educator.Aws,
             skills: "Cloud Computing, AWS, Architecture Design"
         },
         {
             id: 4,
             title: "Meta Front-End Development",
             imgSrc: "/Assets/Course/course4.jpg",
-            logo: University_Logos.Meta,
+            logo: Educator.Meta,
             skills: "HTML, CSS, JavaScript, React"
         },
         {
             id: 5,
             title: "AI Fundamentals",
             imgSrc: "/Assets/Course/course5.jpg",
-            logo: University_Logos.Duke_University,
+            logo: Educator.Duke_University,
             skills: "Artificial Intelligence, Python, Machine Learning"
         },
         {
             id: 6,
             title: "Stanford Machine Learning",
             imgSrc: "/Assets/Course/course6.jpg",
-            logo: University_Logos.Stanford_University,
+            logo: Educator.Stanford_University,
             skills: "Machine Learning, Python, Data Analysis"
         },
         {
             id: 7,
             title: "Cambridge Data Science",
             imgSrc: "/Assets/Course/course7.jpg",
-            logo: University_Logos.University_of_Cambridge,
+            logo: Educator.University_of_Cambridge,
             skills: "Data Science, Statistics, R Programming"
         },
         {
             id: 8,
             title: "Oxford Cyber Security",
             imgSrc: "/Assets/Course/course8.jpg",
-            logo: University_Logos.University_of_Oxford,
+            logo: Educator.University_of_Oxford,
             skills: "Cybersecurity, Ethical Hacking, Network Security"
         },
     ];
@@ -172,7 +172,7 @@ export default function Cards() {
                     object-fit: cover;
                 }
                 .course-logos {
-                    display: flex;University_Logos;
+                    display: flex;Educator;
                     margin-bottom: 8px;
                     justify-content: left;
                 }

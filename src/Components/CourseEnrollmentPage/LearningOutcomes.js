@@ -18,8 +18,8 @@ const LearningOutcomes = forwardRef((props, ref) => {
             {/* Outcome List */}
             <ul className="list-unstyled mt-3">
                 {outcomes.map((outcome, index) => (
-                    <li key={index} className="d-flex align-items-start mb-2 fs-5">
-                        <span className="me-2 fs-5">•</span>
+                    <li key={index} className="d-flex align-items-start mb-2 fs-6">
+                        <span className="me-2 fs-6">•</span>
                         <span>{outcome}</span>
                     </li>
                 ))}

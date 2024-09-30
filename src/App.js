@@ -18,15 +18,15 @@ function App() {
       <div className="App">
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} /> {/* Default redirect to Home */}
-          <Route path="/home" element={<Home />} /> {/* Ensure Home component is valid */}
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
-          <Route path="/about-us" element={<AboutUs/>} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/signup" element={<SignUp />} /> {/* Ensure SignUp component is valid */}
-          <Route path="/login" element={<LogIn />} /> {/* Ensure LogIn component is valid */}
-          <Route path="/courses-page" element={<Courses/>} />
-          <Route path="/courses/:title" element={<EnrollPage />} />  {/* Route for enrollment page */}
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/courses-page" element={<Courses />} />
+          <Route path="/enroll/:id" element={<EnrollPage />} />  {/* Updated route */}
         </Routes>
         <Footer/>
       </div>
