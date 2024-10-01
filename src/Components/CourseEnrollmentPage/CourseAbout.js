@@ -1,86 +1,74 @@
 import React from 'react';
 
-export default function CourseAbout() {
-
-
+export default function CourseAbout({ overview, badges, about, learningOutcomes, skillsGained }) {
     return (
-        <div className="container mt-4">
+        <div className="container mt-4 mb-4">
             {/* Course Overview */}
-            <h2 className="display-6 fw-medium">Course Overview</h2>
-            <p className="fs-5">Comprehensive training in full-stack web development</p>
+            <h2 className="display-6 fw-medium mb-0">Course Overview</h2>
+            <p className="fs-5 mb-2">{overview}</p>
 
-            {/* Badges */}
-            <div className="d-flex flex-wrap mb-4">
-                <span className="badge 0.95rem border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-clock me-1"></i>12 weeks</span>
-                <span className="badge 0.95rem border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-calendar3 me-1"></i>Starts: September 1, 2023</span>
-                <span className="badge 0.95rem border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-mortarboard me-1"></i>Intermediate to Advanced</span>
-                <span className="badge 0.95rem border mb-2" style={{ backgroundColor: "#210BE3" }}><i className="bi bi-people me-1"></i>Max 20 students</span>
-            </div>
+{/* Badges */}
+<div className="d-flex flex-wrap mb-2">
+    {/* Render the first badge as "Instructor:" with an icon */}
+    <span className="badge border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>
+        <i className="bi bi-person-fill me-1"></i>Instructor: {badges[0]}
+    </span>
+
+    {/* Render two additional badges */}
+    <span className="badge border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>
+        <i className="bi bi-award me-1"></i>{badges[1]} {/* You can replace badges[1] with the actual text for the badge */}
+    </span>
+    <span className="badge border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>
+        <i className="bi bi-laptop me-1"></i>{badges[2]} {/* You can replace badges[2] with the actual text for the badge */}
+    </span>
+
+    {/* Render the rest of the badges */}
+    {badges.slice(3).map((badge, index) => (
+        <span key={index} className="badge border me-2 mb-2" style={{ backgroundColor: "#210BE3" }}>
+            {badge}
+        </span>
+    ))}
+</div>
+
 
             {/* Description */}
-            <p className="fs-5">
-                Dive deep into modern web development technologies and practices. This intensive bootcamp will take you from intermediate skills to a professional level, ready to tackle complex web projects.
-            </p>
-
-
-
+            <p className="fs-5 mb-2 mt-0">{about}</p>
 
             {/* Learning Section */}
-      <div className="row">
-        {/* Left Card: What You'll Learn */}
-        <div className="col-md-6 mb-4">
-          <div className="card h-100 shadow-sm">
-            <div className="card-body">
-              <h5 className="card-title">What You'll Learn</h5>
-              <ul className="list-unstyled">
-                <li className="d-flex align-items-center mb-2 ">
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
-                  Create a responsive website using HTML and CSS
-                </li>
-                <li className="d-flex align-items-center mb-2 ">
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
-                  Use JavaScript to make websites interactive
-                </li>
-                <li className="d-flex align-items-center mb-2 ">
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
-                  Use React to create powerful single-page applications
-                </li>
-                <li className="d-flex align-items-center mb-2">
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
-                  Implement version control with Git and GitHub
-                </li>
-                <li className="d-flex align-items-center mb-2">
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
-                  Prepare for technical interviews for front-end developer roles
-                </li>
-              </ul>
+            <div className="row">
+                {/* Left Card: What You'll Learn */}
+                <div className="col-md-6 mb-4">
+                    <div className="card h-100 shadow-sm">
+                        <div className="card-body">
+                            <h5 className="card-title">What You'll Learn</h5>
+                            <ul className="list-unstyled">
+                                {learningOutcomes.map((item, idx) => (
+                                    <li key={idx} className="d-flex align-items-center mb-2">
+                                        <i className="bi bi-check-circle-fill text-success me-2"></i>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right Card: Skills You'll Gain */}
+                <div className="col-md-6 mb-4">
+                    <div className="card h-100 shadow-sm">
+                        <div className="card-body">
+                            <h5 className="card-title">Skills You'll Gain</h5>
+                            <div className="d-flex flex-wrap">
+                                {skillsGained.map((skill, idx) => (
+                                    <span key={idx} className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem" }}>
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        {/* Right Card: Skills You'll Gain */}
-        <div className="col-md-6 mb-4">
-          <div className="card h-100 shadow-sm">
-            <div className="card-body">
-              <h5 className="card-title">Skills You'll Gain</h5>
-              <div className="d-flex flex-wrap">
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem" }}>HTML</span>
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>CSS</span>
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>JavaScript</span>
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>React</span>
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Git</span>
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Web Development</span>
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Front-End Development</span>
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>UI/UX Design</span>
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Responsive Web Design</span>
-              <span className="badge rounded-pill me-2 mb-2" style={{ backgroundColor: "#210BE3", fontSize: "1rem",}}>Web Application Development</span>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
         </div>
     );
 }

@@ -46,7 +46,13 @@ export default function EnrollPage() {
         coursereviewsRef={coursereviewsRef} 
         courseOutcomeRef={courseOutcomeRef} 
       />
-      <CourseAbout />
+      <CourseAbout
+       overview={course.overview}
+       badges={course.badges}
+       about={course.about}
+       learningOutcomes={course.learningOutcomes} // New prop for learning outcomes
+       skillsGained={course.skillsGained} // New prop for skills gained
+       />
       <InstructorDetails />
       <LearningOutcomes ref={courseOutcomeRef} />
       <FAQ />

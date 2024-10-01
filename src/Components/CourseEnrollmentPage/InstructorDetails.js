@@ -9,7 +9,7 @@ export default function InstructorDetails() {
   };
 
   return (
-    <div className="container my-5">
+    <div className="container">
       <h3 className="display-6 fw-medium mb-4">Meet Your Instructor</h3>
       <div className="d-flex justify-content-center align-items-start">
         <div className="me-4">

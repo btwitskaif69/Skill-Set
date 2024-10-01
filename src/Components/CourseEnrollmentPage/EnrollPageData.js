@@ -23,7 +23,22 @@ const enroll = [
     coursesCount: 5,         // New field for the number of courses
     difficulty: "Beginner",   // New field for difficulty level
     duration: "6 Months",     // New field for duration
-    hoursPerWeek: "4 hours/week" // New field for hours per week
+    hoursPerWeek: "4 hours/week", // New field for hours per week
+    overview: "Elevate your skills in Google Data Analytics with hands-on training and real-world projects, designed for aspiring professionals.",
+    badges: [ "John Doe", "Certification Available", "Online"],
+    about:"Unlock the power of data with our Google Data Analytics course, designed for aspiring analysts eager to transform raw data into actionable insights. This comprehensive program covers essential analytical skills and tools used by industry leaders to make data-driven decisions.",
+    learningOutcomes: [
+    "Create a responsive website using HTML and CSS",
+    "Use JavaScript to make websites interactive",
+    "Use React to create powerful single-page applications",
+    "Implement version control with Git and GitHub",
+    "Prepare for technical interviews for front-end developer roles"
+  ],
+  skillsGained: [
+    "HTML", "CSS", "JavaScript", "React", "Git",
+    "Web Development", "Front-End Development", "UI/UX Design",
+    "Responsive Web Design", "Web Application Development"
+  ]
   },
   {
     id: 2,
