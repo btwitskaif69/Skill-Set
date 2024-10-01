@@ -36,28 +36,6 @@ const enroll = [
     duration: "9 Months",
     hoursPerWeek: "5 hours/week"
   },
-  {
-    id: 3,
-    logo: Educator.Aws,
-    title: "AWS Solutions Architect",
-    description: "Become an AWS certified solutions architect.",
-    enrollmentCount: 150000,
-    coursesCount: 7,
-    difficulty: "Advanced",
-    duration: "8 Months",
-    hoursPerWeek: "6 hours/week"
-  },
-  {
-    id: 4,
-    logo: Educator.Meta,
-    title: "Meta Front-End Development",
-    description: "Launch your career as a front-end developer with Meta.",
-    enrollmentCount: 120000,
-    coursesCount: 6,
-    difficulty: "Beginner",
-    duration: "7 Months",
-    hoursPerWeek: "5 hours/week"
-  }
 ];
 
 export { enroll, Educator };
