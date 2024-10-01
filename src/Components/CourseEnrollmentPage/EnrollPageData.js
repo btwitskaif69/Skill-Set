@@ -18,8 +18,12 @@ const enroll = [
     id: 1,
     logo: Educator.Google,
     title: "Google Data Analytics",
-    description: "Learn data analysis using Google tools.",
+    description: "Launch your career as a data analyst. Build job-ready skills and earn a credential from Google.",
     enrollmentCount: 304498,
+    coursesCount: 5,         // New field for the number of courses
+    difficulty: "Beginner",   // New field for difficulty level
+    duration: "6 Months",     // New field for duration
+    hoursPerWeek: "4 hours/week" // New field for hours per week
   },
   {
     id: 2,
@@ -27,6 +31,10 @@ const enroll = [
     title: "IBM Data Science",
     description: "Master data science with IBM.",
     enrollmentCount: 200000,
+    coursesCount: 10,
+    difficulty: "Intermediate",
+    duration: "9 Months",
+    hoursPerWeek: "5 hours/week"
   },
   {
     id: 3,
@@ -34,14 +42,22 @@ const enroll = [
     title: "AWS Solutions Architect",
     description: "Become an AWS certified solutions architect.",
     enrollmentCount: 150000,
+    coursesCount: 7,
+    difficulty: "Advanced",
+    duration: "8 Months",
+    hoursPerWeek: "6 hours/week"
   },
   {
     id: 4,
     logo: Educator.Meta,
     title: "Meta Front-End Development",
-    description: "Become an AWS certified solutions architect.",
-    enrollmentCount: 150000,
-  },
+    description: "Launch your career as a front-end developer with Meta.",
+    enrollmentCount: 120000,
+    coursesCount: 6,
+    difficulty: "Beginner",
+    duration: "7 Months",
+    hoursPerWeek: "5 hours/week"
+  }
 ];
 
 export { enroll, Educator };

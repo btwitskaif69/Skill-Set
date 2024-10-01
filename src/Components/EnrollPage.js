@@ -36,6 +36,10 @@ export default function EnrollPage() {
         title={course.title} 
         description={course.description} 
         enrollmentCount={course.enrollmentCount} // Ensure this field exists in your enroll data
+        coursesCount={course.coursesCount}
+        difficulty={course.difficulty}
+        duration={course.duration}
+        hoursPerWeek={course.hoursPerWeek}
       />
       <ScrollSpy 
         courseDescriptionRef={courseDescriptionRef} 
