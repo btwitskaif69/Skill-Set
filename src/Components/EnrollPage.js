@@ -50,10 +50,15 @@ export default function EnrollPage() {
        overview={course.overview}
        badges={course.badges}
        about={course.about}
-       learningOutcomes={course.learningOutcomes} // New prop for learning outcomes
+       objectives={course.objectives} // New prop for learning outcomes
        skillsGained={course.skillsGained} // New prop for skills gained
        />
-      <InstructorDetails />
+      <InstructorDetails
+      instructorname={course.instructorname}
+      instructorimage={course.instructorimage}
+      experience={course.experience}
+      expertise={course.expertise}
+      />
       <LearningOutcomes ref={courseOutcomeRef} />
       <FAQ />
       <CompanyLogos />

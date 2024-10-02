@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CourseAbout({ overview, badges, about, learningOutcomes, skillsGained }) {
+export default function CourseAbout({ overview, badges, about, objectives, skillsGained }) {
     return (
         <div className="container mt-4 mb-4">
             {/* Course Overview */}
@@ -42,7 +42,7 @@ export default function CourseAbout({ overview, badges, about, learningOutcomes,
                         <div className="card-body">
                             <h5 className="card-title">What You'll Learn</h5>
                             <ul className="list-unstyled">
-                                {learningOutcomes.map((item, idx) => (
+                                {objectives.map((item, idx) => (
                                     <li key={idx} className="d-flex align-items-center mb-2">
                                         <i className="bi bi-check-circle-fill text-success me-2"></i>
                                         {item}

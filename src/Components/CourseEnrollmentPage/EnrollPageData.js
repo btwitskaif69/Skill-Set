@@ -13,6 +13,21 @@ const Educator = {
   University_of_Pennsylvania: '/Assets/Educator/University_of_Pennsylvania.svg',
 };
 
+const Instructor ={
+  image1: '/Assets/Profile/image1.jpg',
+  image2: '/Assets/Profile/image2.jpg',
+  image3: '/Assets/Profile/image3.jpg',
+  image4: '/Assets/Profile/image4.jpg',
+  image5: '/Assets/Profile/image5.jpg',
+  image6: '/Assets/Profile/image6.jpg',
+  image7: '/Assets/Profile/image7.jpg',
+  image8: '/Assets/Profile/image8.jpg',
+  image9: '/Assets/Profile/image9.jpg',
+  image10: '/Assets/Profile/image10.jpg',
+};
+
+
+
 const enroll = [
   {
     id: 1,
@@ -27,7 +42,7 @@ const enroll = [
     overview: "Elevate your skills in Google Data Analytics with hands-on training and real-world projects, designed for aspiring professionals.",
     badges: [ "John Doe", "Certification Available", "Online"],
     about:"Unlock the power of data with our Google Data Analytics course, designed for aspiring analysts eager to transform raw data into actionable insights. This comprehensive program covers essential analytical skills and tools used by industry leaders to make data-driven decisions.",
-    learningOutcomes: [
+    objectives: [
     "Create a responsive website using HTML and CSS",
     "Use JavaScript to make websites interactive",
     "Use React to create powerful single-page applications",
@@ -38,7 +53,13 @@ const enroll = [
     "HTML", "CSS", "JavaScript", "React", "Git",
     "Web Development", "Front-End Development", "UI/UX Design",
     "Responsive Web Design", "Web Application Development"
-  ]
+  ],
+  instructorname:"Dr. Jane Smith, Ph.D.",
+  instructorimage:Instructor.image1,
+  experience:"15+ years of experience in web development and software engineering. Former lead developer at Tech Giant Inc. and author of 'Mastering Modern Web Development'.",
+  expertise:["JavaScript Expert", "React Guru", "Node.js Specialist"],
+
+
   },
   {
     id: 2,
