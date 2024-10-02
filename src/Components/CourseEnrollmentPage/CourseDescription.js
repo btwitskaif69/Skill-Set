@@ -19,34 +19,27 @@ const CourseDescription = forwardRef((props, ref) => {
     }
   }, [isExpanded]);
 
+  const {
+    courseseries,
+    coursedesc,
+    coursedetails,
+    Summary,
+    practicallearning,
+    learningexperience,
+    conclusion,
+  } = props; // Destructure props to get the necessary data
+
   return (
     <div ref={ref} id="course-description-section" className="container">
       <div className="display-6 fw-medium" id="scrollspyHeading3">
-        Professional Certificate - 9 course series
+        Professional Certificate - {courseseries}
       </div>
-      <p>
-        Looking to kickstart a career in coding and web development? This certificate,
-        created by software engineering experts at Meta—the minds behind Facebook and
-        Instagram—will set you on the path to becoming a front-end developer.
-      </p>
+      <p>{coursedesc}</p>
       <p>In this program, you will master:</p>
       <ul>
-        <li>
-          The basics of coding and crafting interactive web pages with HTML5, CSS,
-          and JavaScript.
-        </li>
-        <li>
-          Essential design techniques to build professional-grade layouts using
-          popular tools like Bootstrap, React, and Figma.
-        </li>
-        <li>
-          How to manage code with GitHub, work with content management systems (CMS),
-          and enhance images using Figma.
-        </li>
-        <li>
-          Tips and strategies to excel in technical interviews for front-end
-          developer positions.
-        </li>
+        {coursedetails.map((detail, index) => (
+          <li key={index}>{detail}</li>
+        ))}
       </ul>
 
       {/* Content that expands/collapses */}
@@ -59,41 +52,16 @@ const CourseDescription = forwardRef((props, ref) => {
           opacity: '0',
         }}
       >
-        <p>
-          By the program’s conclusion, you’ll apply your skills in a real-world
-          project, where you’ll develop a front-end web application from scratch.
-          Please note, third-party trademarks, logos, and intellectual property
-          referenced remain the property of their respective owners, and
-          Coursera’s mention of them does not imply any affiliation or
-          endorsement.
-        </p>
+        <p>{Summary}</p>
 
         <h5>Practical Learning Experience</h5>
-        <p>
-          This program offers hands-on learning, allowing you to directly apply the
-          skills you acquire. Each course concludes with a project to ensure you
-          have fully grasped the concepts before moving forward. Across 9 projects,
-          you’ll work on tasks such as:
-        </p>
+        <p>{practicallearning}</p>
         <ul>
-          <li>
-            Updating your personal Bio page, utilizing your knowledge of HTML5,
-            CSS, and UI frameworks.
-          </li>
-          <li>
-            Managing a project on GitHub, employing version control through Git
-            repositories and the Linux Terminal.
-          </li>
-          <li>
-            Building a static version of an application, applying concepts of
-            React, frameworks, hooks, routing, and bundlers.
-          </li>
+          {learningexperience.map((experience, index) => (
+            experience && <li key={index}>{experience}</li> // Avoid empty strings
+          ))}
         </ul>
-        <p>
-          Finally, you’ll complete a Capstone project, bringing all of your
-          newfound skills together to create a fully functioning front-end web
-          application.
-        </p>
+        <p>{conclusion}</p>
       </div>
 
       <button

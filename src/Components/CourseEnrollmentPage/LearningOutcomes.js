@@ -1,15 +1,6 @@
 import React, { forwardRef } from 'react';
 
-const LearningOutcomes = forwardRef((props, ref) => {
-    const outcomes = [
-        "Master advanced JavaScript concepts and ES6+ features",
-        "Build complex, scalable applications with React and state management tools",
-        "Develop robust backend systems using Node.js and Express",
-        "Implement authentication, database integration, and RESTful APIs",
-        "Understand and apply modern architectural patterns like Microservices and Serverless",
-        "Gain hands-on experience with real-world projects and industry best practices"
-    ];
-
+const LearningOutcomes = forwardRef(({ learningoutcomes }, ref) => {
     return (
         <div ref={ref} className="container">
             {/* Title */}
@@ -17,12 +8,16 @@ const LearningOutcomes = forwardRef((props, ref) => {
             
             {/* Outcome List */}
             <ul className="list-unstyled mt-3">
-                {outcomes.map((outcome, index) => (
-                    <li key={index} className="d-flex align-items-start mb-2 fs-6">
-                        <span className="me-2 fs-6">•</span>
-                        <span>{outcome}</span>
-                    </li>
-                ))}
+                {Array.isArray(learningoutcomes) && learningoutcomes.length > 0 ? (
+                    learningoutcomes.map((learningoutcomes, index) => (
+                        <li key={index} className="d-flex align-items-start mb-2 fs-6">
+                            <span className="me-2 fs-6">•</span>
+                            <span>{learningoutcomes}</span>
+                        </li>
+                    ))
+                ) : (
+                    <li className="fs-6 text-muted">No learning outcomes available.</li>
+                )}
             </ul>
         </div>
     );

@@ -1,11 +1,12 @@
 import React from 'react';
 
-export default function CourseAbout({ overview, badges, about, objectives, skillsGained }) {
+export default function CourseAbout({badges, about, objectives, skillsGained }) {
     return (
         <div className="container mt-4 mb-4">
             {/* Course Overview */}
-            <h2 className="display-6 fw-medium mb-0">Course Overview</h2>
-            <p className="fs-5 mb-2">{overview}</p>
+            <h2 className="display-6 fw-medium mb-1">Course Overview</h2>
+                        {/* Description */}
+                        <p className="fs-5 mb-3">{about}</p>
 
 {/* Badges */}
 <div className="d-flex flex-wrap mb-2">
@@ -29,10 +30,6 @@ export default function CourseAbout({ overview, badges, about, objectives, skill
         </span>
     ))}
 </div>
-
-
-            {/* Description */}
-            <p className="fs-5 mb-2 mt-0">{about}</p>
 
             {/* Learning Section */}
             <div className="row">

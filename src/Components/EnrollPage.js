@@ -59,11 +59,25 @@ export default function EnrollPage() {
       experience={course.experience}
       expertise={course.expertise}
       />
-      <LearningOutcomes ref={courseOutcomeRef} />
-      <FAQ />
+      <LearningOutcomes ref={courseOutcomeRef} 
+      learningoutcomes={course.learningoutcomes}
+      />
+      <FAQ
+      faqs={course.faqs} />
       <CompanyLogos />
-      <CourseDescription ref={courseDescriptionRef} />
-      <Accordion />
+      <CourseDescription ref={courseDescriptionRef} 
+      courseseries={course.courseseries}
+      coursedesc={course.coursedesc}
+      coursedetails={course.coursedetails}
+      Summary={course.Summary}
+      practicallearning={course.practicallearning}
+      learningexperience={course.learningexperience}
+      conclusion={course.conclusion}
+      />
+
+      <Accordion
+      courses={course.courses}
+      />
       <CourseReviews ref={coursereviewsRef} />
     </div>
   );

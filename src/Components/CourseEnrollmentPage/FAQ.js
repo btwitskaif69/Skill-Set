@@ -1,28 +1,6 @@
 import React from 'react';
 
-export default function FAQ() {
-  const faqs = [
-    {
-      question: "What are the prerequisites for this course?",
-      answer: "A basic understanding of JavaScript and web development concepts is recommended, but not required."
-    },
-    {
-      question: "Is there a money-back guarantee?",
-      answer: "Yes, we offer a 30-day money-back guarantee if you're not satisfied with the course."
-    },
-    {
-      question: "Will I receive a certificate upon completion?",
-      answer: "Yes, you'll receive a certificate of completion after finishing all course modules and assignments."
-    },
-    {
-      question: "How much time should I dedicate to the course each week?",
-      answer: "We recommend dedicating 5-10 hours per week, depending on your prior experience."
-    },
-    {
-      question: "Is the course completely online?",
-      answer: "Yes, the course is 100% online and can be accessed from anywhere."
-    }
-  ];
+export default function FAQ({faqs}) {
 
   return (
     <div className="container my-5">

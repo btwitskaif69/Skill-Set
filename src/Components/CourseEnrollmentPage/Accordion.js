@@ -1,174 +1,41 @@
 import React from 'react';
 
-export default function Accordion() {
+export default function Accordion({courses}) {
   return (
     <div className='container mb-5'>
-      {/* Accordion Item #1 */}
       <div>
         <div className="accordion" id="accordionPanelsStayOpenExample">
-          <div className="accordion-item border-bottom">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button custom-color fw-semibold"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne"
-                aria-expanded="true"
-                aria-controls="panelsStayOpen-collapseOne"
-              >
-                Introduction to Front-End Development
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
-              <div className="accordion-body" style={{ paddingLeft: "20px" }}>
-                <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Distinguish between front-end, back-end, and full-stack developers.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Create and style a webpage with HTML and CSS.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;The benefits of working with UI frameworks.</li>
-                </ul>
-                <h6>Knowledge You'll Gain</h6>
-                <div className="skills-tags">
-                  <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>Version Control</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>GitHub</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Bash (Unix Shell)</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Web Development</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Linux</span>
+          {courses.map((course, index) => (
+            <div className="accordion-item" key={index}>
+              <h2 className="accordion-header">
+                <button
+                  className={`accordion-button custom-color fw-semibold ${index === 0 ? '' : 'collapsed'}`}
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={`#panelsStayOpen-collapse${index + 1}`}
+                  aria-expanded={index === 0 ? 'true' : 'false'}
+                  aria-controls={`panelsStayOpen-collapse${index + 1}`}
+                >
+                  {course.title}
+                </button>
+              </h2>
+              <div id={`panelsStayOpen-collapse${index + 1}`} className={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}>
+                <div className="accordion-body" style={{ paddingLeft: "20px" }}>
+                  <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
+                    {course.lessons.map((lesson, lessonIndex) => (
+                      <li className="bi bi-check-lg mb-1" key={lessonIndex}>&nbsp;{lesson}</li>
+                    ))}
+                  </ul>
+                  <h6>Knowledge You'll Gain</h6>
+                  <div className="skills-tags">
+                    {course.knowledgeGained.map((knowledge, knowledgeIndex) => (
+                      <span className="badge me-1" style={{ backgroundColor: "#210BE3" }} key={knowledgeIndex}>{knowledge}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Accordion Item #2 */}
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button custom-color collapsed fw-semibold"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseTwo"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseTwo"
-              >
-                Programming with JavaScript
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse">
-              <div className="accordion-body" style={{ paddingLeft: "20px" }}>
-                <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Distinguish between front-end, back-end, and full-stack developers.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Create and style a webpage with HTML and CSS.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;The benefits of working with UI frameworks.</li>
-                </ul>
-                <h6>Knowledge You'll Gain</h6>
-                <div className="skills-tags">
-                  <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>Version Control</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>GitHub</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Bash (Unix Shell)</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Web Development</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Linux</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Accordion Item #3 */}
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button custom-color collapsed fw-semibold"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree"
-              >
-                Version Control
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse">
-              <div className="accordion-body" style={{ paddingLeft: "20px" }}>
-                <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Implement Version Control systems.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Navigate and configure using the command line</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Use a GitHub repository. Create a GitHub repository</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Manage code revisions</li>
-                </ul>
-                <h6>Knowledge You'll Gain</h6>
-                <div className="skills-tags">
-                  <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>React (Web Framework)</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Application Development</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Web Application</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Front-End Web Development</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Accordion Item #4 */}
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button custom-color collapsed fw-semibold"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseFour"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseFour"
-              >
-                HTML and CSS in Depth
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseFour" className="accordion-collapse collapse">
-              <div className="accordion-body" style={{ paddingLeft: "20px" }}>
-                <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Create a simple form with a responsive layout using HTML5 and CSS.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Create a responsive layout using CSS.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Create a UI using Bootstrap.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Implement debugging tools.</li>
-                </ul>
-                <h6>Knowledge You'll Gain</h6>
-                <div className="skills-tags">
-                  <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>Data Structure</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Computer Science</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Algorithms</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Communication</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Pseudocode</span>
-                </div>
-              </div>
-            </div>
-          </div>
-                    {/* Accordion Item #5 */}
-                    <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button custom-color collapsed fw-semibold"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseFive"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseFive"
-              >
-                React
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseFive" className="accordion-collapse collapse">
-              <div className="accordion-body" style={{ paddingLeft: "20px" }}>
-                <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Use reusable components to render views where data changes over time.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Organize React projects to create more scalable and maintainable websites and apps.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Use props to pass data between components. Create dynamic and interactive web pages and apps.</li>
-                  <li className="bi bi-check-lg mb-1">&nbsp;Use forms to allow users to interact with the app. Build an application in React.</li>
-                </ul>
-                <h6>Knowledge You'll Gain</h6>
-                <div className="skills-tags">
-                  <span className="badge me-1" style={{ backgroundColor: "#210BE3" }}>Test-Driven Development</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>JavaScript</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Front-End Web Development</span>
-                  <span className="badge mx-1" style={{ backgroundColor: "#210BE3" }}>Object-Oriented Programming (OOP)</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
