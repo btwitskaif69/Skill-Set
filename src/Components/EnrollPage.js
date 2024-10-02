@@ -18,11 +18,9 @@ export default function EnrollPage() {
   const coursereviewsRef = useRef(null);
 
   const { id } = useParams(); // Get the course ID from the URL
-  console.log("Course ID:", id); // Log the ID for debugging
 
   // Convert ID to a number for comparison
   const course = enroll.find(course => course.id === Number(id)); // Ensure the comparison is type-safe
-  console.log("Found course:", course); // Log the found course data
 
   if (!course) {
     return <div>Course not found!</div>; // Handle case when course is not found

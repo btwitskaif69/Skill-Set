@@ -4,7 +4,7 @@ export default function InstructorDetails({ instructorimage, instructorname, exp
   return (
     <div className="container mb-4">
       <h3 className="display-6 fw-medium mb-4">Meet Your Instructor</h3>
-      <div className="d-flex justify-content-center align-items-start">
+      <div className="d-flex align-items-start">
         <div className="me-4">
           <img
             src={instructorimage}

@@ -8,7 +8,7 @@ export default function CourseBanner({ logo, title, description, enrollmentCount
           {/* Left Column: Course Logo and Information */}
           <div className="col-md-9">
             <img src={logo} alt="Course Logo" style={{height:'40px'}} className="mb-2" />
-            <h1 className="mb-4 display-4 fw-semibold">{title}</h1>
+            <h1 className="mb-2 display-2 fw-semibold">{title}</h1>
             <p className="mb-4 fs-6">{description}</p>
             <button className="btn custom-button-default btn-lg">Enroll for Free</button>
             <p className="mt-3"><strong>{enrollmentCount}</strong> already enrolled</p>
