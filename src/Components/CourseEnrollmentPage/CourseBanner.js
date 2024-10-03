@@ -2,12 +2,12 @@ import React from "react";
 
 export default function CourseBanner({ logo, title, description, enrollmentCount, coursesCount, difficulty, duration, hoursPerWeek}) {
   return (
-    <div className="container mb-4">
+    <div className="container mb-4 mt-5">
       <div className="container mt-4">
         <div className="row">
           {/* Left Column: Course Logo and Information */}
           <div className="col-md-9">
-            <img src={logo} alt="Course Logo" style={{height:'40px'}} className="mb-2" />
+            <img src={logo} alt="Course Logo" style={{height:'45px'}} className="mb-2" />
             <h1 className="mb-2 display-2 fw-semibold">{title}</h1>
             <p className="mb-4 fs-6">{description}</p>
             <button className="btn custom-button-default btn-lg">Enroll for Free</button>
