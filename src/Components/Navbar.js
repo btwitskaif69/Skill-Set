@@ -34,7 +34,9 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div className="container-fluid">
-          <Link Home to='/home' className="navbar-brand"><img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '30px' }} /></Link>
+          <Link to='/home' className="navbar-brand">
+            <img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '30px' }} />
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -48,26 +50,27 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
               <li className="nav-item">
-                <Link Home to='/home' className="nav-link fs-6 text-dark me-0" aria-current="page">Home</Link>
+                <Link to='/home' className="nav-link fs-6 text-dark" aria-current="page">Home</Link>
               </li>
-              <li className="nav-item">
-                <Link Course to='/courses' className="nav-link fs-6 text-dark mx-2">Course</Link>
+              <li className="nav-item mx-2"> {/* Added mx-2 here for consistent spacing */}
+                <Link to='/courses' className="nav-link fs-6 text-dark">Courses</Link>
               </li>
-              <li className="nav-item">
-                <Link AboutUs to='/about-us' className="nav-link fs-6 text-dark" mx-2>About Us</Link>
+              <li className="nav-item mx-2"> {/* Added mx-2 here for consistent spacing */}
+                <Link to='/about-us' className="nav-link fs-6 text-dark">About Us</Link>
               </li>
-              <li className="nav-item">
-                <Link ContactUs to='/contact-us' className="nav-link fs-6 text-dark" mx-2>Contact Us</Link>
+              <li className="nav-item mx-2"> {/* Added mx-2 here for consistent spacing */}
+                <Link to='/contact-us' className="nav-link fs-6 text-dark">Contact Us</Link>
               </li>
-              <li className="nav-item">
-                <form className="d-flex" role="search">
-                  <input className="form-control me-2 mx-2" type="search" placeholder="Search" aria-label="Search"/>
-                  <button className="btn custom-button-default-white" type="submit" mx-2>Search</button>
+              <li className="nav-item"> {/* Ensure this is a nav-item for proper alignment */}
+                <form className="d-flex mb-0" role="search">
+                  <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                  <button className="btn custom-button-default-white" type="submit">Search</button>
                 </form>
               </li>
             </ul>
+            
             <div className="d-flex gap-2">
               <button onClick={handleOnLogIn} type="button" className="btn custom-button-default-white">Log In</button>
               <button onClick={handleOnSignUp} type="button" className="btn custom-button-default">Sign Up</button>
@@ -82,3 +85,4 @@ export default function Navbar() {
     </div>
   );
 }
+
