@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Company Links Section */}
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3' }}>Company</h6>
-            <p><Link to='/Home' onClick={handleClick} className='nav-link' style={{ color: 'Black', textDecoration: 'none' }}>Home</Link></p>
+            <p><Link to='/home' onClick={handleClick} className='nav-link' style={{ color: 'Black', textDecoration: 'none' }}>Home</Link></p>
             <p><Link to='/Courses' onClick={handleClick} className='nav-link'  style={{ color: 'Black', textDecoration: 'none' }}>Courses</Link></p>
             <p><Link style={{ color: 'Black', textDecoration: 'none' }}>Blog</Link></p>
             <p><Link style={{ color: 'Black', textDecoration: 'none' }}>Terms of Service</Link></p>
