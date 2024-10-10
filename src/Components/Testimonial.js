@@ -133,7 +133,7 @@ const Testimonial = forwardRef((props, ref) => {
           <Slider ref={sliderRef} {...settings}>
             {testimonials.map((testimonial) => (
               <div className="testimonial-item" key={testimonial.id}>
-                <div className="testimonial-card border p-4 mb-5 rounded mx-4 mt-4 rounded-3">
+                <div className="testimonial-card border p-4 mb-4 rounded mx-4 mt-4 rounded-3">
                   <div className="testimonial-stars mb-4" style={{ color: "#f59e0b", fontSize: "20px" }}>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
@@ -158,7 +158,7 @@ const Testimonial = forwardRef((props, ref) => {
           </Slider>
         </div>
       </div>
-      <div class="d-flex justify-content-center mt-3">
+      <div class="d-flex justify-content-center">
   <button onClick={previous}class="rounded-circle btn custom-button-basic mx-2 "style={{width: "50px", height: "50px", padding: "0"}}>
     <i class="bi bi-chevron-left fs-3"></i>
   </button>
