@@ -24,7 +24,7 @@ export default function Footer() {
             </h4>
             <p style={{ color: 'black' }}>Start your journey now.</p>
             <button className="btn custom-button-default me-2 mb-2">
-              <Link to='/Courses' className='nav-link' style={{ color: 'inherit', textDecoration: 'none' }}>Explore Courses</Link>
+              <Link to='/courses' onClick={handleClick} className='nav-link' style={{ color: 'inherit', textDecoration: 'none' }}>Explore Courses</Link>
             </button>
             <button  className="btn custom-button-default-white mb-2">Join Us Now</button>
           </div>
@@ -33,10 +33,9 @@ export default function Footer() {
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <h6 className="text-uppercase fw-bold" style={{ color: '#210BE3' }}>Company</h6>
             <p><Link to='/home' onClick={handleClick} className='nav-link' style={{ color: 'Black', textDecoration: 'none' }}>Home</Link></p>
-            <p><Link to='/Courses' onClick={handleClick} className='nav-link'  style={{ color: 'Black', textDecoration: 'none' }}>Courses</Link></p>
-            <p><Link style={{ color: 'Black', textDecoration: 'none' }}>Blog</Link></p>
-            <p><Link style={{ color: 'Black', textDecoration: 'none' }}>Terms of Service</Link></p>
-            <p><Link style={{ color: 'Black', textDecoration: 'none' }}>Privacy Policy</Link></p>
+            <p><Link to='/courses' onClick={handleClick} className='nav-link'  style={{ color: 'Black', textDecoration: 'none' }}>Courses</Link></p>
+            <p><Link to='/about-us' onClick={handleClick} className='nav-link' style={{ color: 'Black', textDecoration: 'none' }}>About Us</Link></p>
+            <p><Link to='/contact-us' onClick={handleClick} className='nav-link' style={{ color: 'Black', textDecoration: 'none' }}>Contact Us</Link></p>
           </div>
 
           {/* Follow Us Section */}
