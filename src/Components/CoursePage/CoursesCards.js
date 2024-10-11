@@ -27,8 +27,8 @@ export default function CoursesCards({ selectedFilters }) {
     // Handle page change
     const handlePageChange = (page) => {
         setCurrentPage(page);
+        window.scrollTo(0, 0);
     };
-
     // Rendering the course cards
     return (
       <div className="container">
@@ -72,68 +72,61 @@ export default function CoursesCards({ selectedFilters }) {
           )}
         </div>
 
-        {/* Pagination */}
-        <nav aria-label="Page navigation example" className="mt-4">
-          <div className="d-flex justify-content-center">
-            <ul className="pagination">
-              <li
-                className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
-              >
-                <button
-                  className="page-link"
-                  onClick={() => {
-                    if (currentPage > 1) handlePageChange(currentPage - 1);
-                  }}
-                >
-                  Previous
-                </button>
-              </li>
-              {[
-                ...Array(
-                  Math.ceil(filteredCourses.length / coursesPerPage)
-                ).keys(),
-              ].map((number) => (
-                <li
-                  key={number + 1}
-                  className={`page-item ${
-                    currentPage === number + 1 ? "active" : ""
-                  }`}
-                >
-                  <button
-                    className="page-link"
-                    onClick={() => {
-                      handlePageChange(number + 1);
-                    }}
-                  >
-                    {number + 1}
-                  </button>
-                </li>
-              ))}
-              <li
-                className={`page-item ${
-                  currentPage ===
-                  Math.ceil(filteredCourses.length / coursesPerPage)
-                    ? "disabled"
-                    : ""
-                }`}
-              >
-                <button
-                  className="page-link"
-                  onClick={() => {
-                    if (
-                      currentPage <
-                      Math.ceil(filteredCourses.length / coursesPerPage)
-                    ) {
-                      handlePageChange(currentPage + 1);
-                    }
-                  }}
-                >
-                  Next
-                </button>
-              </li>
-            </ul>
-          </div>
-        </nav>
+{/* Pagination */}
+<nav aria-label="Page navigation example" className="mt-4">
+  <div className="d-flex justify-content-center">
+    <ul className="pagination">
+      <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+        <button
+          className="page-link"
+          onClick={() => {
+            if (currentPage > 1) {
+              handlePageChange(currentPage - 1);
+            }
+          }}
+        >
+          Previous
+        </button>
+      </li>
+      {[
+        ...Array(Math.ceil(filteredCourses.length / coursesPerPage)).keys(),
+      ].map((number) => (
+        <li
+          key={number + 1}
+          className={`page-item ${currentPage === number + 1 ? "active" : ""}`}
+        >
+          <button
+            className="page-link"
+            onClick={() => {
+              handlePageChange(number + 1);
+            }}
+          >
+            {number + 1}
+          </button>
+        </li>
+      ))}
+      <li
+        className={`page-item ${
+          currentPage === Math.ceil(filteredCourses.length / coursesPerPage)
+            ? "disabled"
+            : ""
+        }`}
+      >
+        <button
+          className="page-link"
+          onClick={() => {
+            if (currentPage < Math.ceil(filteredCourses.length / coursesPerPage)) {
+              handlePageChange(currentPage + 1);
+            }
+          }}
+        >
+          Next
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 
         {/* Inline styling for card effects */}
         <style>{`
