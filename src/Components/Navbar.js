@@ -50,17 +50,17 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+            <ul className="navbar-nav me-auto mb-0 mb-lg-0 ">
               <li className="nav-item">
                 <Link to='/home' className="nav-link fs-6 text-dark" aria-current="page">Home</Link>
               </li>
-              <li className="nav-item mx-2"> {/* Added mx-2 here for consistent spacing */}
+              <li className="nav-item me-2"> {/* Added mx-2 here for consistent spacing */}
                 <Link to='/courses' className="nav-link fs-6 text-dark">Courses</Link>
               </li>
-              <li className="nav-item mx-2"> {/* Added mx-2 here for consistent spacing */}
+              <li className="nav-item me-2"> {/* Added mx-2 here for consistent spacing */}
                 <Link to='/about-us' className="nav-link fs-6 text-dark">About Us</Link>
               </li>
-              <li className="nav-item mx-2"> {/* Added mx-2 here for consistent spacing */}
+              <li className="nav-item me-2"> {/* Added mx-2 here for consistent spacing */}
                 <Link to='/contact-us' className="nav-link fs-6 text-dark">Contact Us</Link>
               </li>
               <li className="nav-item"> {/* Ensure this is a nav-item for proper alignment */}
