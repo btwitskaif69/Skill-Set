@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function SignUp({ onClose, switchToLogin }) {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const [showPassword, setShowPassword] = useState(false);
 
   const onSubmitHandler = (data) => {
     console.log(data);
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -66,20 +71,23 @@ export default function SignUp({ onClose, switchToLogin }) {
                   <label htmlFor="confirmPasswordInput" className="form-label">Confirm Password</label>
                   <div className="input-group">
                     <input
-                      type='password'
+                      type={showPassword ? 'text' : 'password'} // Toggle between text and password
                       className="form-control pe-5"
                       {...register("confirmPassword")}
                       id="confirmPasswordInput"
                       placeholder="Confirm your password"
                     />
-                    <span className="input-group-text position-absolute end-0 pe-2 d-flex align-items-center" style={{ cursor: 'pointer', zIndex: 10 }}>
-                      <i className="bi bi-eye-slash bi-eye" style={{ fontSize: '1.25rem' }}></i>
+                    <span 
+                      className="input-group-text position-absolute end-0 pe-2 d-flex align-items-center" 
+                      onClick={handleTogglePassword} 
+                      style={{ cursor: 'pointer', zIndex: 10 }}
+                    >
+                      <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`} style={{ fontSize: '1.25rem' }}></i>
                     </span>
                   </div>
                 </div>
                 <button type="submit" className="btn custom-button-basic w-100">Sign Up</button>
-                <div className="mt-3 text-center">
-                  Already on Skill Set? 
+                <div className="mt-3 text-center">Already on Skill Set? 
                   <span className="login" style={{ cursor: 'pointer', color: '#210BE3' }} onClick={switchToLogin}> Log In</span>
                 </div>
               </form>
