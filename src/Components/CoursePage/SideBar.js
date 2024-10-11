@@ -21,7 +21,7 @@ export default function SideBar({ onFilterChange }) {
     ];
     
     const languages = [
-        "English", "Spanish", "French", "German", "Chinese"
+        "English","Hindi", "Spanish", "French", "German", "Chinese"
     ];
 
     const Educator = [
@@ -63,7 +63,7 @@ export default function SideBar({ onFilterChange }) {
 
     const visibleSubjects = visibility.subjects ? subjects : subjects.slice(0, 10);
     const visibleSkills = visibility.skills ? skills : skills.slice(0, 10);
-    const visibleLanguages = visibility.languages ? languages : languages.slice(0, 2);
+    const visibleLanguages = visibility.languages ? languages : languages.slice(0, 4);
     const visibleEducator = visibility.Educator ? Educator : Educator.slice(0, 5);
     const visibleDurations = visibility.durations ? durations : durations.slice(0, 2);
     const visibleRatings = visibility.ratings ? ratings : ratings.slice(0, 3);
@@ -84,11 +84,11 @@ export default function SideBar({ onFilterChange }) {
 
     return (
         <div className="sidebar-container mb-5 ms-n5">
-            <h5 className="mb-4"><i class="bi bi-funnel"></i>&nbsp;Filter by</h5>
+            <h5 className="fs-5 fw-semibold mb-4"><i class="bi bi-funnel"></i>&nbsp;Filter by</h5>
 
             {/* Subject Filter */}
             <div className="mb-4">
-                <h6 className="fw-bold">Subject</h6>
+                <h6 className="fs-5 fs-5 fw-semibold mb-2 mb-2">Subjects</h6>
                 {filteredSubjects.map((subject, index) => (
                     <div className="form-check" key={index}>
                         <input
@@ -110,7 +110,7 @@ export default function SideBar({ onFilterChange }) {
 
 {/* Skills Filter */}
 <div className="mb-4">
-  <h6 className="fw-bold">Skills</h6>
+  <h6 className="fs-5 fw-semibold mb-2">Skills</h6>
   <input
     type="text"
     className="form-control mb-2"
@@ -150,7 +150,7 @@ export default function SideBar({ onFilterChange }) {
 
             {/* Language Filter */}
             <div className="mb-4">
-                <h6 className="fw-bold">Language</h6>
+                <h6 className="fs-5 fw-semibold mb-2">Languages</h6>
                 {filteredLanguages.map((language, index) => (
                     <div className="form-check" key={index}>
                         <input
@@ -172,7 +172,7 @@ export default function SideBar({ onFilterChange }) {
 
 {/* Educator Filter */}
 <div className="mb-4">
-  <h6 className="fw-bold">Educator</h6>
+  <h6 className="fs-5 fw-semibold mb-2">Educator</h6>
   <input
     type="text"
     className="form-control mb-2"
@@ -212,7 +212,7 @@ export default function SideBar({ onFilterChange }) {
 
             {/* Duration Filter */}
             <div className="mb-4">
-                <h6 className="fw-bold">Duration</h6>
+                <h6 className="fs-5 fw-semibold mb-2">Duration</h6>
                 {filteredDurations.map((duration, index) => (
                     <div className="form-check" key={index}>
                         <input
@@ -234,7 +234,7 @@ export default function SideBar({ onFilterChange }) {
 
             {/* Rating Filter */}
             <div className="mb-4">
-                <h6 className="fw-bold">Rating</h6>
+                <h6 className="fs-5 fw-semibold mb-2">Rating</h6>
                 {filteredRatings.map((rating, index) => (
                     <div className="form-check" key={index}>
                         <input
