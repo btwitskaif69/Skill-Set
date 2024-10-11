@@ -84,7 +84,7 @@ export default function SideBar({ onFilterChange }) {
 
     return (
         <div className="sidebar-container mb-5 ms-n5">
-            <h5 className="mb-4">Filter by</h5>
+            <h5 className="mb-4"><i class="bi bi-funnel"></i>&nbsp;Filter by</h5>
 
             {/* Subject Filter */}
             <div className="mb-4">
@@ -99,7 +99,7 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('subjects', subject)}
                         />
                         <label className="form-check-label" htmlFor={`subject${index}`}>
-                            {subject} (0)
+                            {subject}
                         </label>
                     </div>
                 ))}
@@ -127,7 +127,7 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('skills', skill)}
                         />
                         <label className="form-check-label" htmlFor={`skill${index}`}>
-                            {skill} ()
+                            {skill}
                         </label>
                     </div>
                 ))}
@@ -149,7 +149,7 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('languages', language)}
                         />
                         <label className="form-check-label" htmlFor={`language${index}`}>
-                            {language} (0)
+                            {language}
                         </label>
                     </div>
                 ))}
@@ -158,7 +158,7 @@ export default function SideBar({ onFilterChange }) {
                 </button>
             </div>
 
-            {/* University Filter */}
+            {/* Educator Filter */}
             <div className="mb-4">
                 <h6 className="fw-bold">Educator</h6>
                 <input
@@ -177,7 +177,7 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('universities', university)}
                         />
                         <label className="form-check-label" htmlFor={`university${index}`}>
-                            {university} ()
+                            {university}
                         </label>
                     </div>
                 ))}
@@ -199,7 +199,7 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('durations', duration)}
                         />
                         <label className="form-check-label" htmlFor={`duration${index}`}>
-                            {duration} (0)
+                            {duration}
                         </label>
                     </div>
                 ))}
@@ -221,7 +221,7 @@ export default function SideBar({ onFilterChange }) {
                             onChange={() => onFilterChange('ratings', rating)}
                         />
                         <label className="form-check-label" htmlFor={`rating${index}`}>
-                            {rating} (0)
+                            {rating}
                         </label>
                     </div>
                 ))}
