@@ -12,11 +12,11 @@ export default function CoursesCards({ selectedFilters }) {
         const languageMatch = selectedFilters.languages.length === 0 || selectedFilters.languages.includes(course.language);
         const productMatch = selectedFilters.learningProducts.length === 0 || selectedFilters.learningProducts.includes(course.product);
         const skillsMatch = selectedFilters.skills.length === 0 || selectedFilters.skills.some(skill => course.skills.includes(skill));
-        const universitiesMatch = selectedFilters.universities.length === 0 || selectedFilters.universities.includes(course.universities);
+        const EducatorMatch = selectedFilters.Educator.length === 0 || selectedFilters.Educator.includes(course.Educator);
         const durationsMatch = selectedFilters.durations.length === 0 || selectedFilters.durations.includes(course.duration);
         const ratingsMatch = selectedFilters.ratings.length === 0 || selectedFilters.ratings.includes(course.rating);
 
-        return subjectMatch && languageMatch && productMatch && skillsMatch && universitiesMatch && durationsMatch && ratingsMatch;
+        return subjectMatch && languageMatch && productMatch && skillsMatch && EducatorMatch && durationsMatch && ratingsMatch;
     });
 
     // Get current courses to display

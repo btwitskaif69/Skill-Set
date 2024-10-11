@@ -10,13 +10,13 @@ export default function MainLayout() {
         learningProducts: [],
         skills: [],
         logo: [],
-        universities: [],
+        Educator: [],
         durations: [],
         ratings:[]
 
 
 
-          // Use 'universities' instead of 'imgSrc'
+          // Use 'Educator' instead of 'imgSrc'
     });
 
     // Function to handle filter changes

@@ -24,7 +24,7 @@ export default function SideBar({ onFilterChange }) {
         "English", "Spanish", "French", "German", "Chinese"
     ];
 
-    const universities = [
+    const Educator = [
         "Aws", "Duke University", "Google", "Harvard University", "IBM", "Meta", "MIT", "Stanford University", "University of Cambridge", "University of Michigan", "University of Oxford", "University of Pennsylvania"
     ];
 
@@ -40,7 +40,7 @@ export default function SideBar({ onFilterChange }) {
         subjects: false,
         skills: false,
         languages: false,
-        universities: false,
+        Educator: false,
         durations: false,
         ratings: false,
     });
@@ -49,7 +49,7 @@ export default function SideBar({ onFilterChange }) {
         subjects: '',
         skills: '',
         languages: '',
-        universities: '',
+        Educator: '',
         durations: '',
         ratings: '',
     });
@@ -64,14 +64,14 @@ export default function SideBar({ onFilterChange }) {
     const visibleSubjects = visibility.subjects ? subjects : subjects.slice(0, 10);
     const visibleSkills = visibility.skills ? skills : skills.slice(0, 10);
     const visibleLanguages = visibility.languages ? languages : languages.slice(0, 2);
-    const visibleUniversities = visibility.universities ? universities : universities.slice(0, 5);
+    const visibleEducator = visibility.Educator ? Educator : Educator.slice(0, 5);
     const visibleDurations = visibility.durations ? durations : durations.slice(0, 2);
     const visibleRatings = visibility.ratings ? ratings : ratings.slice(0, 3);
 
     const filteredSubjects = visibleSubjects.filter(subject => subject.toLowerCase().includes(searchTerms.subjects.toLowerCase()));
     const filteredSkills = visibleSkills.filter(skill => skill.toLowerCase().includes(searchTerms.skills.toLowerCase()));
     const filteredLanguages = visibleLanguages.filter(language => language.toLowerCase().includes(searchTerms.languages.toLowerCase()));
-    const filteredUniversities = visibleUniversities.filter(university => university.toLowerCase().includes(searchTerms.universities.toLowerCase()));
+    const filteredEducator = visibleEducator.filter(university => university.toLowerCase().includes(searchTerms.Educator.toLowerCase()));
     const filteredDurations = visibleDurations.filter(duration => duration.toLowerCase().includes(searchTerms.durations.toLowerCase()));
     const filteredRatings = visibleRatings.filter(rating => rating.toLowerCase().includes(searchTerms.ratings.toLowerCase()));
 
@@ -103,38 +103,50 @@ export default function SideBar({ onFilterChange }) {
                         </label>
                     </div>
                 ))}
-                <button className="btn btn-link" onClick={() => handleToggle('subjects')}>
+                <button className="btn btn-link p-0" onClick={() => handleToggle('subjects')}>
                     {visibility.subjects ? 'Show Less' : 'Show More'}
                 </button>
             </div>
 
-            {/* Skills Filter */}
-            <div className="mb-4">
-                <h6 className="fw-bold">Skills</h6>
-                <input
-                    type="text"
-                    className="form-control mb-2"
-                    placeholder="Search Skills..."
-                    onChange={(e) => handleSearch('skills', e.target.value)}
-                />
-                {filteredSkills.map((skill, index) => (
-                    <div className="form-check" key={index}>
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value={skill}
-                            id={`skill${index}`}
-                            onChange={() => onFilterChange('skills', skill)}
-                        />
-                        <label className="form-check-label" htmlFor={`skill${index}`}>
-                            {skill}
-                        </label>
-                    </div>
-                ))}
-                <button className="btn btn-link" onClick={() => handleToggle('skills')}>
-                    {visibility.skills ? 'Show Less' : 'Show More'}
-                </button>
-            </div>
+{/* Skills Filter */}
+<div className="mb-4">
+  <h6 className="fw-bold">Skills</h6>
+  <input
+    type="text"
+    className="form-control mb-2"
+    placeholder="Search Skills..."
+    onChange={(e) => handleSearch('skills', e.target.value)}
+  />
+
+  {/* Display 'Not Available' if no skills match the search */}
+  {filteredSkills.length === 0 ? (
+    <p className="text-muted mb-0">Not Available</p>
+  ) : (
+    filteredSkills.map((skill, index) => (
+      <div className="form-check" key={index}>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value={skill}
+          id={`skill${index}`}
+          onChange={() => onFilterChange('skills', skill)}
+        />
+        <label className="form-check-label" htmlFor={`skill${index}`}>
+          {skill}
+        </label>
+      </div>
+    ))
+  )}
+
+  {/* Conditionally render the "Show More" button if there are skills available */}
+  {filteredSkills.length > 0 && (
+    <button className="btn btn-link p-0" onClick={() => handleToggle('skills')}>
+      {visibility.skills ? 'Show Less' : 'Show More'}
+    </button>
+  )}
+</div>
+
+
 
             {/* Language Filter */}
             <div className="mb-4">
@@ -153,38 +165,50 @@ export default function SideBar({ onFilterChange }) {
                         </label>
                     </div>
                 ))}
-                <button className="btn btn-link" onClick={() => handleToggle('languages')}>
+                <button className="btn btn-link p-0" onClick={() => handleToggle('languages')}>
                     {visibility.languages ? 'Show Less' : 'Show More'}
                 </button>
             </div>
 
-            {/* Educator Filter */}
-            <div className="mb-4">
-                <h6 className="fw-bold">Educator</h6>
-                <input
-                    type="text"
-                    className="form-control mb-2"
-                    placeholder="Search Universities..."
-                    onChange={(e) => handleSearch('universities', e.target.value)}
-                />
-                {filteredUniversities.map((university, index) => (
-                    <div className="form-check" key={index}>
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value={university}
-                            id={`university${index}`}
-                            onChange={() => onFilterChange('universities', university)}
-                        />
-                        <label className="form-check-label" htmlFor={`university${index}`}>
-                            {university}
-                        </label>
-                    </div>
-                ))}
-                <button className="btn btn-link" onClick={() => handleToggle('universities')}>
-                    {visibility.universities ? 'Show Less' : 'Show More'}
-                </button>
-            </div>
+{/* Educator Filter */}
+<div className="mb-4">
+  <h6 className="fw-bold">Educator</h6>
+  <input
+    type="text"
+    className="form-control mb-2"
+    placeholder="Search Educator..."
+    onChange={(e) => handleSearch('Educator', e.target.value)}
+  />
+
+  {/* Display 'Not Available' if no Educator match the search */}
+  {filteredEducator.length === 0 ? (
+    <p className="text-muted mb-0">Not Available</p>
+  ) : (
+    filteredEducator.map((university, index) => (
+      <div className="form-check" key={index}>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value={university}
+          id={`university${index}`}
+          onChange={() => onFilterChange('Educator', university)}
+        />
+        <label className="form-check-label" htmlFor={`university${index}`}>
+          {university}
+        </label>
+      </div>
+    ))
+  )}
+
+  {/* Conditionally render the "Show More" button if Educator are available */}
+  {filteredEducator.length > 0 && (
+    <button className="btn btn-link p-0" onClick={() => handleToggle('Educator')}>
+      {visibility.Educator ? 'Show Less' : 'Show More'}
+    </button>
+  )}
+</div>
+
+
 
             {/* Duration Filter */}
             <div className="mb-4">
@@ -203,7 +227,7 @@ export default function SideBar({ onFilterChange }) {
                         </label>
                     </div>
                 ))}
-                <button className="btn btn-link" onClick={() => handleToggle('durations')}>
+                <button className="btn btn-link p-0" onClick={() => handleToggle('durations')}>
                     {visibility.durations ? 'Show Less' : 'Show More'}
                 </button>
             </div>
@@ -225,7 +249,7 @@ export default function SideBar({ onFilterChange }) {
                         </label>
                     </div>
                 ))}
-                <button className="btn btn-link" onClick={() => handleToggle('ratings')}>
+                <button className="btn btn-link p-0" onClick={() => handleToggle('ratings')}>
                     {visibility.ratings ? 'Show Less' : 'Show More'}
                 </button>
             </div>
