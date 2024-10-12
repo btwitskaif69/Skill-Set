@@ -27,9 +27,9 @@ export default function Accordion({courses}) {
                     ))}
                   </ul>
                   <h6>Knowledge You'll Gain</h6>
-                  <div className="skills-tags">
+                  <div className="skills-tags ">
                     {course.knowledgeGained.map((knowledge, knowledgeIndex) => (
-                      <span className="badge me-1" style={{ backgroundColor: "#210BE3" }} key={knowledgeIndex}>{knowledge}</span>
+                      <span className="badge me-1 mb-1" style={{ backgroundColor: "#210BE3" }} key={knowledgeIndex}>{knowledge}</span>
                     ))}
                   </div>
                 </div>

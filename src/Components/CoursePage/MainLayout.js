@@ -14,8 +14,6 @@ export default function MainLayout() {
         durations: [],
         ratings:[]
 
-
-
           // Use 'Educator' instead of 'imgSrc'
     });
 
