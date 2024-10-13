@@ -32,10 +32,13 @@ export default function CoursesCards({ selectedFilters }) {
     // Rendering the course cards
     return (
       <div className="container">
-        <p className="mb-4 fs-5 fw-semibold" style={{ color: "Black" }}>
+        <div className="mb-4 d-flex align-items-center ">
+        <button className='btn custom-button-default-white'>Filter</button>
+          <p className="fs-5 fw-semibold m-0 ms-3" style={{ color: "Black" }}>
           Explore our most popular programs, get job-ready for an in-demand
           career.
         </p>
+        </div>
         <div className="row g-4">
           {currentCourses.length > 0 ? (
             currentCourses.map((course) => (
