@@ -48,20 +48,21 @@ export default function CoursesCards({ selectedFilters }) {
 
     return (
         <div className="container">
+          <p className="fs-5 fw-semibold mb-2" style={{ color: "Black" }}>
+                        Explore our most popular programs, get job-ready for an in-demand career.
+                    </p>
             {/* Conditionally render the Filter button on screens <= 1023px */}
             {screenWidth <= 1023 && (
-                <div className="mb-4 d-flex align-items-center">
+                <div className="">
                     <button className="btn custom-button-default-white btn-lg" onClick={handleFilterClick}>
                         Filter
                     </button>
-                    <p className="fs-5 fw-semibold m-0 ms-3" style={{ color: "Black" }}>
-                        Explore our most popular programs, get job-ready for an in-demand career.
-                    </p>
                 </div>
             )}
 
             {/* Conditionally render Filter component */}
             {showFilter && <Filter />}
+            
 
             <div className="row g-4">
                 {currentCourses.length > 0 ? (
