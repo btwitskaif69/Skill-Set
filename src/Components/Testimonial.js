@@ -158,14 +158,14 @@ const Testimonial = forwardRef((props, ref) => {
           </Slider>
         </div>
       </div>
-      <div class="d-flex justify-content-center">
-  <button onClick={previous}class="rounded-circle btn custom-button-basic mx-2 "style={{width: "50px", height: "50px", padding: "0"}}>
-    <i class="bi bi-chevron-left fs-3"></i>
+      <div className="d-flex justify-content-center">
+  <button onClick={previous}className="rounded-circle btn custom-button-basic mx-2 "style={{width: "50px", height: "50px", padding: "0"}}>
+    <i className="bi bi-chevron-left fs-3"></i>
   </button>
 
   <button
-    onClick={next} class=" rounded-circle btn custom-button-basic mx-2" style={{width: "50px", height: "50px", padding: "0"}}>
-    <i class="bi bi-chevron-right fs-3"></i>
+    onClick={next} className=" rounded-circle btn custom-button-basic mx-2" style={{width: "50px", height: "50px", padding: "0"}}>
+    <i className="bi bi-chevron-right fs-3"></i>
   </button>
 </div>
 

@@ -54,7 +54,7 @@ export default function CoursesCards({ selectedFilters }) {
             {/* Conditionally render the Filter button on screens <= 1023px */}
             {screenWidth <= 1023 && (
                 <div className="">
-                    <button className="btn custom-button-default-white btn-lg mb-4" onClick={handleFilterClick}><i class="bi bi-sliders"></i>
+                    <button className="btn custom-button-default-white btn-lg mb-4" onClick={handleFilterClick}><i className="bi bi-sliders"></i>
                     &nbsp;Filters
                     </button>
                 </div>
