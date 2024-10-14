@@ -69,13 +69,13 @@ export default function Filter({ onFilterChange, onClose }) {
               <div className="accordion-item" key={index}>
                 <h2 className="accordion-header" id={`heading-${index}`}>
                   <button
-                    className={`accordion-button ${index === 0 ? '' : 'collapsed'}`}
+                    className={`accordion-button custom-color fw-semibold ${index === 0 ? '' : 'collapsed'}`}
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target={`#collapse-${index}`}
                     aria-expanded={index === 0 ? 'true' : 'false'}
                     aria-controls={`collapse-${index}`}
-                  >
+                    >
                     {filterType.charAt(0).toUpperCase() + filterType.slice(1)}
                   </button>
                 </h2>
@@ -118,7 +118,7 @@ export default function Filter({ onFilterChange, onClose }) {
               </div>
             ))}
           </div>
-          <div className="d-flex gap-2 align-items-center">
+          <div className="d-flex gap-5 justify-content-center">
           <button type="button" className="btn custom-button-default">Apply</button>
           <button type="button" className="btn custom-button-default-white">Clear All</button>
 
