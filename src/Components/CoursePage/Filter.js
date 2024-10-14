@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Filter({ onFilterChange, onClose }) {
   const skills = [
@@ -36,28 +36,12 @@ export default function Filter({ onFilterChange, onClose }) {
     "4.5", "4.6", "4.7", "4.8", "4.9", "5.0"
   ];
 
-  const [searchTerms, setSearchTerms] = useState({
-    subjects: '',
-    skills: '',
-    languages: '',
-    Educator: '',
-    durations: '',
-    ratings: '',
-  });
-
-  const handleSearch = (type, value) => {
-    setSearchTerms((prev) => ({
-      ...prev,
-      [type]: value,
-    }));
-  };
-
-  const filteredSubjects = subjects.filter((subject) => subject.toLowerCase().includes(searchTerms.subjects.toLowerCase()));
-  const filteredSkills = skills.filter((skill) => skill.toLowerCase().includes(searchTerms.skills.toLowerCase()));
-  const filteredLanguages = languages.filter((language) => language.toLowerCase().includes(searchTerms.languages.toLowerCase()));
-  const filteredEducator = Educator.filter((university) => university.toLowerCase().includes(searchTerms.Educator.toLowerCase()));
-  const filteredDurations = durations.filter((duration) => duration.toLowerCase().includes(searchTerms.durations.toLowerCase()));
-  const filteredRatings = ratings.filter((rating) => rating.toLowerCase().includes(searchTerms.ratings.toLowerCase()));
+  const filteredSubjects = subjects.filter((subject) => subject.toLowerCase().includes(subjects.toLowerCase()));
+  const filteredSkills = skills.filter((skill) => skill.toLowerCase().includes(skills.toLowerCase()));
+  const filteredLanguages = languages.filter((language) => language.toLowerCase().includes(languages.toLowerCase()));
+  const filteredEducator = Educator.filter((university) => university.toLowerCase().includes(Educator.toLowerCase()));
+  const filteredDurations = durations.filter((duration) => duration.toLowerCase().includes(durations.toLowerCase()));
+  const filteredRatings = ratings.filter((rating) => rating.toLowerCase().includes(ratings.toLowerCase()));
 
   return (
     <div className="modal-overlay d-flex justify-content-center align-items-center">
@@ -78,12 +62,6 @@ export default function Filter({ onFilterChange, onClose }) {
               {/* Subject Filter */}
               <div className="mb-4">
                 <h6 className="fs-5 fw-semibold mb-2">Subjects</h6>
-                <input
-                  type="text"
-                  className="form-control mb-2"
-                  placeholder="Search Subjects..."
-                  onChange={(e) => handleSearch('subjects', e.target.value)}
-                />
                 <select className="form-select" onChange={(e) => onFilterChange('subjects', e.target.value)}>
                   <option value="">Select Subject</option>
                   {filteredSubjects.map((subject, index) => (
@@ -95,12 +73,6 @@ export default function Filter({ onFilterChange, onClose }) {
               {/* Skills Filter */}
               <div className="mb-4">
                 <h6 className="fs-5 fw-semibold mb-2">Skills</h6>
-                <input
-                  type="text"
-                  className="form-control mb-2"
-                  placeholder="Search Skills..."
-                  onChange={(e) => handleSearch('skills', e.target.value)}
-                />
                 <select className="form-select" onChange={(e) => onFilterChange('skills', e.target.value)}>
                   <option value="">Select Skill</option>
                   {filteredSkills.map((skill, index) => (
@@ -123,12 +95,6 @@ export default function Filter({ onFilterChange, onClose }) {
               {/* Educator Filter */}
               <div className="mb-4">
                 <h6 className="fs-5 fw-semibold mb-2">Educator</h6>
-                <input
-                  type="text"
-                  className="form-control mb-2"
-                  placeholder="Search Educator..."
-                  onChange={(e) => handleSearch('Educator', e.target.value)}
-                />
                 <select className="form-select" onChange={(e) => onFilterChange('Educator', e.target.value)}>
                   <option value="">Select Educator</option>
                   {filteredEducator.map((university, index) => (
