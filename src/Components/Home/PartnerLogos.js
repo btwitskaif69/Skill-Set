@@ -17,7 +17,7 @@ export default function PartnerLogos() {
       };
 
     return (
-        <div className='logos p-5' style={{ backgroundColor: '#f5f7fa', height: 'auto' }}>
+        <div className='logos p-4' style={{ backgroundColor: '#f5f7fa', height: 'auto' }}>
             <div className='container'>
                 <div className="text-center">
                     <h3 className="marquee-heading text-center fs-1 fw-semibold" style={{ color: '#210BE3' }}>

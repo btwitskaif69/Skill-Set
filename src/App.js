@@ -18,7 +18,7 @@ function App() {
       <div className="App">
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/" exact element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/about-us" element={<AboutUs />} />
@@ -26,7 +26,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/courses-page" element={<Courses />} />
-          <Route path="/enroll/:id" element={<EnrollPage />} />  {/* Updated route */}
+          <Route path="/enroll/:id" exact element={<EnrollPage />} />  {/* Updated route */}
         </Routes>
         <Footer/>
       </div>
