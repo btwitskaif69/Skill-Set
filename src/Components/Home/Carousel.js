@@ -11,7 +11,7 @@ export default function Carousel() {
         const carouselElement = document.getElementById('carouselExampleCaptions');
         if (carouselElement) {
             new window.bootstrap.Carousel(carouselElement, {
-                interval: 4000, // 4 seconds
+                interval: 3000, // 3 seconds
                 ride: 'carousel'
             });
         }

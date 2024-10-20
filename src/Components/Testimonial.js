@@ -129,12 +129,12 @@ const Testimonial = forwardRef((props, ref) => {
       </div>
 
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-12 my-5">
           <Slider ref={sliderRef} {...settings}>
             {testimonials.map((testimonial) => (
-              <div className="testimonial-item" key={testimonial.id}>
-                <div className="testimonial-card border p-4 mb-4 rounded mx-4 mt-4 rounded-3">
-                  <div className="testimonial-stars mb-4" style={{ color: "#f59e0b", fontSize: "20px" }}>
+              <div className="testimonial-itemh-100" key={testimonial.id}>
+                <div className="testimonial-card border p-4 my-4 mx-4 rounded-3">
+                  <div className="testimonial-stars mb-4 " style={{ color: "#f59e0b", fontSize: "20px" }}>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
