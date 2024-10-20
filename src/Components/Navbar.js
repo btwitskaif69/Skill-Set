@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SignUp from './SignUp';
 import LogIn from './LogIn';
@@ -29,6 +29,17 @@ export default function Navbar() {
   const Logo = {
     SKILL_SET: '/Assets/Logo/Skill_Set.svg',
   };
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+      const handleResize = () => {
+          setScreenWidth(window.innerWidth);
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div>
@@ -64,7 +75,7 @@ export default function Navbar() {
                 <Link to='/contact-us' className="nav-link fs-6 text-dark  text-nowrap">Contact Us</Link>
               </li>
               <li className="nav-item"> {/* Ensure this is a nav-item for proper alignment */}
-                <form className="d-flex mb-0 me-2 " role="search">
+                <form className={screenWidth > 991 ? "d-flex mb-0 me-2" : "d-flex mb-2 me-2"} role="search"> 
                   <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                   <button className="btn custom-button-default-white" type="submit">Search</button>
                 </form>
