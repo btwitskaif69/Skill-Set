@@ -23,10 +23,10 @@ export default function Footer() {
               <img src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '25px' }} />
             </h4>
             <p style={{ color: 'black' }}>Start your journey now.</p>
-            <button className="btn custom-button-default me-2 mb-2">
+            <button className="btn custom-button-default me-2 mb-2  text-nowrap">
               <Link to='/courses' onClick={handleClick} className='nav-link' style={{ color: 'inherit', textDecoration: 'none' }}>Explore Courses</Link>
             </button>
-            <button  className="btn custom-button-default-white mb-2">Join Us Now</button>
+            <button  className="btn custom-button-default-white mb-2  text-nowrap">Join Us Now</button>
           </div>
 
           {/* Company Links Section */}

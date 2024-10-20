@@ -40,9 +40,9 @@ export default function Carousel() {
                     {/* First Slide */}
                     <div className="carousel-item active">
                         <img src="/Assets/Slides/FirstSlide.jpg" className="d-block w-100" alt="First slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
-                        <div className="carousel-caption d-flex flex-column justify-content-center align-items-start" style={{ top: '50%', transform: 'translateY(-50%)', left: '10%', textAlign: 'left', maxWidth: '500px' }}>
-                            <h1 className="display-4 text-dark" style={{ fontWeight: '500' }}>Get job ready with new AI skills</h1>
-                            <p className="lead text-dark" style={{ fontWeight: '400' }}>Stand out to employers with an industry-leading Professional Certificate and must-have AI skills from top companies.</p>
+                        <div className="carousel-caption d-flex flex-column justify-content-center align-items-start" style={{ top: '50%', transform: 'translateY(-50%)', left: '10%', textAlign: 'left', maxWidth: '600px' }}>
+                            <h1 className="display-3 fw-semibold text-dark">Get job ready with new AI skills</h1>
+                            <p className="fs-4 text-dark">Stand out to employers with an industry-leading Professional Certificate and must-have AI skills from top companies.</p>
                             <div>
                                 <button className="btn custom-button-default-transparent btn-lg me-3 mb-2">
                                     <Link to='/Courses' className="nav-link ">Explore certificates</Link>
@@ -56,7 +56,7 @@ export default function Carousel() {
                     <div className="carousel-item">
                         <img src="/Assets/Slides/SecondSlide.jpg" className="d-block w-100" alt="Second slide" style={{ height: carouselHeight, objectFit: 'cover' }} />
                         <div className="carousel-caption d-flex flex-column justify-content-center align-items-start" style={{ top: '50%', transform: 'translateY(-50%)', left: '10%', textAlign: 'left', maxWidth: '500px' }}>
-                            <h1 className="display-4 text-dark" style={{ fontWeight: '500' }}>Master AI and data science</h1>
+                            <h1 className="display-3 fw-semibold text-dark" style={{ fontWeight: '500' }}>Master AI and data science</h1>
                             <p className="lead text-dark" style={{ fontWeight: '400' }}>Earn credentials that showcase your expertise in AI and data science, opening doors to new career opportunities.</p>
                             <div>
                                 <button className="btn custom-button-default-transparent btn-lg custom-button-normal me-3 mb-2">Start learning</button>

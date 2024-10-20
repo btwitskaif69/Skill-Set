@@ -52,19 +52,19 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-0 mb-lg-0 ">
               <li className="nav-item">
-                <Link to='/home' className="nav-link fs-6 text-dark" aria-current="page">Home</Link>
+                <Link to='/home' className="nav-link fs-6 text-dark  text-nowrap" aria-current="page">Home</Link>
               </li>
               <li className="nav-item me-2"> {/* Added mx-2 here for consistent spacing */}
-                <Link to='/courses' className="nav-link fs-6 text-dark">Courses</Link>
+                <Link to='/courses' className="nav-link fs-6 text-dark  text-nowrap">Courses</Link>
               </li>
               <li className="nav-item me-2"> {/* Added mx-2 here for consistent spacing */}
-                <Link to='/about-us' className="nav-link fs-6 text-dark">About Us</Link>
+                <Link to='/about-us' className="nav-link fs-6 text-dark  text-nowrap">About Us</Link>
               </li>
               <li className="nav-item me-2"> {/* Added mx-2 here for consistent spacing */}
-                <Link to='/contact-us' className="nav-link fs-6 text-dark">Contact Us</Link>
+                <Link to='/contact-us' className="nav-link fs-6 text-dark  text-nowrap">Contact Us</Link>
               </li>
               <li className="nav-item"> {/* Ensure this is a nav-item for proper alignment */}
-                <form className="d-flex mb-0" role="search">
+                <form className="d-flex mb-0 me-2 " role="search">
                   <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                   <button className="btn custom-button-default-white" type="submit">Search</button>
                 </form>
@@ -72,8 +72,8 @@ export default function Navbar() {
             </ul>
             
             <div className="d-flex gap-2">
-              <button onClick={handleOnLogIn} type="button" className="btn custom-button-default-white">Log In</button>
-              <button onClick={handleOnSignUp} type="button" className="btn custom-button-default">Sign Up</button>
+              <button onClick={handleOnLogIn} type="button" className="btn custom-button-default-white  text-nowrap">Log In</button>
+              <button onClick={handleOnSignUp} type="button" className="btn custom-button-default  text-nowrap">Sign Up</button>
             </div>
           </div>
         </div>
