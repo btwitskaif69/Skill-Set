@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function SignUp({ onClose, switchToLogin }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -7,33 +7,45 @@ export default function SignUp({ onClose, switchToLogin }) {
     setShowPassword(!showPassword);
   };
 
-	const [firstname, setFirstname] = useState('')
-  const [lastname, setLastname] = useState('')
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
-  const [confirmpassword, setConfirmpassword] = useState('')
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmpassword, setConfirmpassword] = useState('');
 
-	async function registerUser(event) {
-		event.preventDefault()
+  useEffect(() => {
+    // Disable scroll when component mounts (modal is open)
+    document.body.style.overflow = 'hidden';
 
-		const response = await fetch('http://localhost:1337/api/register', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				firstname,
+    // Cleanup function to enable scroll when component unmounts (modal closes)
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
+  async function registerUser(event) {
+    event.preventDefault();
+
+    const response = await fetch('http://localhost:1337/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstname,
         lastname,
-				email,
-				password,
+        email,
+        password,
         confirmpassword,
-			}),
-		})
-		const data = await response.json()
+      }),
+    });
+    const data = await response.json();
 
-		if (data.status === 'ok') {
-		}
-	}
+    if (data.status === 'ok') {
+      // Handle successful registration
+    }
+  }
+
   return (
     <div className="modal-overlay">
       <div className="container d-flex justify-content-center align-items-center min-vh-100">
@@ -63,8 +75,8 @@ export default function SignUp({ onClose, switchToLogin }) {
                   <div className="col-12 col-md-6">
                     <label htmlFor="lastNameInput" className="form-label">Last Name</label>
                     <input
-                    className="form-control"
-                    id="lastNameInput"
+                      className="form-control"
+                      id="lastNameInput"
                       value={lastname}
                       onChange={(e) => setLastname(e.target.value)}
                       type="text"
@@ -78,7 +90,7 @@ export default function SignUp({ onClose, switchToLogin }) {
                     className="form-control"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    type="email"  
+                    type="email"
                     id="emailInput"
                     aria-describedby="emailHelp"
                     placeholder="Enter your email"
@@ -94,7 +106,7 @@ export default function SignUp({ onClose, switchToLogin }) {
                     id="passwordInput"
                     placeholder="Enter your password"
                   />
-                  </div>
+                </div>
                 <div className="mb-3 position-relative">
                   <label htmlFor="confirmPasswordInput" className="form-label">Confirm Password</label>
                   <div className="input-group">

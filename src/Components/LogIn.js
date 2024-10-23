@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function LogIn({ onClose, switchToSignUp }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -7,6 +7,15 @@ export default function LogIn({ onClose, switchToSignUp }) {
     setShowPassword(!showPassword);
   };
 
+  useEffect(() => {
+    // Disable scroll when component mounts (modal is open)
+    document.body.style.overflow = 'hidden';
+
+    // Cleanup function to enable scroll when component unmounts (modal closes)
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
   return (
     <div className="modal-overlay">
       <div className="container mt-4 position-absolute top-50 start-50 translate-middle">
