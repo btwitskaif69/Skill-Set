@@ -52,29 +52,36 @@ export default function SignUp({ onClose, switchToLogin }) {
                   <div className="col-12 col-md-6 mb-3 mb-md-0">
                     <label htmlFor="firstNameInput" className="form-label">First Name</label>
                     <input
+                      className="form-control"
+                      id="firstNameInput"
                       value={firstname}
                       onChange={(e) => setFirstname(e.target.value)}
                       type="text"
-                      placeholder="Enter First Name"
+                      placeholder="Enter your first name"
                     />
                   </div>
                   <div className="col-12 col-md-6">
                     <label htmlFor="lastNameInput" className="form-label">Last Name</label>
                     <input
+                    className="form-control"
+                    id="lastNameInput"
                       value={lastname}
                       onChange={(e) => setLastname(e.target.value)}
                       type="text"
-                      placeholder="Enter Last Name"
+                      placeholder="Enter your last name"
                     />
                   </div>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="emailInput" className="form-label">Email address</label>
                   <input
+                    className="form-control"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    type="email"
-                    placeholder="Enter Your Email"
+                    type="email"  
+                    id="emailInput"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter your email"
                   />
                 </div>
                 <div className="mb-3">
@@ -83,7 +90,9 @@ export default function SignUp({ onClose, switchToLogin }) {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
-                    placeholder=" Enter Password"
+                    className="form-control"
+                    id="passwordInput"
+                    placeholder="Enter your password"
                   />
                   </div>
                 <div className="mb-3 position-relative">
@@ -93,7 +102,9 @@ export default function SignUp({ onClose, switchToLogin }) {
                       type={showPassword ? 'text' : 'password'}
                       value={confirmpassword}
                       onChange={(e) => setConfirmpassword(e.target.value)}
-                      placeholder="Enter Confirm Password"
+                      className="form-control pe-5"
+                      id="confirmPasswordInput"
+                      placeholder="Confirm your password"
                     />
                     <span
                       className="input-group-text position-absolute end-0 pe-2 d-flex align-items-center"
