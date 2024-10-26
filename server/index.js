@@ -3,7 +3,8 @@ const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
 const User = require ('./models/user.model')
-const { error } = require('ajv/dist/vocabularies/applicator/dependencies')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcryptjs')
 
 
 app.use(cors())
@@ -12,22 +13,27 @@ mongoose.connect('mongodb://localhost:27017/skill-set')
 
 
 app.post('/api/register', async (req, res) => {
-    console.log(req.body)
-    try{
+    console.log(req.body);
+    try {
+        // Hash the password
+        const newPassword = await bcrypt.hash(req.body.password, 10);
+        
+        // Create a new user with the hashed password
         await User.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
-            password: req.body.password,
-            confirmpassword: req.body.confirmpassword,
-        })
-        res.json({status: 'ok'})
+            password: newPassword,  // Use the hashed password
+            confirmpassword: newPassword, // Optional: You might want to handle this differently
+        });
 
-    }catch (err){
-        console.log(err)
-        res.json({status : 'error', error: 'Duplicate Email'})
+        res.json({ status: 'ok' });
+    } catch (err) {
+        console.log(err);
+        res.json({ status: 'error', error: 'Duplicate Email' });
     }
-})
+});
+
 
 
 app.post('/api/login', async (req, res) => {
