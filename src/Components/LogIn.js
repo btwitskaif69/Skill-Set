@@ -6,7 +6,6 @@ export default function LogIn({ onClose, switchToSignUp }) {
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
-
   useEffect(() => {
     // Disable scroll when component mounts (modal is open)
     document.body.style.overflow = 'hidden';
@@ -16,6 +15,37 @@ export default function LogIn({ onClose, switchToSignUp }) {
       document.body.style.overflow = 'auto';
     };
   }, []);
+
+  const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+
+	async function loginUser(event) {
+		event.preventDefault()
+
+		const response = await fetch('http://localhost:1337/api/login', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				email,
+				password,
+			}),
+		})
+
+		const data = await response.json()
+
+		if (data.user) {
+			localStorage.setItem('token', data.user)
+			alert('Login successful')
+			window.location.href = '/dashboard'
+		} else {
+			alert('Please check your username and password')
+		}
+	}
+
+
+
   return (
     <div className="modal-overlay">
       <div className="container mt-4 position-absolute top-50 start-50 translate-middle">
@@ -29,14 +59,16 @@ export default function LogIn({ onClose, switchToSignUp }) {
                 onClick={onClose}
               ></button>
               <h2 className="text-center mb-4">Log In</h2>
-              <form>
+              <form> onSubmit={loginUser}
                 <div className="mb-3">
                   <label htmlFor="emailInput" className="form-label">Email address</label>
-                  <input 
-                    type="email" 
-                    className="form-control" 
-                    id="emailInput" 
-                    aria-describedby="emailHelp" 
+                  <input
+                    className="form-control"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
+                    id="emailInput"
+                    aria-describedby="emailHelp"
                     placeholder="Enter your email"
                   />
                   <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
@@ -44,12 +76,14 @@ export default function LogIn({ onClose, switchToSignUp }) {
                 <div className="mb-3 position-relative">
                   <label htmlFor="passwordInput" className="form-label">Password</label>
                   <div className="input-group">
-                    <input 
-                      type={showPassword ? 'text' : 'password'} 
-                      className="form-control pe-5" 
-                      id="passwordInput" 
-                      placeholder="Enter your password"
-                    />
+                  <input
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="password"
+                    className="form-control"
+                    id="passwordInput"
+                    placeholder="Enter your password"
+                  />
                     <span 
                       className="input-group-text position-absolute end-0 pe-2 d-flex align-items-center" 
                       onClick={handleTogglePassword} 

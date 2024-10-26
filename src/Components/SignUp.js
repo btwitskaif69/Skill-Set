@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
+
 
 export default function SignUp({ onClose, switchToLogin }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,27 +25,25 @@ export default function SignUp({ onClose, switchToLogin }) {
   }, []);
 
   async function registerUser(event) {
-    event.preventDefault();
+		event.preventDefault()
 
-    const response = await fetch('http://localhost:1337/api/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        firstname,
-        lastname,
-        email,
-        password,
-        confirmpassword,
-      }),
-    });
-    const data = await response.json();
+		const response = await fetch('http://localhost:1337/api/register', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				email,
+				password,
+			}),
+		})
 
-    if (data.status === 'ok') {
-      // Handle successful registration
-    }
-  }
+		const data = await response.json()
+
+		if (data.status === 'ok') {
+			history.push('/login')
+		}
+	}
 
   return (
     <div className="modal-overlay">
