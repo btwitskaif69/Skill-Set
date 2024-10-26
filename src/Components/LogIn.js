@@ -79,7 +79,7 @@ export default function LogIn({ onClose, switchToSignUp }) {
                   <input
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    type="password"
+                    type={showPassword ? 'text' : 'password'} 
                     className="form-control"
                     id="passwordInput"
                     placeholder="Enter your password"
