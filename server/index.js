@@ -12,24 +12,20 @@ app.use((express.json()))
 mongoose.connect('mongodb://localhost:27017/skill-set')
 
 
-app.post('/api/register', async (req, res) => {
-    console.log(req.body)
-    try{
-        await User.create({
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            email: req.body.email,
-            password: req.body.password,
-            confirmpassword: req.body.confirmpassword,
-        })
-        res.json({status: 'ok'})
-
-    }catch (err){
-        console.log(err)
-        res.json({status : 'error', error: 'Duplicate Email'})
-    }
+app.post('/api/signup', async (req, res) => {
+	console.log(req.body)
+	try {
+		const newPassword = await bcrypt.hash(req.body.password, 10)
+		await User.create({
+			name: req.body.name,
+			email: req.body.email,
+			password: newPassword,
+		})
+		res.json({ status: 'ok' })
+	} catch (err) {
+		res.json({ status: 'error', error: 'Duplicate email' })
+	}
 })
-
 
 app.post('/api/login', async (req, res) => {
 	const user = await User.findOne({

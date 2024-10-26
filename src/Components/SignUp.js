@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function SignUp({ onClose, switchToLogin }) {
@@ -23,16 +24,19 @@ export default function SignUp({ onClose, switchToLogin }) {
       document.body.style.overflow = 'auto';
     };
   }, []);
+  const history = useNavigate()
 
   async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://localhost:1337/api/register', {
+		const response = await fetch('http://localhost:1337/api/signup', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
+        firstname,
+        lastname,
 				email,
 				password,
 			}),

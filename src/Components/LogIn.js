@@ -59,7 +59,7 @@ export default function LogIn({ onClose, switchToSignUp }) {
                 onClick={onClose}
               ></button>
               <h2 className="text-center mb-4">Log In</h2>
-              <form> onSubmit={loginUser}
+              <form onSubmit={loginUser}> 
                 <div className="mb-3">
                   <label htmlFor="emailInput" className="form-label">Email address</label>
                   <input
