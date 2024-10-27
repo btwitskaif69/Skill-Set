@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Filter({ onFilterChange, onClose }) {
+export default function Filter({ onFilterChange }) {
+  const [isVisible, setIsVisible] = useState(true);
+
   const filters = {
     subjects: [
       "Data Science", "Computer Science", "Cloud Computing", "Web Development", "Artificial Intelligence",
@@ -49,6 +51,8 @@ export default function Filter({ onFilterChange, onClose }) {
     };
   }, []);
 
+  if (!isVisible) return null;
+
   return (
     <div className="modal-overlay d-flex justify-content-center align-items-center">
       <div className="filter-modal">
@@ -57,7 +61,7 @@ export default function Filter({ onFilterChange, onClose }) {
             type="button"
             className="btn-close position-absolute top-0 end-0 mt-2 me-2"
             aria-label="Close"
-            onClick={onClose}
+            onClick={() => setIsVisible(false)} // Hide modal on close
           ></button>
           <h5 className="fs-5 fw-semibold mb-4">
             <i className="bi bi-funnel"></i>&nbsp;Filter by
@@ -120,11 +124,11 @@ export default function Filter({ onFilterChange, onClose }) {
           </div>
           <div className="d-flex gap-5 justify-content-center">
           <button type="button" className="btn custom-button-default">Apply</button>
-          <button type="button" className="btn custom-button-default-white">Clear All</button>
-
+          <button type="button" className="btn custom-button-default-white ">Clear All</button>
           </div>
         </div>
       </div>
+
       <style>{`
         .modal-overlay {
           position: fixed;
