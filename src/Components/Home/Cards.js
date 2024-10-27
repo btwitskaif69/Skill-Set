@@ -86,13 +86,13 @@ export default function Cards() {
     return (
         <div>
              {/* Course Cards */}
-             <div className="container my-5">
+             <div className="container my-5 p-3">
              <p className="mb-1 fs-5 fw-semibold" style={{color: '#210BE3'}}>Professional Specializations and Certification Courses</p>
                 <h1 className="mb-1 display-4 fw-normal" style={{color: 'Black'}}>Most Popular Certificates</h1>
                 <p className="mb-4 fs-5" style={{color: 'Black'}}>Explore our most popular programs, get job-ready for an in-demand career.</p>
                 <div className="row">
                     {mainCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-3">
+                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card">
                                     <img src={course.imgSrc} className="card-img-top" alt={course.title} />
