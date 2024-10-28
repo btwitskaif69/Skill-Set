@@ -115,16 +115,21 @@ export default function Navbar() {
     transition: width 0.3s ease;
   }
 
-  .nav-link.fs-6.text-dark.text-nowrap:hover {
-    color: #210BE3;
-    transform: translateY(-1px); /* Slight upward movement */
-  }
+  /* Apply hover effects only for screens greater than 991px */
+  @media (min-width: 992px) {
+    .nav-link.fs-6.text-dark.text-nowrap:hover {
+      color: #210BE3;
+      transform: translateY(-1px); /* Slight upward movement */
+    }
 
-  .nav-link.fs-6.text-dark.text-nowrap:hover::after {
-    width: 100%; /* Expands underline to full width */
+    .nav-link.fs-6.text-dark.text-nowrap:hover::after {
+      width: 100%; /* Expands underline to full width */
+    }
   }
 `}
 </style>
+
+
     </div>
   );
 }
