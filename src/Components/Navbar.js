@@ -111,25 +111,20 @@ export default function Navbar() {
     width: 0;
     height: 2px;
     background-color: #210BE3;
-    border-radius: 2px;
-    transition: width 0.4s ease, height 0.3s ease;
+    border-radius: 1px;
+    transition: width 0.3s ease;
   }
 
   .nav-link.fs-6.text-dark.text-nowrap:hover {
     color: #210BE3;
-    transform: translateY(-2px); /* Adds a slight upward movement */
+    transform: translateY(-1px); /* Slight upward movement */
   }
 
   .nav-link.fs-6.text-dark.text-nowrap:hover::after {
-    width: 100%;
-    height: 2px; /* Increases underline thickness on hover */
+    width: 100%; /* Expands underline to full width */
   }
 `}
 </style>
-
-
-
-
     </div>
   );
 }
