@@ -3,13 +3,14 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./models/user.model');
-const CourseData = require('./models/coursedata.model'); // Import CourseData model
+const CourseData = require('./models/coursedata.model');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+require('dotenv').config(); // Load environment variables from .env file
 
 app.use(cors());
 app.use(express.json());
-mongoose.connect('mongodb://localhost:27017/skill-set');
+mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 
 // User registration endpoint
 app.post('/api/register', async (req, res) => {
