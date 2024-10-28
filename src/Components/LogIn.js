@@ -16,6 +16,35 @@ export default function LogIn({ onClose, switchToSignUp }) {
       document.body.style.overflow = 'auto';
     };
   }, []);
+
+  const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+
+	async function loginUser(event) {
+		event.preventDefault()
+
+		const response = await fetch('http://localhost:1337/api/login', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				email,
+				password,
+			}),
+		})
+
+		const data = await response.json()
+
+		if (data.user) {
+			localStorage.setItem('token', data.user)
+			alert('Login successful')
+			window.location.href = '/home'
+		} else {
+			alert('Please check your username and password')
+		}
+	}
+
   return (
     <div className="modal-overlay">
       <div className="container mt-4 position-absolute top-50 start-50 translate-middle">
@@ -29,15 +58,17 @@ export default function LogIn({ onClose, switchToSignUp }) {
                 onClick={onClose}
               ></button>
               <h2 className="text-center mb-4">Log In</h2>
-              <form>
+              <form onSubmit={loginUser}>
                 <div className="mb-3">
                   <label htmlFor="emailInput" className="form-label">Email address</label>
                   <input 
-                    type="email" 
                     className="form-control" 
                     id="emailInput" 
                     aria-describedby="emailHelp" 
                     placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
                   />
                   <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
@@ -49,6 +80,8 @@ export default function LogIn({ onClose, switchToSignUp }) {
                       className="form-control pe-5" 
                       id="passwordInput" 
                       placeholder="Enter your password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                     <span 
                       className="input-group-text position-absolute end-0 pe-2 d-flex align-items-center" 
@@ -59,7 +92,7 @@ export default function LogIn({ onClose, switchToSignUp }) {
                     </span>
                   </div>
                 </div>
-                <button type="submit" className="btn custom-button-basic w-100">Log In</button>
+                <button type="submit" value="Login" className="btn custom-button-basic w-100">Log In</button>
                 <div className="mt-3 text-center">
                   Don’t have an account?
                   {/* Use the form-switching handler instead of Link */}

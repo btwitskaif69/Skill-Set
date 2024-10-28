@@ -36,19 +36,33 @@ app.post('/api/register', async (req, res) => {
 
 // User login endpoint
 app.post('/api/login', async (req, res) => {
-    const user = await User.findOne({ email: req.body.email });
-    
-    if (user) {
-        // Compare hashed password
-        const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
-        
-        if (isPasswordValid) {
-            return res.json({ status: 'ok', user: true });
-        }
-    }
-    
-    return res.json({ status: 'error', user: false });
-});
+	const user = await User.findOne({
+		email: req.body.email,
+	})
+
+	if (!user) {
+		return { status: 'error', error: 'Invalid login' }
+	}
+
+	const isPasswordValid = await bcrypt.compare(
+		req.body.password,
+		user.password
+	)
+
+	if (isPasswordValid) {
+		const token = jwt.sign(
+			{
+				name: user.name,
+				email: user.email,
+			},
+			'secret123'
+		)
+
+		return res.json({ status: 'ok', user: token })
+	} else {
+		return res.json({ status: 'error', user: false })
+	}
+})
 
 // Endpoint to create a new course data entry
 app.post('/api/courses', async (req, res) => {
