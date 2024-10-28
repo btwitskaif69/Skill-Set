@@ -23,7 +23,7 @@ export default function Accordion({courses}) {
                 <div className="accordion-body" style={{ paddingLeft: "20px" }}>
                   <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
                     {course.lessons.map((lesson, lessonIndex) => (
-                      <li className="bi bi-check-lg mb-1" key={lessonIndex}>&nbsp;{lesson}</li>
+                      <li className="mb-1" key={lessonIndex}><i className="bi bi-check-circle-fill text-success"></i>&nbsp;{lesson}</li>
                     ))}
                   </ul>
                   <h6>Knowledge You'll Gain</h6>
