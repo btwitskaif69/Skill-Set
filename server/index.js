@@ -52,8 +52,9 @@ app.post('/api/login', async (req, res) => {
 
 // Endpoint to create a new course data entry
 app.post('/api/courses', async (req, res) => {
+    console.log(req.body); // Log the incoming data
     try {
-        const courseData = await CourseData.create(req.body); // Assuming req.body contains course data
+        const courseData = await CourseData.create(req.body);
         res.json({ status: 'ok', data: courseData });
     } catch (err) {
         console.error(err);

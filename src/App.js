@@ -11,6 +11,7 @@ import ContactUs from './Components/ContactUs';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import AboutUs from './Components/AboutUs';
+import CourseForm from './Components/CourseForm';
 
 function App() {
   return (
@@ -27,8 +28,10 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/courses-page" element={<Courses />} />
           <Route path="/enroll/:id" exact element={<EnrollPage />} />  {/* Updated route */}
+          <Route path="/form" element={<CourseForm/>} />
         </Routes>
         <Footer/>
+        
       </div>
     </Router>
   );
