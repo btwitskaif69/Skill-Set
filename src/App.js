@@ -24,8 +24,8 @@ function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LogIn />} />
+          <Route path="/api/signup" element={<SignUp />} />
+          <Route path="/api/login" element={<LogIn />} />
           <Route path="/courses-page" element={<Courses />} />
           <Route path="/enroll/:id" exact element={<EnrollPage />} />  {/* Updated route */}
           <Route path="/form" element={<CourseForm/>} />
