@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
     confirmpassword: { type: String, required: true },
     quote: { type: String },
 }, {
-    collection: 'user-data' // Use lowercase 'collection'
+    collection: 'users' // Use lowercase 'collection'
 });
 
 // Create the model

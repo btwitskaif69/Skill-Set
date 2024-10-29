@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const CourseDataSchema = new mongoose.Schema({
+const CoursesSchema = new mongoose.Schema({
     logo: String,
     coursetitle: String,
     description: String,
@@ -41,11 +41,11 @@ const CourseDataSchema = new mongoose.Schema({
       },
     ]
 }, {
-    collection: 'course-data' // Use lowercase 'collection'
+    collection: 'courses' // Use lowercase 'collection'
 });
 
 // Create the model
-const CourseData = mongoose.model('CourseData', CourseDataSchema); // Renamed model to CourseData
+const Courses = mongoose.model('Courses', CoursesSchema); // Renamed model to CourseData
 
 // Export the model
-module.exports = CourseData; // Updated export to match the model name
+module.exports = Courses; // Updated export to match the model name

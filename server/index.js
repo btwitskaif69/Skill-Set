@@ -8,15 +8,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config(); // Load environment variables from .env file
 
-app.use(
-    cors({
-        origin: process.env.FRONTEND_URL,
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        credentials: true,
-    })
-);
-
-  
+app.use(cors());
 app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 
