@@ -9,10 +9,10 @@ const bcrypt = require('bcryptjs');
 require('dotenv').config(); // Load environment variables from .env file
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL, // Allow requests only from your frontend URL
-    methods: ["POST", "GET"],
-    credentials: true // Allow cookies or authorization headers
-}));
+    origin: 'https://skill-set-app.vercel.app', // or a list of allowed origins
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // allowed methods
+    credentials: true, // allow credentials (cookies, authorization headers, etc.)
+  }));
 
 app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
