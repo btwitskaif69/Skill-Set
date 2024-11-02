@@ -16,6 +16,11 @@ app.use(cors({
 app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 
+
+module.exports = (req, res) => {
+    res.status(200).json({ message: "Hello World" });
+  };
+  
 // User registration endpoint
 app.post('/api/register', async (req, res) => {
     console.log(req.body);
