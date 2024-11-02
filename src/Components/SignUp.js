@@ -60,7 +60,6 @@ export default function SignUp({ onClose, switchToLogin }) {
         alert("Password must contain at least one special character.");
         return;
     }
-
     // Proceed with the fetch request
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {
         method: 'POST',
