@@ -13,7 +13,19 @@ app.use(cors({
     credentials: true // Allow cookies or authorization headers
 }));
 app.use(express.json());
-mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
+
+const connectDB = async () => {
+    if (mongoose.connection.readyState === 1) {
+        // Connection is already established
+        return mongoose.connection;
+    }
+    return mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+};
+
+// Use connectDB() whenever you need to interact with the database
 
 // User registration endpoint
 app.post('/api/register', async (req, res) => {
