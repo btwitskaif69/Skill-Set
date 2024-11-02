@@ -10,6 +10,7 @@ require('dotenv').config(); // Load environment variables from .env file
 
 app.use(cors({
     origin: process.env.FRONTEND_URL, // Allow requests only from your frontend URL
+    methods: ["POST", "GET"],
     credentials: true // Allow cookies or authorization headers
 }));
 
@@ -17,9 +18,9 @@ app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 
 
-module.exports = (req, res) => {
-    res.status(200).json({ message: "Hello World" });
-  };
+app.get("/", (req, res) => {
+    res.json("Hello World");
+})
   
 // User registration endpoint
 app.post('/api/register', async (req, res) => {
