@@ -8,51 +8,14 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config(); // Load environment variables from .env file
 
+app.use(cors());
+app.use(express.json());
+mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 
-// Middleware to handle CORS
-app.use(cors({
-    origin: '*', // Temporarily allow all origins
-    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-    credentials: true,
-}));
-
-
-// Preflight request handling (optional, but useful for some setups)
-app.options('*', cors());
-
-// Your other middleware and routes go here
-app.use(express.json()); // Middleware to parse JSON bodiese.connect(process.env.MONGODB_URI) // Use the environment variable
-
-
-app.get("/", (req, res) => {
-    res.json("Hello World");
-})
-  
 // User registration endpoint
-app.post('/api/register', [
-    // Input validation rules
-    body('firstname').notEmpty().withMessage('First name is required.'),
-    body('lastname').notEmpty().withMessage('Last name is required.'),
-    body('email').isEmail().withMessage('Invalid email format.'),
-    body('password').isLength({ min: 8 }).withMessage('Password must be at least 8 characters long.')
-        .matches(/^[A-Z]/).withMessage('Password must start with an uppercase letter.')
-        .matches(/[0-9]/).withMessage('Password must contain at least one numeric character.')
-        .matches(/[!@#$%^&*(),.?":{}|<>]/).withMessage('Password must contain at least one special character.'),
-], async (req, res) => {
-    // Validate the input data
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ status: 'error', errors: errors.array() });
-    }
-
+app.post('/api/register', async (req, res) => {
+    console.log(req.body);
     try {
-        // Check if the email is already registered
-        const existingUser = await User.findOne({ email: req.body.email });
-        if (existingUser) {
-            return res.status(400).json({ status: 'error', error: 'Email already registered.' });
-        }
-
         // Hash the password
         const newPassword = await bcrypt.hash(req.body.password, 10);
         
@@ -61,13 +24,14 @@ app.post('/api/register', [
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
-            password: newPassword, // Use the hashed password
+            password: newPassword,  // Use the hashed password
+            confirmpassword: newPassword, // Optional: You might want to handle this differently
         });
 
         res.json({ status: 'ok' });
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ status: 'error', error: 'An unexpected error occurred. Please try again later.' });
+        console.log(err);
+        res.json({ status: 'error', error: 'Duplicate Email' });
     }
 });
 

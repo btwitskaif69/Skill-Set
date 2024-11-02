@@ -44,11 +44,13 @@ export default function SignUp({ onClose, switchToLogin }) {
         return;
     }
 
+    // Check if the first letter is uppercase
     if (!/^[A-Z]/.test(password)) {
         alert("Password must start with an uppercase letter.");
         return;
     }
 
+    // Check for at least one numeric character and one special character
     if (!/[0-9]/.test(password)) {
         alert("Password must contain at least one numeric character.");
         return;
@@ -59,47 +61,36 @@ export default function SignUp({ onClose, switchToLogin }) {
         return;
     }
 
-    try {
-        // Proceed with the fetch request
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-              firstname,
-              lastname,
-              email,
-              password,
-              confirmpassword,
-          }),
-      });
-      
+    // Proceed with the fetch request
+    const response = await fetch('http://localhost:1337/api/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            firstname,
+            lastname,
+            email,
+            password,
+            confirmpassword,
+        }),
+    });
+    
+    const data = await response.json();
 
-        // Check if the response is ok
-        if (!response.ok) {
-            const errorData = await response.text(); // Get the error response as text
-            throw new Error(errorData || 'Unknown error'); // Throw an error with the response text
-        }
-
-        const data = await response.json();
-
-        if (data.status === 'ok') {
-            alert("Registration successful!"); // Notify user of success
-        } else if (data.status === 'error') {
-            if (data.error === 'Duplicate Email') {
-                alert("This email is already registered. Please use a different email."); // Notify about duplicate email
-            } else {
-                alert("An unexpected error occurred. Please try again."); // Handle other potential errors
-            }
+    if (data.status === 'ok') {
+        alert("Registration successful!"); // Notify user of success
+        // Optionally redirect or clear form fields
+    } else if (data.status === 'error') {
+        if (data.error === 'Duplicate Email') {
+            alert("This email is already registered. Please use a different email."); // Notify about duplicate email
         } else {
-            alert("Registration failed. Please fill all fields correctly."); // Fallback for any other status
+            alert("An unexpected error occurred. Please try again."); // Handle other potential errors
         }
-    } catch (error) {
-        alert(`Error: ${error.message}`); // Alert the error message
+    } else {
+        alert("Registration failed. Please fill all fields correctly."); // Fallback for any other status
     }
 }
-
 
 
   return (
