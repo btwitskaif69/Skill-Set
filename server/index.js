@@ -7,14 +7,13 @@ const CourseData = require('./models/coursedata.model');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config(); // Load environment variables from .env file
+app.use(express.json());
 
 app.use(cors({
     origin: 'https://skill-set-app.vercel.app', // or a list of allowed origins
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // allowed methods
     credentials: true, // allow credentials (cookies, authorization headers, etc.)
   }));
-
-app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 
 
