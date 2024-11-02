@@ -11,11 +11,12 @@ require('dotenv').config(); // Load environment variables from .env file
 
 // Middleware to handle CORS
 app.use(cors({
-    origin: 'https://skill-set-app.vercel.app', // Allowed origin(s)
-    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'], // Allowed methods
-    allowedHeaders: ['Content-Type'], // Allowed headers
-    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+    origin: '*', // Temporarily allow all origins
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true,
 }));
+
 
 // Preflight request handling (optional, but useful for some setups)
 app.options('*', cors());
