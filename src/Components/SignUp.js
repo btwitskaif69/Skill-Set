@@ -61,19 +61,20 @@ export default function SignUp({ onClose, switchToLogin }) {
 
     try {
         // Proceed with the fetch request
-        const response = await fetch('https://skill-set-api.vercel.app/api/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                firstname,
-                lastname,
-                email,
-                password,
-                confirmpassword,
-            }),
-        });
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              firstname,
+              lastname,
+              email,
+              password,
+              confirmpassword,
+          }),
+      });
+      
 
         // Check if the response is ok
         if (!response.ok) {

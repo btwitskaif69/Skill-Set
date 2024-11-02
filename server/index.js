@@ -7,15 +7,21 @@ const CourseData = require('./models/coursedata.model');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config(); // Load environment variables from .env file
-app.use(express.json());
 
+
+// Middleware to handle CORS
 app.use(cors({
     origin: 'https://skill-set-app.vercel.app', // Allowed origin(s)
-    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'], // Allowed methods
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'], // Allowed methods
     allowedHeaders: ['Content-Type'], // Allowed headers
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
-mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
+
+// Preflight request handling (optional, but useful for some setups)
+app.options('*', cors());
+
+// Your other middleware and routes go here
+app.use(express.json()); // Middleware to parse JSON bodiese.connect(process.env.MONGODB_URI) // Use the environment variable
 
 
 app.get("/", (req, res) => {
