@@ -10,10 +10,11 @@ require('dotenv').config(); // Load environment variables from .env file
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://skill-set-app.vercel.app', // or a list of allowed origins
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // allowed methods
-    credentials: true, // allow credentials (cookies, authorization headers, etc.)
-  }));
+    origin: 'https://skill-set-app.vercel.app', // Allowed origin(s)
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'], // Allowed methods
+    allowedHeaders: ['Content-Type'], // Allowed headers
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+}));
 mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 
 

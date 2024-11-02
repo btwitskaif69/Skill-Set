@@ -63,7 +63,6 @@ export default function SignUp({ onClose, switchToLogin }) {
     // Proceed with the fetch request
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {
         method: 'POST',
-        mode: 'no-cors', // This disables CORS checking
         headers: {
             'Content-Type': 'application/json',
         },
