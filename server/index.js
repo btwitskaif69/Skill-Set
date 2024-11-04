@@ -8,7 +8,20 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config(); // Load environment variables from .env file
 
-app.use(cors());
+const allowedOrigin = 'https://skill-set-app.vercel.app';
+
+app.use(cors({
+  origin: allowedOrigin,
+  credentials: true
+}));
+
+app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  next();
+});
 app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 
