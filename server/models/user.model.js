@@ -5,14 +5,10 @@ const UserSchema = new mongoose.Schema({
     lastname: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    confirmpassword: { type: String, required: true },
-    quote: { type: String },
 }, {
-    collection: 'users' // Use lowercase 'collection'
+    collection: 'users' // Ensure collection is lowercase
 });
 
-// Create the model
 const User = mongoose.model('UserData', UserSchema);
 
-// Export the model
 module.exports = User;

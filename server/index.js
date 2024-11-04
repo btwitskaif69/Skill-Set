@@ -31,7 +31,7 @@ app.post('/api/register', async (req, res) => {
 
     try {
         // Check if email already exists
-        const existingUser = await User.findOne({ where: { email: req.body.email } });
+        const existingUser = await User.findOne({ email: req.body.email });
         
         if (existingUser) {
             return res.json({ status: 'error', error: 'Duplicate Email' });
@@ -40,20 +40,20 @@ app.post('/api/register', async (req, res) => {
         // Hash the password
         const newPassword = await bcrypt.hash(req.body.password, 10);
 
-        // Create a new user with the hashed password and combined name field
+        // Create a new user with the hashed password and separate firstname/lastname fields
         await User.create({
-            name: `${req.body.firstname} ${req.body.lastname}`,
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
             email: req.body.email,
             password: newPassword, // Store the hashed password
         });
 
         res.json({ status: 'ok' });
     } catch (err) {
-        console.log(err);
+        console.error(err);
         res.json({ status: 'error', error: 'An unexpected error occurred' });
     }
 });
-
 
 
 // User login endpoint
