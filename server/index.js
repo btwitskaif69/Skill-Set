@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config(); // Load environment variables from .env file
 
-const allowedOrigin = 'https://skill-set-app.vercel.app';
+const allowedOrigin = process.env.FRONTEND_URL;
 
 app.use(cors({
   origin: allowedOrigin,
