@@ -28,23 +28,32 @@ mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 // User registration endpoint
 app.post('/api/register', async (req, res) => {
     console.log(req.body);
+
     try {
+        // Check if email already exists
+        const existingUser = await User.findOne({ where: { email: req.body.email } });
+        
+        if (existingUser) {
+            return res.json({ status: 'error', error: 'Duplicate Email' });
+        }
+
         // Hash the password
         const newPassword = await bcrypt.hash(req.body.password, 10);
 
         // Create a new user with the hashed password and combined name field
         await User.create({
-            name: `${req.body.firstname} ${req.body.lastname}`, // Combine first and last name
+            name: `${req.body.firstname} ${req.body.lastname}`,
             email: req.body.email,
-            password: newPassword,  // Store the hashed password
+            password: newPassword, // Store the hashed password
         });
 
         res.json({ status: 'ok' });
     } catch (err) {
         console.log(err);
-        res.json({ status: 'error', error: 'Duplicate Email' });
+        res.json({ status: 'error', error: 'An unexpected error occurred' });
     }
 });
+
 
 
 // User login endpoint
