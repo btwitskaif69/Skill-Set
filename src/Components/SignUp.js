@@ -62,7 +62,7 @@ export default function SignUp({ onClose, switchToLogin }) {
     }
 
     // Proceed with the fetch request
-    const response = await fetch('http://skill-set-api.vercel.app/api/register', {
+    const response = await fetch('https://skill-set-api.vercel.app/api/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
