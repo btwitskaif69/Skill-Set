@@ -25,72 +25,70 @@ export default function SignUp({ onClose, switchToLogin }) {
 
   async function registerUser(event) {
     event.preventDefault();
-
+  
     // Basic input validation
     if (!firstname || !lastname || !email || !password || !confirmpassword) {
-        alert("Please fill in all fields.");
-        return;
+      alert("Please fill in all fields.");
+      return;
     }
-
+  
     // Check if passwords match
     if (password !== confirmpassword) {
-        alert("Passwords do not match.");
-        return;
+      alert("Passwords do not match.");
+      return;
     }
-
+  
     // Check password length and complexity
     if (password.length < 8) {
-        alert("Password must be at least 8 characters long.");
-        return;
+      alert("Password must be at least 8 characters long.");
+      return;
     }
-
+  
     // Check if the first letter is uppercase
     if (!/^[A-Z]/.test(password)) {
-        alert("Password must start with an uppercase letter.");
-        return;
+      alert("Password must start with an uppercase letter.");
+      return;
     }
-
+  
     // Check for at least one numeric character and one special character
     if (!/[0-9]/.test(password)) {
-        alert("Password must contain at least one numeric character.");
-        return;
+      alert("Password must contain at least one numeric character.");
+      return;
     }
-
+  
     if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
-        alert("Password must contain at least one special character.");
-        return;
+      alert("Password must contain at least one special character.");
+      return;
     }
-
-    // Proceed with the fetch request
+  
+    // Proceed with the fetch request without confirmpassword
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            firstname,
-            lastname,
-            email,
-            password,
-            confirmpassword,
-        }),
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstname,
+        lastname,
+        email,
+        password,
+      }),
     });
-    
+  
     const data = await response.json();
-
+  
     if (data.status === 'ok') {
-        alert("Registration successful!"); // Notify user of success
-        // Optionally redirect or clear form fields
+      alert("Registration successful!");
     } else if (data.status === 'error') {
-        if (data.error === 'Duplicate Email') {
-            alert("This email is already registered. Please use a different email."); // Notify about duplicate email
-        } else {
-            alert("An unexpected error occurred. Please try again."); // Handle other potential errors
-        }
+      if (data.error === 'Duplicate Email') {
+        alert("This email is already registered. Please use a different email.");
+      } else {
+        alert("An unexpected error occurred. Please try again.");
+      }
     } else {
-        alert("Registration failed. Please fill all fields correctly."); // Fallback for any other status
+      alert("Registration failed. Please fill all fields correctly.");
     }
-}
+  }
 
 
   return (

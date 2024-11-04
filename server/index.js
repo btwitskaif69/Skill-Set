@@ -31,14 +31,12 @@ app.post('/api/register', async (req, res) => {
     try {
         // Hash the password
         const newPassword = await bcrypt.hash(req.body.password, 10);
-        
-        // Create a new user with the hashed password
+
+        // Create a new user with the hashed password and combined name field
         await User.create({
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
+            name: `${req.body.firstname} ${req.body.lastname}`, // Combine first and last name
             email: req.body.email,
-            password: newPassword,  // Use the hashed password
-            confirmpassword: newPassword, // Optional: You might want to handle this differently
+            password: newPassword,  // Store the hashed password
         });
 
         res.json({ status: 'ok' });
@@ -47,6 +45,7 @@ app.post('/api/register', async (req, res) => {
         res.json({ status: 'error', error: 'Duplicate Email' });
     }
 });
+
 
 // User login endpoint
 app.post('/api/login', async (req, res) => {
