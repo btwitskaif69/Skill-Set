@@ -40,10 +40,12 @@ app.post('/api/register', async (req, res) => {
         // Hash the password
         const newPassword = await bcrypt.hash(req.body.password, 10);
 
-        // Create a new user with the hashed password and separate firstname/lastname fields
+        // Combine firstname and lastname into one field for 'name'
+        const fullName = `${req.body.firstname} ${req.body.lastname}`;
+
+        // Create a new user with the hashed password and combined name field
         await User.create({
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
+            name: fullName,
             email: req.body.email,
             password: newPassword, // Store the hashed password
         });
