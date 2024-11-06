@@ -46,7 +46,7 @@ const CourseForm = () => {
         };
     
         try {
-            const response = await fetch('http://localhost:1337/api/courses', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/coursesr`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
