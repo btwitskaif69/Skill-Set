@@ -1,51 +1,55 @@
 const mongoose = require('mongoose');
 
 const CoursesSchema = new mongoose.Schema({
-    logo: String,
-    coursetitle: String,
+    title: String,
+    advancement: String, // Example: "Advance in Your Degree Program"
+    proCert: String, // Example: "Professional Certificate"
     description: String,
-    enrollmentCount: Number,
-    coursesCount: Number, // Number of courses in the series
-    difficulty: String, // Difficulty level
-    duration: String, // Duration of the course
-    hoursPerWeek: String, // Estimated hours per week
-    about: String, // Course overview
-    badges: [String], // Array of badges associated with the course
-    objectives: [String], // Learning objectives
-    skillsGained: [String], // Skills acquired from the course
-    instructor: {
-      name: String,
-      image: String,
-      experience: String,
-      expertise: [String], // Array of instructor's areas of expertise
+    enrollmentCount: { type: Number, min: 0 }, // Only accepts numeric values
+    coursesCount: { type: Number, min: 0 }, // Only accepts numeric values
+    difficulty: {
+        type: String,
+        enum: ["Beginner", "Intermediate", "Advanced", "Expert"], // Limited to specific difficulty levels
     },
-    learningOutcomes: [String], // Expected outcomes from the course
+    duration: {
+        type: String,
+        enum: ["1-3 months", "3-6 months", "6-12 months"], // Valid ranges for duration
+    },
+    hoursPerWeek: String, // Example: "4 hours/week"
+    about: String,
+    badges: [String], // Accepts multiple string values
+    objectives: [String], // Accepts multiple string values
+    skillsGained: [String], // Accepts multiple string values
+    instructorName: String,
+    experience: String,
+    expertise: [String], // Accepts multiple string values
+    learningOutcomes: [String], // Accepts multiple string values
     faqs: [
-      {
-        question: String,
-        answer: String,
-      },
+        {
+            question: String,
+            answer: String,
+        },
     ],
-    courseSeries: String, // Title of the course series
-    courseDescription: String, // Description of the course series
-    courseDetails: [String], // Detailed information about the course content
-    summary: String, // Summary of the course
-    practicalLearning: String, // Information about practical learning components
-    learningExperience: [String], // Descriptions of learning experiences
-    conclusion: String, // Final conclusion about the course
+    courseSeries: String,
+    courseDescription: String,
+    courseDetails: String,
+    summary: String,
+    practicalLearning: String,
+    learningExperience: [String], // Accepts multiple string values
+    conclusion: String,
     courses: [
-      {
-        title: String, // Title of the individual course
-        lessons: [String], // Array of lessons covered in the course
-        knowledgeGained: [String], // Skills or knowledge gained from the course
-      },
-    ]
+        {
+            title: String,
+            lessons: [String], // Array of lessons covered in the course
+            knowledgeGained: [String], // Skills or knowledge gained from the course
+        },
+    ],
 }, {
     collection: 'courses' // Use lowercase 'collection'
 });
 
 // Create the model
-const Courses = mongoose.model('Courses', CoursesSchema); // Renamed model to CourseData
+const CourseData = mongoose.model('CourseData', CoursesSchema);
 
 // Export the model
-module.exports = Courses; // Updated export to match the model name
+module.exports = CourseData;

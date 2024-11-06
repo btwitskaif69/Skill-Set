@@ -1,19 +1,33 @@
-// CourseForm.js
 import React, { useState } from 'react';
 
 const CourseForm = () => {
     const [formData, setFormData] = useState({
-        logo: '',
-        coursetitle: '',
+        title: '',
+        advancement: '',
+        proCert: '',
         description: '',
         enrollmentCount: 0,
         coursesCount: 0,
         difficulty: '',
         duration: '',
         hoursPerWeek: '',
+        about: '',
+        badges: '',
         objectives: '',
         skillsGained: '',
+        instructorName: '',
+        experience: '',
+        expertise: '',
+        learningOutcomes: '',
         faqs: '',
+        courseSeries: '',
+        courseDescription: '',
+        courseDetails: '',
+        summary: '',
+        practicalLearning: '',
+        learningExperience: '',
+        conclusion: '',
+        courses: '',
     });
 
     const handleChange = (e) => {
@@ -26,55 +40,41 @@ const CourseForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        // Convert string inputs to arrays if needed, adding default empty arrays if undefined
-        const objectivesArray = formData.objectives ? formData.objectives.split(',').map(obj => obj.trim()) : [];
-        const skillsGainedArray = formData.skillsGained ? formData.skillsGained.split(',').map(skill => skill.trim()) : [];
-        const faqsArray = formData.faqs ? formData.faqs.split('|').map(faq => {
+
+        const processArray = (str) => str.split(',').map(item => item.trim());
+        const processFaqs = (str) => str.split('|').map(faq => {
             const [question, answer] = faq.split(':');
+            return { question: question.trim(), answer: answer.trim() };
+        });
+        const processCourses = (str) => str.split('|').map(course => {
+            const [title, lessons, knowledgeGained] = course.split(';');
             return {
-                question: question ? question.trim() : '',
-                answer: answer ? answer.trim() : '',
+                title: title.trim(),
+                lessons: processArray(lessons),
+                knowledgeGained: processArray(knowledgeGained),
             };
-        }) : [];
-    
+        });
+
         const dataToSend = {
             ...formData,
-            objectives: objectivesArray,
-            skillsGained: skillsGainedArray,
-            faqs: faqsArray,
+            badges: processArray(formData.badges),
+            objectives: processArray(formData.objectives),
+            skillsGained: processArray(formData.skillsGained),
+            expertise: processArray(formData.expertise),
+            learningOutcomes: processArray(formData.learningOutcomes),
+            learningExperience: processArray(formData.learningExperience),
+            faqs: processFaqs(formData.faqs),
+            courses: processCourses(formData.courses),
         };
-    
+
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/coursesr`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/courses`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dataToSend),
             });
-    
             const result = await response.json();
-    
-            if (result.status === 'ok') {
-                alert('Course added successfully!');
-                // Optionally reset the form or handle success
-                setFormData({
-                    logo: '',
-                    coursetitle: '',
-                    description: '',
-                    enrollmentCount: 0,
-                    coursesCount: 0,
-                    difficulty: '',
-                    duration: '',
-                    hoursPerWeek: '',
-                    objectives: '',
-                    skillsGained: '',
-                    faqs: '',
-                });
-            } else {
-                alert('Error: ' + result.error);
-            }
+            alert(result.status === 'ok' ? 'Course added successfully!' : 'Error: ' + result.error);
         } catch (error) {
             console.error('Error:', error);
             alert('Error submitting form');
@@ -86,49 +86,78 @@ const CourseForm = () => {
             <h1 className="mt-5">Add Course</h1>
             <form onSubmit={handleSubmit} className="mt-4">
                 <div className="mb-3">
-                    <label htmlFor="formLogo" className="form-label">Logo URL</label>
-                    <input type="text" className="form-control" id="formLogo" name="logo" value={formData.logo} onChange={handleChange} />
+                    <label className="form-label">Title</label>
+                    <input type="text" className="form-control" name="title" value={formData.title} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="formCourseTitle" className="form-label">Course Title</label>
-                    <input type="text" className="form-control" id="formCourseTitle" name="coursetitle" value={formData.coursetitle} onChange={handleChange} />
+                    <label className="form-label">Advancement</label>
+                    <input type="text" className="form-control" name="advancement" value={formData.advancement} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="formDescription" className="form-label">Description</label>
-                    <textarea className="form-control" id="formDescription" name="description" value={formData.description} onChange={handleChange}></textarea>
+                    <label className="form-label">Professional Certificate</label>
+                    <input type="text" className="form-control" name="proCert" value={formData.proCert} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="formEnrollmentCount" className="form-label">Enrollment Count</label>
-                    <input type="number" className="form-control" id="formEnrollmentCount" name="enrollmentCount" value={formData.enrollmentCount} onChange={handleChange} />
+                    <label className="form-label">Description</label>
+                    <textarea className="form-control" name="description" value={formData.description} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="formCoursesCount" className="form-label">Courses Count</label>
-                    <input type="number" className="form-control" id="formCoursesCount" name="coursesCount" value={formData.coursesCount} onChange={handleChange} />
+                    <label className="form-label">Enrollment Count</label>
+                    <input type="number" className="form-control" name="enrollmentCount" value={formData.enrollmentCount} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="formDifficulty" className="form-label">Difficulty</label>
-                    <input type="text" className="form-control" id="formDifficulty" name="difficulty" value={formData.difficulty} onChange={handleChange} />
+                    <label className="form-label">Courses Count</label>
+                    <input type="number" className="form-control" name="coursesCount" value={formData.coursesCount} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="formDuration" className="form-label">Duration</label>
-                    <input type="text" className="form-control" id="formDuration" name="duration" value={formData.duration} onChange={handleChange} />
+                    <label className="form-label">Difficulty</label>
+                    <select className="form-control" name="difficulty" value={formData.difficulty} onChange={handleChange}>
+                        <option value="">Select Difficulty</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Expert">Expert</option>
+                    </select>
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="formHoursPerWeek" className="form-label">Hours Per Week</label>
-                    <input type="text" className="form-control" id="formHoursPerWeek" name="hoursPerWeek" value={formData.hoursPerWeek} onChange={handleChange} />
+                    <label className="form-label">Duration</label>
+                    <select className="form-control" name="duration" value={formData.duration} onChange={handleChange}>
+                        <option value="">Select Duration</option>
+                        <option value="1-3 months">1-3 months</option>
+                        <option value="3-6 months">3-6 months</option>
+                        <option value="6-12 months">6-12 months</option>
+                    </select>
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="formObjectives" className="form-label">Objectives (comma separated)</label>
-                    <input type="text" className="form-control" id="formObjectives" name="objectives" value={formData.objectives} onChange={handleChange} />
+                    <label className="form-label">Hours per Week</label>
+                    <input type="text" className="form-control" name="hoursPerWeek" value={formData.hoursPerWeek} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="formSkillsGained" className="form-label">Skills Gained (comma separated)</label>
-                    <input type="text" className="form-control" id="formSkillsGained" name="skillsGained" value={formData.skillsGained} onChange={handleChange} />
+                    <label className="form-label">Badges (comma-separated)</label>
+                    <input type="text" className="form-control" name="badges" value={formData.badges} onChange={handleChange} />
                 </div>
+
+                {/* Repeat similar input fields for objectives, skillsGained, expertise, learningOutcomes, etc. */}
+
                 <div className="mb-3">
-                    <label htmlFor="formFaqs" className="form-label">FAQs (question:answer separated by |)</label>
-                    <input type="text" className="form-control" id="formFaqs" name="faqs" value={formData.faqs} onChange={handleChange} />
+                    <label className="form-label">FAQs (question:answer separated by |)</label>
+                    <input type="text" className="form-control" name="faqs" value={formData.faqs} onChange={handleChange} />
                 </div>
+
+                <div className="mb-3">
+                    <label className="form-label">Courses (format: title;lessons;knowledgeGained separated by |)</label>
+                    <input type="text" className="form-control" name="courses" value={formData.courses} onChange={handleChange} />
+                </div>
+
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
