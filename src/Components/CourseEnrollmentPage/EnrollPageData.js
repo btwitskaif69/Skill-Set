@@ -1487,6 +1487,175 @@ const enroll = [
     id: 30,
     title: "Google Cloud Solutions",
   },
+  {
+    id: 31,
+    title: "Google Data Analytics",
+    advancement: "Advance in Your Degree Program",
+    proCert: "Professional Certificate",
+    description:"Launch your career as a data analyst. Build job-ready skills and earn a credential from Google.",
+    enrollmentCount: 304498,
+    coursesCount: 5, // New field for the number of courses
+    difficulty: "Beginner", // New field for difficulty level
+    duration: "6 Months", // New field for duration
+    hoursPerWeek: "4 hours/week", // New field for hours per week
+    about:"Unlock the power of data with our Google Data Analytics course, designed for aspiring analysts eager to transform raw data into      actionable insights. This comprehensive program covers essential analytical skills and tools used by industry leaders to make data-driven decisions.",
+    badges: ["Dr. Jane Smith, Ph.D.", "Certification Available", "Online"],
+    objectives: [
+      "Create a responsive website using HTML and CSS",
+      "Use JavaScript to make websites interactive",
+      "Use React to create powerful single-page applications",
+      "Implement version control with Git and GitHub",
+      "Prepare for technical interviews for front-end developer roles",
+    ],
+    skillsGained: [ "HTML", "CSS", "JavaScript", "React", "Git", "Web Development", "Front-End Development", "UI/UX Design", "Responsive Web Design", "Web Application Development"],
+    instructorname: "Dr. Jane Smith, Ph.D.",
+    instructorimage: Instructor.image1,
+    experience:"15+ years of experience in web development and software engineering. Former lead developer at Tech Giant Inc. and author of 'Mastering Modern Web Development'.",
+    expertise: ["JavaScript Expert", "React Guru", "Node.js Specialist"],
+    learningoutcomes: [
+      "Master advanced JavaScript concepts and ES6+ features",
+      "Build complex, scalable applications with React and state management tools",
+      "Develop robust backend systems using Node.js and Express",
+      "Implement authentication, database integration, and RESTful APIs",
+      "Understand and apply modern architectural patterns like Microservices and Serverless",
+      "Gain hands-on experience with real-world projects and industry best practices",
+    ],
+    faqs: [
+      {
+        question: "What are the prerequisites for this course?",
+        answer:
+          "A basic understanding of JavaScript and web development concepts is recommended, but not required.",
+      },
+      {
+        question: "Is there a money-back guarantee?",
+        answer:
+          "Yes, we offer a 30-day money-back guarantee if you're not satisfied with the course.",
+      },
+      {
+        question: "Will I receive a certificate upon completion?",
+        answer:
+          "Yes, you'll receive a certificate of completion after finishing all course modules and assignments.",
+      },
+      {
+        question: "How much time should I dedicate to the course each week?",
+        answer:
+          "We recommend dedicating 5-10 hours per week, depending on your prior experience.",
+      },
+      {
+        question: "Is the course completely online?",
+        answer:
+          "Yes, the course is 100% online and can be accessed from anywhere.",
+      },
+    ],
+    courseseries: "5 course series",
+
+    coursedesc:
+      "Looking to kickstart a career in coding and web development? This certificate, created by software engineering experts at Meta—the minds behind Facebook and Instagram—will set you on the path to becoming a front-end developer.",
+
+    coursedetails: [
+      "The basics of coding and crafting interactive web pages with HTML5, CSS, and JavaScript.",
+      "Essential design techniques to build professional-grade layouts using popular tools like Bootstrap, React, and Figma.",
+      "How to manage code with GitHub, work with content management systems (CMS), and enhance images using Figma.",
+      "Tips and strategies to excel in technical interviews for front-end developer positions.",
+      "Understand and apply modern architectural patterns like Microservices and Serverless",
+      "Gain hands-on experience with real-world projects and industry best practices",
+    ],
+
+    Summary:
+      "By the program’s conclusion, you’ll apply your skills in a real-world project, where you’ll develop a front-end web application from scratch. Please note, third-party trademarks, logos, and intellectual property referenced remain the property of their respective owners, and Coursera’s mention of them does not imply any affiliation or endorsement.",
+
+    practicallearning:
+      "This program offers hands-on learning, allowing you to directly apply the skills you acquire. Each course concludes with a project to ensure you have fully grasped the concepts before moving forward. Across 9 projects, you’ll work on tasks such as:",
+
+    learningexperience: [
+      "Updating your personal Bio page, utilizing your knowledge of HTML5, CSS, and UI frameworks.",
+      "Managing a project on GitHub, employing version control through Git repositories and the Linux Terminal.",
+      "Building a static version of an application, applying concepts of React, frameworks, hooks, routing, and bundlers.",
+      "",
+    ],
+
+    conclusion:
+      "Finally, you’ll complete a Capstone project, bringing all of your newfound skills together to create a fully functioning front-end web application.",
+
+      courses: [
+        {
+          title: "Introduction to Front-End Development",
+          lessons: [
+            "Distinguish between front-end, back-end, and full-stack developers.",
+            "Create and style a webpage with HTML and CSS.",
+            "The benefits of working with UI frameworks."
+          ],
+          knowledgeGained: [
+            "Version Control",
+            "GitHub",
+            "Bash (Unix Shell)",
+            "Web Development",
+            "Linux",
+          ]
+        },
+        {
+          title: "Programming with JavaScript",
+          lessons: [
+            "Distinguish between front-end, back-end, and full-stack developers.",
+            "Create and style a webpage with HTML and CSS.",
+            "The benefits of working with UI frameworks."
+          ],
+          knowledgeGained: [
+            "Version Control",
+            "GitHub",
+            "Bash (Unix Shell)",
+            "Web Development",
+            "Linux"
+          ]
+        },
+        {
+          title: "Version Control",
+          lessons: [
+            "Implement Version Control systems.",
+            "Navigate and configure using the command line",
+            "Use a GitHub repository. Create a GitHub repository",
+            "Manage code revisions"
+          ],
+          knowledgeGained: [
+            "React (Web Framework)",
+            "Application Development",
+            "Web Application",
+            "Front-End Web Development"
+          ]
+        },
+        {
+          title: "HTML and CSS in Depth",
+          lessons: [
+            "Create a simple form with a responsive layout using HTML5 and CSS.",
+            "Create a responsive layout using CSS.",
+            "Create a UI using Bootstrap.",
+            "Implement debugging tools."
+          ],
+          knowledgeGained: [
+            "Data Structure",
+            "Computer Science",
+            "Algorithms",
+            "Communication",
+            "Pseudocode"
+          ]
+        },
+        {
+          title: "React",
+          lessons: [
+            "Use reusable components to render views where data changes over time.",
+            "Organize React projects to create more scalable and maintainable websites and apps.",
+            "Use props to pass data between components.",
+            "Create dynamic and interactive web pages and apps."
+          ],
+          knowledgeGained: [
+            "Test-Driven Development",
+            "JavaScript",
+            "Front-End Web Development",
+            "Object-Oriented Programming (OOP)"
+          ]
+        }
+      ],
+  },
 ];
 
 export { enroll, Educator };
