@@ -66,7 +66,8 @@ const CourseForm = () => {
         };
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/courses`, {
+            const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:1337/api/courses';
+            const response = await fetch(`${backendUrl}/api/courses`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dataToSend),
@@ -128,26 +129,32 @@ const CourseForm = () => {
                     <label className="form-label">Hours per Week</label>
                     <input type="text" className="form-control" name="hoursPerWeek" value={formData.hoursPerWeek} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">about</label>
                     <input type="text" className="form-control" name="about" value={formData.about} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">Badges (comma-separated)</label>
                     <input type="text" className="form-control" name="badges" value={formData.badges} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">instructorName</label>
                     <input type="text" className="form-control" name="instructorName" value={formData.instructorName} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">experience</label>
                     <input type="text" className="form-control" name="experience" value={formData.experience} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">expertise</label>
                     <input type="text" className="form-control" name="expertise" value={formData.expertise} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">learningOutcomes</label>
                     <input type="text" className="form-control" name="learningOutcomes" value={formData.learningOutcomes} onChange={handleChange} />
@@ -157,30 +164,37 @@ const CourseForm = () => {
                     <label className="form-label">FAQs (question:answer separated by |)</label>
                     <input type="text" className="form-control" name="faqs" value={formData.faqs} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">courseSeries</label>
                     <input type="text" className="form-control" name="courseSeries" value={formData.courseSeries} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">courseDescription (comma-separated)</label>
                     <input type="text" className="form-control" name="courseDescription" value={formData.courseDescription} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">courseDetails</label>
                     <input type="text" className="form-control" name="courseDetails" value={formData.courseDetails} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">summary</label>
                     <input type="text" className="form-control" name="summary" value={formData.summary} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">practicalLearning</label>
                     <input type="text" className="form-control" name="practicalLearning" value={formData.practicalLearning} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">learningExperience</label>
                     <input type="text" className="form-control" name="learningExperience" value={formData.learningExperience} onChange={handleChange} />
                 </div>
+
                 <div className="mb-3">
                     <label className="form-label">conclusion</label>
                     <input type="text" className="form-control" name="conclusion" value={formData.conclusion} onChange={handleChange} />
