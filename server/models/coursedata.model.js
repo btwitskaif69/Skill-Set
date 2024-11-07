@@ -2,8 +2,14 @@ const mongoose = require('mongoose');
 
 const CoursesSchema = new mongoose.Schema({
     title: String,
-    advancement: String, // Example: "Advance in Your Degree Program"
-    proCert: String, // Example: "Professional Certificate"
+    advancement: {
+        type: String,
+        default: "Default Advancement"  // Default value
+    },
+    proCert: {
+        type: String,
+        default: "Default Professional Certificate"  // Default value
+    },
     description: String,
     enrollmentCount: { type: Number, min: 0 }, // Only accepts numeric values
     coursesCount: { type: Number, min: 0 }, // Only accepts numeric values

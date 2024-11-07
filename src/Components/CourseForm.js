@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 const CourseForm = () => {
     const [formData, setFormData] = useState({
         title: '',
-        advancement: '',
-        proCert: '',
         description: '',
         enrollmentCount: 0,
         coursesCount: 0,
@@ -82,7 +80,7 @@ const CourseForm = () => {
     };
 
     return (
-        <div className="container">
+<div className="container">
             <h1 className="mt-5">Add Course</h1>
             <form onSubmit={handleSubmit} className="mt-4">
                 <div className="mb-3">
@@ -90,15 +88,8 @@ const CourseForm = () => {
                     <input type="text" className="form-control" name="title" value={formData.title} onChange={handleChange} />
                 </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Advancement</label>
-                    <input type="text" className="form-control" name="advancement" value={formData.advancement} onChange={handleChange} />
-                </div>
-
-                <div className="mb-3">
-                    <label className="form-label">Professional Certificate</label>
-                    <input type="text" className="form-control" name="proCert" value={formData.proCert} onChange={handleChange} />
-                </div>
+                {/* No input fields for 'Advancement' and 'Professional Certificate' */}
+                {/* These fields are always set by default in the form data */}
 
                 <div className="mb-3">
                     <label className="form-label">Description</label>
@@ -140,18 +131,64 @@ const CourseForm = () => {
                     <label className="form-label">Hours per Week</label>
                     <input type="text" className="form-control" name="hoursPerWeek" value={formData.hoursPerWeek} onChange={handleChange} />
                 </div>
-
+                <div className="mb-3">
+                    <label className="form-label">about</label>
+                    <input type="text" className="form-control" name="about" value={formData.about} onChange={handleChange} />
+                </div>
                 <div className="mb-3">
                     <label className="form-label">Badges (comma-separated)</label>
                     <input type="text" className="form-control" name="badges" value={formData.badges} onChange={handleChange} />
                 </div>
-
-                {/* Repeat similar input fields for objectives, skillsGained, expertise, learningOutcomes, etc. */}
+                <div className="mb-3">
+                    <label className="form-label">instructorName</label>
+                    <input type="text" className="form-control" name="instructorName" value={formData.instructorName} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">experience</label>
+                    <input type="text" className="form-control" name="experience" value={formData.experience} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">expertise</label>
+                    <input type="text" className="form-control" name="expertise" value={formData.expertise} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">learningOutcomes</label>
+                    <input type="text" className="form-control" name="learningOutcomes" value={formData.learningOutcomes} onChange={handleChange} />
+                </div>
 
                 <div className="mb-3">
                     <label className="form-label">FAQs (question:answer separated by |)</label>
                     <input type="text" className="form-control" name="faqs" value={formData.faqs} onChange={handleChange} />
                 </div>
+                <div className="mb-3">
+                    <label className="form-label">courseSeries</label>
+                    <input type="text" className="form-control" name="courseSeries" value={formData.courseSeries} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">courseDescription (comma-separated)</label>
+                    <input type="text" className="form-control" name="courseDescription" value={formData.courseDescription} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">courseDetails</label>
+                    <input type="text" className="form-control" name="courseDetails" value={formData.courseDetails} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">summary</label>
+                    <input type="text" className="form-control" name="summary" value={formData.summary} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">practicalLearning</label>
+                    <input type="text" className="form-control" name="practicalLearning" value={formData.practicalLearning} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">learningExperience</label>
+                    <input type="text" className="form-control" name="learningExperience" value={formData.learningExperience} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">conclusion</label>
+                    <input type="text" className="form-control" name="conclusion" value={formData.conclusion} onChange={handleChange} />
+                </div>
+
 
                 <div className="mb-3">
                     <label className="form-label">Courses (format: title;lessons;knowledgeGained separated by |)</label>
