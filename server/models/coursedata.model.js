@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const CoursesSchema = new mongoose.Schema({
-    title: String,
+    title:  { type: String, required: true, unique: true },
     advancement: {
         type: String,
         default: "Default Advancement"  // Default value
