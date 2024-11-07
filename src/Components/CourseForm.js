@@ -88,9 +88,6 @@ const CourseForm = () => {
                     <input type="text" className="form-control" name="title" value={formData.title} onChange={handleChange} />
                 </div>
 
-                {/* No input fields for 'Advancement' and 'Professional Certificate' */}
-                {/* These fields are always set by default in the form data */}
-
                 <div className="mb-3">
                     <label className="form-label">Description</label>
                     <textarea className="form-control" name="description" value={formData.description} onChange={handleChange} />
