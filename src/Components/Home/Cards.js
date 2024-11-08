@@ -22,18 +22,22 @@ export default function Cards() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                // Try fetching from the primary endpoint
-                let response = await fetch('https://localhost:1337/api/courses');
-                
+                let response = await fetch('http://localhost:1337/api/courses');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
                 const data = await response.json();
-                setCourses(data);
+                
+                // Use data.data if the courses are nested under `data`
+                setCourses(data.data || data);
             } catch (error) {
                 console.error("Failed to fetch courses:", error);
             }
         };
-
+    
         fetchCourses();
     }, []);
+    
 
     // Split courses into main and additional for display
     const mainCourses = courses.slice(0, 4);
