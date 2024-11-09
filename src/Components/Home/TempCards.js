@@ -8,7 +8,7 @@ const Courses = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/courses');
+        const response = await fetch('http://localhost:1337/api/courses');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
