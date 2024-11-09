@@ -7,7 +7,7 @@ const Courses = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('https://skill-set-api.vercel.app/api/courses');
+        const response = await fetch('http://localhost:3000/api/courses');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
         setCourses(Array.isArray(data) ? data : []);
