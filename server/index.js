@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config(); // Load environment variables from .env file
 
-const allowedOrigins = [process.env.FRONTEND_URL, 'http://localhost:1337'];
+const allowedOrigins = [process.env.FRONTEND_URL, 'http://localhost:3000'];
 
 app.use(cors({
   origin: function (origin, callback) {
