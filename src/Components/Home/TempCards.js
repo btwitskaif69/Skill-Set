@@ -9,13 +9,12 @@ const Courses = () => {
           const response = await fetch('https://skill-set-api.vercel.app/api/courses');
           if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
           const data = await response.json();
-          setCourses(data);
+          setCourses(Array.isArray(data) ? data : []); // Ensure data is an array
         } catch (error) {
           console.error('Error fetching courses:', error);
+          setCourses([]); // Set an empty array on error to avoid further issues
         }
       };
-      
-      
 
     fetchCourses();
   }, []);
