@@ -12,8 +12,12 @@ const Courses = () => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const data = await response.json();
-        setCourses(Array.isArray(data) ? data : []); // Ensure data is an array
+        const result = await response.json();
+        if (result.status === 'ok') {
+          setCourses(result.data); // Use the data field
+        } else {
+          throw new Error(result.error || 'Failed to fetch courses');
+        }
       } catch (error) {
         console.error('Error fetching courses:', error);
         setError(error.message); // Set error message state
