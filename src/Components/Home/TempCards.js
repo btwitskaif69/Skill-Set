@@ -5,14 +5,17 @@ const Courses = () => {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      try {
-        const response = await fetch('https://skill-set-api.vercel.app/api/courses');
-        const data = await response.json();
-        setCourses(data);
-      } catch (error) {
-        console.error('Error fetching courses:', error);
-      }
-    };
+        try {
+          const response = await fetch('https://skill-set-api.vercel.app/api/courses');
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          const data = await response.json();
+          setCourses(data);
+        } catch (error) {
+          console.error('Error fetching courses:', error);
+        }
+      };
+      
+      
 
     fetchCourses();
   }, []);
