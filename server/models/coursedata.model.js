@@ -4,11 +4,11 @@ const CoursesSchema = new mongoose.Schema({
     title:  { type: String, required: true, unique: true },
     advancement: {
         type: String,
-        default: "Default Advancement"  // Default value
+        default: "Advance in Your Degree Program"  // Default value
     },
     proCert: {
         type: String,
-        default: "Default Professional Certificate"  // Default value
+        default: "Professional Certificate"  // Default value
     },
     description: String,
     enrollmentCount: { type: Number, min: 0 }, // Only accepts numeric values

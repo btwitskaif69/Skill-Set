@@ -8,7 +8,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config(); // Load environment variables from .env file
 
-const allowedOrigin = 'http//localhost:3000';
+const allowedOrigin = 'http://localhost:3000';  // Corrected the URL
+
 
 app.use(cors({
   origin: allowedOrigin,
