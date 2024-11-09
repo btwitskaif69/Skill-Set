@@ -12,6 +12,7 @@ import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import AboutUs from './Components/AboutUs';
 import CourseForm from './Components/CourseForm';
+import TempCards from './Components/Home/TempCards';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           <Route path="/courses-page" element={<Courses />} />
           <Route path="/enroll/:id" exact element={<EnrollPage />} />  {/* Updated route */}
           <Route path="/form" element={<CourseForm/>} />
+          <Route path="/card" element={<TempCards/>} />
+          
         </Routes>
         <Footer/>
         
