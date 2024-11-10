@@ -60,8 +60,8 @@ export default function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-0 mb-lg-0 ">
+          <div className="collapse navbar-collapse mr-" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-0 mb-lg-0 me-2">
               <li className="nav-item me-2">
                 <Link to='/home' className="nav-link fs-6 text-dark  text-nowrap" aria-current="page">Home</Link>
               </li>
@@ -74,13 +74,13 @@ export default function Navbar() {
               <li className="nav-item me-2"> {/* Added mx-2 here for consistent spacing */}
                 <Link to='/contact-us' className="nav-link fs-6 text-dark  text-nowrap">Contact Us</Link>
               </li>
-              <li className="nav-item"> {/* Ensure this is a nav-item for proper alignment */}
-                <form className={screenWidth > 991 ? "d-flex mb-0 me-2" : "d-flex mb-2 me-2"} role="search"> 
+            </ul>
+            <div className="">
+            <form className={screenWidth > 991 ? "d-flex mb-0 me-2" : "d-flex mb-2 me-2"} role="search"> 
                   <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                   <button className="btn custom-button-default-white" type="submit">Search</button>
                 </form>
-              </li>
-            </ul>
+            </div>
             
             <div className="d-flex gap-2">
               <button onClick={handleOnLogIn} type="button" className="btn custom-button-default-white  text-nowrap">Log In</button>

@@ -1,39 +1,81 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Educator = { 
-    Aws: '/Assets/Educator/Aws.svg',
-    Duke_University: '/Assets/Educator/Duke_University.svg',
-    Google: '/Assets/Educator/Google.svg',
-    IBM: '/Assets/Educator/IBM.svg',
-    Meta: '/Assets/Educator/Meta.svg',
-    Stanford_University: '/Assets/Educator/Stanford_University.svg',
-    University_of_Cambridge: '/Assets/Educator/University_of_Cambridge.svg',
-    University_of_Michigan: '/Assets/Educator/University_of_Michigan.svg',
-    University_of_Oxford: '/Assets/Educator/University_of_Oxford.svg',
-    University_of_Pennsylvania: '/Assets/Educator/University_of_Pennsylvania.svg',
-};
-
 export default function Cards() {
-    const [courses, setCourses] = useState([]);
     const [showAdditionalCourses, setShowAdditionalCourses] = useState(false);
+    const [courses, setCourses] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:1337/api/courses')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data); // Log the entire response to inspect it
-                if (Array.isArray(data.data)) { // Check if 'data' is an array
-                    setCourses(data.data); // Set the courses from the 'data' field
-                } else {
-                    console.error("Fetched data is not an array:", data);
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch('http://localhost:1337/api/courses');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-            })
-            .catch(error => console.error('Error fetching courses:', error));
+                const result = await response.json();
+                if (result.status === 'ok') {
+                    setCourses(result.data.slice(0, 8)); // Limit to 8 courses in total
+                } else {
+                    throw new Error(result.error || 'Failed to fetch courses');
+                }
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCourses();
     }, []);
 
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
+    const CourseImage = {
+        img1: "/Assets/Course/course1.jpg",
+        img2: "/Assets/Course/course2.jpg",
+        img3: "/Assets/Course/course3.jpg",
+        img4: "/Assets/Course/course4.jpg",
+        img5: "/Assets/Course/course5.jpg",
+        img6: "/Assets/Course/course6.jpg",
+        img7: "/Assets/Course/course7.jpg",
+        img8: "/Assets/Course/course8.jpg",
+    }
+    const getCourseImage = (index) => {
+        const imageKeys = Object.keys(CourseImage);
+        return CourseImage[imageKeys[index % imageKeys.length]] || '/Assets/Course/default.jpg';
+    };
+
+    const Educator = {
+        Aws: '/Assets/Educator/Aws.svg',
+        Duke_University: '/Assets/Educator/Duke_University.svg',
+        Google: '/Assets/Educator/Google.svg',
+        Harvard_University: '/Assets/Educator/Harvard_University.svg',
+        IBM: '/Assets/Educator/IBM.svg',
+        Meta: '/Assets/Educator/Meta.svg',
+        MIT: '/Assets/Educator/Mit.svg',
+        Stanford_University: '/Assets/Educator/Stanford_University.svg',
+        University_of_Cambridge: '/Assets/Educator/University_of_Cambridge.svg',
+        University_of_Michigan: '/Assets/Educator/University_of_Michigan.svg',
+        University_of_Oxford: '/Assets/Educator/University_of_Oxford.svg',
+        University_of_Pennsylvania: '/Assets/Educator/University_of_Pennsylvania.svg',
+      };
+
+        // Helper function to get the educator logo
+        const getEducatorLogo = (educator) => {
+            return Educator[educator] || '/Assets/Educator/Default.svg'; // Fallback to a default logo if not found
+        };
+        
+    // Show only the first 4 courses initially and the next 4 on "Show More"
     const mainCourses = courses.slice(0, 4);
-    const additionalCourses = courses.slice(4);
+    const additionalCourses = courses.slice(4, 8);
 
     const toggleAdditionalCourses = () => {
         setShowAdditionalCourses(!showAdditionalCourses);
@@ -47,22 +89,19 @@ export default function Cards() {
                 <h1 className="mb-1 display-4 fw-normal" style={{ color: 'Black' }}>Most Popular Certificates</h1>
                 <p className="mb-4 fs-5" style={{ color: 'Black' }}>Explore our most popular programs, get job-ready for an in-demand career.</p>
                 <div className="row">
-                    {/* Main Courses */}
-                    {mainCourses.map(course => (
+                {mainCourses.map((course, index) => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card">
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} />
+                                    <img src={getCourseImage(index)} className="card-img-top" alt={course.title} />
                                     <div className="card-body d-flex flex-column">
-                                        <div className="course-logos">
-                                            {/* Map the course university to the Educator logos */}
-                                            {course.university && Educator[course.university] ? (
-                                                <img src={Educator[course.university]} alt="Course Logo" />
-                                            ) : (
-                                                <img src="/path/to/default-logo.svg" alt="Default Logo" />
-                                            )}
+                                    <div className="course-logos">
+                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo" />
                                         </div>
                                         <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
+                                        <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
+                                            <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
+                                        </p>
                                         <div className="mt-auto">
                                             <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
                                             <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
@@ -75,32 +114,32 @@ export default function Cards() {
                 </div>
 
                 {/* Additional Courses */}
-                <div className={`row mt-4 ${showAdditionalCourses ? 'fade-in' : 'd-none'}`}>
-                    {additionalCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-3">
+                {showAdditionalCourses && (
+                    <div className="row mt-4 fade-in">
+                        {additionalCourses.map((course, index) => (
+                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
                                 <div className="card">
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} />
-                                    <div className="card-body d-flex flex-column">
+                                    <img src={getCourseImage(index + 4)} className="card-img-top" alt={course.title} />
+                                        <div className="card-body d-flex flex-column">
                                         <div className="course-logos">
-                                            {/* Map the course university to the Educator logos */}
-                                            {course.university && Educator[course.university] ? (
-                                                <img src={Educator[course.university]} alt="Course Logo" />
-                                            ) : (
-                                                <img src="/path/to/default-logo.svg" alt="Default Logo" />
-                                            )}
+                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo" />
                                         </div>
-                                        <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
-                                        <div className="mt-auto">
-                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
-                                            <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
+                                            <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
+                                            <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
+                                            <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
+                                        </p>
+                                            <div className="mt-auto">
+                                                <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
+                                                <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
-                </div>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                )}
 
                 {/* Button Container */}
                 <div className="button-container">
@@ -113,18 +152,28 @@ export default function Cards() {
             </div>
 
             <style>{`
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
                 .card {
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                     padding: 7px;
                     border-radius: 7px;
-                    height: 100%; /* Ensure cards take full height */
+                    height: 100%;
                 }
                 .card:hover {
                     transform: scale(1.05);
                     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
                 }
                 .card-img-top {
-                    height: 60%; /* Adjust height */
+                    height: 60%;
                     border-radius: 10px;
                     object-fit: cover;
                 }
@@ -134,16 +183,16 @@ export default function Cards() {
                     justify-content: left;
                 }
                 .course-logos img {
-                    height: 24px; /* Slightly increased logo height */
+                    height: 24px;
                     width: auto;
                     margin-right: 8px;
                 }
                 .card-title {
-                    font-size: 16px; /* Adjusted to be consistent with image */
+                    font-size: 16px;
                     font-weight: 600;
                 }
                 .card-text {
-                    font-size: 0.8rem; /* Slightly larger for readability */
+                    font-size: 0.8rem;
                 }
                 .button-container {
                     display: flex;
@@ -155,10 +204,10 @@ export default function Cards() {
                 }
                 @media (max-width: 576px) {
                     .course-logos img {
-                        height: 20px; /* Smaller logos for small screens */
+                        height: 20px;
                     }
                     .container h3 {
-                        font-size: 30px; /* Decrease font size */
+                        font-size: 30px;
                     }
                     .card {
                         margin-bottom: 15px;

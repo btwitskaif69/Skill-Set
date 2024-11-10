@@ -11,6 +11,7 @@ const CoursesSchema = new mongoose.Schema({
         default: "Professional Certificate"  // Default value
     },
     description: String,
+    educator: String,
     enrollmentCount: { type: Number, min: 0 }, // Only accepts numeric values
     coursesCount: { type: Number, min: 0 }, // Only accepts numeric values
     difficulty: {
@@ -25,6 +26,7 @@ const CoursesSchema = new mongoose.Schema({
     about: String,
     badges: [String], // Accepts multiple string values
     objectives: [String], // Accepts multiple string values
+    skills: String,
     skillsGained: [String], // Accepts multiple string values
     instructorName: String,
     experience: String,
