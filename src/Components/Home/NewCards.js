@@ -1,33 +1,77 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link} from 'react-router-dom';
 
 export default function NewCards() {
     const [showAdditionalCourses, setShowAdditionalCourses] = useState(false);
+    const [courses, setCourses] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch('http://localhost:1337/api/courses');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const result = await response.json();
+                if (result.status === 'ok') {
+                    setCourses(result.data.slice(8, 16)); // Limit to 8 courses in total
+                } else {
+                    throw new Error(result.error || 'Failed to fetch courses');
+                }
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCourses();
+    }, []);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
+    const CourseImage = {
+        img1: "/Assets/Course/course9.jpg",
+        img2: "/Assets/Course/course10.jpg",
+        img3: "/Assets/Course/course11.jpg",
+        img4: "/Assets/Course/course12.jpg",
+        img5: "/Assets/Course/course13.jpg",
+        img6: "/Assets/Course/course14.jpg",
+        img7: "/Assets/Course/course15.jpg",
+        img8: "/Assets/Course/course16.jpg",
+    }
+    const getCourseImage = (index) => {
+        const imageKeys = Object.keys(CourseImage);
+        return CourseImage[imageKeys[index % imageKeys.length]] || '/Assets/Course/default.jpg';
+    };
 
     const Educator = {
         Aws: '/Assets/Educator/Aws.svg',
         Duke_University: '/Assets/Educator/Duke_University.svg',
         Google: '/Assets/Educator/Google.svg',
+        Harvard_University: '/Assets/Educator/Harvard_University.svg',
         IBM: '/Assets/Educator/IBM.svg',
         Meta: '/Assets/Educator/Meta.svg',
+        MIT: '/Assets/Educator/Mit.svg',
         Stanford_University: '/Assets/Educator/Stanford_University.svg',
         University_of_Cambridge: '/Assets/Educator/University_of_Cambridge.svg',
         University_of_Michigan: '/Assets/Educator/University_of_Michigan.svg',
         University_of_Oxford: '/Assets/Educator/University_of_Oxford.svg',
         University_of_Pennsylvania: '/Assets/Educator/University_of_Pennsylvania.svg',
-    };
+      };
 
-    const courses = [
-        { id: 1, title: "Oxford Cyber Security", imgSrc: "/Assets/Course/course16.jpg", logo: Educator.University_of_Oxford },
-        { id: 2, title: "Cambridge Data Science", imgSrc: "/Assets/Course/course15.jpg", logo: Educator.University_of_Cambridge },
-        { id: 3, title: "Stanford Machine Learning", imgSrc: "/Assets/Course/course14.jpg", logo: Educator.Stanford_University },
-        { id: 4, title: "AI Fundamentals", imgSrc: "/Assets/Course/course13.jpg", logo: Educator.Duke_University },
-        { id: 5, title: "Meta Front-End Development", imgSrc: "/Assets/Course/course12.jpg", logo: Educator.Meta },
-        { id: 6, title: "IBM Data Science", imgSrc: "/Assets/Course/course11.jpg", logo: Educator.IBM },
-        { id: 7, title: "Google Data Analytics", imgSrc: "/Assets/Course/course10.jpg", logo: Educator.Google },
-        { id: 8, title: "AWS Solutions Architect", imgSrc: "/Assets/Course/course9.jpg", logo: Educator.Aws },
-    ];
-
+        // Helper function to get the educator logo
+        const getEducatorLogo = (educator) => {
+            return Educator[educator] || '/Assets/Educator/Default.svg'; // Fallback to a default logo if not found
+        };
     const newmainCourses = courses.slice(0, 4);
     const additionalCourses = courses.slice(4);
 
@@ -43,19 +87,22 @@ export default function NewCards() {
                 <h1 className="mb-1 display-4 fw-normal" >New Courses for Critical Skills</h1>
                 <p className="mb-4 fs-5">Discover our latest courses, designed to build critical skills.</p>
                 <div className="row">
-                    {newmainCourses.map(course => (
+                    {newmainCourses.map((course, index) => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-3">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card">
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} />
+                            <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%"}}>
+                            <img src={getCourseImage(index)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
                                     <div className="card-body d-flex flex-column">
-                                        <div className="course-logos">
-                                            {course.logo && <img src={course.logo} alt="Course Logo" />}
+                                    <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
+                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo"/>
                                         </div>
-                                        <h5 className="card-title">{course.title}</h5>
+                                        <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
+                                        <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
+                                            <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
+                                        </p>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 bi bi-award" style={{color: '#210BE3'}}>&nbsp;Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted">Professional Certificate</p>
+                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
+                                            <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -66,25 +113,28 @@ export default function NewCards() {
 
                 {/* Additional Courses */}
                 <div className={`row mt-4 ${showAdditionalCourses ? 'fade-in' : 'd-none'}`}>
-                    {additionalCourses.map(course => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-3">
+                {additionalCourses.map((course, index) => (
+                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card">
-                                    <img src={course.imgSrc} className="card-img-top" alt={course.title} />
+                            <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%"}}>
+                                    <img src={getCourseImage(index + 4 )} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
                                     <div className="card-body d-flex flex-column">
-                                        <div className="course-logos">
-                                            {course.logo && <img src={course.logo} alt="Course Logo" />}
+                                    <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
+                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo"/>
                                         </div>
-                                        <h5 className="card-title">{course.title}</h5>
+                                        <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
+                                        <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
+                                            <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
+                                        </p>
                                         <div className="mt-auto">
-                                            <p className="card-text mb-0 bi bi-award" style={{color: '#210BE3'}}>&nbsp;Advance in Your Degree Program</p>
-                                            <p className="card-text mb-0 text-muted">Professional Certificate</p>
+                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
+                                            <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
                                         </div>
                                     </div>
                                 </div>
-                            </Link>
-                        </div>
-                    ))}
+                                </Link>
+                            </div>
+                        ))}
                 </div>
 
                 {/* Button Container */}

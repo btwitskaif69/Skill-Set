@@ -92,11 +92,11 @@ export default function Cards() {
                 {mainCourses.map((course, index) => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card">
-                                    <img src={getCourseImage(index)} className="card-img-top" alt={course.title} />
+                                <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%"}}>
+                                    <img src={getCourseImage(index)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
                                     <div className="card-body d-flex flex-column">
-                                    <div className="course-logos">
-                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo" />
+                                    <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
+                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo"/>
                                         </div>
                                         <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
                                         <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
@@ -119,22 +119,22 @@ export default function Cards() {
                         {additionalCourses.map((course, index) => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
                             <Link to={`/courses/${course.id}`} className="text-decoration-none">
-                                <div className="card">
-                                    <img src={getCourseImage(index + 4)} className="card-img-top" alt={course.title} />
-                                        <div className="card-body d-flex flex-column">
-                                        <div className="course-logos">
-                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo" />
+                            <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%"}}>
+                                    <img src={getCourseImage(index + 4 )} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
+                                    <div className="card-body d-flex flex-column">
+                                    <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
+                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo"/>
                                         </div>
-                                            <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
-                                            <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
+                                        <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
+                                        <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
                                             <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
                                         </p>
-                                            <div className="mt-auto">
-                                                <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
-                                                <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
-                                            </div>
+                                        <div className="mt-auto">
+                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
+                                            <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
                                         </div>
                                     </div>
+                                </div>
                                 </Link>
                             </div>
                         ))}

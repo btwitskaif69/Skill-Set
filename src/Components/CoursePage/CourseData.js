@@ -73,7 +73,7 @@ const courses = [
       },
       {
         id: 5,
-        title: "AI Fundamentals",
+        title: "Duke AI Fundamentals",
         imgSrc: "/Assets/Course/course5.jpg",
         logo: Educator.Duke_University,
         Educator: "Duke University",
@@ -157,7 +157,7 @@ const courses = [
       },
       {
         id: 11,
-        title: "AR/VR Development",
+        title: "Meta AR/VR Development",
         imgSrc: "/Assets/Course/course11.jpg",
         logo: Educator.Meta,
         Educator: "Meta",
@@ -171,7 +171,7 @@ const courses = [
       },
       {
         id: 12,
-        title: "Quantum Computing",
+        title: "IBM Quantum Computing",
         imgSrc: "/Assets/Course/course12.jpg",
         logo: Educator.IBM,
         Educator: "IBM",
@@ -185,7 +185,7 @@ const courses = [
       },
       {
         id: 13,
-        title: "Leadership and Management",
+        title: "Harvard Leadership and Management",
         imgSrc: "/Assets/Course/course13.jpg",
         logo: Educator.Harvard_University,
         Educator: "Harvard University",
@@ -199,7 +199,7 @@ const courses = [
       },
       {
         id: 14,
-        title: "Mobile App Development",
+        title: "Google Mobile App Development",
         imgSrc: "/Assets/Course/course14.jpg",
         logo: Educator.Google,
         Educator: "Google",
@@ -213,7 +213,7 @@ const courses = [
       },
       {
         id: 15,
-        title: "AI Ethics",
+        title: "Stanford AI Ethics",
         imgSrc: "/Assets/Course/course15.jpg",
         logo: Educator.Stanford_University,
         Educator: "Stanford University",
