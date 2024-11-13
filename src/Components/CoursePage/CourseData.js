@@ -255,7 +255,7 @@ const courses = [
       },
       {
         id: 18,
-        title: "Meta AR/VR Development",
+        title: "Meta AR/VR Development", // duplicate ignore this
         imgSrc: "/Assets/Course/course18.jpg",
         logo: Educator.Meta,
         Educator: "Meta",
@@ -297,7 +297,7 @@ const courses = [
       },
       {
         id: 21,
-        title: "Advanced Data Analysis",
+        title: "Cambridge Advanced Data Analysis",
         imgSrc: "/Assets/Course/course21.jpg",
         logo: Educator.University_of_Cambridge,
         Educator: "University of Cambridge",
@@ -325,7 +325,7 @@ const courses = [
       },
       {
         id: 23,
-        title: "Google Mobile Dev",
+        title: "Google Mobile Dev", // already in the db
         imgSrc: "/Assets/Course/course23.jpg",
         logo: Educator.Google,
         Educator: "Google",

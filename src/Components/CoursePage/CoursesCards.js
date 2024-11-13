@@ -82,7 +82,30 @@ export default function CoursesCards({ selectedFilters }) {
         img6: "/Assets/Course/course6.jpg",
         img7: "/Assets/Course/course7.jpg",
         img8: "/Assets/Course/course8.jpg",
+        img9: "/Assets/Course/course9.jpg",
+        img10: "/Assets/Course/course10.jpg",
+        img11: "/Assets/Course/course11.jpg",
+        img12: "/Assets/Course/course12.jpg",
+        img13: "/Assets/Course/course13.jpg",
+        img14: "/Assets/Course/course14.jpg",
+        img15: "/Assets/Course/course15.jpg",
+        img16: "/Assets/Course/course16.jpg",
+        img17: "/Assets/Course/course17.jpg",
+        img18: "/Assets/Course/course18.jpg",
+        img19: "/Assets/Course/course19.jpg",
+        img20: "/Assets/Course/course20.jpg",
+        img21: "/Assets/Course/course21.jpg",
+        img22: "/Assets/Course/course22.jpg",
+        img23: "/Assets/Course/course23.jpg",
+        img24: "/Assets/Course/course24.jpg",
+        img25: "/Assets/Course/course25.jpg",
+        img26: "/Assets/Course/course26.jpg",
+        img27: "/Assets/Course/course27.jpg",
+        img28: "/Assets/Course/course28.jpg",
+        img29: "/Assets/Course/course29.jpg",
+        img30: "/Assets/Course/course30.jpg",
     }
+    
     const getCourseImage = (index) => {
         const imageKeys = Object.keys(CourseImage);
         return CourseImage[imageKeys[index % imageKeys.length]] || '/Assets/Course/default.jpg';
@@ -152,7 +175,7 @@ export default function CoursesCards({ selectedFilters }) {
                                                 <i className="bi bi-star-fill" style={{ color: "#f59e0b" }}></i>&nbsp;<b>{course.rating}</b> {course.reviews}
                                             </p>
                                             <p className="card-text mb-0" style={{ color: "#636363", fontSize: "0.7rem" }}>
-                                                Beginner · Career Certificate · {course.duration}
+                                            {course.difficulty} · Career Certificate · {course.duration}
                                             </p>
                                         </div>
                                     </div>
@@ -170,7 +193,8 @@ export default function CoursesCards({ selectedFilters }) {
                 <div className="d-flex justify-content-center">
                     <ul className="pagination">
                         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
-                            <button className="page-link" onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
+                        <button className="page-link" aria-label="Previous page" onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
+
                         </li>
                         {[...Array(Math.ceil(filteredCourses.length / coursesPerPage)).keys()].map((number) => (
                             <li key={number + 1} className={`page-item ${currentPage === number + 1 ? "active" : ""}`}>
