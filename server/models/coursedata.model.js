@@ -12,6 +12,8 @@ const CoursesSchema = new mongoose.Schema({
     },
     description: String,
     educator: String,
+    rating: String,
+    reviews: String,
     enrollmentCount: { type: Number, min: 0 }, // Only accepts numeric values
     coursesCount: { type: Number, min: 0 }, // Only accepts numeric values
     difficulty: {

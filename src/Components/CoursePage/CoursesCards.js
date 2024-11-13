@@ -1,25 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { courses } from './CourseData';
 import Filter from './Filter'; // Import Filter component
 
 export default function CoursesCards({ selectedFilters }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const [showFilter, setShowFilter] = useState(false); // State to toggle Filter component
+    const [courses, setCourses] = useState([]); // State for courses
+    const [loading, setLoading] = useState(true); // State for loading status
+    const [error, setError] = useState(null); // State for errors
+
     const coursesPerPage = 30;
 
-    // Filter courses based on selected filters
+    // Fetch courses from API
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch('http://localhost:1337/api/courses');
+                const data = await response.json();
+        
+                // Check if 'data' contains an array of courses
+                if (Array.isArray(data.data)) {
+                    setCourses(data.data); // Use data.data to access the courses array
+                } else {
+                    setCourses([]);
+                    setError('Invalid response format');
+                }
+                setLoading(false);
+            } catch (error) {
+                setError('Failed to fetch courses');
+                setLoading(false);
+            }
+        };
+        
+        fetchCourses();
+    }, []);
+
     const filteredCourses = courses.filter(course => {
+    
         const subjectMatch = selectedFilters.subjects.length === 0 || selectedFilters.subjects.includes(course.subject);
         const languageMatch = selectedFilters.languages.length === 0 || selectedFilters.languages.includes(course.language);
         const productMatch = selectedFilters.learningProducts.length === 0 || selectedFilters.learningProducts.includes(course.product);
         const skillsMatch = selectedFilters.skills.length === 0 || selectedFilters.skills.some(skill => course.skills.includes(skill));
-        const EducatorMatch = selectedFilters.Educator.length === 0 || selectedFilters.Educator.includes(course.Educator);
+        const educatorMatch = selectedFilters.Educator.length === 0 || selectedFilters.Educator.includes(course.Educator);
         const durationsMatch = selectedFilters.durations.length === 0 || selectedFilters.durations.includes(course.duration);
         const ratingsMatch = selectedFilters.ratings.length === 0 || selectedFilters.ratings.includes(course.rating);
 
-        return subjectMatch && languageMatch && productMatch && skillsMatch && EducatorMatch && durationsMatch && ratingsMatch;
+        return subjectMatch && languageMatch && productMatch && skillsMatch && educatorMatch && durationsMatch && ratingsMatch;
     });
 
     // Handle page change
@@ -46,11 +73,45 @@ export default function CoursesCards({ selectedFilters }) {
     const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
     const currentCourses = filteredCourses.slice(indexOfFirstCourse, indexOfLastCourse);
 
+    const CourseImage = {
+        img1: "/Assets/Course/course1.jpg",
+        img2: "/Assets/Course/course2.jpg",
+        img3: "/Assets/Course/course3.jpg",
+        img4: "/Assets/Course/course4.jpg",
+        img5: "/Assets/Course/course5.jpg",
+        img6: "/Assets/Course/course6.jpg",
+        img7: "/Assets/Course/course7.jpg",
+        img8: "/Assets/Course/course8.jpg",
+    }
+    const getCourseImage = (index) => {
+        const imageKeys = Object.keys(CourseImage);
+        return CourseImage[imageKeys[index % imageKeys.length]] || '/Assets/Course/default.jpg';
+    };
+    const Educator = {
+        Aws: '/Assets/Educator/Aws.svg',
+        Duke_University: '/Assets/Educator/Duke_University.svg',
+        Google: '/Assets/Educator/Google.svg',
+        Harvard_University: '/Assets/Educator/Harvard_University.svg',
+        IBM: '/Assets/Educator/IBM.svg',
+        Meta: '/Assets/Educator/Meta.svg',
+        MIT: '/Assets/Educator/Mit.svg',
+        Stanford_University: '/Assets/Educator/Stanford_University.svg',
+        University_of_Cambridge: '/Assets/Educator/University_of_Cambridge.svg',
+        University_of_Michigan: '/Assets/Educator/University_of_Michigan.svg',
+        University_of_Oxford: '/Assets/Educator/University_of_Oxford.svg',
+        University_of_Pennsylvania: '/Assets/Educator/University_of_Pennsylvania.svg',
+      };
+
+        // Helper function to get the educator logo
+        const getEducatorLogo = (educator) => {
+            return Educator[educator] || '/Assets/Educator/Default.svg'; // Fallback to a default logo if not found
+        };
+
     return (
         <div className="container">
-          <p className="fs-5 fw-semibold mb-2" style={{ color: "Black" }}>
-                        Explore our most popular programs, get job-ready for an in-demand career.
-                    </p>
+            <p className="fs-5 fw-semibold mb-2" style={{ color: "Black" }}>
+                Explore our most popular programs, get job-ready for an in-demand career.
+            </p>
             {/* Conditionally render the Filter button on screens <= 1023px */}
             {screenWidth <= 1023 && (
                 <div className="">
@@ -62,19 +123,20 @@ export default function CoursesCards({ selectedFilters }) {
 
             {/* Conditionally render Filter component */}
             {showFilter && <Filter />}
-            
+
+            {loading && <p>Loading courses...</p>}
+            {error && <p>{error}</p>}
 
             <div className="row g-4">
                 {currentCourses.length > 0 ? (
-                    currentCourses.map((course) => (
+                    currentCourses.map((course, index) => (
                         <div key={course.id} className="col-lg-4 col-md-6 col-sm-12">
                             <Link to={`/enroll/${course.id}`} className="text-decoration-none">
-                                <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%"}}>
-                                    <img loading="lazy" src={course.imgSrc} className="card-img-top" alt={course.title || "Course Image"}
-                                        style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }}/>
+                                <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%" }}>
+                                <img src={getCourseImage(index)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
                                     <div className="card-body d-flex flex-column">
                                         <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
-                                            {course.logo && (<img src={course.logo} alt={`${course.title} Logo`} />)}
+                                        <img src={getEducatorLogo(course.educator)} alt="Educator Logo"/>
                                         </div>
                                         <h5 className="card-title mb-0" style={{ color: "Black", minHeight: "30px", fontSize: "16px", fontWeight: "600" }}>
                                             {course.title}
@@ -163,8 +225,8 @@ export default function CoursesCards({ selectedFilters }) {
                     color: #210BE3;
                 }
                 .page-item .page-link:hover {
-                    background-color: #e2e6ea;
-                    color: #210BE3;
+                    color: #fff;
+                    background-color: #210BE3;
                 }
             `}</style>
         </div>
