@@ -13,6 +13,7 @@ import Navbar from './Components/Navbar';
 import AboutUs from './Components/AboutUs';
 import CourseForm from './Components/CourseForm';
 import TempCards from './Components/Home/TempCards';
+import TestCourseFetcher from './Components/TestCourseFetcher';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/api/login" element={<LogIn />} />
           <Route path="/courses-page" element={<Courses />} />
           <Route path="/enroll/:id" exact element={<EnrollPage />} />  {/* Updated route */}
+          <Route path="/course/:id" element={<TestCourseFetcher />} />
           <Route path="/form" element={<CourseForm/>} />
           <Route path="/card" element={<TempCards/>} />
           

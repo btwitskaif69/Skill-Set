@@ -232,6 +232,8 @@ app.get('/api/courses/:id', async (req, res) => {
     }
 });
 
+
+
 // Endpoint to update course data by ID
 app.put('/api/courses/:id', async (req, res) => {
     try {
