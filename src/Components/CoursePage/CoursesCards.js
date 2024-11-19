@@ -168,14 +168,14 @@ export default function CoursesCards({ selectedFilters }) {
                                             <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
                                         </p>
                                         <div className="mt-auto">
-                                            <p className="review-rating mb-0 bi bi-award" style={{ color: "#210BE3", fontSize: "0.7rem" }}>
-                                                &nbsp;Advance your degree journey
-                                            </p>
                                             <p className="card-text mb-0" style={{ fontSize: "0.7rem" }}>
                                                 <i className="bi bi-star-fill" style={{ color: "#f59e0b" }}></i>&nbsp;<b>{course.rating}</b> {course.reviews}
                                             </p>
+                                            <p className="review-rating mb-0 bi bi-award" style={{ color: "#210BE3", fontSize: "0.7rem" }}>
+                                                &nbsp;Advance your degree journey
+                                            </p>
                                             <p className="card-text mb-0" style={{ color: "#636363", fontSize: "0.7rem" }}>
-                                            {course.difficulty} · Career Certificate · {course.duration}
+                                            {course.difficulty} · Certificate · {course.duration}
                                             </p>
                                         </div>
                                     </div>
