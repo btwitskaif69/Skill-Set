@@ -1,31 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import SignUp from './SignUp';
-import LogIn from './LogIn';
 
 export default function Navbar() {
-  const [activeForm, setActiveForm] = useState(null); // null, 'signup', or 'login'
-
-  const handleOnSignUp = () => {
-    setActiveForm('signup');
-  };
-
-  const handleOnLogIn = () => {
-    setActiveForm('login');
-  };
-
-  const closeForm = () => {
-    setActiveForm(null);
-  };
-
-  const switchToSignUp = () => {
-    setActiveForm('signup');
-  };
-
-  const switchToLogin = () => {
-    setActiveForm('login');
-  };
-
   const Logo = {
     SKILL_SET: '/Assets/Logo/Skill_Set.svg',
   };
@@ -86,16 +62,13 @@ export default function Navbar() {
             
             
             <div className="d-flex gap-2">
-              <button onClick={handleOnLogIn} type="button" className="btn custom-button-default-white  text-nowrap">Log In</button>
-              <button onClick={handleOnSignUp} type="button" className="btn custom-button-default  text-nowrap">Sign Up</button>
+              <Link to='/api/login'><button type="button" className="btn custom-button-default-white  text-nowrap">Log In</button></Link>
+              <Link to='/api/signup'><button type="button" className="btn custom-button-default  text-nowrap">Sign Up</button></Link>
+              
             </div>
           </div>
         </div>
       </nav>
-
-      {/* Render the forms conditionally and pass the switch handlers */}
-      {activeForm === 'signup' && <SignUp onClose={closeForm} switchToLogin={switchToLogin} />}
-      {activeForm === 'login' && <LogIn onClose={closeForm} switchToSignUp={switchToSignUp} />}
 
       <style>
 {`
