@@ -129,6 +129,8 @@ function SignUp() {
       >
         <div className="text-center">
         <h2 className="text-center mb-4" style={{color:'#210BE3'}}>Sign Up</h2>
+        <h2 className="text-center mb-4" style={{color:'#210BE3'}}>kaif</h2>
+
         </div>
         <form onSubmit={registerUser}>
           <div className="row mb-2">
