@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import './App.css';
-// import Navbar from './Components/Navbar'; 
 import SignUp from './Components/SignUp'; 
 import LogIn from './Components/LogIn'; 
 import Home from './Components/Home'; 
@@ -15,29 +14,42 @@ import CourseForm from './Components/CourseForm';
 import TempCards from './Components/Home/TempCards';
 import TestCourseFetcher from './Components/TestCourseFetcher';
 
+function Layout() {
+  const location = useLocation();
+
+  // Define routes where Navbar and Footer should be hidden
+  const hideNavbarFooter = ['/api/signup', '/api/login'];
+
+  return (
+    <>
+      {/* Conditionally render Navbar */}
+      {!hideNavbarFooter.includes(location.pathname) && <Navbar />}
+      
+      <Routes>
+        <Route path="/" exact element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/api/signup" element={<SignUp />} />
+        <Route path="/api/login" element={<LogIn />} />
+        <Route path="/courses-page" element={<Courses />} />
+        <Route path="/enroll/:id" exact element={<EnrollPage />} />
+        <Route path="/course/:id" element={<TestCourseFetcher />} />
+        <Route path="/form" element={<CourseForm />} />
+        <Route path="/card" element={<TempCards />} />
+      </Routes>
+
+      {/* Conditionally render Footer */}
+      {!hideNavbarFooter.includes(location.pathname) && <Footer />}
+    </>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar/>
-        <Routes>
-          <Route path="/" exact element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/api/signup" element={<SignUp />} />
-          <Route path="/api/login" element={<LogIn />} />
-          <Route path="/courses-page" element={<Courses />} />
-          <Route path="/enroll/:id" exact element={<EnrollPage />} />  {/* Updated route */}
-          <Route path="/course/:id" element={<TestCourseFetcher />} />
-          <Route path="/form" element={<CourseForm/>} />
-          <Route path="/card" element={<TempCards/>} />
-          
-        </Routes>
-        <Footer/>
-        
-      </div>
+      <Layout />
     </Router>
   );
 }
