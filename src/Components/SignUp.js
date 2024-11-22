@@ -204,7 +204,7 @@ function SignUp() {
               Password strength: {passwordStrengthLabel}
             </small>
           </div>
-          <div className="mb-2">
+          <div className="mb-4">
             <label htmlFor="confirmPassword" className="form-label mb-1">
               Confirm Password
             </label>
