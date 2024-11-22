@@ -11,6 +11,9 @@ function Login() {
   const Cover = {
     bg: "/Assets/Background/image2.jpg",
   };
+  const Texture = {
+    txt1: "/Assets/Texture/axiom-pattern.png",
+  };
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
@@ -41,8 +44,17 @@ function Login() {
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center min-vh-100 p-4"
-      style={{ backgroundColor: "#F4F4F4" }}
+      className="d-flex justify-content-center align-items-center min-vh-100 p-4 shadow-lg"
+      style={{
+        backgroundImage: `url(${Texture.txt1})`, // Reference the texture correctly
+        backgroundRepeat: "repeat",    // Ensures the texture repeats
+        backgroundSize: "80px 80px",   // Use fixed dimensions for consistent texture size
+        height: "100vh",               // Full viewport height
+        width: "100%",                 // Full viewport width
+        position: "absolute",          // Positions the element across the whole screen
+        top: 0,                        // Aligns the div to the top of the screen
+        left: 0,                       // Aligns the div to the left of the screen
+      }}
     >
       <div
         className="container shadow-lg rounded-3 overflow-hidden"
