@@ -2,14 +2,11 @@ import React from "react";
 
 
 function Login() {
-  const Logo = {
-    SKILL_SET: '/Assets/Logo/Skill_Set.svg',
-  };
+
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
       <div className="card shadow p-4" style={{ width: "24rem" }}>
         <div className="text-center">
-        <img className="mb-4" src={Logo.SKILL_SET} alt="SKILL SET" style={{ height: '30px' }} />
           <h5 className="mb-3">Welcome back</h5>
           <p className="text-muted">Enter your credentials to access your account</p>
         </div>

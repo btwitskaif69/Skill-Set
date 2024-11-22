@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
-
+import { useNavigate, Link } from "react-router-dom";
 
 function SignUp() {
   const [firstname, setFirstname] = useState("");
@@ -14,14 +13,15 @@ function SignUp() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
+
   const Texture = {
     txt1: "/Assets/Texture/axiom-pattern.png",
   };
-  
 
   useEffect(() => {
     const strength = calculatePasswordStrength(password);
@@ -50,7 +50,6 @@ function SignUp() {
     event.preventDefault();
     setIsLoading(true);
 
-    // Basic input validation
     if (!firstname || !lastname || !email || !password || !confirmpassword) {
       alert("Please fill in all fields.");
       setIsLoading(false);
@@ -90,6 +89,7 @@ function SignUp() {
 
       if (data.status === "ok") {
         alert("Registration successful!");
+        navigate("/api/login"); // Navigate to the LogIn component on success
       } else if (data.status === "error") {
         if (data.error === "Duplicate Email") {
           alert(
@@ -115,16 +115,17 @@ function SignUp() {
         backgroundColor: "#210BE3",   // Background color
         backgroundImage: `url(${Texture.txt1})`, // Reference the texture correctly
         backgroundRepeat: "repeat",    // Ensures the texture repeats
-        backgroundSize: "4%",     // Adjust the texture's size to control its scale (adjust this as needed)
+        backgroundSize: "80px 80px",   // Use fixed dimensions for consistent texture size
         height: "100vh",               // Full viewport height
         width: "100%",                 // Full viewport width
         position: "absolute",          // Positions the element across the whole screen
         top: 0,                        // Aligns the div to the top of the screen
         left: 0,                       // Aligns the div to the left of the screen
       }}
+      
     >
       <div
-        className="card shadow p-4 py-4"
+        className="card shadow-lg p-4 py-4"
         style={{ width: "28rem", borderRadius: "1rem" }}
       >
         <div className="text-center">
