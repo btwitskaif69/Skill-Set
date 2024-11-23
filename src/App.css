@@ -219,3 +219,8 @@
 }
 
 
+.form-control::placeholder {
+  font-size: 15px; /* Adjust size */
+  color: #6c757d; /* Optional: Bootstrap's default muted text color */
+  opacity: 1; /* Ensures visibility */
+}

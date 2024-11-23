@@ -93,8 +93,8 @@ function Login() {
           {/* Right Side */}
           <div className="col-lg-6 col-12 p-5 bg-white d-flex flex-column justify-content-center" style={{ height: "100%" }}>
             <h2 className="text-start fw-bold fs-1 mb-4" style={{color: "#210BE3"}}>Login</h2>
-            <p>
-            <b className="fw-semibold mb-4">Welcome Back! </b>Please log in to your account to continue. 
+            <p className="text-muted">
+            <b className="fw-medium mb-4">Welcome Back! </b>Please log in to your account to continue. 
             </p>
             <form onSubmit={loginUser}>
               <div className="mb-4">
@@ -102,14 +102,15 @@ function Login() {
                   User Name
                 </label>
                 <input
-                  type="email"
-                  className="form-control form-control-lg"
-                  id="email"
-                  placeholder="username@gmail.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+  type="email"
+  className="form-control form-control-lg"
+  id="email"
+  placeholder="username@gmail.com"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  required
+/>
+
               </div>
               <div className="mb-4">
                 <label htmlFor="passwordInput" className="form-label">
@@ -150,8 +151,8 @@ function Login() {
             </form>
             <div className="text-center mt-4">
           <p>
-            Already have an account?{" "}
-            <Link to='/api/signup' className="text-decoration-none" style={{color: '#210BE3'}}>Log in</Link>
+          Don’t have an account?{" "}
+            <Link to='/api/signup' className="text-decoration-none" style={{color: '#210BE3'}}>Sign Up</Link>
           </p>
         </div>
           </div>
