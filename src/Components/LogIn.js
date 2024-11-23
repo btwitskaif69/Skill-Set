@@ -14,7 +14,12 @@ function Login() {
   const Texture = {
     txt1: "/Assets/Texture/axiom-pattern.png",
   };
+  const Logo = {
+    lgw: "/Assets/logo/skill-set-white-Logo.png",
+  };
 
+
+  
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -63,7 +68,7 @@ function Login() {
         <div className="row h-100">
           {/* Left Side */}
           <div
-            className="col-lg-6 d-none d-lg-flex flex-column justify-content-center align-items-center text-white"
+            className="col-lg-6 d-none d-lg-flex flex-column p-4"
             style={{
               backgroundImage: `url(${Cover.bg})`, // Use the imported image correctly
               backgroundSize: "cover", // Ensure the background covers the whole area
@@ -71,30 +76,34 @@ function Login() {
               height: "100%",  /* Ensure this takes up full height */
             }}
           >
-            <h1 className="mb-4 text-center" style={{ fontWeight: "bold", fontSize: "2.5rem" }}>
-              Welcome Back!
-            </h1>
-            <p style={{ fontSize: "1.2rem", textAlign: "center" }}>
-              Please login to your account.
-            </p>
+<div
+  className="logo"
+  style={{
+    backgroundImage: `url(${Logo.lgw})`,
+    backgroundPosition: "top left",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "contain", // Ensures the image retains its aspect ratio
+    width: "100%",
+    height: "50px", // Adjust height based on your container
+  }}
+></div>
+
           </div>
 
           {/* Right Side */}
           <div className="col-lg-6 col-12 p-5 bg-white d-flex flex-column justify-content-center" style={{ height: "100%" }}>
-            <h2
-              className="text-center mb-4"
-              style={{ fontWeight: "bold", color: "#210BE3" }}
-            >
-              Login
-            </h2>
+            <h2 className="text-start fw-bold fs-1 mb-4" style={{color: "#210BE3"}}>Login</h2>
+            <p>
+            <b className="fw-semibold mb-4">Welcome Back! </b>Please log in to your account to continue. 
+            </p>
             <form onSubmit={loginUser}>
-              <div className="mb-3">
+              <div className="mb-4">
                 <label htmlFor="email" className="form-label">
                   User Name
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control form-control-lg"
                   id="email"
                   placeholder="username@gmail.com"
                   value={email}
@@ -109,7 +118,7 @@ function Login() {
                 <div className="input-group">
                   <input
                     type={showPassword ? "text" : "password"}
-                    className="form-control"
+                    className="form-control form-control-lg rounded"
                     id="passwordInput"
                     placeholder="Enter your password"
                     value={password}
@@ -117,54 +126,34 @@ function Login() {
                     required
                   />
                   <span
-                    className="input-group-text"
-                    onClick={handleTogglePassword}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <i className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}></i>
-                  </span>
+                className="input-group-text position-absolute end-0 pe-2 d-flex align-items-center"
+                onClick={handleTogglePassword}
+                style={{ cursor: "pointer", zIndex: 10 }}
+              >
+                <i
+                  className={`bi ${showPassword ? "bi-eye-slash text-muted" : "bi-eye text-muted"}`}
+                  style={{ fontSize: "1.5rem" }}
+                ></i>
+              </span>
                 </div>
               </div>
-              <div className="d-flex justify-content-between align-items-center mb-4">
-                <div className="form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="rememberMe"
-                  />
-                  <label className="form-check-label" htmlFor="rememberMe">
-                    Remember Me
-                  </label>
-                </div>
-                <a href="/" className="text-decoration-none text-primary">
-                  Forgot Password?
-                </a>
+              <div className="text-start mb-4">
+                <Link to="/api/forgot-password" className="text-decoration-none" style={{color: "#210BE3"}}>Forgot Password?</Link>
               </div>
               <button
                 type="submit"
-                className="btn btn-primary w-100"
+                className="btn custom-button-basic btn-lg w-100"
                 disabled={isLoading}
-                style={{
-                  backgroundColor: "#7D3CE9",
-                  borderColor: "#7D3CE9",
-                  fontWeight: "bold",
-                }}
               >
                 {isLoading ? "Logging in..." : "Login"}
               </button>
             </form>
-            <div className="text-center mt-3">
-              <p className="mb-0">
-                New User?{" "}
-                <Link
-                  to="/api/signup"
-                  className="text-decoration-none"
-                  style={{ color: "#7D3CE9", fontWeight: "bold" }}
-                >
-                  Signup
-                </Link>
-              </p>
-            </div>
+            <div className="text-center mt-4">
+          <p>
+            Already have an account?{" "}
+            <Link to='/api/signup' className="text-decoration-none" style={{color: '#210BE3'}}>Log in</Link>
+          </p>
+        </div>
           </div>
         </div>
       </div>
