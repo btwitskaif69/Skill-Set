@@ -94,7 +94,7 @@ function Login() {
           <div className="col-lg-6 col-12 p-5 bg-white d-flex flex-column justify-content-center" style={{ height: "100%" }}>
             <h2 className="text-start fw-bold fs-1 mb-4" style={{color: "#210BE3"}}>Login</h2>
             <p className="text-muted">
-            <b className="fw-medium mb-4">Welcome Back! </b>Please log in to your account to continue. 
+            <b className="fw-semibold mb-4">Welcome Back! </b>Please log in to your account to continue. 
             </p>
             <form onSubmit={loginUser}>
               <div className="mb-4">

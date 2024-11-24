@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 function SignUp() {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
@@ -15,13 +14,23 @@ function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
 
+
+
+  const Cover = {
+    bg: "/Assets/Background/image2.jpg",
+  };
   const Texture = {
     txt1: "/Assets/Texture/axiom-pattern.png",
   };
+  const Logo = {
+    lgw: "/Assets/logo/skill-set-white-Logo.png",
+  };
+
 
   useEffect(() => {
     const strength = calculatePasswordStrength(password);
@@ -50,7 +59,7 @@ function SignUp() {
     event.preventDefault();
     setIsLoading(true);
 
-    if (!firstname || !lastname || !email || !password || !confirmpassword) {
+    if (!name || !email || !password || !confirmpassword) {
       alert("Please fill in all fields.");
       setIsLoading(false);
       return;
@@ -77,8 +86,7 @@ function SignUp() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            firstname,
-            lastname,
+            name,
             email,
             password,
           }),
@@ -110,9 +118,8 @@ function SignUp() {
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center vh-100 p-4 py-4"
+      className="d-flex justify-content-center align-items-center min-vh-100 p-4 shadow-lg"
       style={{
-        backgroundColor: "#210BE3",   // Background color
         backgroundImage: `url(${Texture.txt1})`, // Reference the texture correctly
         backgroundRepeat: "repeat",    // Ensures the texture repeats
         backgroundSize: "80px 80px",   // Use fixed dimensions for consistent texture size
@@ -122,45 +129,56 @@ function SignUp() {
         top: 0,                        // Aligns the div to the top of the screen
         left: 0,                       // Aligns the div to the left of the screen
       }}
-      
     >
       <div
-        className="card shadow-lg p-4 py-4"
-        style={{ width: "28rem", borderRadius: "1rem" }}
+        className="container shadow-lg rounded-3 overflow-hidden"
+        style={{ maxWidth: "1200px", height: "675px" }}
       >
-        <div className="text-center">
-        <h2 className="text-center mb-4" style={{color:'#210BE3'}}>Sign Up</h2>
-        </div>
-        <form onSubmit={registerUser}>
-          <div className="row mb-2">
-            <div className="col-12 col-md-6 mb-2 mb-md-0">
-              <label htmlFor="firstNameInput" className="form-label mb-1">
-                First Name
-              </label>
-              <input
+        <div className="row h-100">
+          {/* Left Side */}
+          <div
+            className="col-lg-6 d-none d-lg-flex flex-column p-4"
+            style={{
+              backgroundImage: `url(${Cover.bg})`, // Use the imported image correctly
+              backgroundSize: "cover", // Ensure the background covers the whole area
+              backgroundPosition: "center", // Position it in the center
+              height: "100%",  /* Ensure this takes up full height */
+            }}
+          >
+<div
+  className="logo"
+  style={{
+    backgroundImage: `url(${Logo.lgw})`,
+    backgroundPosition: "top left",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "contain", // Ensures the image retains its aspect ratio
+    width: "100%",
+    height: "50px", // Adjust height based on your container
+  }}
+></div>
+
+          </div>
+
+          {/* Right Side */}
+          <div className="col-lg-6 col-12 p-5 bg-white d-flex flex-column justify-content-center" style={{ height: "100%" }}>
+            <h2 className="text-start fw-bold fs-1 mb-4" style={{color: "#210BE3"}}>Sign Up</h2>
+            <p className="text-muted">
+            <b className="fw-semibold mb-4">Join us today! </b>Create your account to get started. 
+            </p>
+            <form onSubmit={registerUser}>
+            <div className="mb-2">
+            <label htmlFor="name" className="form-label mb-1">
+              Name
+            </label>
+            <input
                 className="form-control"
-                id="firstNameInput"
-                value={firstname}
-                onChange={(e) => setFirstname(e.target.value)}
+                id="fullnameInput"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 type="text"
-                placeholder="John"
+                placeholder="John Doe"
                 required
               />
-            </div>
-            <div className="col-12 col-md-6">
-              <label htmlFor="lastNameInput" className="form-label mb-1">
-                Last Name
-              </label>
-              <input
-                className="form-control"
-                id="lastNameInput"
-                value={lastname}
-                onChange={(e) => setLastname(e.target.value)}
-                type="text"
-                placeholder="Doe"
-                required
-              />
-            </div>
           </div>
           <div className="mb-2">
             <label htmlFor="email" className="form-label mb-1">
@@ -221,17 +239,19 @@ function SignUp() {
           <button
             type="submit"
             value="Register"
-            className="btn custom-button-basic w-100"
+            className="btn custom-button-basic btn-lg w-100"
             disabled={isLoading}
           >
             {isLoading ? "Signing up..." : "Sign up"}
           </button>
         </form>
-        <div className="text-center mt-3">
+            <div className="text-center mt-4">
           <p>
-            Already have an account?{" "}
-            <Link to='/api/login' className="text-decoration-none" style={{color: '#210BE3'}}>Log in</Link>
+          Don’t have an account?{" "}
+            <Link to='/api/login' className="text-decoration-none" style={{color: '#210BE3'}}>Log In</Link>
           </p>
+        </div>
+          </div>
         </div>
       </div>
     </div>
