@@ -171,7 +171,7 @@ function SignUp() {
               Name
             </label>
             <input
-                className="form-control"
+                className="form-control form-control-lg"
                 id="fullnameInput"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -186,7 +186,7 @@ function SignUp() {
             </label>
             <input
               type="email"
-              className="form-control"
+              className="form-control form-control-lg"
               id="email"
               placeholder="m@example.com"
               value={email}
@@ -201,7 +201,7 @@ function SignUp() {
             <div className="input-group">
               <input
                 type={showPassword ? "text" : "password"}
-                className="form-control"
+                className="form-control form-control-lg"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -213,7 +213,11 @@ function SignUp() {
                 style={{ cursor: "pointer", zIndex: 10 }}
               >
                 <i
-                  className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}
+                  className={`bi ${
+                    showPassword
+                      ? "bi-eye-slash text-muted"
+                      : "bi-eye text-muted"
+                  }`}
                   style={{ fontSize: "1.15rem" }}
                 ></i>
               </span>
@@ -228,7 +232,7 @@ function SignUp() {
             </label>
             <input
               type="password"
-              className="form-control"
+              className="form-control form-control-lg"
               id="confirmPassword"
               value={confirmpassword}
               onChange={(e) => setConfirmpassword(e.target.value)}

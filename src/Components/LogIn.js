@@ -52,13 +52,13 @@ function Login() {
       className="d-flex justify-content-center align-items-center min-vh-100 p-4 shadow-lg"
       style={{
         backgroundImage: `url(${Texture.txt1})`, // Reference the texture correctly
-        backgroundRepeat: "repeat",    // Ensures the texture repeats
-        backgroundSize: "80px 80px",   // Use fixed dimensions for consistent texture size
-        height: "100vh",               // Full viewport height
-        width: "100%",                 // Full viewport width
-        position: "absolute",          // Positions the element across the whole screen
-        top: 0,                        // Aligns the div to the top of the screen
-        left: 0,                       // Aligns the div to the left of the screen
+        backgroundRepeat: "repeat", // Ensures the texture repeats
+        backgroundSize: "80px 80px", // Use fixed dimensions for consistent texture size
+        height: "100vh", // Full viewport height
+        width: "100%", // Full viewport width
+        position: "absolute", // Positions the element across the whole screen
+        top: 0, // Aligns the div to the top of the screen
+        left: 0, // Aligns the div to the left of the screen
       }}
     >
       <div
@@ -73,28 +73,36 @@ function Login() {
               backgroundImage: `url(${Cover.bg})`, // Use the imported image correctly
               backgroundSize: "cover", // Ensure the background covers the whole area
               backgroundPosition: "center", // Position it in the center
-              height: "100%",  /* Ensure this takes up full height */
+              height: "100%" /* Ensure this takes up full height */,
             }}
           >
-<div
-  className="logo"
-  style={{
-    backgroundImage: `url(${Logo.lgw})`,
-    backgroundPosition: "top left",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "contain", // Ensures the image retains its aspect ratio
-    width: "100%",
-    height: "50px", // Adjust height based on your container
-  }}
-></div>
-
+            <div
+              className="logo"
+              style={{
+                backgroundImage: `url(${Logo.lgw})`,
+                backgroundPosition: "top left",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain", // Ensures the image retains its aspect ratio
+                width: "100%",
+                height: "50px", // Adjust height based on your container
+              }}
+            ></div>
           </div>
 
           {/* Right Side */}
-          <div className="col-lg-6 col-12 p-5 bg-white d-flex flex-column justify-content-center" style={{ height: "100%" }}>
-            <h2 className="text-start fw-bold fs-1 mb-4" style={{color: "#210BE3"}}>Login</h2>
+          <div
+            className="col-lg-6 col-12 p-5 bg-white d-flex flex-column justify-content-center"
+            style={{ height: "100%" }}
+          >
+            <h2
+              className="text-start fw-bold fs-1 mb-4"
+              style={{ color: "#210BE3" }}
+            >
+              Login
+            </h2>
             <p className="text-muted">
-            <b className="fw-semibold mb-4">Welcome Back! </b>Please log in to your account to continue. 
+              <b className="fw-semibold mb-4">Welcome Back! </b>Please log in to
+              your account to continue.
             </p>
             <form onSubmit={loginUser}>
               <div className="mb-4">
@@ -102,15 +110,14 @@ function Login() {
                   User Name
                 </label>
                 <input
-  type="email"
-  className="form-control form-control-lg"
-  id="email"
-  placeholder="username@gmail.com"
-  value={email}
-  onChange={(e) => setEmail(e.target.value)}
-  required
-/>
-
+                  type="email"
+                  className="form-control form-control-lg"
+                  id="email"
+                  placeholder="username@gmail.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
               <div className="mb-4">
                 <label htmlFor="passwordInput" className="form-label">
@@ -127,19 +134,29 @@ function Login() {
                     required
                   />
                   <span
-                className="input-group-text position-absolute end-0 pe-2 d-flex align-items-center"
-                onClick={handleTogglePassword}
-                style={{ cursor: "pointer", zIndex: 10 }}
-              >
-                <i
-                  className={`bi ${showPassword ? "bi-eye-slash text-muted" : "bi-eye text-muted"}`}
-                  style={{ fontSize: "1.5rem" }}
-                ></i>
-              </span>
+                    className="input-group-text position-absolute end-0 pe-2 d-flex align-items-center"
+                    onClick={handleTogglePassword}
+                    style={{ cursor: "pointer", zIndex: 10 }}
+                  >
+                    <i
+                      className={`bi ${
+                        showPassword
+                          ? "bi-eye-slash text-muted"
+                          : "bi-eye text-muted"
+                      }`}
+                      style={{ fontSize: "1.15rem" }}
+                    ></i>
+                  </span>
                 </div>
               </div>
               <div className="text-start mb-4">
-                <Link to="/api/forgot-password" className="text-decoration-none" style={{color: "#210BE3"}}>Forgot Password?</Link>
+                <Link
+                  to="/api/forgot-password"
+                  className="text-decoration-none"
+                  style={{ color: "#210BE3" }}
+                >
+                  Forgot Password?
+                </Link>
               </div>
               <button
                 type="submit"
@@ -150,11 +167,17 @@ function Login() {
               </button>
             </form>
             <div className="text-center mt-4">
-          <p>
-          Don’t have an account?{" "}
-            <Link to='/api/signup' className="text-decoration-none" style={{color: '#210BE3'}}>Sign Up</Link>
-          </p>
-        </div>
+              <p>
+                Don’t have an account?{" "}
+                <Link
+                  to="/api/signup"
+                  className="text-decoration-none"
+                  style={{ color: "#210BE3" }}
+                >
+                  Sign Up
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>

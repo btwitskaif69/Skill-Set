@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'r
 import './App.css';
 import SignUp from './Components/SignUp'; 
 import LogIn from './Components/LogIn'; 
+import ForgotPassword from './Components/ForgotPassword';
 import Home from './Components/Home'; 
 import Courses from './Components/CoursePage/Courses';
 import EnrollPage from './Components/EnrollPage';
@@ -18,7 +19,7 @@ function Layout() {
   const location = useLocation();
 
   // Define routes where Navbar and Footer should be hidden
-  const hideNavbarFooter = ['/api/signup', '/api/login'];
+  const hideNavbarFooter = ['/api/signup', '/api/login', '/api/forgot-password'];
 
   return (
     <>
@@ -33,6 +34,8 @@ function Layout() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/api/signup" element={<SignUp />} />
         <Route path="/api/login" element={<LogIn />} />
+        <Route path="/api/forgot-password" element={<ForgotPassword />} />
+
         <Route path="/courses-page" element={<Courses />} />
         <Route path="/enroll/:id" exact element={<EnrollPage />} />
         <Route path="/course/:id" element={<TestCourseFetcher />} />
