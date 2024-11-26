@@ -133,6 +133,9 @@ export default function Cards() {
                                             <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
                                         </p>
                                         <div className="mt-auto">
+                                        <p className="card-text mb-0" style={{ fontSize: "0.7rem" }}>
+                                                <i className="bi bi-star-fill" style={{ color: "#f59e0b" }}></i>&nbsp;<b>{course.rating}</b> {course.reviews}
+                                            </p>
                                             <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
                                             <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
                                         </div>
