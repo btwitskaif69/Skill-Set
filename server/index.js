@@ -10,21 +10,31 @@ require('dotenv').config(); // Load environment variables from .env file
 // const crypto = require("crypto");
 // const nodemailer = require("nodemailer");
 
-const allowedOrigin = 'http://localhost:3000';  // Corrected the URL
-
+const FRONTEND_URL = process.env.FRONTEND_URL || 'https://skill-set-app.vercel.app'; // Default to Vercel URL
+const allowedOrigins = [FRONTEND_URL, 'http://localhost:3000']; // Add both URLs
 
 app.use(cors({
-  origin: allowedOrigin,
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) { // Allow if the origin is in the list or undefined (for non-browser requests)
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 
-app.use(function(req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+app.use(function (req, res, next) {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   next();
 });
+
 app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI) // Use the environment variable
 
