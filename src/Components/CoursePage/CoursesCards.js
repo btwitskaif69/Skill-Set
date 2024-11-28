@@ -16,7 +16,7 @@ export default function CoursesCards({ selectedFilters }) {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch('http://localhost:1337/api/courses');
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/courses`);
                 const data = await response.json();
         
                 // Check if 'data' contains an array of courses
