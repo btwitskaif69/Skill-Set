@@ -10,7 +10,7 @@ require('dotenv').config(); // Load environment variables from .env file
 // const crypto = require("crypto");
 // const nodemailer = require("nodemailer");
 
-const FRONTEND_URL = process.env.FRONTEND_URL || 'https://skill-set-app.vercel.app'; // Default to Vercel URL
+const FRONTEND_URL = process.env.FRONTEND_URL; // Default to Vercel URL
 const allowedOrigins = [FRONTEND_URL, 'http://localhost:3000']; // Add both URLs
 
 app.use(cors({
