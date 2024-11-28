@@ -10,7 +10,7 @@ export default function NewCards() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch('http://localhost:1337/api/courses');
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/courses`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
