@@ -32,7 +32,7 @@ export default function Cards() {
     }, []);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <p className='text-center mt-4'>Loading...</p>;
     }
 
     if (error) {
