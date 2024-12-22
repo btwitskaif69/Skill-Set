@@ -14,7 +14,8 @@ import AboutUs from './Components/AboutUs';
 import CourseForm from './Components/CourseForm';
 import TempCards from './Components/Home/TempCards';
 import TestCourseFetcher from './Components/TestCourseFetcher';
-
+import TestCourseCards from './Components/TestCourseCards';
+import TestEnrollPage from './Components/TestEnrollPage';
 function Layout() {
   const location = useLocation();
 
@@ -35,12 +36,14 @@ function Layout() {
         <Route path="/api/signup" element={<SignUp />} />
         <Route path="/api/login" element={<LogIn />} />
         <Route path="/api/forgot-password" element={<ForgotPassword />} />
-
         <Route path="/courses-page" element={<Courses />} />
-        <Route path="/enroll/:id" exact element={<EnrollPage />} />
+        <Route path="/enroll/:id" element={<EnrollPage />} />
         <Route path="/course/:id" element={<TestCourseFetcher />} />
         <Route path="/form" element={<CourseForm />} />
         <Route path="/card" element={<TempCards />} />
+
+        <Route path="cards"  element={<TestCourseCards />} />
+        <Route path="/course/enroll/:id" element={<TestEnrollPage />} />
       </Routes>
 
       {/* Conditionally render Footer */}

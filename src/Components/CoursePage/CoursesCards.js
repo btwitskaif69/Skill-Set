@@ -74,37 +74,37 @@ export default function CoursesCards({ selectedFilters }) {
     const currentCourses = filteredCourses.slice(indexOfFirstCourse, indexOfLastCourse);
 
     const CourseImage = {
-        img1: "/Assets/Course/course1.jpg",
-        img2: "/Assets/Course/course2.jpg",
-        img3: "/Assets/Course/course3.jpg",
-        img4: "/Assets/Course/course4.jpg",
-        img5: "/Assets/Course/course5.jpg",
-        img6: "/Assets/Course/course6.jpg",
-        img7: "/Assets/Course/course7.jpg",
-        img8: "/Assets/Course/course8.jpg",
-        img9: "/Assets/Course/course9.jpg",
-        img10: "/Assets/Course/course10.jpg",
-        img11: "/Assets/Course/course11.jpg",
-        img12: "/Assets/Course/course12.jpg",
-        img13: "/Assets/Course/course13.jpg",
-        img14: "/Assets/Course/course14.jpg",
-        img15: "/Assets/Course/course15.jpg",
-        img16: "/Assets/Course/course16.jpg",
-        img17: "/Assets/Course/course17.jpg",
-        img18: "/Assets/Course/course18.jpg",
-        img19: "/Assets/Course/course19.jpg",
-        img20: "/Assets/Course/course20.jpg",
-        img21: "/Assets/Course/course21.jpg",
-        img22: "/Assets/Course/course22.jpg",
-        img23: "/Assets/Course/course23.jpg",
-        img24: "/Assets/Course/course24.jpg",
-        img25: "/Assets/Course/course25.jpg",
-        img26: "/Assets/Course/course26.jpg",
-        img27: "/Assets/Course/course27.jpg",
-        img28: "/Assets/Course/course28.jpg",
-        img29: "/Assets/Course/course29.jpg",
-        img30: "/Assets/Course/course30.jpg",
-    }
+      img1: "/Assets/Course/course1.jpg",
+      img2: "/Assets/Course/course2.jpg",
+      img3: "/Assets/Course/course3.jpg",
+      img4: "/Assets/Course/course4.jpg",
+      img5: "/Assets/Course/course5.jpg",
+      img6: "/Assets/Course/course6.jpg",
+      img7: "/Assets/Course/course7.jpg",
+      img8: "/Assets/Course/course8.jpg",
+      img9: "/Assets/Course/course9.jpg",
+      img10: "/Assets/Course/course10.jpg",
+      img11: "/Assets/Course/course11.jpg",
+      img12: "/Assets/Course/course12.jpg",
+      img13: "/Assets/Course/course13.jpg",
+      img14: "/Assets/Course/course14.jpg",
+      img15: "/Assets/Course/course15.jpg",
+      img16: "/Assets/Course/course16.jpg",
+      img17: "/Assets/Course/course17.jpg",
+      img18: "/Assets/Course/course18.jpg",
+      img19: "/Assets/Course/course19.jpg",
+      img20: "/Assets/Course/course20.jpg",
+      img21: "/Assets/Course/course21.jpg",
+      img22: "/Assets/Course/course22.jpg",
+      img23: "/Assets/Course/course23.jpg",
+      img24: "/Assets/Course/course24.jpg",
+      img25: "/Assets/Course/course25.jpg",
+      img26: "/Assets/Course/course26.jpg",
+      img27: "/Assets/Course/course27.jpg",
+      img28: "/Assets/Course/course28.jpg",
+      img29: "/Assets/Course/course29.jpg",
+      img30: "/Assets/Course/course30.jpg",
+    };
     
     const getCourseImage = (index) => {
         const imageKeys = Object.keys(CourseImage);
@@ -147,7 +147,7 @@ export default function CoursesCards({ selectedFilters }) {
             {/* Conditionally render Filter component */}
             {showFilter && <Filter />}
 
-            {loading && <p>Loading courses...</p>}
+            {loading && <p className='text-center'>Loading courses...</p>}
             {error && <p>{error}</p>}
 
             <div className="row g-4">

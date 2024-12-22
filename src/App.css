@@ -224,3 +224,36 @@
   color: #6c757d; /* Optional: Bootstrap's default muted text color */
   opacity: 1; /* Ensures visibility */
 }
+
+
+/* Basic close button */
+.custom-button-close {
+  color: #210BE3;
+  border: none !important; /* Removes border */
+  outline: none !important; /* Removes focus ring */
+  background: transparent; /* Ensures no background */
+  box-shadow: none !important; /* Removes any default focus shadow */
+}
+
+.custom-button-close:hover {
+  border: none !important;
+  outline: none !important;
+}
+
+.custom-button-close:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.custom-button-close:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.custom-button-close:focus:not(:hover) {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}

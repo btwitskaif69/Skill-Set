@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import CourseBanner from "./CourseEnrollmentPage/CourseBanner";
 import InstructorDetails from './CourseEnrollmentPage/InstructorDetails';
 import CourseReviews from './CourseEnrollmentPage/CourseReviews';
@@ -10,72 +10,102 @@ import CourseAbout from "./CourseEnrollmentPage/CourseAbout";
 import LearningOutcomes from "./CourseEnrollmentPage/LearningOutcomes";
 import FAQ from "./CourseEnrollmentPage/FAQ";
 import { useParams } from 'react-router-dom';
-import { enroll } from '../Components/CourseEnrollmentPage/EnrollPageData'; // Correctly import 'enroll'
 
 export default function EnrollPage() {
+  const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const courseOutcomeRef = useRef(null);
   const courseDescriptionRef = useRef(null);
   const coursereviewsRef = useRef(null);
 
   const { id } = useParams(); // Get the course ID from the URL
 
-  // Convert ID to a number for comparison
-  const course = enroll.find(course => course.id === Number(id)); // Ensure the comparison is type-safe
+  useEffect(() => {
+    const fetchCourse = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/api/courses/${id}`);
+        if (!response.ok) {
+          throw new Error(`Server responded with status ${response.status}: ${response.statusText}`);
+        }
+        const result = await response.json();
+        if (result.status === "ok") {
+          setCourse(result.data);
+        } else {
+          throw new Error(result.error || "Failed to fetch course data");
+        }
+      } catch (err) {
+        setError(err.message); // Capture detailed error
+      } finally {
+        setLoading(false);
+      }
+    };    
+
+    fetchCourse();
+  }, [id]);
+
+  if (loading) {
+    return <div>Loading course data...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   if (!course) {
-    return <div>Course not found!</div>; // Handle case when course is not found
+    return <div>Course not found!</div>;
   }
+  console.log("Course ID:", id); // Debug the ID being passed
+  
 
   return (
     <div>
-      {/* Pass the course logo, title, description, and enrollment count as props */}
-      <CourseBanner 
-        logo={course.logo} // Pass the logo here
-        title={course.title} 
-        description={course.description} 
-        enrollmentCount={course.enrollmentCount} // Ensure this field exists in your enroll data
+      <CourseBanner
+        logo={course.logo}
+        title={course.title}
+        description={course.description}
+        enrollmentCount={course.enrollmentCount}
         coursesCount={course.coursesCount}
         difficulty={course.difficulty}
         duration={course.duration}
         hoursPerWeek={course.hoursPerWeek}
       />
-      <ScrollSpy 
-        courseDescriptionRef={courseDescriptionRef} 
-        coursereviewsRef={coursereviewsRef} 
-        courseOutcomeRef={courseOutcomeRef} 
+      <ScrollSpy
+        courseDescriptionRef={courseDescriptionRef}
+        coursereviewsRef={coursereviewsRef}
+        courseOutcomeRef={courseOutcomeRef}
       />
       <CourseAbout
-       overview={course.overview}
-       badges={course.badges}
-       about={course.about}
-       objectives={course.objectives} // New prop for learning outcomes
-       skillsGained={course.skillsGained} // New prop for skills gained
-       />
+        overview={course.overview}
+        badges={course.badges}
+        about={course.about}
+        objectives={course.objectives}
+        skillsGained={course.skillsGained}
+      />
       <InstructorDetails
-      instructorname={course.instructorname}
-      instructorimage={course.instructorimage}
-      experience={course.experience}
-      expertise={course.expertise}
+        instructorname={course.instructorname}
+        instructorimage={course.instructorimage}
+        experience={course.experience}
+        expertise={course.expertise}
       />
-      <LearningOutcomes ref={courseOutcomeRef} 
-      learningoutcomes={course.learningoutcomes}
+      <LearningOutcomes
+        ref={courseOutcomeRef}
+        learningoutcomes={course.learningoutcomes}
       />
-      <FAQ
-      faqs={course.faqs} />
+      <FAQ faqs={course.faqs} />
       <CompanyLogos />
-      <CourseDescription ref={courseDescriptionRef} 
-      courseseries={course.courseseries}
-      coursedesc={course.coursedesc}
-      coursedetails={course.coursedetails}
-      Summary={course.Summary}
-      practicallearning={course.practicallearning}
-      learningexperience={course.learningexperience}
-      conclusion={course.conclusion}
+      <CourseDescription
+        ref={courseDescriptionRef}
+        courseseries={course.courseseries}
+        coursedesc={course.coursedesc}
+        coursedetails={course.coursedetails}
+        Summary={course.Summary}
+        practicallearning={course.practicallearning}
+        learningexperience={course.learningexperience}
+        conclusion={course.conclusion}
       />
-
-      <Accordion
-      courses={course.courses}
-      />
+      <Accordion courses={course.courses} />
       <CourseReviews ref={coursereviewsRef} />
     </div>
   );
