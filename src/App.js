@@ -37,7 +37,7 @@ function Layout() {
         <Route path="/api/login" element={<LogIn />} />
         <Route path="/api/forgot-password" element={<ForgotPassword />} />
         <Route path="/courses-page" element={<Courses />} />
-        <Route path="/enroll/:id" element={<EnrollPage />} />
+        <Route path="/courses/:id" element={<EnrollPage />} />
         <Route path="/course/:id" element={<TestCourseFetcher />} />
         <Route path="/form" element={<CourseForm />} />
         <Route path="/card" element={<TempCards />} />
