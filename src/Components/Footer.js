@@ -51,7 +51,7 @@ export default function Footer() {
       </section>
 
       <div className="text-center p-3" style={styles.bottomBar}>
-        <p className="mb-0">© 2024 Skill Set All rights reserved.</p>
+        <p className="mb-0">© 2025 Skill Set All rights reserved.</p>
       </div>
     </footer>
   );

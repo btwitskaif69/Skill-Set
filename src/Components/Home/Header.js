@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Header() {
   const Header = {
@@ -19,12 +20,22 @@ function Header() {
               Uncover a new realm of learning experiences and elevate your expertise in unique ways.
             </p>
             <div className="d-flex gap-3">
-              <button className="btn btn-primary px-4 py-2">
-                Enroll Now
-              </button>
-              <button className="btn btn-outline-secondary px-4 py-2 d-flex align-items-center gap-2">
-                What's Etech?
-              </button>
+              <Link to="/api/signup">
+                              <button
+                                type="button"
+                                className="btn custom-button-default text-nowrap"
+                              >
+                                Enroll Now
+                              </button>
+                            </Link>
+                            <Link to="/about-us">
+                              <button
+                                type="button"
+                                className="btn custom-button-default-white text-nowrap"
+                              >
+                                What's Skill Set?
+                              </button>
+                            </Link>
             </div>
           </div>
           

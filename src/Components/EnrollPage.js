@@ -1,44 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 
-function EnrollPage({ match }) {
+export default function EnrollPage() {
   const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const { id } = useParams(); // Get the course ID from the URL
+
   useEffect(() => {
-    const fetchCourseData = async () => {
+    let isMounted = true; // Prevent state updates on unmounted component
+  
+    const fetchCourse = async () => {
       try {
-        const response = await fetch(`http://localhost:1337/api/courses/${match.params.id}`);
-
+        const response = await fetch(`http://localhost:3000/api/courses/${id}`);
         if (!response.ok) {
-          throw new Error(`Network response was not ok (status: ${response.status})`);
+          throw new Error(`Server error: ${response.status} ${response.statusText}`);
         }
-
-        const data = await response.json();
-        setCourse(data); 
-      } catch (error) {
-        setError(`Failed to fetch course data: ${error.message}`); 
+        const result = await response.json();
+        if (isMounted) {
+          setCourse(result.data);
+        }
+      } catch (err) {
+        if (isMounted) setError(err.message);
+      } finally {
+        if (isMounted) setLoading(false);
       }
     };
+  
+    fetchCourse();
+  
+    return () => {
+      isMounted = false; // Cleanup function to prevent async updates after unmount
+    };
+  }, [id]);
+  
 
-    fetchCourseData();
-  }, [match.params.id]);
+  if (loading) {
+    return <div>Loading course data...</div>;
+  }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>{error}</div>;
   }
 
   if (!course) {
-    return <div>Loading...</div>;
+    return <div>Course not found!</div>;
   }
 
   return (
     <div>
-      <h2>{course.attributes.title}</h2>
-      <p>{course.attributes.description}</p>
-      {/* Add more course details here */}
-      <button>Enroll Now</button>
+      {/* Display course title and description */}
+      <h1>{course.title}</h1>
+      <p>{course.description}</p>
     </div>
   );
 }
-
-export default EnrollPage;
