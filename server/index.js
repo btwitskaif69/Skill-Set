@@ -216,16 +216,13 @@ app.get('/api/courses', async (req, res) => {
 // Endpoint to get a specific course data entry by ID
 app.get('/api/courses/:id', async (req, res) => {
     try {
-        const course = await CourseData.findById(req.params.id);
-        if (!course) {
-            return res.json({ status: 'error', error: 'Course not found' });
-        }
-        res.json({ status: 'ok', data: course });
-    } catch (err) {
-        console.error(err);
-        res.json({ status: 'error', error: 'Failed to retrieve course data' });
+      const course = await Course.findById(req.params.id); // Using MongoDB
+      if (!course) return res.status(404).json({ error: 'Course not found' });
+      res.json({ data: course });
+    } catch (error) {
+      res.status(500).json({ error: 'Server error' });
     }
-});
+  });
 
 
 

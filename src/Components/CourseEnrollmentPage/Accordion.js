@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function Accordion({courses}) {
+export default function Accordion({ courses = [] }) {
   return (
-    <div className='container mb-5'>
+    <div className="container mb-5">
       <div>
         <div className="accordion" id="accordionPanelsStayOpenExample">
           {courses.map((course, index) => (
@@ -19,17 +19,28 @@ export default function Accordion({courses}) {
                   {course.title}
                 </button>
               </h2>
-              <div id={`panelsStayOpen-collapse${index + 1}`} className={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}>
+              <div
+                id={`panelsStayOpen-collapse${index + 1}`}
+                className={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
+              >
                 <div className="accordion-body" style={{ paddingLeft: "20px" }}>
                   <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                    {course.lessons.map((lesson, lessonIndex) => (
-                      <li className="mb-1" key={lessonIndex}><i className="bi bi-check-circle-fill text-success"></i>&nbsp;{lesson}</li>
+                    {(course.lessons || []).map((lesson, lessonIndex) => (
+                      <li className="mb-1" key={lessonIndex}>
+                        <i className="bi bi-check-circle-fill text-success"></i>&nbsp;{lesson}
+                      </li>
                     ))}
                   </ul>
                   <h6>Knowledge You'll Gain</h6>
-                  <div className="skills-tags ">
-                    {course.knowledgeGained.map((knowledge, knowledgeIndex) => (
-                      <span className="badge me-1 mb-1" style={{ backgroundColor: "#210BE3" }} key={knowledgeIndex}>{knowledge}</span>
+                  <div className="skills-tags">
+                    {(course.knowledgeGained || []).map((knowledge, knowledgeIndex) => (
+                      <span
+                        className="badge me-1 mb-1"
+                        style={{ backgroundColor: "#210BE3" }}
+                        key={knowledgeIndex}
+                      >
+                        {knowledge}
+                      </span>
                     ))}
                   </div>
                 </div>
