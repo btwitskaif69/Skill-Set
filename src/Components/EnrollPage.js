@@ -23,22 +23,29 @@ export default function EnrollPage() {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/courses/${id}`);
-        
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/api/courses/${id}`
+        );
+
+        const data = await response.json();
+
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(data.error || 'Failed to fetch course');
         }
 
-        const result = await response.json();
-        
-        if (!result.data) {
-          throw new Error('Course data not found in response');
+        if (!data.data) {
+          throw new Error('Invalid course data structure');
         }
 
-        setCourse(result.data);
+        setCourse(data.data);
+        setError(null);
       } catch (error) {
         setError(error.message);
-        console.error('Fetch error:', error);
+        console.error('Fetch Error:', {
+          error: error.message,
+          courseId: id,
+          timestamp: new Date().toISOString()
+        });
       } finally {
         setLoading(false);
       }
@@ -46,7 +53,6 @@ export default function EnrollPage() {
 
     fetchCourse();
   }, [id]);
-
   // Render loading/error states
   if (loading) return <div className="loading-spinner">Loading...</div>;
   if (error) return <div className="error-alert">Error: {error}</div>;
