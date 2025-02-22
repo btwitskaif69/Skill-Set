@@ -186,9 +186,7 @@ export default function Navbar() {
             <li>
               <div className="search-bar">
                 <form
-                  className={
-                    screenWidth > 991 ? "d-flex mb-0 p-3 border-bottom" : "d-flex mb-2 p-3 border-bottom"
-                  }
+                  className="d-flex mb-0 p-3 border-bottom"
                   role="search"
                 >
                   <input
@@ -204,6 +202,24 @@ export default function Navbar() {
                     Search
                   </button>
                 </form>
+                <div className="d-flex gap-2 p-3 border-bottom">
+              <Link to="/api/login">
+                <button
+                  type="button"
+                  className="btn custom-button-default-white text-nowrap"
+                >
+                  Log In
+                </button>
+              </Link>
+              <Link to="/api/signup">
+                <button
+                  type="button"
+                  className="btn custom-button-default text-nowrap"
+                >
+                  Sign Up
+                </button>
+              </Link>
+            </div>
               </div>
             </li>
           </ul>
