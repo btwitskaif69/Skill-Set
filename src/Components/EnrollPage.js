@@ -84,13 +84,12 @@ export default function EnrollPage() {
         courseOutcomeRef={courseOutcomeRef} 
       />
 
-      <CourseAbout
-        overview={course.overview}
-        badges={course.badges || []}
-        about={course.aboutCourse}
-        objectives={course.learningObjectives || []}
-        skillsGained={course.skills || []}
-      />
+<CourseAbout
+    badges={course?.badges || []}
+    about={course?.about || course?.description || ""}
+    objectives={course?.objectives || course?.learningObjectives || []}
+    skillsGained={course?.skillsGained || []} // Changed from 'skills' to 'skillsGained'
+/>
 
       <InstructorDetails
         instructorname={course.instructor?.name}
