@@ -92,10 +92,10 @@ export default function EnrollPage() {
 />
 
       <InstructorDetails
-        instructorname={course.instructor?.name}
+        instructorname={course.badges[0]}
         instructorimage={course.instructor?.image}
-        experience={course.instructor?.experience}
-        expertise={course.instructor?.expertise || []}
+        experience={course.experience}
+        expertise={course.expertise || []}
       />
 
       <LearningOutcomes 
@@ -108,16 +108,16 @@ export default function EnrollPage() {
 
       <CourseDescription 
         ref={courseDescriptionRef}
-        courseseries={course.relatedCourses || []}
-        coursedesc={course.fullDescription}
-        coursedetails={course.courseDetails || {}}
-        Summary={course.summary}
-        practicallearning={course.handsOnProjects || []}
-        learningexperience={course.experience}
+        courseseries={course.courseseries || []}
+        coursedesc={course.coursedesc}
+        coursedetails={course.coursedetails || {}}
+        Summary={course.Summary}
+        practicallearning={course.practicallearning || []}
+        learningExperience={course.learningExperience}
         conclusion={course.conclusion}
       />
 
-      <Accordion courses={course.curriculum || []} />
+      <Accordion courses={course.courses || []} />
       <CourseReviews ref={coursereviewsRef} reviews={course.reviews || []} />
     </div>
   );
