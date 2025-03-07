@@ -25,7 +25,7 @@ export default function EnrollPage() {
   
     const fetchCourse = async () => {
       try {
-        const response = await fetch(`http://localhost:1337/api/courses/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/courses/${id}`);
         if (!response.ok) {
           throw new Error(`Server error: ${response.status} ${response.statusText}`);
         }
