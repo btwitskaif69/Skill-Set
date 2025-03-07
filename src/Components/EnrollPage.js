@@ -71,11 +71,11 @@ export default function EnrollPage() {
         logo={getEducatorLogo(course.educator)}
         title={course.title} 
         description={course.description} 
-        enrollmentCount={course.enrolledStudents || 0}
-        coursesCount={course.relatedCourses?.length || 0}
+        enrollmentCount={course.enrollmentCount || 0}
+        coursesCount={course.coursesCount || 0}
         difficulty={course.difficulty || 'Beginner'}
         duration={course.duration}
-        hoursPerWeek={course.weeklyCommitment}
+        hoursPerWeek={course.hoursPerWeek}
       />
 
       <ScrollSpy 
