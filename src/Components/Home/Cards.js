@@ -91,7 +91,7 @@ export default function Cards() {
                 <div className="row">
                 {mainCourses.map((course, index) => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
-                            <Link to={`/courses/${course.id}`} className="text-decoration-none">
+                             <Link to={`/enroll/${course._id}`} className="text-decoration-none">
                                 <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%"}}>
                                     <img src={getCourseImage(index)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
                                     <div className="card-body d-flex flex-column">
@@ -121,7 +121,7 @@ export default function Cards() {
                     <div className="row mt-4 fade-in">
                         {additionalCourses.map((course, index) => (
                         <div key={course.id} className="col-md-3 col-sm-6 mb-4">
-                            <Link to={`/courses/${course.id}`} className="text-decoration-none">
+                             <Link to={`/enroll/${course._id}`} className="text-decoration-none">
                             <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%"}}>
                                     <img src={getCourseImage(index + 4 )} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
                                     <div className="card-body d-flex flex-column">
