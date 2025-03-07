@@ -16,7 +16,7 @@ export default function CoursesCards({ selectedFilters }) {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/courses`);
+                const response = await fetch(`http://localhost:1337/api/courses`);
                 const data = await response.json();
         
                 // Check if 'data' contains an array of courses
@@ -153,8 +153,8 @@ export default function CoursesCards({ selectedFilters }) {
             <div className="row g-4">
                 {currentCourses.length > 0 ? (
                     currentCourses.map((course, index) => (
-                        <div key={course._id} className="col-lg-4 col-md-6 col-sm-12">
-                           <Link to={`/enroll/${course._id}`} className="text-decoration-none">
+                        <div key={course.id} className="col-lg-4 col-md-6 col-sm-12">
+                            <Link to={`/enroll/${course._id}`} className="text-decoration-none">
                                 <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%" }}>
                                 <img src={getCourseImage(index)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
                                     <div className="card-body d-flex flex-column">

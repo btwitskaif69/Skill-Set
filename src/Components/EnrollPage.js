@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 import CourseBanner from "./CourseEnrollmentPage/CourseBanner";
 import InstructorDetails from './CourseEnrollmentPage/InstructorDetails';
 import CourseReviews from './CourseEnrollmentPage/CourseReviews';
@@ -9,7 +10,6 @@ import ScrollSpy from "./CourseEnrollmentPage/ScrollSpy";
 import CourseAbout from "./CourseEnrollmentPage/CourseAbout";
 import LearningOutcomes from "./CourseEnrollmentPage/LearningOutcomes";
 import FAQ from "./CourseEnrollmentPage/FAQ";
-import { useParams } from 'react-router-dom';
 
 export default function EnrollPage() {
   const courseOutcomeRef = useRef(null);
@@ -21,103 +21,105 @@ export default function EnrollPage() {
   const { id } = useParams();
 
   useEffect(() => {
+    let isMounted = true;
+  
     const fetchCourse = async () => {
       try {
-        const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/api/courses/${id}`
-        );
-
-        const data = await response.json();
-
+        const response = await fetch(`http://localhost:1337/api/courses/${id}`);
         if (!response.ok) {
-          throw new Error(data.error || 'Failed to fetch course');
+          throw new Error(`Server error: ${response.status} ${response.statusText}`);
         }
-
-        if (!data.data) {
-          throw new Error('Invalid course data structure');
+        const result = await response.json();
+        
+        if (isMounted) {
+          if (result.data) {
+            setCourse(result.data);
+          } else {
+            throw new Error('Course data not found in response');
+          }
         }
-
-        setCourse(data.data);
-        setError(null);
-      } catch (error) {
-        setError(error.message);
-        console.error('Fetch Error:', {
-          error: error.message,
-          courseId: id,
-          timestamp: new Date().toISOString()
-        });
+      } catch (err) {
+        if (isMounted) setError(err.message);
       } finally {
-        setLoading(false);
+        if (isMounted) setLoading(false);
       }
     };
 
     fetchCourse();
+    return () => { isMounted = false };
   }, [id]);
-  // Render loading/error states
+
+  const getEducatorLogo = (educator) => {
+    const EducatorLogos = {
+      aws: '/Assets/Educator/Aws.svg',
+      google: '/Assets/Educator/Google.svg',
+      ibm: '/Assets/Educator/IBM.svg',
+      meta: '/Assets/Educator/Meta.svg',
+      mit: '/Assets/Educator/Mit.svg',
+      default: '/Assets/Educator/Default.svg'
+    };
+    return EducatorLogos[educator?.toLowerCase()] || EducatorLogos.default;
+  };
+
   if (loading) return <div className="loading-spinner">Loading...</div>;
   if (error) return <div className="error-alert">Error: {error}</div>;
   if (!course) return <div className="not-found">Course not found!</div>;
 
-  // Render course details...
-  // Map API response structure to component props
   return (
     <div>
       <CourseBanner 
-        logo={getEducatorLogo(course.educator)} // Use educator logo from CoursesCards
+        logo={getEducatorLogo(course.educator)}
         title={course.title} 
         description={course.description} 
-        enrollmentCount={course.enrolledStudents} // Adjust according to API field
-        coursesCount={course.relatedCoursesCount}
-        difficulty={course.difficulty}
+        enrollmentCount={course.enrolledStudents || 0}
+        coursesCount={course.relatedCourses?.length || 0}
+        difficulty={course.difficulty || 'Beginner'}
         duration={course.duration}
         hoursPerWeek={course.weeklyCommitment}
       />
+
       <ScrollSpy 
         courseDescriptionRef={courseDescriptionRef} 
         coursereviewsRef={coursereviewsRef} 
         courseOutcomeRef={courseOutcomeRef} 
       />
-<CourseAbout
-  overview={course?.overview || ""}
-  badges={course?.badges || []}
-  about={course?.aboutCourse || ""}
-  objectives={course?.learningObjectives || []} 
-  skillsGained={course?.skills || []}
-/>
-      <InstructorDetails
-        instructorname={course.instructorName}
-        instructorimage={course.instructorImage}
-        experience={course.instructorExperience}
-        expertise={course.instructorExpertise}
+
+      <CourseAbout
+        overview={course.overview}
+        badges={course.badges || []}
+        about={course.aboutCourse}
+        objectives={course.learningObjectives || []}
+        skillsGained={course.skills || []}
       />
+
+      <InstructorDetails
+        instructorname={course.instructor?.name}
+        instructorimage={course.instructor?.image}
+        experience={course.instructor?.experience}
+        expertise={course.instructor?.expertise || []}
+      />
+
       <LearningOutcomes 
         ref={courseOutcomeRef} 
-        learningoutcomes={course.learningOutcomes} 
+        learningoutcomes={course.learningOutcomes || []} 
       />
+
       <FAQ faqs={course.faqs || []} />
-      <CompanyLogos logos={course.partnerLogos} />
+      <CompanyLogos logos={course.partnerLogos || []} />
+
       <CourseDescription 
-        ref={courseDescriptionRef} 
-        courseseries={course.relatedCourses}
+        ref={courseDescriptionRef}
+        courseseries={course.relatedCourses || []}
         coursedesc={course.fullDescription}
-        coursedetails={course.courseDetails}
+        coursedetails={course.courseDetails || {}}
         Summary={course.summary}
-        practicallearning={course.handsOnProjects}
+        practicallearning={course.handsOnProjects || []}
         learningexperience={course.experience}
         conclusion={course.conclusion}
       />
-      <Accordion courses={course.curriculum} />
-      <CourseReviews ref={coursereviewsRef} reviews={course.reviews} />
+
+      <Accordion courses={course.curriculum || []} />
+      <CourseReviews ref={coursereviewsRef} reviews={course.reviews || []} />
     </div>
   );
 }
-
-// Helper function to get educator logo (same as in CoursesCards)
-const Educator = {
-  Aws: '/Assets/Educator/Aws.svg',
-  // ... other educator mappings
-};
-
-const getEducatorLogo = (educator) => {
-  return Educator[educator] || '/Assets/Educator/Default.svg';
-};
