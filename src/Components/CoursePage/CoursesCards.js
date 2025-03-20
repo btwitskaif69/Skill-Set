@@ -18,7 +18,7 @@ export default function CoursesCards({ selectedFilters }) {
             try {
                 const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/courses`);
                 const data = await response.json();
-        
+
                 // Check if 'data' contains an array of courses
                 if (Array.isArray(data.data)) {
                     setCourses(data.data); // Use data.data to access the courses array
@@ -32,12 +32,11 @@ export default function CoursesCards({ selectedFilters }) {
                 setLoading(false);
             }
         };
-        
+
         fetchCourses();
     }, []);
 
     const filteredCourses = courses.filter(course => {
-    
         const subjectMatch = selectedFilters.subjects.length === 0 || selectedFilters.subjects.includes(course.subject);
         const languageMatch = selectedFilters.languages.length === 0 || selectedFilters.languages.includes(course.language);
         const productMatch = selectedFilters.learningProducts.length === 0 || selectedFilters.learningProducts.includes(course.product);
@@ -74,42 +73,43 @@ export default function CoursesCards({ selectedFilters }) {
     const currentCourses = filteredCourses.slice(indexOfFirstCourse, indexOfLastCourse);
 
     const CourseImage = {
-      img1: "/Assets/Course/course1.jpg",
-      img2: "/Assets/Course/course2.jpg",
-      img3: "/Assets/Course/course3.jpg",
-      img4: "/Assets/Course/course4.jpg",
-      img5: "/Assets/Course/course5.jpg",
-      img6: "/Assets/Course/course6.jpg",
-      img7: "/Assets/Course/course7.jpg",
-      img8: "/Assets/Course/course8.jpg",
-      img9: "/Assets/Course/course9.jpg",
-      img10: "/Assets/Course/course10.jpg",
-      img11: "/Assets/Course/course11.jpg",
-      img12: "/Assets/Course/course12.jpg",
-      img13: "/Assets/Course/course13.jpg",
-      img14: "/Assets/Course/course14.jpg",
-      img15: "/Assets/Course/course15.jpg",
-      img16: "/Assets/Course/course16.jpg",
-      img17: "/Assets/Course/course17.jpg",
-      img18: "/Assets/Course/course18.jpg",
-      img19: "/Assets/Course/course19.jpg",
-      img20: "/Assets/Course/course20.jpg",
-      img21: "/Assets/Course/course21.jpg",
-      img22: "/Assets/Course/course22.jpg",
-      img23: "/Assets/Course/course23.jpg",
-      img24: "/Assets/Course/course24.jpg",
-      img25: "/Assets/Course/course25.jpg",
-      img26: "/Assets/Course/course26.jpg",
-      img27: "/Assets/Course/course27.jpg",
-      img28: "/Assets/Course/course28.jpg",
-      img29: "/Assets/Course/course29.jpg",
-      img30: "/Assets/Course/course30.jpg",
+        img1: "/Assets/Course/course1.jpg",
+        img2: "/Assets/Course/course2.jpg",
+        img3: "/Assets/Course/course3.jpg",
+        img4: "/Assets/Course/course4.jpg",
+        img5: "/Assets/Course/course5.jpg",
+        img6: "/Assets/Course/course6.jpg",
+        img7: "/Assets/Course/course7.jpg",
+        img8: "/Assets/Course/course8.jpg",
+        img9: "/Assets/Course/course9.jpg",
+        img10: "/Assets/Course/course10.jpg",
+        img11: "/Assets/Course/course11.jpg",
+        img12: "/Assets/Course/course12.jpg",
+        img13: "/Assets/Course/course13.jpg",
+        img14: "/Assets/Course/course14.jpg",
+        img15: "/Assets/Course/course15.jpg",
+        img16: "/Assets/Course/course16.jpg",
+        img17: "/Assets/Course/course17.jpg",
+        img18: "/Assets/Course/course18.jpg",
+        img19: "/Assets/Course/course19.jpg",
+        img20: "/Assets/Course/course20.jpg",
+        img21: "/Assets/Course/course21.jpg",
+        img22: "/Assets/Course/course22.jpg",
+        img23: "/Assets/Course/course23.jpg",
+        img24: "/Assets/Course/course24.jpg",
+        img25: "/Assets/Course/course25.jpg",
+        img26: "/Assets/Course/course26.jpg",
+        img27: "/Assets/Course/course27.jpg",
+        img28: "/Assets/Course/course28.jpg",
+        img29: "/Assets/Course/course29.jpg",
+        img30: "/Assets/Course/course30.jpg",
     };
-    
+
     const getCourseImage = (index) => {
         const imageKeys = Object.keys(CourseImage);
         return CourseImage[imageKeys[index % imageKeys.length]] || '/Assets/Course/default.jpg';
     };
+
     const Educator = {
         Aws: '/Assets/Educator/Aws.svg',
         Duke_University: '/Assets/Educator/Duke_University.svg',
@@ -123,12 +123,11 @@ export default function CoursesCards({ selectedFilters }) {
         University_of_Michigan: '/Assets/Educator/University_of_Michigan.svg',
         University_of_Oxford: '/Assets/Educator/University_of_Oxford.svg',
         University_of_Pennsylvania: '/Assets/Educator/University_of_Pennsylvania.svg',
-      };
+    };
 
-        // Helper function to get the educator logo
-        const getEducatorLogo = (educator) => {
-            return Educator[educator] || '/Assets/Educator/Default.svg'; // Fallback to a default logo if not found
-        };
+    const getEducatorLogo = (educator) => {
+        return Educator[educator] || '/Assets/Educator/Default.svg'; // Fallback to a default logo if not found
+    };
 
     return (
         <div className="container">
@@ -138,8 +137,8 @@ export default function CoursesCards({ selectedFilters }) {
             {/* Conditionally render the Filter button on screens <= 1023px */}
             {screenWidth <= 1023 && (
                 <div className="">
-                    <button className="btn custom-button-default-white btn-lg mb-4" onClick={handleFilterClick}><i className="bi bi-sliders"></i>
-                    &nbsp;Filters
+                    <button className="btn custom-button-default-white btn-lg mb-4" onClick={handleFilterClick}>
+                        <i className="bi bi-sliders"></i>&nbsp;Filters
                     </button>
                 </div>
             )}
@@ -147,54 +146,92 @@ export default function CoursesCards({ selectedFilters }) {
             {/* Conditionally render Filter component */}
             {showFilter && <Filter />}
 
-            {loading && <p className='text-center'>Loading courses...</p>}
-            {error && <p>{error}</p>}
-
-            <div className="row g-4">
-                {currentCourses.length > 0 ? (
-                    currentCourses.map((course, index) => (
-                        <div key={course.id} className="col-lg-4 col-md-6 col-sm-12">
-                            <Link to={`/enroll/${course._id}`} className="text-decoration-none">
-                                <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%" }}>
-                                <img src={getCourseImage(index)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
-                                    <div className="card-body d-flex flex-column">
-                                        <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
-                                        <img src={getEducatorLogo(course.educator)} alt="Educator Logo"/>
-                                        </div>
-                                        <h5 className="card-title mb-0" style={{ color: "Black", minHeight: "30px", fontSize: "16px", fontWeight: "600" }}>
-                                            {course.title}
-                                        </h5>
-                                        <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
-                                            <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
+            {loading ? (
+                // Skeleton Loading Placeholder
+                <div className="row g-4">
+                    {Array.from({ length: 6 }).map((_, index) => (
+                        <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                            <div className="card h-100" aria-hidden="true">
+                                <div className="card-img-top placeholder" style={{ height: "200px", width: "100%", borderRadius: "7px", backgroundColor: "#e9ecef" }}></div>
+                                <div className="card-body d-flex flex-column">
+                                    <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
+                                        <div className="placeholder" style={{ height: "24px", width: "24px", backgroundColor: "#e9ecef" }}></div>
+                                    </div>
+                                    <h5 className="card-title placeholder-glow">
+                                        <span className="placeholder col-6"></span>
+                                    </h5>
+                                    <p className="card-text-skills placeholder-glow">
+                                        <span className="placeholder col-7"></span>
+                                        <span className="placeholder col-4"></span>
+                                        <span className="placeholder col-4"></span>
+                                        <span className="placeholder col-6"></span>
+                                        <span className="placeholder col-8"></span>
+                                    </p>
+                                    <div className="mt-auto">
+                                        <p className="card-text mb-0 placeholder-glow">
+                                            <span className="placeholder col-4"></span>
                                         </p>
-                                        <div className="mt-auto">
-                                            <p className="review-rating mb-0 bi bi-award" style={{ color: "#210BE3", fontSize: "0.7rem" }}>
-                                                &nbsp;Advance your degree journey
-                                            </p>
-                                            <p className="card-text mb-0" style={{ fontSize: "0.7rem" }}>
-                                                <i className="bi bi-star-fill" style={{ color: "#f59e0b" }}></i>&nbsp;<b>{course.rating}</b> {course.reviews}
-                                            </p>
-                                            <p className="card-text mb-0" style={{ color: "#636363", fontSize: "0.7rem" }}>
-                                            {course.difficulty} · Career Certificate · {course.duration}
-                                            </p>
-                                        </div>
+                                        <p className="card-text mb-0 placeholder-glow">
+                                            <span className="placeholder col-5"></span>
+                                        </p>
+                                        <p className="card-text mb-0 placeholder-glow">
+                                            <span className="placeholder col-6"></span>
+                                        </p>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
-                    ))
-                ) : (
-                    <p>No courses found matching your filters.</p>
-                )}
-            </div>
+                    ))}
+                </div>
+            ) : error ? (
+                <p>{error}</p>
+            ) : (
+                // Actual Course Cards
+                <div className="row g-4">
+                    {currentCourses.length > 0 ? (
+                        currentCourses.map((course, index) => (
+                            <div key={course.id} className="col-lg-4 col-md-6 col-sm-12">
+                                <Link to={`/courses/enroll/${course._id}`} className="text-decoration-none">
+                                    <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%" }}>
+                                        <img src={getCourseImage(index)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
+                                        <div className="card-body d-flex flex-column">
+                                            <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
+                                                <img src={getEducatorLogo(course.educator)} alt="Educator Logo" />
+                                            </div>
+                                            <h5 className="card-title mb-0" style={{ color: "Black", minHeight: "30px", fontSize: "16px", fontWeight: "600" }}>
+                                                {course.title}
+                                            </h5>
+                                            <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
+                                                <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
+                                            </p>
+                                            <div className="mt-auto">
+                                                <p className="review-rating mb-0 bi bi-award" style={{ color: "#210BE3", fontSize: "0.7rem" }}>
+                                                    &nbsp;Advance your degree journey
+                                                </p>
+                                                <p className="card-text mb-0" style={{ fontSize: "0.7rem" }}>
+                                                    <i className="bi bi-star-fill" style={{ color: "#f59e0b" }}></i>&nbsp;<b>{course.rating}</b> {course.reviews}
+                                                </p>
+                                                <p className="card-text mb-0" style={{ color: "#636363", fontSize: "0.7rem" }}>
+                                                    {course.difficulty} · Career Certificate · {course.duration}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No courses found matching your filters.</p>
+                    )}
+                </div>
+            )}
 
             {/* Pagination */}
             <nav aria-label="Page navigation example" className="mt-4">
                 <div className="d-flex justify-content-center">
                     <ul className="pagination">
                         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
-                        <button className="page-link" aria-label="Previous page" onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
-
+                            <button className="page-link" aria-label="Previous page" onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
                         </li>
                         {[...Array(Math.ceil(filteredCourses.length / coursesPerPage)).keys()].map((number) => (
                             <li key={number + 1} className={`page-item ${currentPage === number + 1 ? "active" : ""}`}>

@@ -61,7 +61,7 @@ export default function CourseAbout({ badges = [], about = "", objectives = [], 
                             <h5 className="card-title">Skills You'll Gain</h5>
                             <div className="d-flex flex-wrap">
                                 {safeSkills.map((skill, idx) => (
-                                    <span key={idx} className="badge rounded-pill me-2 mb-2" 
+                                    <span key={idx} className="badge fw-semibold rounded-pill me-2 mb-2" 
                                         style={{ backgroundColor: "#210BE3", fontSize: "1rem" }}>
                                         {skill}
                                     </span>

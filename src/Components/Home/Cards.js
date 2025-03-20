@@ -31,13 +31,6 @@ export default function Cards() {
         fetchCourses();
     }, []);
 
-    if (loading) {
-        return <p className='text-center mt-4'>Loading...</p>;
-    }
-
-    if (error) {
-        return <p>Error: {error}</p>;
-    }
     const CourseImage = {
         img1: "/Assets/Course/course1.jpg",
         img2: "/Assets/Course/course2.jpg",
@@ -47,7 +40,8 @@ export default function Cards() {
         img6: "/Assets/Course/course6.jpg",
         img7: "/Assets/Course/course7.jpg",
         img8: "/Assets/Course/course8.jpg",
-    }
+    };
+
     const getCourseImage = (index) => {
         const imageKeys = Object.keys(CourseImage);
         return CourseImage[imageKeys[index % imageKeys.length]] || '/Assets/Course/default.jpg';
@@ -66,20 +60,22 @@ export default function Cards() {
         University_of_Michigan: '/Assets/Educator/University_of_Michigan.svg',
         University_of_Oxford: '/Assets/Educator/University_of_Oxford.svg',
         University_of_Pennsylvania: '/Assets/Educator/University_of_Pennsylvania.svg',
-      };
+    };
 
-        // Helper function to get the educator logo
-        const getEducatorLogo = (educator) => {
-            return Educator[educator] || '/Assets/Educator/Default.svg'; // Fallback to a default logo if not found
-        };
-        
-    // Show only the first 4 courses initially and the next 4 on "Show More"
+    const getEducatorLogo = (educator) => {
+        return Educator[educator] || '/Assets/Educator/Default.svg'; // Fallback to a default logo if not found
+    };
+
     const mainCourses = courses.slice(0, 4);
     const additionalCourses = courses.slice(4, 8);
 
     const toggleAdditionalCourses = () => {
         setShowAdditionalCourses(!showAdditionalCourses);
     };
+
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
 
     return (
         <div>
@@ -89,58 +85,96 @@ export default function Cards() {
                 <h1 className="mb-1 display-4 fw-normal" style={{ color: 'Black' }}>Most Popular Certificates</h1>
                 <p className="mb-4 fs-5" style={{ color: 'Black' }}>Explore our most popular programs, get job-ready for an in-demand career.</p>
                 <div className="row">
-                {mainCourses.map((course, index) => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
-                             <Link to={`/enroll/${course._id}`} className="text-decoration-none">
-                                <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%"}}>
-                                    <img src={getCourseImage(index)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
+                    {loading ? (
+                        // Skeleton Loading Placeholder
+                        Array.from({ length: 4 }).map((_, index) => (
+                            <div key={index} className="col-md-3 col-sm-6 mb-4">
+                                <div className="card h-100" aria-hidden="true">
+                                    <div className="card-img-top placeholder" style={{ height: "200px", width: "100%", borderRadius: "7px", backgroundColor: "#e9ecef" }}></div>
                                     <div className="card-body d-flex flex-column">
-                                    <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
-                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo"/>
+                                        <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
+                                            <div className="placeholder" style={{ height: "24px", width: "24px", backgroundColor: "#e9ecef" }}></div>
                                         </div>
-                                        <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
-                                        <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
-                                            <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
+                                        <h5 className="card-title placeholder-glow">
+                                            <span className="placeholder col-6"></span>
+                                        </h5>
+                                        <p className="card-text-skills placeholder-glow">
+                                            <span className="placeholder col-7"></span>
+                                            <span className="placeholder col-4"></span>
+                                            <span className="placeholder col-4"></span>
+                                            <span className="placeholder col-6"></span>
+                                            <span className="placeholder col-8"></span>
                                         </p>
                                         <div className="mt-auto">
-                                        <p className="card-text mb-0" style={{ fontSize: "0.7rem" }}>
-                                                <i className="bi bi-star-fill" style={{ color: "#f59e0b" }}></i>&nbsp;<b>{course.rating}</b> {course.reviews}
+                                            <p className="card-text mb-0 placeholder-glow">
+                                                <span className="placeholder col-4"></span>
                                             </p>
-                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
-                                            <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
+                                            <p className="card-text mb-0 placeholder-glow">
+                                                <span className="placeholder col-5"></span>
+                                            </p>
+                                            <p className="card-text mb-0 placeholder-glow">
+                                                <span className="placeholder col-6"></span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                            </Link>
-                        </div>
-                    ))}
+                            </div>
+                        ))
+                    ) : (
+                        // Actual Course Cards
+                        mainCourses.map((course, index) => (
+                            <div key={course.id} className="col-md-3 col-sm-6 mb-4">
+                                <Link to={`/courses/enroll/${course._id}`} className="text-decoration-none">
+                                    <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%" }}>
+                                        <img src={getCourseImage(index)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
+                                        <div className="card-body d-flex flex-column">
+                                            <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
+                                                <img src={getEducatorLogo(course.educator)} alt="Educator Logo" />
+                                            </div>
+                                            <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
+                                            <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
+                                                <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
+                                            </p>
+                                            <div className="mt-auto">
+                                                <p className="card-text mb-0" style={{ fontSize: "0.7rem" }}>
+                                                    <i className="bi bi-star-fill" style={{ color: "#f59e0b" }}></i>&nbsp;<b>{course.rating}</b> {course.reviews}
+                                                </p>
+                                                <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
+                                                <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        ))
+                    )}
                 </div>
 
                 {/* Additional Courses */}
                 {showAdditionalCourses && (
                     <div className="row mt-4 fade-in">
                         {additionalCourses.map((course, index) => (
-                        <div key={course.id} className="col-md-3 col-sm-6 mb-4">
-                             <Link to={`/enroll/${course._id}`} className="text-decoration-none">
-                            <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%"}}>
-                                    <img src={getCourseImage(index + 4 )} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
-                                    <div className="card-body d-flex flex-column">
-                                    <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
-                                            <img src={getEducatorLogo(course.educator)} alt="Educator Logo"/>
-                                        </div>
-                                        <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
-                                        <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
-                                            <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
-                                        </p>
-                                        <div className="mt-auto">
-                                        <p className="card-text mb-0" style={{ fontSize: "0.7rem" }}>
-                                                <i className="bi bi-star-fill" style={{ color: "#f59e0b" }}></i>&nbsp;<b>{course.rating}</b> {course.reviews}
+                            <div key={course.id} className="col-md-3 col-sm-6 mb-4">
+                                <Link to={`/courses/enroll/${course._id}`} className="text-decoration-none">
+                                    <div className="card h-100 fade-in" style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", padding: "7px", borderRadius: "7px", height: "100%" }}>
+                                        <img src={getCourseImage(index + 4)} className="card-img-top" alt={course.title} style={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "7px", }} />
+                                        <div className="card-body d-flex flex-column">
+                                            <div className="course-logos mb-3" style={{ display: "flex", marginBottom: "8px", justifyContent: "left" }}>
+                                                <img src={getEducatorLogo(course.educator)} alt="Educator Logo" />
+                                            </div>
+                                            <h5 className="card-title" style={{ color: 'Black' }}>{course.title}</h5>
+                                            <p className="card-text-skills" style={{ color: "#636363", fontSize: "0.8rem" }}>
+                                                <b style={{ color: "black", fontWeight: "600" }}>Skills you'll gain:</b> {course.skills}
                                             </p>
-                                            <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
-                                            <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
+                                            <div className="mt-auto">
+                                                <p className="card-text mb-0" style={{ fontSize: "0.7rem" }}>
+                                                    <i className="bi bi-star-fill" style={{ color: "#f59e0b" }}></i>&nbsp;<b>{course.rating}</b> {course.reviews}
+                                                </p>
+                                                <p className="card-text mb-0 bi bi-award" style={{ color: '#210BE3' }}>&nbsp;{course.advancement}</p>
+                                                <p className="card-text mb-0" style={{ color: '#636363' }}>{course.proCert}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 </Link>
                             </div>
                         ))}

@@ -32,7 +32,7 @@ function Layout() {
         <Route path="/api/signup" element={<SignUp />} />
         <Route path="/api/login" element={<LogIn />} />
         <Route path="/api/forgot-password" element={<ForgotPassword />} />
-        <Route path="/enroll/:id" element={<EnrollPage />} />
+        <Route path="/courses/enroll/:id" element={<EnrollPage />} />
         <Route path="/form" element={<CourseForm />} />
       </Routes>
 
