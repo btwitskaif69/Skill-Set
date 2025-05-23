@@ -10,11 +10,9 @@ require('dotenv').config(); // Load environment variables from .env file
 // const crypto = require("crypto");
 // const nodemailer = require("nodemailer");
 
-const allowedOrigins = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(',')
-  : ['http://localhost:5173', 'https://sydney-events-finder.vercel.app'];
+const FRONTEND_URL = process.env.FRONTEND_URL; // Default to Vercel URL
+const allowedOrigins = [FRONTEND_URL, 'http://localhost:3000']; // Add both URLs
 
-// ...existing code...
 app.use(cors({
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin) || !origin) { // Allow if the origin is in the list or undefined (for non-browser requests)
