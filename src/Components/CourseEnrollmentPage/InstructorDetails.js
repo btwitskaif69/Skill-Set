@@ -1,13 +1,20 @@
 import React from 'react';
 
+const DEFAULT_IMAGE = "/Assets/Profile/default_profile.jpg";
+
 export default function InstructorDetails({ instructorimage, instructorname, experience, expertise = [] }) {
+  // Use the provided image or fallback to default
+  const imageSrc = instructorimage
+    ? `/Assets/Profile/${instructorimage}`
+    : DEFAULT_IMAGE;
+
   return (
     <div className="container mb-4">
       <h3 className="display-6 fw-medium mb-4">Meet Your Instructor</h3>
       <div className="d-flex align-items-start">
         <div className="me-4">
           <img
-            src={instructorimage}
+            src={imageSrc}
             alt={instructorname}
             className="rounded-circle"
             style={{ width: '120px', height: '120px', objectFit: 'cover' }}
@@ -19,8 +26,8 @@ export default function InstructorDetails({ instructorimage, instructorname, exp
             {experience || "Experience details not available"}
           </p>
           <div className="mb-3">
-            {expertise.length > 0 ? ( // Check if expertise array has items
-              expertise.map((skill, index) => ( // Map over expertise array
+            {expertise.length > 0 ? (
+              expertise.map((skill, index) => (
                 <span key={index} className="badge me-2 mb-2" style={{ fontSize: '12px', backgroundColor: '#210BE3' }}>
                   {skill}
                 </span>
@@ -34,3 +41,4 @@ export default function InstructorDetails({ instructorimage, instructorname, exp
     </div>
   );
 }
+
