@@ -17,7 +17,7 @@ function Header() {
             </h1>
             <p className="lead text-muted mb-4">
               Explore a transformative approach to skill development on our online learning platform. 
-              Uncover a new realm of learning experiences and elevate your expertise in unique ways.
+              Uncover a new realm of learning experiences and elevate your expertise in unique ways
             </p>
             <div className="d-flex gap-3">
               <Link to="/api/signup">
